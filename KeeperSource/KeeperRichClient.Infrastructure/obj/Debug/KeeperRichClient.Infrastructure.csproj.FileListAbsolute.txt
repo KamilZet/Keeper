@@ -60,7 +60,6 @@ C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ko\Sys
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.g.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.Properties.Resources.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csproj.GenerateResource.Cache

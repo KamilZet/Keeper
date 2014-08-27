@@ -19,10 +19,10 @@ namespace KeeperRichClient.Modules.Benefits.Views
 {
     public partial class NewBeneficiaryDetailsView : UserControl
     {
-        public NewBeneficiaryDetailsView()//INewBeneficiaryViewModel vm
+        public NewBeneficiaryDetailsView(INewBeneficiaryViewModel vm)
         {
             InitializeComponent();
-            DataContext = new NewBeneficiaryDetailsViewModel();//vm;
+            DataContext = vm;
         }
     }
 }

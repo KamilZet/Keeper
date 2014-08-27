@@ -9,6 +9,7 @@ using System.Windows.Input;
 
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Employees;
+using KeeperRichClient.Modules.Benefits.Views;
 
 using Microsoft.Practices.Prism.PubSubEvents;
 using System.Reflection;
@@ -211,22 +212,26 @@ namespace KeeperRichClient.Modules.Benefits
                 }
 
                 //Modified User Control type to Window type, so no runtime created window is required
-                using (AddNewBeneficiaryView wnd = new AddNewBeneficiaryView(this))
+
                 {
-                    wnd.ShowDialog();
+                    NewBeneficiaryDetailsMainView NewBeneficiaryView = new NewBeneficiaryDetailsMainView();
+                    NewBeneficiaryView.ShowDialog();
+
+                    //if (SelectedMedicalPacket.BeneficiaryGroupID == null)
+                    //    _DbContext.spCreateBeneficiaryGroupForMedPack(medPackID: SelectedMedicalPacket.ConfiguredMedicalPacketID);
+                    
+                    //_DbContext.spAddBeneficiaryToMedicalPacket(
+                    //                                                beneficiaryID: wnd.Beneficiary.BeneficiaryID,
+                    //                                                medicalPacketID: SelectedMedicalPacket.ConfiguredMedicalPacketID
+                    //                                                );
+                    RaisePropertyChanged("BeneficiariesLinkedToMedPack");
+                }
+               
 
                     //if insertion error occured on server side, provide handling mechanism
 
-                    if (SelectedMedicalPacket.BeneficiaryGroupID == null)
-                    {
-                        _DbContext.spCreateBeneficiaryGroupForMedPack(medPackID: SelectedMedicalPacket.ConfiguredMedicalPacketID);
-                    }
-                    _DbContext.spAddBeneficiaryToMedicalPacket(
-                                                                    beneficiaryID: wnd.Beneficiary.BeneficiaryID,
-                                                                    medicalPacketID: SelectedMedicalPacket.ConfiguredMedicalPacketID
-                                                                    );
-                    RaisePropertyChanged("BeneficiariesLinkedToMedPack");
-                }
+
+                
             }
             catch (Exception e)
             {

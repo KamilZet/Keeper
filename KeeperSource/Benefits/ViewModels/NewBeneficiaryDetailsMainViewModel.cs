@@ -35,10 +35,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 {
                     if (Content != null)
                     {
-                        if (Content is NewBeneficiaryDetailsViewModel)
-                        { Content = ServLocator.Get<SelectBeneficiaryViewModel>(); }
+                        if (Content is NewBeneficiaryDetailsView)
+                        { Content = ServLocator.Get<SelectBeneficiaryView>(); }
                         else
-                        { Content = ServLocator.Get<NewBeneficiaryDetailsViewModel>(); }
+                        { Content = ServLocator.Get <NewBeneficiaryDetailsView>(); }
                     }
                     else
                     { Content = ServLocator.Get<SelectBeneficiaryView>(); }

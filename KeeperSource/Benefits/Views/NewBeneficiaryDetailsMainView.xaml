@@ -5,8 +5,10 @@
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:vm="clr-namespace:KeeperRichClient.Modules.Benefits.ViewModels"
             xmlns:styles="clr-namespace:KeeperRichClient.Infrastructure.Themes;assembly=KeeperRichClient.Infrastructure"
-             mc:Ignorable="d"
-             d:DesignHeight="378" d:DesignWidth="681">
+            mc:Ignorable="d"
+            d:DesignHeight="378" d:DesignWidth="681"
+            Background="{StaticResource WindowBrush}">
+
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}"/>
     </Window.Resources>
@@ -20,8 +22,13 @@
             <RowDefinition Height="63*"/>
         </Grid.RowDefinitions>
 
-        <styles:AnimatedContentControl x:Name="ContentPlace"
+        <styles:AnimatedContentControl x:Name="ContentControl"
                                       Grid.Row="1"
-                                      Content="{Binding Content}"/>
+                                      Content="{Binding Content, UpdateSourceTrigger=PropertyChanged}"/>
+        <DockPanel Grid.Row="2">
+            <Button Content="Change New Beneficiary Mode" Command="{Binding ChangeContentCommand}"/>
+                    
+        </DockPanel>
+        
     </Grid>
 </Window>

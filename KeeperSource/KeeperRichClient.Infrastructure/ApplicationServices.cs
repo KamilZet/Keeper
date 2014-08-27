@@ -20,10 +20,7 @@ namespace KeeperRichClient.Infrastructure
 
                 return _eventAggregator;
             }
-        }
-
-        
-        
+        }        
     }
 }
 
