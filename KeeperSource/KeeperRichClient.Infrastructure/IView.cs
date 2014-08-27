@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// komentarz 
 namespace KeeperRichClient.Infrastructure
 {
     public interface IView
