@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MCM_Keeper" Class="BeneficiaryGroupDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WAR-SQL100;Initial Catalog=MCM_Keeper;Integrated Security=True" SettingsObjectName="Tests.Properties.Settings" SettingsPropertyName="MCM_KeeperConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Benefits.BeneficiaryGroupDetails" Member="BeneficiaryGroupDetails">
+    <Type Name="BeneficiaryGroupDetail">
+      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryAddDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryRemoveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Beneficiary_BeneficiaryGroupDetail" Member="Beneficiary" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="Beneficiary" IsForeignKey="true" />
+      <Association Name="BeneficiaryGroupId_BeneficiaryGroupDetail" Member="BeneficiaryGroupId1" ThisKey="BeneficiaryGroupID" OtherKey="BeneficiaryGroupID" Type="BeneficiaryGroupId" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="General.IdentityCardTypes" Member="IdentityCardTypes">
+    <Type Name="IdentityCardType">
+      <Column Name="IdentityCardTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentityCardTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="IdentityCardType_Beneficiary" Member="Beneficiaries" ThisKey="IdentityCardTypeID" OtherKey="BeneficiaryIdentityCardType" Type="Beneficiary" />
+    </Type>
+  </Table>
+  <Table Name="Benefits.Beneficiaries" Member="Beneficiaries">
+    <Type Name="Beneficiary">
+      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryPesel" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryAddress" Type="System.String" DbType="NVarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryIdentityCardType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryIdentityCardNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryParentEmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Beneficiary_BeneficiaryGroupDetail" Member="BeneficiaryGroupDetails" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="BeneficiaryGroupDetail" />
+      <Association Name="IdentityCardType_Beneficiary" Member="IdentityCardType" ThisKey="BeneficiaryIdentityCardType" OtherKey="IdentityCardTypeID" Type="IdentityCardType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Benefits.BeneficiaryGroupId" Member="BeneficiaryGroupIds">
+    <Type Name="BeneficiaryGroupId">
+      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="BeneficiaryGroupId_BeneficiaryGroupDetail" Member="BeneficiaryGroupDetails" ThisKey="BeneficiaryGroupID" OtherKey="BeneficiaryGroupID" Type="BeneficiaryGroupDetail" />
+    </Type>
+  </Table>
+  <Function Name="Interface.GetEmployees" Method="GetEmployees">
+    <ElementType Name="GetEmployeesResult">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LevelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

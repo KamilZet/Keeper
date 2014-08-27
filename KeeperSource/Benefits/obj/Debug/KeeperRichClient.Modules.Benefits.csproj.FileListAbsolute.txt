@@ -1,0 +1,110 @@
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll.config
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Ninject.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\Ninject.xml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csprojResolveAssemblyReference.cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\AddNewBeneficiaryView.baml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\MultiSportView.baml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\AddNewBeneficiaryView.g.cs
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\HealthcareView.g.cs
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\MultiSportView.g.cs
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.lref
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\HealthcareView.baml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.g.resources
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.Properties.Resources.resources
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll.config
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\DeactivateBenefitView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\EmployeeBannerView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\NavigationPanelView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Properties\Styles.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\AddNewBeneficiaryView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\DeactivateBenefitView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\EmployeeBannerView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\HealthcareView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\MultiSportView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\NavigationPanelView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\ParkingView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsMainView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.cache
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.lref
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\AddNewBeneficiaryView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\HealthcareView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\MultiSportView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\ParkingView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsMainView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.g.resources
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.Properties.Resources.resources
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb

@@ -1,0 +1,5 @@
+c:\users\kamil.zien\documents\visual studio 2013\Projects\KeeperRichClient\Employees\bin\Debug\Employees.dll
+c:\users\kamil.zien\documents\visual studio 2013\Projects\KeeperRichClient\Employees\bin\Debug\Employees.pdb
+c:\users\kamil.zien\documents\visual studio 2013\Projects\KeeperRichClient\Employees\obj\Debug\Employees.csprojResolveAssemblyReference.cache
+c:\users\kamil.zien\documents\visual studio 2013\Projects\KeeperRichClient\Employees\obj\Debug\Employees.dll
+c:\users\kamil.zien\documents\visual studio 2013\Projects\KeeperRichClient\Employees\obj\Debug\Employees.pdb

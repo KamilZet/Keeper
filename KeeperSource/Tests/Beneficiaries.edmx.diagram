@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eca55a04098246eab6cb7ec13c82f697" Name="Diagram1">
+        <EntityTypeShape EntityType="McmKeeperModel.Beneficiaries" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.BeneficiaryGroupId" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.ConfiguredMedicalPacket" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.MedicalPacketTypes" Width="2.25" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.BeneficiaryGroupDetails" Width="2.875" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.ConfiguredMedicalPacketToEmployee" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="McmKeeperModel.MedicalPacketTypeSettings" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="McmKeeperModel.FK_BeneficiaryGroupDetails_Beneficiaries" ManuallyRouted="false" />
+        <AssociationConnector Association="McmKeeperModel.FK_BeneficiaryGroupDetails_BeneficiaryGroupId" ManuallyRouted="false" />
+        <AssociationConnector Association="McmKeeperModel.FK_ConfiguredMedicalPacket_BeneficiaryGroupId" ManuallyRouted="false" />
+        <AssociationConnector Association="McmKeeperModel.FK_ConfiguredMedicalPacket_MedicalPacketTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="McmKeeperModel.FK_ConfiguredMedicalPacketToEmployee_ConfiguredMedicalPacket" ManuallyRouted="false" />
+        <AssociationConnector Association="McmKeeperModel.FK_MedicalPacketTypeSettings_MedicalPacketTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="McmKeeperModel.IdentityCardTypes" Width="3.25" PointX="0.75" PointY="10.5" />
+        <AssociationConnector Association="McmKeeperModel.FK_Beneficiaries_IdentityCardTypes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

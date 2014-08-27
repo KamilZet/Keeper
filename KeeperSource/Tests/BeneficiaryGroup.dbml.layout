@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BeneficiaryGroup">
+  <DataContextMoniker Name="/BeneficiaryGroupDataContext" />
+  <nestedChildShapes>
+    <classShape Id="85840b4d-502e-4ebb-b2b6-c803835f84bf" absoluteBounds="4.125, 3.75, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BeneficiaryGroupDataContext/BeneficiaryGroupDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4de384ac-183a-4c4d-b8a5-c2aa560df8e2" absoluteBounds="4.1400000000000006, 4.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28cde9bb-01e8-4de3-95d5-bb54db3f05e2" absoluteBounds="2, 6.75, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BeneficiaryGroupDataContext/IdentityCardType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1c146db-0902-4ea1-abbf-4186f3f150d0" absoluteBounds="2.015, 7.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20d889d8-a0ef-492e-bce7-ef94eaef4637" absoluteBounds="0.5, 3.875, 2.875, 2.0822371419270831">
+      <DataClassMoniker Name="/BeneficiaryGroupDataContext/Beneficiary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b07ac5b5-dbc2-4920-8324-939bf7392bf9" absoluteBounds="0.515, 4.335, 2.8449999999999998, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 4.52492390950521); (4.125 : 4.52492390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeneficiaryGroupDataContext/Beneficiary/Beneficiary_BeneficiaryGroupDetail" />
+      <nodes>
+        <classShapeMoniker Id="20d889d8-a0ef-492e-bce7-ef94eaef4637" />
+        <classShapeMoniker Id="85840b4d-502e-4ebb-b2b6-c803835f84bf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.6875 : 6.75); (2.6875 : 5.95723714192708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeneficiaryGroupDataContext/IdentityCardType/IdentityCardType_Beneficiary" />
+      <nodes>
+        <classShapeMoniker Id="28cde9bb-01e8-4de3-95d5-bb54db3f05e2" />
+        <classShapeMoniker Id="20d889d8-a0ef-492e-bce7-ef94eaef4637" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7cb4c275-a699-4f60-8fb0-22ddff738f28" absoluteBounds="1.75, 2, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BeneficiaryGroupDataContext/BeneficiaryGroupId" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b505d416-8d18-4dd2-ad50-211261a68b2e" absoluteBounds="1.7650000000000001, 2.46, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 3.09615315755208); (4.125 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeneficiaryGroupDataContext/BeneficiaryGroupId/BeneficiaryGroupId_BeneficiaryGroupDetail" />
+      <nodes>
+        <classShapeMoniker Id="7cb4c275-a699-4f60-8fb0-22ddff738f28" />
+        <classShapeMoniker Id="85840b4d-502e-4ebb-b2b6-c803835f84bf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

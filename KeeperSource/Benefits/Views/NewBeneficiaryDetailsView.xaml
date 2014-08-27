@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="KeeperRichClient.Modules.Benefits.Views.NewBeneficiaryDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:KeeperRichClient.Modules.Benefits"
+             mc:Ignorable="d" d:DesignWidth="323" Height="266">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Width" Value="90"/>
+                    <Setter Property="Margin" Value="10,0,0,0"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </StackPanel.Resources>
+            <DockPanel LastChildFill="False" Margin="0,50,0,0">
+                <TextBlock x:Name="FNameBox" Text="First Name" HorizontalAlignment="Right"/>
+                <TextBox Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False">
+                <TextBlock x:Name="LNameBox" Text="Last Name"/>
+                <TextBox Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False">
+                <TextBlock x:Name="PESElBox" Text="PESEL"/>
+                <!--Text="{Binding Pesel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+                <TextBox  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" Width="200" HorizontalAlignment="Left">
+                    <TextBox.Text>
+                        <Binding Path="Pesel" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:PeselValidator/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+            <DockPanel LastChildFill="False">
+                <TextBlock Text="Date of Birth"/>
+                <Label Content="YYYY" Width="36"/>
+                <TextBox Background="White" Width="45" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Text="{Binding YearFromPesel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="MM"/>
+                <TextBox Width="37" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Text="{Binding MonthFromPesel, Mode=OneWay}" RenderTransformOrigin="0.5,0.5">
+                </TextBox>
+                <Label Content="DD"/>
+                <TextBox Width="30" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Text="{Binding DayFromPesel, Mode=OneWay}"/>
+            </DockPanel>
+
+            <DockPanel LastChildFill="False">
+                <TextBlock x:Name="AddressBox" Text="Citizenship"/>
+                <TextBox Text="{Binding CitizenShip,Mode=OneWay}" Width="200" HorizontalAlignment="Left"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False">
+                <TextBlock Text="Sex"/>
+                <TextBox IsReadOnly="True" 
+                     Text="{Binding SexFromPesel, Mode=OneWay}" Width="200" HorizontalAlignment="Left"/>
+
+            </DockPanel>
+            <DockPanel LastChildFill="False">
+                <TextBlock Text="Phone Number"/>
+                <TextBox Text="{Binding PhoneNumber,StringFormat=###-###-###}" Width="200" HorizontalAlignment="Left"/>
+            </DockPanel>
+
+            <DockPanel LastChildFill="False">
+                <TextBlock x:Name="IdCardNumber" Text="Email Address"/>
+                <TextBox Validation.ErrorTemplate="{StaticResource validationErrorTemplate}"
+                     Width="200" HorizontalAlignment="Left">
+                    <TextBox.Text>
+                        <Binding Path="EmailAddress" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:EmailValidator/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

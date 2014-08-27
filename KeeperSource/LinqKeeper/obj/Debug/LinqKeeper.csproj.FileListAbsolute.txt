@@ -1,0 +1,6 @@
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\bin\Debug\LinqKeeper.exe.config
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\bin\Debug\LinqKeeper.exe
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\bin\Debug\LinqKeeper.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\obj\Debug\LinqKeeper.csprojResolveAssemblyReference.cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\obj\Debug\LinqKeeper.exe
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\LinqKeeper\obj\Debug\LinqKeeper.pdb

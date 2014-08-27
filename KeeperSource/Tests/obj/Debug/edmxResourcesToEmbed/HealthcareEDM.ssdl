@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MCM_KeeperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Beneficiaries">
+    <Key>
+      <PropertyRef Name="BeneficiaryID" />
+    </Key>
+    <Property Name="BeneficiaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BeneficiaryFName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BeneficiaryLName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BeneficiaryPesel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="BeneficiaryAddress" Type="nvarchar" MaxLength="160" Nullable="false" />
+    <Property Name="BeneficiaryIdentityCardType" Type="int" Nullable="false" />
+    <Property Name="BeneficiaryIdentityCardNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BeneficiaryParentEmployeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MCM_Keeper.Benefits.BeneficiaryGroups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeneficiaryGroups">
+    <Key>
+      <PropertyRef Name="BeneficiaryGroupID" />
+      <PropertyRef Name="BeneficiaryID" />
+    </Key>
+    <Property Name="BeneficiaryGroupID" Type="int" Nullable="false" />
+    <Property Name="BeneficiaryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BenefitLimitsToEmployees">
+    <Key>
+      <PropertyRef Name="BenefitLimitID" />
+    </Key>
+    <Property Name="BenefitLimitID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="BenefitLimitType" Type="int" Nullable="false" />
+    <Property Name="AssignDate" Type="datetime" Nullable="false" />
+    <Property Name="TakingDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="OverLimit" Type="int" Nullable="false" />
+    <Property Name="TakingReasonID" Type="int" />
+  </EntityType>
+  <EntityType Name="BenefitLimitTypes">
+    <Key>
+      <PropertyRef Name="BenefitLimitTypeID" />
+    </Key>
+    <Property Name="BenefitLimitTypeID" Type="int" Nullable="false" />
+    <Property Name="BenefitLimitValueID" Type="int" Nullable="false" />
+    <Property Name="EmployeeLevel" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="DeactivateDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BenefitLimitValues">
+    <Key>
+      <PropertyRef Name="BenefitLimitValueID" />
+    </Key>
+    <Property Name="BenefitLimitValueID" Type="int" Nullable="false" />
+    <Property Name="LimitValue" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="ActiveFrom" Type="datetime" Nullable="false" />
+    <Property Name="ActiveTo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguredMedicalPacket">
+    <Key>
+      <PropertyRef Name="ConfiguredMedicalPacketID" />
+    </Key>
+    <Property Name="ConfiguredMedicalPacketID" Type="int" Nullable="false" />
+    <Property Name="MedicalPacketID" Type="int" Nullable="false" />
+    <Property Name="BeneficiaryGroupID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MCM_Keeper.Healthcare.ConfiguredMedicalPacketToEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ConfiguredMedicalPacketToEmployee">
+    <Key>
+      <PropertyRef Name="ConfiguredMedicalPacketID" />
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="AssignDate" />
+      <PropertyRef Name="IncludedInLimit" />
+    </Key>
+    <Property Name="ConfiguredMedicalPacketID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="AssignDate" Type="datetime" Nullable="false" />
+    <Property Name="IncludedInLimit" Type="bit" Nullable="false" />
+    <Property Name="IsPayedByEmployee" Type="nchar" MaxLength="10" />
+    <Property Name="TakingDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="TakingReasonID" Type="int" />
+  </EntityType>
+  <EntityType Name="MedicalPacketTypes">
+    <Key>
+      <PropertyRef Name="MedicalPacketID" />
+    </Key>
+    <Property Name="MedicalPacketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MedicalPacketName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MCM_Keeper.Healthcare.MedicalPacketTypeSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MedicalPacketTypeSettings">
+    <Key>
+      <PropertyRef Name="MedicalPacketID" />
+      <PropertyRef Name="MedicalPacketTotalCost" />
+      <PropertyRef Name="OccupationalMedicinePartPC" />
+      <PropertyRef Name="PreventionMedicinePartPC" />
+      <PropertyRef Name="IndividualMedicinePartPC" />
+      <PropertyRef Name="FamilyMedicinePartPC" />
+      <PropertyRef Name="CreateDate" />
+    </Key>
+    <Property Name="MedicalPacketID" Type="int" Nullable="false" />
+    <Property Name="MedicalPacketTotalCost" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="OccupationalMedicinePartPC" Type="decimal" Precision="10" Scale="10" Nullable="false" />
+    <Property Name="PreventionMedicinePartPC" Type="decimal" Precision="10" Scale="10" Nullable="false" />
+    <Property Name="IndividualMedicinePartPC" Type="decimal" Precision="10" Scale="10" Nullable="false" />
+    <Property Name="FamilyMedicinePartPC" Type="decimal" Precision="10" Scale="10" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="DeactivateDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_BeneficiariesToConfiguredMedicalPackets_ConfiguredMedicalPacket">
+    <End Role="ConfiguredMedicalPacket" Type="Self.ConfiguredMedicalPacket" Multiplicity="1" />
+    <End Role="BeneficiaryGroups" Type="Self.BeneficiaryGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConfiguredMedicalPacket">
+        <PropertyRef Name="ConfiguredMedicalPacketID" />
+      </Principal>
+      <Dependent Role="BeneficiaryGroups">
+        <PropertyRef Name="BeneficiaryGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeneficiaryGroups_Beneficiaries">
+    <End Role="Beneficiaries" Type="Self.Beneficiaries" Multiplicity="1" />
+    <End Role="BeneficiaryGroups" Type="Self.BeneficiaryGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Beneficiaries">
+        <PropertyRef Name="BeneficiaryID" />
+      </Principal>
+      <Dependent Role="BeneficiaryGroups">
+        <PropertyRef Name="BeneficiaryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitLimits_BenefitLimitTypes">
+    <End Role="BenefitLimitTypes" Type="Self.BenefitLimitTypes" Multiplicity="1" />
+    <End Role="BenefitLimitsToEmployees" Type="Self.BenefitLimitsToEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenefitLimitTypes">
+        <PropertyRef Name="BenefitLimitTypeID" />
+      </Principal>
+      <Dependent Role="BenefitLimitsToEmployees">
+        <PropertyRef Name="BenefitLimitType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitLimitTypes_BenefitLimitValues">
+    <End Role="BenefitLimitValues" Type="Self.BenefitLimitValues" Multiplicity="1" />
+    <End Role="BenefitLimitTypes" Type="Self.BenefitLimitTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenefitLimitValues">
+        <PropertyRef Name="BenefitLimitValueID" />
+      </Principal>
+      <Dependent Role="BenefitLimitTypes">
+        <PropertyRef Name="BenefitLimitValueID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguredMedicalPacket_MedicalPacketTypes">
+    <End Role="MedicalPacketTypes" Type="Self.MedicalPacketTypes" Multiplicity="1" />
+    <End Role="ConfiguredMedicalPacket" Type="Self.ConfiguredMedicalPacket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalPacketTypes">
+        <PropertyRef Name="MedicalPacketID" />
+      </Principal>
+      <Dependent Role="ConfiguredMedicalPacket">
+        <PropertyRef Name="MedicalPacketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguredMedicalPacketToEmployee_ConfiguredMedicalPacket">
+    <End Role="ConfiguredMedicalPacket" Type="Self.ConfiguredMedicalPacket" Multiplicity="1" />
+    <End Role="ConfiguredMedicalPacketToEmployee" Type="Self.ConfiguredMedicalPacketToEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConfiguredMedicalPacket">
+        <PropertyRef Name="ConfiguredMedicalPacketID" />
+      </Principal>
+      <Dependent Role="ConfiguredMedicalPacketToEmployee">
+        <PropertyRef Name="ConfiguredMedicalPacketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicalPacketTypeSettings_MedicalPacketTypes">
+    <End Role="MedicalPacketTypes" Type="Self.MedicalPacketTypes" Multiplicity="1" />
+    <End Role="MedicalPacketTypeSettings" Type="Self.MedicalPacketTypeSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalPacketTypes">
+        <PropertyRef Name="MedicalPacketID" />
+      </Principal>
+      <Dependent Role="MedicalPacketTypeSettings">
+        <PropertyRef Name="MedicalPacketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MCM_KeeperModelStoreContainer">
+    <EntitySet Name="Beneficiaries" EntityType="Self.Beneficiaries" Schema="Benefits" store:Type="Tables" />
+    <EntitySet Name="BenefitLimitsToEmployees" EntityType="Self.BenefitLimitsToEmployees" Schema="Benefits" store:Type="Tables" />
+    <EntitySet Name="BenefitLimitTypes" EntityType="Self.BenefitLimitTypes" Schema="Benefits" store:Type="Tables" />
+    <EntitySet Name="BenefitLimitValues" EntityType="Self.BenefitLimitValues" Schema="Benefits" store:Type="Tables" />
+    <EntitySet Name="ConfiguredMedicalPacket" EntityType="Self.ConfiguredMedicalPacket" Schema="Healthcare" store:Type="Tables" />
+    <EntitySet Name="MedicalPacketTypes" EntityType="Self.MedicalPacketTypes" Schema="Healthcare" store:Type="Tables" />
+    <EntitySet Name="BeneficiaryGroups" EntityType="Self.BeneficiaryGroups" store:Type="Tables" store:Schema="Benefits">
+      <DefiningQuery>SELECT 
+    [BeneficiaryGroups].[BeneficiaryGroupID] AS [BeneficiaryGroupID], 
+    [BeneficiaryGroups].[BeneficiaryID] AS [BeneficiaryID]
+    FROM [Benefits].[BeneficiaryGroups] AS [BeneficiaryGroups]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ConfiguredMedicalPacketToEmployee" EntityType="Self.ConfiguredMedicalPacketToEmployee" store:Type="Tables" store:Schema="Healthcare">
+      <DefiningQuery>SELECT 
+    [ConfiguredMedicalPacketToEmployee].[ConfiguredMedicalPacketID] AS [ConfiguredMedicalPacketID], 
+    [ConfiguredMedicalPacketToEmployee].[EmployeeID] AS [EmployeeID], 
+    [ConfiguredMedicalPacketToEmployee].[AssignDate] AS [AssignDate], 
+    [ConfiguredMedicalPacketToEmployee].[IncludedInLimit] AS [IncludedInLimit], 
+    [ConfiguredMedicalPacketToEmployee].[IsPayedByEmployee] AS [IsPayedByEmployee], 
+    [ConfiguredMedicalPacketToEmployee].[TakingDate] AS [TakingDate], 
+    [ConfiguredMedicalPacketToEmployee].[Note] AS [Note], 
+    [ConfiguredMedicalPacketToEmployee].[TakingReasonID] AS [TakingReasonID]
+    FROM [Healthcare].[ConfiguredMedicalPacketToEmployee] AS [ConfiguredMedicalPacketToEmployee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MedicalPacketTypeSettings" EntityType="Self.MedicalPacketTypeSettings" store:Type="Tables" store:Schema="Healthcare">
+      <DefiningQuery>SELECT 
+    [MedicalPacketTypeSettings].[MedicalPacketID] AS [MedicalPacketID], 
+    [MedicalPacketTypeSettings].[MedicalPacketTotalCost] AS [MedicalPacketTotalCost], 
+    [MedicalPacketTypeSettings].[OccupationalMedicinePartPC] AS [OccupationalMedicinePartPC], 
+    [MedicalPacketTypeSettings].[PreventionMedicinePartPC] AS [PreventionMedicinePartPC], 
+    [MedicalPacketTypeSettings].[IndividualMedicinePartPC] AS [IndividualMedicinePartPC], 
+    [MedicalPacketTypeSettings].[FamilyMedicinePartPC] AS [FamilyMedicinePartPC], 
+    [MedicalPacketTypeSettings].[CreateDate] AS [CreateDate], 
+    [MedicalPacketTypeSettings].[DeactivateDate] AS [DeactivateDate]
+    FROM [Healthcare].[MedicalPacketTypeSettings] AS [MedicalPacketTypeSettings]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BeneficiariesToConfiguredMedicalPackets_ConfiguredMedicalPacket" Association="Self.FK_BeneficiariesToConfiguredMedicalPackets_ConfiguredMedicalPacket">
+      <End Role="ConfiguredMedicalPacket" EntitySet="ConfiguredMedicalPacket" />
+      <End Role="BeneficiaryGroups" EntitySet="BeneficiaryGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeneficiaryGroups_Beneficiaries" Association="Self.FK_BeneficiaryGroups_Beneficiaries">
+      <End Role="Beneficiaries" EntitySet="Beneficiaries" />
+      <End Role="BeneficiaryGroups" EntitySet="BeneficiaryGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitLimits_BenefitLimitTypes" Association="Self.FK_BenefitLimits_BenefitLimitTypes">
+      <End Role="BenefitLimitTypes" EntitySet="BenefitLimitTypes" />
+      <End Role="BenefitLimitsToEmployees" EntitySet="BenefitLimitsToEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitLimitTypes_BenefitLimitValues" Association="Self.FK_BenefitLimitTypes_BenefitLimitValues">
+      <End Role="BenefitLimitValues" EntitySet="BenefitLimitValues" />
+      <End Role="BenefitLimitTypes" EntitySet="BenefitLimitTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguredMedicalPacket_MedicalPacketTypes" Association="Self.FK_ConfiguredMedicalPacket_MedicalPacketTypes">
+      <End Role="MedicalPacketTypes" EntitySet="MedicalPacketTypes" />
+      <End Role="ConfiguredMedicalPacket" EntitySet="ConfiguredMedicalPacket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguredMedicalPacketToEmployee_ConfiguredMedicalPacket" Association="Self.FK_ConfiguredMedicalPacketToEmployee_ConfiguredMedicalPacket">
+      <End Role="ConfiguredMedicalPacket" EntitySet="ConfiguredMedicalPacket" />
+      <End Role="ConfiguredMedicalPacketToEmployee" EntitySet="ConfiguredMedicalPacketToEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicalPacketTypeSettings_MedicalPacketTypes" Association="Self.FK_MedicalPacketTypeSettings_MedicalPacketTypes">
+      <End Role="MedicalPacketTypes" EntitySet="MedicalPacketTypes" />
+      <End Role="MedicalPacketTypeSettings" EntitySet="MedicalPacketTypeSettings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,4 @@
+C:\Users\Kamil.Zien\documents\visual studio 2013\Projects\KeeperRichClient\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.General.Infrastructure.dll
+C:\Users\Kamil.Zien\documents\visual studio 2013\Projects\KeeperRichClient\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.General.Infrastructure.pdb
+C:\Users\Kamil.Zien\documents\visual studio 2013\Projects\KeeperRichClient\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.General.Infrastructure.dll
+C:\Users\Kamil.Zien\documents\visual studio 2013\Projects\KeeperRichClient\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.General.Infrastructure.pdb
