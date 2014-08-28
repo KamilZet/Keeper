@@ -214,6 +214,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\CustomControlsLib.csproj">
+      <Project>{3b679647-6bfe-4738-b212-19622f6faef4}</Project>
+      <Name>CustomControlsLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Employees\KeeperRichClient.Modules.Employees.csproj">
       <Project>{e25d66cd-89b9-484a-8e7c-91e72b232506}</Project>
       <Name>KeeperRichClient.Modules.Employees</Name>

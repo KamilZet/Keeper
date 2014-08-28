@@ -4,9 +4,9 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:vm="clr-namespace:KeeperRichClient.Modules.Benefits.ViewModels"
-            xmlns:styles="clr-namespace:KeeperRichClient.Infrastructure.Themes;assembly=KeeperRichClient.Infrastructure"
+            xmlns:fx="clr-namespace:CustomControlsLib;assembly=CustomControlsLib"
             mc:Ignorable="d"
-            d:DesignHeight="378" d:DesignWidth="681"
+            Height="392" Width="332"
             Background="{StaticResource WindowBrush}">
 
     <Window.Resources>
@@ -22,13 +22,13 @@
             <RowDefinition Height="63*"/>
         </Grid.RowDefinitions>
 
-        <styles:AnimatedContentControl x:Name="ContentControl"
-                                      Grid.Row="1"
-                                      Content="{Binding Content, UpdateSourceTrigger=PropertyChanged}"/>
+        <fx:ContentSlider Grid.Row="1"
+                          Content="{Binding Content, UpdateSourceTrigger=PropertyChanged}"
+                          HorizontalContentAlignment="Center"/>
         <DockPanel Grid.Row="2">
             <Button Content="Change New Beneficiary Mode" Command="{Binding ChangeContentCommand}"/>
-                    
+
         </DockPanel>
-        
+
     </Grid>
 </Window>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="McmKeeperModelStoreContainer" CdmEntityContainer="McmKeeper">
+    <EntitySetMapping Name="Beneficiaries">
+      <EntityTypeMapping TypeName="McmKeeperModel.Beneficiaries">
+        <MappingFragment StoreEntitySet="Beneficiaries">
+          <ScalarProperty Name="BeneficiaryID" ColumnName="BeneficiaryID" />
+          <ScalarProperty Name="BeneficiaryFName" ColumnName="BeneficiaryFName" />
+          <ScalarProperty Name="BeneficiaryLName" ColumnName="BeneficiaryLName" />
+          <ScalarProperty Name="BeneficiaryPesel" ColumnName="BeneficiaryPesel" />
+          <ScalarProperty Name="BeneficiaryAddress" ColumnName="BeneficiaryAddress" />
+          <ScalarProperty Name="BeneficiaryIdentityCardType" ColumnName="BeneficiaryIdentityCardType" />
+          <ScalarProperty Name="BeneficiaryIdentityCardNumber" ColumnName="BeneficiaryIdentityCardNumber" />
+          <ScalarProperty Name="BeneficiaryParentEmployeeID" ColumnName="BeneficiaryParentEmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeneficiaryGroupId">
+      <EntityTypeMapping TypeName="McmKeeperModel.BeneficiaryGroupId">
+        <MappingFragment StoreEntitySet="BeneficiaryGroupId">
+          <ScalarProperty Name="BeneficiaryGroupID1" ColumnName="BeneficiaryGroupID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguredMedicalPacket">
+      <EntityTypeMapping TypeName="McmKeeperModel.ConfiguredMedicalPacket">
+        <MappingFragment StoreEntitySet="ConfiguredMedicalPacket">
+          <ScalarProperty Name="ConfiguredMedicalPacketID" ColumnName="ConfiguredMedicalPacketID" />
+          <ScalarProperty Name="MedicalPacketID" ColumnName="MedicalPacketID" />
+          <ScalarProperty Name="BeneficiaryGroupID" ColumnName="BeneficiaryGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalPacketTypes">
+      <EntityTypeMapping TypeName="McmKeeperModel.MedicalPacketTypes">
+        <MappingFragment StoreEntitySet="MedicalPacketTypes">
+          <ScalarProperty Name="MedicalPacketID" ColumnName="MedicalPacketID" />
+          <ScalarProperty Name="MedicalPacketName" ColumnName="MedicalPacketName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeneficiaryGroupDetails">
+      <EntityTypeMapping TypeName="McmKeeperModel.BeneficiaryGroupDetails">
+        <MappingFragment StoreEntitySet="BeneficiaryGroupDetails">
+          <ScalarProperty Name="BeneficiaryGroupID" ColumnName="BeneficiaryGroupID" />
+          <ScalarProperty Name="BeneficiaryID" ColumnName="BeneficiaryID" />
+          <ScalarProperty Name="BeneficiaryAddDate" ColumnName="BeneficiaryAddDate" />
+          <ScalarProperty Name="BeneficiaryRemoveDate" ColumnName="BeneficiaryRemoveDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguredMedicalPacketToEmployee">
+      <EntityTypeMapping TypeName="McmKeeperModel.ConfiguredMedicalPacketToEmployee">
+        <MappingFragment StoreEntitySet="ConfiguredMedicalPacketToEmployee">
+          <ScalarProperty Name="ConfiguredMedicalPacketID" ColumnName="ConfiguredMedicalPacketID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AssignDate" ColumnName="AssignDate" />
+          <ScalarProperty Name="IncludedInLimit" ColumnName="IncludedInLimit" />
+          <ScalarProperty Name="IsPayedByEmployee" ColumnName="IsPayedByEmployee" />
+          <ScalarProperty Name="TakingDate" ColumnName="TakingDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TakingReasonID" ColumnName="TakingReasonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalPacketTypeSettings">
+      <EntityTypeMapping TypeName="McmKeeperModel.MedicalPacketTypeSettings">
+        <MappingFragment StoreEntitySet="MedicalPacketTypeSettings">
+          <ScalarProperty Name="MedicalPacketID" ColumnName="MedicalPacketID" />
+          <ScalarProperty Name="MedicalPacketTotalCost" ColumnName="MedicalPacketTotalCost" />
+          <ScalarProperty Name="OccupationalMedicinePartPC" ColumnName="OccupationalMedicinePartPC" />
+          <ScalarProperty Name="PreventionMedicinePartPC" ColumnName="PreventionMedicinePartPC" />
+          <ScalarProperty Name="IndividualMedicinePartPC" ColumnName="IndividualMedicinePartPC" />
+          <ScalarProperty Name="FamilyMedicinePartPC" ColumnName="FamilyMedicinePartPC" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DeactivateDate" ColumnName="DeactivateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployees" FunctionName="McmKeeperModel.Store.GetEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McmKeeperModel.GetEmployees_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="IdentityCardTypes">
+      <EntityTypeMapping TypeName="McmKeeperModel.IdentityCardTypes">
+        <MappingFragment StoreEntitySet="IdentityCardTypes">
+          <ScalarProperty Name="IdentityCardTypeName" ColumnName="IdentityCardTypeName" />
+          <ScalarProperty Name="IdentityCardTypeID" ColumnName="IdentityCardTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

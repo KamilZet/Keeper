@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqKeeper", "LinqKeeper\LinqKeeper.csproj", "{7AB7C261-B04E-4AB6-A3AE-7AD441E8B0D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControlsLib", "..\..\..\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\CustomControlsLib.csproj", "{3B679647-6BFE-4738-B212-19622F6FAEF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{7AB7C261-B04E-4AB6-A3AE-7AD441E8B0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AB7C261-B04E-4AB6-A3AE-7AD441E8B0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AB7C261-B04E-4AB6-A3AE-7AD441E8B0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B679647-6BFE-4738-B212-19622F6FAEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B679647-6BFE-4738-B212-19622F6FAEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B679647-6BFE-4738-B212-19622F6FAEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B679647-6BFE-4738-B212-19622F6FAEF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +68,6 @@ Global
 		{6C1CE7EC-D1CB-462F-B40C-698F197662B9} = {ACB5B2BA-645F-4C37-AB06-32A6AF4B34A6}
 		{DC8FA3E0-7571-4351-AB89-4DA9067FAB1E} = {A62969A1-7AC1-41A2-B069-ECEF6AC4F335}
 		{7AB7C261-B04E-4AB6-A3AE-7AD441E8B0D0} = {A62969A1-7AC1-41A2-B069-ECEF6AC4F335}
+		{3B679647-6BFE-4738-B212-19622F6FAEF4} = {ACB5B2BA-645F-4C37-AB06-32A6AF4B34A6}
 	EndGlobalSection
 EndGlobal
