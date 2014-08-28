@@ -8,19 +8,23 @@ using System.Windows.Input;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Views;
 using KeeperRichClient.Modules.Benefits.Models;
+
 using Ninject;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class NewBeneficiaryDetailsMainViewModel  : ViewModelBase
     {
-        public NewBeneficiaryDetailsMainViewModel() {
+        public NewBeneficiaryDetailsMainViewModel() 
+        {
             ServLocator.Bind<INewBeneficiaryViewModel>().To<NewBeneficiaryDetailsViewModel>().InSingletonScope();
-            ServLocator.Bind<ISelectBeneficiaryViewModel>().To<SelectBeneficiaryViewModel>().InSingletonScope();}
-
+            ServLocator.Bind<ISelectBeneficiaryViewModel>().To<SelectBeneficiaryViewModel>().InSingletonScope();
+            Content = ServLocator.Get<SelectBeneficiaryView>();
+        }
+            
         IKernel ServLocator = new StandardKernel();
 
-        IView content;
+        IView content = null;
         public IView Content
         {
             get { return content; }
@@ -41,24 +45,20 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 });}}
 
         ICommand addBeneficiaryCommand;
-        void addBeneficiary() 
-        {
-            (Content.ViewModel as IAddBeneficiary).AddBeneficiary();
-        }
-        
         public ICommand AddBeneficiaryCommand
         {
             get
             {
-                if (addBeneficiaryCommand == null) addBeneficiaryCommand = new RelayCommand(param => this.addBeneficiary(), null);
+                if (addBeneficiaryCommand == null) 
+                    addBeneficiaryCommand = new RelayCommand
+                        (
+                        param => (Content.ViewModel as IAddBeneficiary).AddBeneficiary(),
+                        predicate => (Content.ViewModel as IAddBeneficiary).CanBeAdded()
+                        );
                 return addBeneficiaryCommand;
             }
         }
+        
 
         }
-        
-        
-    
-    
     }
-

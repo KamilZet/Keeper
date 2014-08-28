@@ -21,15 +21,23 @@ namespace KeeperRichClient.Modules.Benefits.Views
 {
     public partial class SelectBeneficiaryView : UserControl,IView
     {
-        public SelectBeneficiaryView(ISelectBeneficiaryViewModel vm){
+        public SelectBeneficiaryView(ISelectBeneficiaryViewModel vm)
+        {
             InitializeComponent();
-            ViewModel = vm;}
+            ViewModel = vm;
+        }
 
-        public IViewModel ViewModel{
-            get { return (IViewModel)DataContext; }
-            set { DataContext = value; }}
-
-        
+        public IViewModel ViewModel
+        {
+            get 
+            { 
+                return (IViewModel)DataContext; 
+            }
+            set 
+            { 
+                DataContext = value; 
+            }
+        }
 
     }
 }

@@ -5,8 +5,6 @@ using KeeperRichClient.Modules.Benefits.Models;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
-    public interface INewBeneficiaryViewModel : IViewModel{}
-
     public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel,IAddBeneficiary
     {
         public NewBeneficiaryDetailsViewModel(){ }
@@ -76,7 +74,15 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public string ViewModelType{
             get{ return "Create New Beneficiary";}}
 
-        public void AddBeneficiary() {System.Windows.MessageBox.Show("New saved!");}
-        
+        public void AddBeneficiary() 
+        {
+            System.Windows.MessageBox.Show("New saved!");
+        }
+
+        public bool CanBeAdded()
+        {
+            return true;
+        }
+
     }
 }

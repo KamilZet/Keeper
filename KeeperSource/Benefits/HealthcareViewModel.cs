@@ -31,7 +31,7 @@ namespace KeeperRichClient.Modules.Benefits
             //_eventAggr = eventAgr;
             _eventAggr = ApplicationService.Instance.EventAggregator;
             this._eventAggr.GetEvent<EmployeeSelectedEvent>().Subscribe(this.EmployeeSelected, true);
-            NewMedPackPayByEmp = true;   
+            NewMedPackPayByEmp = true;
         }
 
         public ObservableCollection<vBeneficiaries2MedPackResult> BeneficiariesLinkedToMedPack
