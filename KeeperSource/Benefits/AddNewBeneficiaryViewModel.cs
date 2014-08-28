@@ -32,9 +32,9 @@ namespace KeeperRichClient.Modules.Benefits
                 _beneficiary.BeneficiaryPhoneNumber = value.BeneficiaryPhoneNumber; RaisePropertyChanged("PhoneNumber");
                 _beneficiary.BeneficiaryEmailAddress = value.BeneficiaryEmailAddress; RaisePropertyChanged("EmailAddress");
             }
-        }   
+        }
 
-        public AddNewBeneficiaryViewModel(HealthcareViewModel InVm,Window ArgParentWnd)
+        public AddNewBeneficiaryViewModel(HealthcareViewModel InVm, Window ArgParentWnd)
         {
             _parentWnd = ArgParentWnd;
             _healthcareVm = InVm;

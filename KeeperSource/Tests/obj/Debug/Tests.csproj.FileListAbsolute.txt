@@ -26,6 +26,7 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.exe.config
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.pdb
@@ -53,6 +54,5 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.x
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
-C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.pdb

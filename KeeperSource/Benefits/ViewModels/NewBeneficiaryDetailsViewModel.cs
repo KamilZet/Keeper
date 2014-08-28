@@ -1,61 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Windows;
 using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
-    public interface INewBeneficiaryViewModel{}
+    public interface INewBeneficiaryViewModel : IViewModel{}
 
-    public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel
+    public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel,IAddBeneficiary
     {
-        public NewBeneficiaryDetailsViewModel(){ 
-            beneficiary = new Beneficiary();}
+        public NewBeneficiaryDetailsViewModel(){ }
 
         Beneficiary beneficiary;
+        public Beneficiary Beneficiary
+        {
+            get
+            {
+                if (beneficiary == null) beneficiary = new Beneficiary();
+                return beneficiary;
+            }
+        }
         
         public string FirstName{
-            get { return beneficiary.BeneficiaryFName; }
-            set { beneficiary.BeneficiaryFName = value; }}
+            get { return Beneficiary.BeneficiaryFName; }
+            set { Beneficiary.BeneficiaryFName = value; }}
         
         public string LastName{
-            get { return beneficiary.BeneficiaryLName; }
-            set { beneficiary.BeneficiaryLName = value; }}
+            get { return Beneficiary.BeneficiaryLName; }
+            set { Beneficiary.BeneficiaryLName = value; }}
 
         public string Pesel{
-            get { return beneficiary.BeneficiaryPesel; }
-            set {beneficiary.BeneficiaryPesel = value;
+            get { return Beneficiary.BeneficiaryPesel; }
+            set {Beneficiary.BeneficiaryPesel = value;
                 RaisePropertyChanged("YearFromPesel");
                 RaisePropertyChanged("MonthFromPesel");
                 RaisePropertyChanged("DayFromPesel");
                 RaisePropertyChanged("SexFromPesel");}}
 
         public DateTime DateOfBirth{
-            get { return beneficiary.BeneficiaryBirthDate; }
-            set { beneficiary.BeneficiaryBirthDate = value; }}
+            get { return Beneficiary.BeneficiaryBirthDate; }
+            set { Beneficiary.BeneficiaryBirthDate = value; }}
 
         public string Citizenship{
-            get { return beneficiary.BeneficiaryCitizenship; }
-            set { beneficiary.BeneficiaryCitizenship = value; }}
+            get { return Beneficiary.BeneficiaryCitizenship; }
+            set { Beneficiary.BeneficiaryCitizenship = value; }}
 
         public string Sex{
-            get { return beneficiary.BeneficiarySex; }
-            set { beneficiary.BeneficiarySex = value; }}
+            get { return Beneficiary.BeneficiarySex; }
+            set { Beneficiary.BeneficiarySex = value; }}
 
         public string PhoneNumber{
-            get { return beneficiary.BeneficiaryPhoneNumber; }
-            set { beneficiary.BeneficiaryPhoneNumber = value; }}
+            get { return Beneficiary.BeneficiaryPhoneNumber; }
+            set { Beneficiary.BeneficiaryPhoneNumber = value; }}
 
         public string EmailAddress{
-            get { return beneficiary.BeneficiaryEmailAddress; }
-            set { beneficiary.BeneficiaryEmailAddress = value; }}
+            get { return Beneficiary.BeneficiaryEmailAddress; }
+            set { Beneficiary.BeneficiaryEmailAddress = value; }}
 
         public int ParentEmployeeID{
-            get { return beneficiary.BeneficiaryParentEmployeeId; }
-            private set { beneficiary.BeneficiaryParentEmployeeId = value; }}
+            get { return Beneficiary.BeneficiaryParentEmployeeId; }
+            private set { Beneficiary.BeneficiaryParentEmployeeId = value; }}
 
         public string YearFromPesel{
             get { return HelperFuncs.GetYearFromPesel(Pesel); }}
@@ -69,9 +73,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public string SexFromPesel{
             get { return HelperFuncs.GetSexFromPesel(Pesel); }}
 
-
         public string ViewModelType{
             get{ return "Create New Beneficiary";}}
+
+        public void AddBeneficiary() {System.Windows.MessageBox.Show("New saved!");}
         
     }
 }

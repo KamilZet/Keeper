@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
-    public interface ISelectBeneficiaryViewModel { }
+    public interface ISelectBeneficiaryViewModel : IViewModel { }
 
-    public class SelectBeneficiaryViewModel : ViewModelBase, ISelectBeneficiaryViewModel
+    public class SelectBeneficiaryViewModel : ViewModelBase, ISelectBeneficiaryViewModel,IAddBeneficiary
     {
         public SelectBeneficiaryViewModel() { beneficiary = new Beneficiary(); }
 
@@ -20,6 +16,6 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             set { beneficiary = value; }}
 
 
-
+        public void AddBeneficiary() { System.Windows.MessageBox.Show("Selected saved!"); }
     }
 }

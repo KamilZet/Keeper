@@ -104,6 +104,7 @@
     <Compile Include="IHealthcareViewModel.cs" />
     <Compile Include="IMultiSportViewModel.cs" />
     <Compile Include="INavigationViewModel.cs" />
+    <Compile Include="Models\IAddBeneficiary.cs" />
     <Compile Include="IParkingViewModel.cs" />
     <Compile Include="MultiSportModule.cs" />
     <Compile Include="MultiSportView.xaml.cs">

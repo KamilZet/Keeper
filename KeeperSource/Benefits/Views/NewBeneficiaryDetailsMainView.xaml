@@ -6,27 +6,30 @@
             xmlns:vm="clr-namespace:KeeperRichClient.Modules.Benefits.ViewModels"
             xmlns:fx="clr-namespace:CustomControlsLib;assembly=CustomControlsLib"
             mc:Ignorable="d"
-            Height="392" Width="332"
+            Height="392" Width="419"
             Background="{StaticResource WindowBrush}">
-
     <Window.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}">
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
     </Window.Resources>
     <Window.DataContext>
         <vm:NewBeneficiaryDetailsMainViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="47*"/>
-            <RowDefinition Height="240*"/>
-            <RowDefinition Height="63*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
 
         <fx:ContentSlider Grid.Row="1"
                           Content="{Binding Content, UpdateSourceTrigger=PropertyChanged}"
                           HorizontalContentAlignment="Center"/>
-        <DockPanel Grid.Row="2">
-            <Button Content="Change New Beneficiary Mode" Command="{Binding ChangeContentCommand}"/>
+        <DockPanel Grid.Row="2" Margin="0">
+            <Button Content="Change New Beneficiary Mode" Command="{Binding ChangeContentCommand}" Width="191" DockPanel.Dock="Left"/>
+            <Button Content="Add Beneficiary" Command="{Binding AddBeneficiaryCommand}" Width="95"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}"/>
 
         </DockPanel>
 
