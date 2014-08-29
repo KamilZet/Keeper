@@ -27,7 +27,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public IView Content
         {
             get { return content; }
-            set {if (content != value){
+            set { if (content != value){
                     content = value;
                     RaisePropertyChanged("Content");}}}
 
