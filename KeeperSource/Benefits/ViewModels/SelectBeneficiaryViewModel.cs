@@ -1,35 +1,36 @@
 ﻿
 using System.Linq;
-using System.Data.Linq;
 using System.Collections.ObjectModel;
 
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
 using KeeperRichClient.Modules.Benefits.Services;
+using KeeperRichClient.Modules.Employees.Services;
+
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
 
-    public class SelectBeneficiaryViewModel : ViewModelBase, ISelectBeneficiaryViewModel,IAddBeneficiary
+    public class SelectBeneficiaryViewModel : BindableBase, ISelectBeneficiaryViewModel, IAddBeneficiary//BindableBase,
     {
         public SelectBeneficiaryViewModel() 
         { 
          
         }
 
-        Beneficiary beneficiary = null;
-        public Beneficiary Beneficiary
+        Beneficiary selectedBeneficiary = null;
+        public Beneficiary SelectedBeneficiary
         {
-            get { return beneficiary; }
-            set { beneficiary = value; }
+            get { return this.selectedBeneficiary; }
+            set { SetProperty(ref this.selectedBeneficiary, value); } // bindable base
         }
 
         public void AddBeneficiary()
         {
             using (DbContext db = new DbContext())
             {
-                db.Beneficiaries.InsertOnSubmit(Beneficiary);
-                db.SubmitChanges();
+                
             }
         }
 
@@ -39,10 +40,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             {
                 using (DbContext db = new DbContext())
                 {
-                    var ret = from beneficiaries in db.Beneficiaries
-                              where beneficiaries.BeneficiaryParentEmployeeId == CurrentEmployee.ActiveEmployee.EmployeeID
-                              select beneficiaries;
-                    return new ObservableCollection<Beneficiary>(ret);
+                    var result = from beneficiaries in db.Beneficiaries
+                                 where beneficiaries.BeneficiaryParentEmployeeId == ActiveEmployee.Employee.EmployeeID
+                                 select beneficiaries;
+                    return new ObservableCollection<Beneficiary>(result);
                 }
             }
         }
@@ -50,7 +51,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public bool CanBeAdded()
         {
-            return (Beneficiary != null);
+            return (this.SelectedBeneficiary != null);
         }
     }
 }

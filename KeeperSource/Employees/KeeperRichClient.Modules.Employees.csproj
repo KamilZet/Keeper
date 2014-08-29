@@ -87,6 +87,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RowNumberConverter.cs" />
+    <Compile Include="Services\ActiveEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="EmployeeView.xaml">

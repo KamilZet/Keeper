@@ -8,7 +8,8 @@
     <Grid>
         <ComboBox Width="250" Height="40"
                   Style="{StaticResource SimpleComboBox}"
-                  ItemsSource="{Binding Beneficiaries}"
-                  DisplayMemberPath="BeneficiaryFName"/>
+                  ItemsSource="{Binding Beneficiaries, Mode=OneWay}"
+                  DisplayMemberPath="BeneficiaryFName"
+                  SelectedItem="{Binding SelectedBeneficiary, Mode=TwoWay}"/>
     </Grid>
 </UserControl>

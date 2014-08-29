@@ -7,7 +7,7 @@ using System.ComponentModel;
 using KeeperRichClient.Infrastructure;
 using System.Collections.ObjectModel;
 using Microsoft.Practices.Prism.PubSubEvents;
-
+using KeeperRichClient.Modules.Employees.Services;
 
 namespace KeeperRichClient.Modules.Employees
 {
@@ -24,12 +24,10 @@ namespace KeeperRichClient.Modules.Employees
             get {return _EmployeeList;}
         }
 
-        public EmployeeViewModel()//IEventAggregator eventAggr
+        public EmployeeViewModel()
         {
-            
             _empDC = new EmployeeDataModelContext();
             _EmployeeList = (from emps in _empDC.GetEmployees() where emps.LevelID != null select emps).ToObservableCollection();
-            //if (eventAggr == null) throw new ArgumentNullException();
             this._eventAggr = ApplicationService.Instance.EventAggregator;
         }
 
@@ -51,7 +49,12 @@ namespace KeeperRichClient.Modules.Employees
         private void SelectedEmployeeChanged()
         {
             GetEmployeesResult employee = this.SelectedEmployee as GetEmployeesResult;
-            if (employee != null) this._eventAggr.GetEvent<EmployeeSelectedEvent>().Publish(employee);
+            if (employee != null)
+            {
+                ActiveEmployee.Employee = employee;
+                this._eventAggr.GetEvent<EmployeeSelectedEvent>().Publish(employee); 
+            }
+
         }
         
         public void EmployeeRefresh()

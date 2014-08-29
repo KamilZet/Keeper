@@ -8,6 +8,9 @@ namespace KeeperRichClient.Modules.Benefits.Services
 {
     public static class CurrentEmployee
     {
+
+        static GetEmployeesResult GetCurrentEmployee { get; set; }
+
         static CurrentEmployee()
         {   
             eventAggr = ApplicationService.Instance.EventAggregator;

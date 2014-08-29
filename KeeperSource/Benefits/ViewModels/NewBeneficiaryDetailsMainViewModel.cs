@@ -1,15 +1,13 @@
-﻿using System;
+﻿using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Benefits.Views;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
-using KeeperRichClient.Infrastructure;
-using KeeperRichClient.Modules.Benefits.Views;
-using KeeperRichClient.Modules.Benefits.Models;
-
-using Ninject;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
@@ -17,9 +15,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
     {
         public NewBeneficiaryDetailsMainViewModel() 
         {
+            ServLocator.Bind<SelectBeneficiaryView>().To<SelectBeneficiaryView>().InSingletonScope();
+            ServLocator.Bind<NewBeneficiaryDetailsView>().To<NewBeneficiaryDetailsView>().InSingletonScope();
             ServLocator.Bind<INewBeneficiaryViewModel>().To<NewBeneficiaryDetailsViewModel>().InSingletonScope();
             ServLocator.Bind<ISelectBeneficiaryViewModel>().To<SelectBeneficiaryViewModel>().InSingletonScope();
-            Content = ServLocator.Get<SelectBeneficiaryView>();
         }
             
         IKernel ServLocator = new StandardKernel();
@@ -50,11 +49,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             get
             {
                 if (addBeneficiaryCommand == null) 
-                    addBeneficiaryCommand = new RelayCommand
-                        (
+                    addBeneficiaryCommand = new RelayCommand(
                         param => (Content.ViewModel as IAddBeneficiary).AddBeneficiary(),
-                        predicate => (Content.ViewModel as IAddBeneficiary).CanBeAdded()
-                        );
+                        predicate => (Content.ViewModel as IAddBeneficiary).CanBeAdded());
+
                 return addBeneficiaryCommand;
             }
         }
