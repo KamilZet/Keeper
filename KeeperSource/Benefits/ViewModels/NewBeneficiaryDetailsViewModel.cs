@@ -1,13 +1,36 @@
 ﻿using System;
 using System.Windows;
+using System.Linq;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Prism.Regions;
+
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel,IAddBeneficiary
     {
-        public NewBeneficiaryDetailsViewModel(){ }
+        public NewBeneficiaryDetailsViewModel()
+        {
+            IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+            var ActiveView = regionManager.Regions["MainContentRegion"].ActiveViews.FirstOrDefault();
+            if (ActiveView is HealthcareView)
+                this.IsFieldEnabled = true;
+            else
+                this.IsFieldEnabled = false;
+        }
+
+        bool isFieldEnabled;
+        public bool IsFieldEnabled 
+        { 
+            get {return isFieldEnabled;} 
+            private set 
+            {
+                isFieldEnabled = value;
+                RaisePropertyChanged("IsFieldDisabled"); 
+            }
+        }
 
         Beneficiary beneficiary;
         public Beneficiary Beneficiary
@@ -74,9 +97,13 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public string ViewModelType{
             get{ return "Create New Beneficiary";}}
 
-        public void AddBeneficiary() 
+        public void AddBeneficiary()
         {
-            System.Windows.MessageBox.Show("New saved!");
+            using (DbContext db = new DbContext())
+            {
+
+            }
+
         }
 
         public bool CanBeAdded()

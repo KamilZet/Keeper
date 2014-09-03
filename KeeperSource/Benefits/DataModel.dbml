@@ -249,7 +249,17 @@
       <Column Name="BeneficiaryParentEmployeeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="Benefits.spCreateBeneficiary" Method="spCreateBeneficiary">
+  <Function Name="Healthcare.vMedicalPacketsToEmployee" Method="vMedicalPacketsToEmployee" IsComposable="true">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="vMedicalPacketsToEmployeeResult">
+      <Column Name="ConfiguredMedicalPacketID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalPacketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Benefits.spCreateMedicalBeneficiary" Method="spCreateMedicalBeneficiary">
     <Parameter Name="BeneficiaryFName" Parameter="beneficiaryFName" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="BeneficiaryLName" Parameter="beneficiaryLName" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="BeneficiaryPesel" Parameter="beneficiaryPesel" Type="System.String" DbType="NVarChar(11)" />
@@ -261,14 +271,10 @@
     <Parameter Name="BeneficiaryParentEmployeeId" Parameter="beneficiaryParentEmployeeId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Healthcare.vMedicalPacketsToEmployee" Method="vMedicalPacketsToEmployee" IsComposable="true">
-    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="vMedicalPacketsToEmployeeResult">
-      <Column Name="ConfiguredMedicalPacketID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="MedicalPacketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-    </ElementType>
+  <Function Name="Benefits.spCreateMultisportBeneficiary" Method="spCreateMultisportBeneficiary">
+    <Parameter Name="BeneficiaryFName" Parameter="beneficiaryFName" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="BeneficiaryLName" Parameter="beneficiaryLName" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="BeneficiaryParentEmployeeId" Parameter="beneficiaryParentEmployeeId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

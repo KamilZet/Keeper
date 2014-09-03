@@ -27,9 +27,10 @@
                 <TextBox Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200" HorizontalAlignment="Left"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
-                <TextBlock x:Name="PESElBox" Text="PESEL"/>
+                <TextBlock x:Name="PeselBox" Text="PESEL"/>
                 <!--Text="{Binding Pesel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
-                <TextBox  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" Width="200" HorizontalAlignment="Left">
+                <TextBox  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" Width="200" HorizontalAlignment="Left"
+                          IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}">
                     <TextBox.Text>
                         <Binding Path="Pesel" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -43,35 +44,41 @@
                 <TextBlock Text="Date of Birth"/>
                 <Label Content="YYYY" Width="36"/>
                 <TextBox Background="White" Width="45" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         Text="{Binding YearFromPesel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                         Text="{Binding YearFromPesel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
                 <Label Content="MM"/>
                 <TextBox Width="37" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         Text="{Binding MonthFromPesel, Mode=OneWay}" RenderTransformOrigin="0.5,0.5">
+                         Text="{Binding MonthFromPesel, Mode=OneWay}" RenderTransformOrigin="0.5,0.5"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}">
                 </TextBox>
                 <Label Content="DD"/>
                 <TextBox Width="30" IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         Text="{Binding DayFromPesel, Mode=OneWay}"/>
+                         Text="{Binding DayFromPesel, Mode=OneWay}"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
 
             <DockPanel LastChildFill="False">
                 <TextBlock x:Name="AddressBox" Text="Citizenship"/>
-                <TextBox Text="{Binding CitizenShip,Mode=OneWay}" Width="200" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding CitizenShip,Mode=OneWay}" Width="200" HorizontalAlignment="Left"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Sex"/>
                 <TextBox IsReadOnly="True" 
-                     Text="{Binding SexFromPesel, Mode=OneWay}" Width="200" HorizontalAlignment="Left"/>
-
+                     Text="{Binding SexFromPesel, Mode=OneWay}" Width="200" HorizontalAlignment="Left"
+                    IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Phone Number"/>
-                <TextBox Text="{Binding PhoneNumber,StringFormat=###-###-###}" Width="200" HorizontalAlignment="Left"/>
+                <TextBox Text="{Binding PhoneNumber,StringFormat=###-###-###}" Width="200" HorizontalAlignment="Left"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
 
             <DockPanel LastChildFill="False">
                 <TextBlock x:Name="IdCardNumber" Text="Email Address"/>
                 <TextBox Validation.ErrorTemplate="{StaticResource validationErrorTemplate}"
-                     Width="200" HorizontalAlignment="Left">
+                        Width="200" HorizontalAlignment="Left"
+                         IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}">
                     <TextBox.Text>
                         <Binding Path="EmailAddress" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>

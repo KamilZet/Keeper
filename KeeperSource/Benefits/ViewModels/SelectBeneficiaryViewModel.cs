@@ -9,14 +9,15 @@ using KeeperRichClient.Modules.Employees.Services;
 
 using Microsoft.Practices.Prism.Mvvm;
 
+
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
 
     public class SelectBeneficiaryViewModel : BindableBase, ISelectBeneficiaryViewModel, IAddBeneficiary//BindableBase,
     {
         public SelectBeneficiaryViewModel() 
-        { 
-         
+        {
+            
         }
 
         Beneficiary selectedBeneficiary = null;

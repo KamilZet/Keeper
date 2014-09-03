@@ -35,10 +35,10 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Benefit
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\LinqKeeper.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Composition.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
-C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
@@ -47,9 +47,9 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.SqlServer.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Composition.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Employees.pdb
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Ninject.xml
-C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml

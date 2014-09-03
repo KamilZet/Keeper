@@ -20,14 +20,14 @@ namespace KeeperRichClient.Modules.Benefits
 {
     public class HealthcareViewModel : INotifyPropertyChanged, IHealthcareViewModel
     {
-        DbContext _DbContext;
+        DbContext db;
         ObservableCollection<MedicalPacketType> _medPackTypesColl;
         //todo odswiezanie listy po dodaniu, odjęciu beneficjenta
         ObservableCollection<Beneficiary> _benefLinkToMedPackColl;
         public HealthcareViewModel()//IEventAggregator eventAgr
         {
-            _DbContext = new DbContext();
-            _medPackTypesColl = (from packs in _DbContext.MedicalPacketTypes select packs).ToObservableCollection();//MedPackTypes.ToObservableCollection();
+            db = new DbContext();
+            _medPackTypesColl = (from packs in db.MedicalPacketTypes select packs).ToObservableCollection();//MedPackTypes.ToObservableCollection();
             //_eventAggr = eventAgr;
             _eventAggr = ApplicationService.Instance.EventAggregator;
             this._eventAggr.GetEvent<EmployeeSelectedEvent>().Subscribe(this.EmployeeSelected, true);
@@ -39,7 +39,7 @@ namespace KeeperRichClient.Modules.Benefits
             get
             {
                 if (SelectedMedicalPacket != null) 
-                    return new ObservableCollection<vBeneficiaries2MedPackResult>(_DbContext.vBeneficiaries2MedPack(SelectedMedicalPacket.ConfiguredMedicalPacketID));
+                    return new ObservableCollection<vBeneficiaries2MedPackResult>(db.vBeneficiaries2MedPack(SelectedMedicalPacket.ConfiguredMedicalPacketID));
                 else 
                 {
                     return null;
@@ -73,7 +73,7 @@ namespace KeeperRichClient.Modules.Benefits
         {
             get
             {
-                return new ObservableCollection<vMedicalPacketsToEmployeeResult>(_DbContext.vMedicalPacketsToEmployee(_selectedEmpId));
+                return new ObservableCollection<vMedicalPacketsToEmployeeResult>(db.vMedicalPacketsToEmployee(_selectedEmpId));
             }
             set
             {
@@ -101,7 +101,7 @@ namespace KeeperRichClient.Modules.Benefits
             set;
         }
 
-        public DbContext HealthDataContext { get { return _DbContext; } }
+        public DbContext HealthDataContext { get { return db; } }
 
         
 
@@ -156,7 +156,7 @@ namespace KeeperRichClient.Modules.Benefits
                 }
                 else
                 {
-                    _DbContext.spAddMedicalPacketToEmployee(
+                    db.spAddMedicalPacketToEmployee(
                                                                 employeeId: _selectedEmpId,
                                                                 medicalPacketTypeId: NewMedPackTypeId,
                                                                 beneficiaryGroupId: null,
@@ -167,7 +167,7 @@ namespace KeeperRichClient.Modules.Benefits
                                                                 note: null
                                                                 );
                     if (NewMedPackTypeId == 4)
-                        _DbContext.spAddMedicalPacketToEmployee(employeeId: _selectedEmpId,
+                        db.spAddMedicalPacketToEmployee(employeeId: _selectedEmpId,
                                                                 medicalPacketTypeId: 8,
                                                                 beneficiaryGroupId: null,
                                                                 validFrom: NewMedPackValidFrom,
@@ -229,8 +229,6 @@ namespace KeeperRichClient.Modules.Benefits
                
 
                     //if insertion error occured on server side, provide handling mechanism
-
-
                 
             }
             catch (Exception e)
@@ -297,7 +295,7 @@ namespace KeeperRichClient.Modules.Benefits
             }
             else
             {
-                _DbContext.spRemoveBeneficiaryFromMedicalPacket(
+                db.spRemoveBeneficiaryFromMedicalPacket(
                                                                     beneficiaryID: this.SelectedBeneficiary.BeneficiaryID,
                                                                     medicalPacketId: this.SelectedBeneficiary.ConfiguredMedicalPacketID);
                 RaisePropertyChanged("BeneficiariesLinkedToMedPack");

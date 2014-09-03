@@ -275,17 +275,24 @@ namespace KeeperRichClient.Modules.Benefits
 			return this.CreateMethodCallQuery<fBeneficiariesToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parentEmployeeId);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spCreateBeneficiary")]
-		public int spCreateBeneficiary([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryFName", DbType="NVarChar(20)")] string beneficiaryFName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryLName", DbType="NVarChar(20)")] string beneficiaryLName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPesel", DbType="NVarChar(11)")] string beneficiaryPesel, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryBirthDate", DbType="DateTime")] System.Nullable<System.DateTime> beneficiaryBirthDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryCitizenship", DbType="NVarChar(10)")] string beneficiaryCitizenship, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiarySex", DbType="NVarChar(1)")] string beneficiarySex, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPhoneNumber", DbType="NVarChar(50)")] string beneficiaryPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryEmailAddress", DbType="NVarChar(100)")] string beneficiaryEmailAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryParentEmployeeId", DbType="Int")] System.Nullable<int> beneficiaryParentEmployeeId)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vMedicalPacketsToEmployee", IsComposable=true)]
+		public IQueryable<vMedicalPacketsToEmployeeResult> vMedicalPacketsToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
+		{
+			return this.CreateMethodCallQuery<vMedicalPacketsToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spCreateMedicalBeneficiary")]
+		public int spCreateMedicalBeneficiary([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryFName", DbType="NVarChar(20)")] string beneficiaryFName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryLName", DbType="NVarChar(20)")] string beneficiaryLName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPesel", DbType="NVarChar(11)")] string beneficiaryPesel, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryBirthDate", DbType="DateTime")] System.Nullable<System.DateTime> beneficiaryBirthDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryCitizenship", DbType="NVarChar(10)")] string beneficiaryCitizenship, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiarySex", DbType="NVarChar(1)")] string beneficiarySex, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPhoneNumber", DbType="NVarChar(50)")] string beneficiaryPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryEmailAddress", DbType="NVarChar(100)")] string beneficiaryEmailAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryParentEmployeeId", DbType="Int")] System.Nullable<int> beneficiaryParentEmployeeId)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), beneficiaryFName, beneficiaryLName, beneficiaryPesel, beneficiaryBirthDate, beneficiaryCitizenship, beneficiarySex, beneficiaryPhoneNumber, beneficiaryEmailAddress, beneficiaryParentEmployeeId);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vMedicalPacketsToEmployee", IsComposable=true)]
-		public IQueryable<vMedicalPacketsToEmployeeResult> vMedicalPacketsToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spCreateMultisportBeneficiary")]
+		public int spCreateMultisportBeneficiary([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryFName", DbType="NVarChar(20)")] string beneficiaryFName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryLName", DbType="NVarChar(20)")] string beneficiaryLName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryParentEmployeeId", DbType="Int")] System.Nullable<int> beneficiaryParentEmployeeId)
 		{
-			return this.CreateMethodCallQuery<vMedicalPacketsToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), beneficiaryFName, beneficiaryLName, beneficiaryParentEmployeeId);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

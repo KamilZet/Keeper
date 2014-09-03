@@ -26,7 +26,6 @@ namespace KeeperRichClient.Appl
         protected override DependencyObject CreateShell()
         {
             return Kernel.Resolve<ShellWindow>();
-            //return ServiceLocator.Current.GetInstance<ShellWindow>();
         }
 
         protected override void InitializeShell(){

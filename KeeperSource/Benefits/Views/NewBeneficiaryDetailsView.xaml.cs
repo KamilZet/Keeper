@@ -17,6 +17,7 @@ using KeeperRichClient.Modules.Benefits.ViewModels;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
 
+
 namespace KeeperRichClient.Modules.Benefits.Views
 {
     public partial class NewBeneficiaryDetailsView : UserControl,IView
@@ -25,6 +26,8 @@ namespace KeeperRichClient.Modules.Benefits.Views
         {
             InitializeComponent();
             ViewModel = vm;
+
+
         }
 
         public IViewModel ViewModel

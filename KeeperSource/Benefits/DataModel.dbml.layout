@@ -124,7 +124,7 @@
         <classShapeMoniker Id="fa8bb2ad-0753-4098-a3f1-607bc54a0013" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.375 : 2.77492140950521); (12.15625 : 2.77492140950521); (12.15625 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.375 : 2.77492140950521); (11.0416666666667 : 2.77492140950521 : JumpStart); (11.2083333333333 : 2.77492140950521 : JumpEnd); (12.15625 : 2.77492140950521); (12.15625 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/TakingReasonType/TakingReasonType_ConfiguredMultisportPacketsToEmployee" />
       <nodes>
         <classShapeMoniker Id="0649a562-6f90-4423-b92f-cef9f6174f00" />

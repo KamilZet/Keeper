@@ -46,7 +46,6 @@ namespace KeeperRichClient.Modules.Benefits
             return new Uri(targetName, UriKind.Relative);
         }
 
-
         bool _CanNavigate(object arg)
         {
             return true;
