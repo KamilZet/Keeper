@@ -58,8 +58,8 @@
             </DockPanel>
 
             <DockPanel LastChildFill="False">
-                <TextBlock x:Name="AddressBox" Text="Citizenship"/>
-                <TextBox Text="{Binding CitizenShip,Mode=OneWay}" Width="200" HorizontalAlignment="Left"
+                <TextBlock x:Name="Citizenship" Text="Citizenship"/>
+                <TextBox Text="{Binding Citizenship,Mode=OneWayToSource}" Width="200" HorizontalAlignment="Left"
                          IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
             <DockPanel LastChildFill="False">

@@ -131,17 +131,17 @@ namespace KeeperRichClient.Modules.Benefits
         {
             try
             {   
-                _beneficiary.BeneficiaryID = _healthcareDc.spCreateBeneficiary(
-                                                    beneficiaryFName: _beneficiary.BeneficiaryFName,
-                                                    beneficiaryLName: _beneficiary.BeneficiaryLName,
-                                                    beneficiaryPesel: _beneficiary.BeneficiaryPesel,
-                                                    beneficiaryBirthDate : _beneficiary.BeneficiaryBirthDate,
-                                                    beneficiaryCitizenship : _beneficiary.BeneficiaryCitizenship,
-                                                    beneficiarySex : _beneficiary.BeneficiarySex,
-                                                    beneficiaryPhoneNumber: _beneficiary.BeneficiaryPhoneNumber,
-                                                    beneficiaryEmailAddress: _beneficiary.BeneficiaryEmailAddress,
-                                                    beneficiaryParentEmployeeId: _healthcareVm.SelectedEmployeeId
-                                                    );
+                //_beneficiary.BeneficiaryID = _healthcareDc.spCreateBeneficiary(
+                //                                    beneficiaryFName: _beneficiary.BeneficiaryFName,
+                //                                    beneficiaryLName: _beneficiary.BeneficiaryLName,
+                //                                    beneficiaryPesel: _beneficiary.BeneficiaryPesel,
+                //                                    beneficiaryBirthDate : _beneficiary.BeneficiaryBirthDate,
+                //                                    beneficiaryCitizenship : _beneficiary.BeneficiaryCitizenship,
+                //                                    beneficiarySex : _beneficiary.BeneficiarySex,
+                //                                    beneficiaryPhoneNumber: _beneficiary.BeneficiaryPhoneNumber,
+                //                                    beneficiaryEmailAddress: _beneficiary.BeneficiaryEmailAddress,
+                //                                    beneficiaryParentEmployeeId: _healthcareVm.SelectedEmployeeId
+                //                                    );
             }
             catch (Exception e)
             {

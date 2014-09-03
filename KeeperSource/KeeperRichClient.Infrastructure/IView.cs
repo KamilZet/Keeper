@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KeeperRichClient.Infrastructure
 {
-    public interface IView
+    public interface IView 
     {
         IViewModel ViewModel { get; set; }
     }

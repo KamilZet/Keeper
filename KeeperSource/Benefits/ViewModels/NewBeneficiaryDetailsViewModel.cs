@@ -3,6 +3,7 @@ using System.Windows;
 using System.Linq;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Employees.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
 
@@ -11,11 +12,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel,IAddBeneficiary
     {
+        IView activeView = (IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();
         public NewBeneficiaryDetailsViewModel()
         {
-            IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            var ActiveView = regionManager.Regions["MainContentRegion"].ActiveViews.FirstOrDefault();
-            if (ActiveView is HealthcareView)
+            if (activeView is HealthcareView)
                 this.IsFieldEnabled = true;
             else
                 this.IsFieldEnabled = false;
@@ -58,29 +58,34 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 RaisePropertyChanged("DayFromPesel");
                 RaisePropertyChanged("SexFromPesel");}}
 
-        public DateTime DateOfBirth{
-            get { return Beneficiary.BeneficiaryBirthDate; }
-            set { Beneficiary.BeneficiaryBirthDate = value; }}
+        public DateTime DateOfBirth
+        {
+            get { return new DateTime(Int32.Parse(YearFromPesel), Int32.Parse(MonthFromPesel), Int32.Parse(DayFromPesel)); }
+        }
+
 
         public string Citizenship{
             get { return Beneficiary.BeneficiaryCitizenship; }
             set { Beneficiary.BeneficiaryCitizenship = value; }}
 
-        public string Sex{
-            get { return Beneficiary.BeneficiarySex; }
-            set { Beneficiary.BeneficiarySex = value; }}
+        public string Sex
+        {
+            get { return SexFromPesel; }
+        }
 
         public string PhoneNumber{
             get { return Beneficiary.BeneficiaryPhoneNumber; }
             set { Beneficiary.BeneficiaryPhoneNumber = value; }}
-
+            
         public string EmailAddress{
             get { return Beneficiary.BeneficiaryEmailAddress; }
             set { Beneficiary.BeneficiaryEmailAddress = value; }}
 
-        public int ParentEmployeeID{
-            get { return Beneficiary.BeneficiaryParentEmployeeId; }
-            private set { Beneficiary.BeneficiaryParentEmployeeId = value; }}
+        public int ParentEmployeeID
+        {
+            get { return ActiveEmployee.Employee.EmployeeID; }
+        }
+
 
         public string YearFromPesel{
             get { return HelperFuncs.GetYearFromPesel(Pesel); }}
@@ -101,7 +106,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             using (DbContext db = new DbContext())
             {
-
+                if (activeView is HealthcareView)
+                    db.spCreateMedicalBeneficiary(FirstName, LastName, Pesel, DateOfBirth, Citizenship, Sex, PhoneNumber, EmailAddress, ParentEmployeeID );
+                //else
+                    //db.spCreateMultisportBeneficiary();
             }
 
         }
@@ -110,6 +118,9 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             return true;
         }
+
+
+
 
     }
 }
