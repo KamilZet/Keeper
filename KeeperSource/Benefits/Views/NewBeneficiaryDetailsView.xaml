@@ -33,9 +33,7 @@
                           IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}">
                     <TextBox.Text>
                         <Binding Path="Pesel" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                            <Binding.ValidationRules>
-                                <local:PeselValidator/>
-                            </Binding.ValidationRules>
+                            <Binding.ValidationRules><local:PeselValidator/></Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -59,7 +57,7 @@
 
             <DockPanel LastChildFill="False">
                 <TextBlock x:Name="Citizenship" Text="Citizenship"/>
-                <TextBox Text="{Binding Citizenship,Mode=OneWayToSource}" Width="200" HorizontalAlignment="Left"
+                <TextBox Text="{Binding Citizenship,Mode=TwoWay}" Width="200" HorizontalAlignment="Left"
                          IsEnabled="{Binding IsFieldEnabled, Mode=OneWay}"/>
             </DockPanel>
             <DockPanel LastChildFill="False">

@@ -24,7 +24,8 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             
         IKernel ServLocator = new StandardKernel();
 
-        IView content = null;
+        KeeperRichClient.Infrastructure.IView content = null;
+
         public IView Content
         {
             get { return content; }

@@ -25,7 +25,6 @@ namespace KeeperRichClient.Modules.Benefits
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="MCM_Keeper")]
 	public partial class DbContext : System.Data.Linq.DataContext
 	{
-		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
@@ -42,7 +41,7 @@ namespace KeeperRichClient.Modules.Benefits
     partial void InsertParkingPlace(ParkingPlace instance);
     partial void UpdateParkingPlace(ParkingPlace instance);
     partial void DeleteParkingPlace(ParkingPlace instance);
-    partial void InsertParking(Parking instance);
+    partial void InsertParking( Parking instance);
     partial void UpdateParking(Parking instance);
     partial void DeleteParking(Parking instance);
     partial void InsertMultisportPacketType(MultisportPacketType instance);

@@ -40,6 +40,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 if (beneficiary == null) beneficiary = new Beneficiary();
                 return beneficiary;
             }
+            private set
+            {
+                beneficiary = value;
+            }
         }
         
         public string FirstName{
@@ -107,9 +111,35 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             using (DbContext db = new DbContext())
             {
                 if (activeView is HealthcareView)
-                    db.spCreateMedicalBeneficiary(FirstName, LastName, Pesel, DateOfBirth, Citizenship, Sex, PhoneNumber, EmailAddress, ParentEmployeeID );
-                //else
+                {
+                    int newBeneficiaryId = db.spCreateMedicalBeneficiary(FirstName, 
+                                                  LastName, 
+                                                  Pesel, 
+                                                  DateOfBirth, 
+                                                  Citizenship, 
+                                                  Sex, 
+                                                  PhoneNumber, 
+                                                  EmailAddress, 
+                                                  ParentEmployeeID);
+
+                    if (newBeneficiaryId != 0)
+                    {
+                        db.spAddBeneficiaryToMedicalPacket(newBeneficiaryId,
+                                                           (activeView.ViewModel as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
+                                                           );
+                        Beneficiary = new Beneficiary();
+                        RaisePropertyChanged(string.Empty);
+                    }
+                    else
+                    MessageBox.Show("Error occured. Please");
+
+                    
+                }
+                else
+                {
                     //db.spCreateMultisportBeneficiary();
+                }
+                    
             }
 
         }
@@ -123,4 +153,6 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
 
     }
+
+    
 }

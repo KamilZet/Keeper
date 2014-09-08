@@ -7,6 +7,7 @@ using System.Windows.Controls;
 
 namespace KeeperRichClient.Modules.Benefits
 {
+    
     public class PeselValidator : ValidationRule
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)

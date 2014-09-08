@@ -9,7 +9,19 @@
         <ComboBox Width="250" Height="40"
                   Style="{StaticResource SimpleComboBox}"
                   ItemsSource="{Binding Beneficiaries, Mode=OneWay}"
-                  DisplayMemberPath="BeneficiaryFName"
-                  SelectedItem="{Binding SelectedBeneficiary, Mode=TwoWay}"/>
+                  SelectedItem="{Binding SelectedBeneficiary, Mode=OneWayToSource}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock DataContext="{Binding}">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="BeneficiaryFName" />
+                                <Binding Path="BeneficiaryLName" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </UserControl>
