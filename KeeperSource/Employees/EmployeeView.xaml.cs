@@ -20,6 +20,7 @@ using System.Windows.Shapes;
 using KeeperRichClient.Infrastructure;
 using System.ComponentModel;
 
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Employees
 {

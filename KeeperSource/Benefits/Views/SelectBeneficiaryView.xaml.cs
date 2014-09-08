@@ -17,6 +17,8 @@ using KeeperRichClient.Modules.Benefits.ViewModels;
 using KeeperRichClient.Modules.Benefits.Models;
 using KeeperRichClient.Infrastructure;
 
+using Microsoft.Practices.Prism.Mvvm;
+
 namespace KeeperRichClient.Modules.Benefits.Views
 {
     public partial class SelectBeneficiaryView : UserControl,IView
@@ -37,6 +39,11 @@ namespace KeeperRichClient.Modules.Benefits.Views
             { 
                 DataContext = value; 
             }
+        }
+
+        public void Close()
+        {
+            this.Close();
         }
 
     }

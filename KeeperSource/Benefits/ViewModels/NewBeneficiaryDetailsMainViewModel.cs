@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+using Microsoft.Practices.Prism.Mvvm;
+
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class NewBeneficiaryDetailsMainViewModel  : ViewModelBase
@@ -24,7 +26,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             
         IKernel ServLocator = new StandardKernel();
 
-        KeeperRichClient.Infrastructure.IView content = null;
+        IView content = null;
 
         public IView Content
         {
@@ -53,12 +55,15 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             {
                 if (addBeneficiaryCommand == null)
                     addBeneficiaryCommand = new RelayCommand(
-                        param => (Content.ViewModel as IAddBeneficiary).AddBeneficiary(),
-                        predicate => (Content.ViewModel as IAddBeneficiary).CanBeAdded());
+                        param => (Content.DataContext as IAddBeneficiary).AddBeneficiary(),
+                        predicate => (Content.DataContext as IAddBeneficiary).CanBeAdded());
                 return addBeneficiaryCommand;
             }
         }
-        
+
+
+
+        public ICommand CancelCommand { get; set; }
 
         }
     }

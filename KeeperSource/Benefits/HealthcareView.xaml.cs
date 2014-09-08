@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using KeeperRichClient.Infrastructure;
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits
 {

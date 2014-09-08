@@ -10,13 +10,14 @@ using KeeperRichClient.Modules.Employees.Services;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
+using System.Windows.Forms;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     
     public class SelectBeneficiaryViewModel : BindableBase, ISelectBeneficiaryViewModel, IAddBeneficiary
     {
-        KeeperRichClient.Infrastructure.IView activeView = (KeeperRichClient.Infrastructure.IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();    
+        IView activeView = (IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();    
         public SelectBeneficiaryViewModel() 
         {
             
@@ -33,11 +34,11 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             using (DbContext db = new DbContext())
             {
-                //db.spAddBeneficiaryToMedicalPacket(SelectedBeneficiary.BeneficiaryID,
-                //                                   (activeView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
-                //                                   );
+                db.spAddBeneficiaryToMedicalPacket(SelectedBeneficiary.BeneficiaryID,
+                                                   (activeView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
+                                                   );
+                MessageBox.Show("Beneficiary was assigned to the selected healthcare packet.");
                 SelectedBeneficiary = new Beneficiary();
-
             }
         }
 

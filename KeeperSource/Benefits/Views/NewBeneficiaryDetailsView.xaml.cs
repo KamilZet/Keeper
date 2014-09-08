@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using KeeperRichClient.Modules.Benefits.ViewModels;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
-
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.Views
 {
@@ -25,22 +25,20 @@ namespace KeeperRichClient.Modules.Benefits.Views
         public NewBeneficiaryDetailsView(INewBeneficiaryViewModel vm)
         {
             InitializeComponent();
-            ViewModel = vm;
-
-
+            DataContext= vm;
         }
 
-        public IViewModel ViewModel
-        {
-            get 
-            {
-                return (IViewModel)DataContext;
-            }
-            set
-            {
-                DataContext = value;
-            }
-        }
+        //public object DataContext
+        //{
+        //    get 
+        //    {
+        //        return (IViewModel)base.DataContext;
+        //    }
+        //    set
+        //    {
+        //        base.DataContext = value;
+        //    }
+        //}
     
     }
     

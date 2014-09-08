@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using KeeperRichClient.Modules.Benefits;
 
 namespace UnitTestProject
 {
@@ -10,9 +10,8 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethod1()
         {
-            KeeperRichClient.Modules.Benefits.PeselValidator pv = new KeeperRichClient.Modules.Benefits.PeselValidator();
-
-            pv.Validate(86102009790, System.Globalization.CultureInfo.CurrentCulture);
+            PeselValidator pv = new PeselValidator();
+            pv.Validate(54032805210, System.Globalization.CultureInfo.CurrentCulture);
 
             
 

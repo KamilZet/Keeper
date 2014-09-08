@@ -6,7 +6,7 @@ using KeeperRichClient.Modules.Benefits.Models;
 using KeeperRichClient.Modules.Employees.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
-
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
@@ -125,13 +125,14 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                     if (newBeneficiaryId != 0)
                     {
                         db.spAddBeneficiaryToMedicalPacket(newBeneficiaryId,
-                                                           (activeView.ViewModel as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
+                                                           (activeView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
                                                            );
                         Beneficiary = new Beneficiary();
+                        MessageBox.Show("Beneficiary created and assigned to the selected healthcare packet.");
                         RaisePropertyChanged(string.Empty);
                     }
                     else
-                    MessageBox.Show("Error occured. Please");
+                        MessageBox.Show("Error occured. Please");
 
                     
                 }

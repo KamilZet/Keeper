@@ -9,7 +9,7 @@
         <ComboBox Width="250" Height="40"
                   Style="{StaticResource SimpleComboBox}"
                   ItemsSource="{Binding Beneficiaries, Mode=OneWay}"
-                  SelectedItem="{Binding SelectedBeneficiary, Mode=OneWayToSource}">
+                  SelectedItem="{Binding SelectedBeneficiary, Mode=TwoWay}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock DataContext="{Binding}">
