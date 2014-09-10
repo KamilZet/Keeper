@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Windows.Input;
-
-using KeeperRichClient.Modules.Employees;
-using KeeperRichClient.Infrastructure;
-
+﻿using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Employees.Models;
+using KeeperRichClient.Modules.Employees.Services;
+using KeeperRichClient.Modules.Benefits.Models;
 using Microsoft.Practices.Prism.PubSubEvents;
-using Microsoft.Practices.ServiceLocation;
 
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Forms;
-
 using System.Windows.Input;
+using System.Linq;
 
 namespace KeeperRichClient.Modules.Benefits
 {

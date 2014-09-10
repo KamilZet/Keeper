@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Data;
 using System.Windows.Controls;
-using System.Windows.Markup;
+using System.Windows.Data;
 
-namespace KeeperRichClient.Modules.Employees 
+namespace KeeperRichClient.Modules.Employees.Services
 {
     public class RowNumberConverter : IMultiValueConverter
     {

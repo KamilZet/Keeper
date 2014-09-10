@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿
 using KeeperRichClient.Infrastructure;
-using System.Collections.ObjectModel;
-using Microsoft.Practices.Prism.PubSubEvents;
 using KeeperRichClient.Modules.Employees.Services;
+using KeeperRichClient.Modules.Employees.Models;
+
+using Microsoft.Practices.Prism.PubSubEvents;
+
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 
 namespace KeeperRichClient.Modules.Employees
 {
@@ -15,7 +15,7 @@ namespace KeeperRichClient.Modules.Employees
     {
         private IEventAggregator _eventAggr;
         
-        private EmployeeDataModelContext _empDC;
+        private EmployeeLINQClassDataContext _empDC;
         private GetEmployeesResult _emp;
 
         private ObservableCollection<GetEmployeesResult> _EmployeeList;
@@ -26,7 +26,7 @@ namespace KeeperRichClient.Modules.Employees
 
         public EmployeeViewModel()
         {
-            _empDC = new EmployeeDataModelContext();
+            _empDC = new EmployeeLINQClassDataContext();
             _EmployeeList = (from emps in _empDC.GetEmployees() where emps.LevelID != null select emps).ToObservableCollection();
             this._eventAggr = ApplicationService.Instance.EventAggregator;
         }

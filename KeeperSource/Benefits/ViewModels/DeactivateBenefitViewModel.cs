@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 using KeeperRichClient.Infrastructure;
-
+using KeeperRichClient.Modules.Benefits.Models;
 
 namespace KeeperRichClient.Modules.Benefits
 {
@@ -66,18 +66,14 @@ namespace KeeperRichClient.Modules.Benefits
             using (DbContext dc = new DbContext())
             {
                 if (_ViewModel.GetType() == typeof(HealthcareViewModel))
-                {
                     dc.spRemoveMedicalPacketFromEmployee(((HealthcareViewModel)_ViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID,
                                                     this.EndDate,
                                                     this.SelectedTakeType.TakingReasonID,
                                                     this.TakingNote);
-                    
-
-                    RequestClose(this,EventArgs.Empty);
-                }   
                 else if (_ViewModel.GetType() == typeof(MultiSportViewModel))
                     dc.spTakeConfiguredMultiSportCard(((MultiSportViewModel)_ViewModel).SelectedMultiSportOwner.ConfiguredBenefitPacketID);
 
+                RequestClose(null, EventArgs.Empty);
             }
         }
 

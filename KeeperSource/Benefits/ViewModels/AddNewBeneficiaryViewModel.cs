@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
+using KeeperRichClient.Modules.Benefits.Models;
+
 namespace KeeperRichClient.Modules.Benefits
 {
     public class AddNewBeneficiaryViewModel : INotifyPropertyChanged

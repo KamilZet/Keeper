@@ -15,7 +15,7 @@ namespace KeeperRichClient.Modules.Benefits
     public class HealthcareModule : IModule
     {
         IKernel _ninkernel;
-        IRegionManager _regmanager;                        
+        IRegionManager _regmanager;
 
         public HealthcareModule(IKernel InKernel,IRegionManager InRegManager)
         {

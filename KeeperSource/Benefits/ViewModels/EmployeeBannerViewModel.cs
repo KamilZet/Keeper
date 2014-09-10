@@ -8,7 +8,8 @@ using System.ComponentModel;
 
 using Microsoft.Practices.Prism.PubSubEvents;
 using KeeperRichClient.Infrastructure;
-using KeeperRichClient.Modules.Employees;
+using KeeperRichClient.Modules.Employees.Models;
+using KeeperRichClient.Modules.Employees.Services;
 
 namespace KeeperRichClient.Modules.Benefits
 {
@@ -59,7 +60,7 @@ namespace KeeperRichClient.Modules.Benefits
             }
         }
         readonly IEventAggregator eventAggr;
-        readonly EmployeeDataModelContext empDc;
+        readonly EmployeeLINQClassDataContext empDc;
 
         void EmployeeSelected(GetEmployeesResult Employee)
         {

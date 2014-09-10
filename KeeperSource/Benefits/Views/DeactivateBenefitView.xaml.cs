@@ -26,7 +26,7 @@ namespace KeeperRichClient.Modules.Benefits
             InitializeComponent();
             var ViewModel = new DeactivateBenefitViewModel(ArgViewModel);
             
-            ViewModel.RequestClose += (s, e) => this.Close();
+            ViewModel.RequestClose += (s,e) => this.Close();
 
 
             DataContext = ViewModel;

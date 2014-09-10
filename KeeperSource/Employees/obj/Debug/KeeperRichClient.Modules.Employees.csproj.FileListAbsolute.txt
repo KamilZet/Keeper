@@ -70,11 +70,11 @@ C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\ru\System.Windows.Interactiv
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.csprojResolveAssemblyReference.cache
-C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\EmployeeView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.cache
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.lref
-C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\EmployeeView.baml
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.baml
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.g.resources
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.pdb

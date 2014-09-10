@@ -1,18 +1,16 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Employees.Models;
+using KeeperRichClient.Modules.Employees.Services;
 
 using Microsoft.Practices.Prism.PubSubEvents;
-using KeeperRichClient.Infrastructure;
-using KeeperRichClient.Modules.Employees;
 
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 //Concerns:
 
@@ -174,6 +172,16 @@ namespace KeeperRichClient.Modules.Benefits
         {
             try
             {
+                // reuse DeactivateBenefit{ View | ViewModel }
+
+                DeactivateBenefitView deactivateView = new DeactivateBenefitView(this);
+                deactivateView.ShowDialog();
+
+                //method raised also when user cancel operation - implement handling for this case
+                RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
+
+
+                //previous code
                 _DbContext.spTakeConfiguredMultiSportCard(configuredMultiSportCardId: SelectedMultiSportOwner.ConfiguredBenefitPacketID);
                 RaisePropertyChanged("MultiSportOwnerToEmployee");
             }

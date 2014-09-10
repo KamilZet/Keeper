@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 
 using KeeperRichClient.Infrastructure ;
 using KeeperRichClient.Modules.Benefits.Models;
-using KeeperRichClient.Modules.Benefits.Services;
 using KeeperRichClient.Modules.Employees.Services;
 
 using Microsoft.Practices.Prism.Mvvm;

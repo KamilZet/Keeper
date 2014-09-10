@@ -71,7 +71,6 @@
     <Compile Include="ApplicationServices.cs" />
     <Compile Include="CollectionExt.cs" />
     <Compile Include="CurrentEmployeService.cs" />
-    <Compile Include="EmployeeSelectedEvent.cs" />
     <Compile Include="IViewModel.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="KernelExtensions.cs" />

@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
-
-using KeeperRichClient.Infrastructure;
-using KeeperRichClient.Modules.Employees;
+﻿using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
 using KeeperRichClient.Modules.Benefits.Views;
+using KeeperRichClient.Modules.Employees.Models;
+using KeeperRichClient.Modules.Employees.Services;
 
 using Microsoft.Practices.Prism.PubSubEvents;
-using System.Reflection;
+
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 
 
 namespace KeeperRichClient.Modules.Benefits
@@ -83,7 +81,7 @@ namespace KeeperRichClient.Modules.Benefits
         }
 
 
-        private MedicalPacketType _selMedPackType;
+        
 
         private readonly IEventAggregator _eventAggr;
         private int _selectedEmpId;
@@ -104,11 +102,17 @@ namespace KeeperRichClient.Modules.Benefits
         public DbContext HealthDataContext { get { return db; } }
 
         
-
-
         public ObservableCollection<MedicalPacketType> MedicalPacketTypes
         {
-            get { return _medPackTypesColl; }
+            get
+            {
+                if (this.MedicalPacketsLinkedToEmployee.Count == 0)
+                    return new ObservableCollection<MedicalPacketType>(db.MedicalPacketTypes.Where(p => p.MedicalPacketName.Contains("pojedynczy")));
+                else
+                    return new ObservableCollection<MedicalPacketType>(db.MedicalPacketTypes);
+                    
+            }
+            //get { return _medPackTypesColl; }
         }
 
 
@@ -129,6 +133,7 @@ namespace KeeperRichClient.Modules.Benefits
         {
             _selectedEmpId = Employee.EmployeeID;
             RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
+            RaisePropertyChanged("MedicalPacketTypes");
         }
 
 

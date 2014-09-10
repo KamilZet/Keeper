@@ -1,4 +1,6 @@
 ﻿
+using KeeperRichClient.Modules.Employees.Models;
+
 namespace KeeperRichClient.Modules.Employees.Services
 {
     public static class ActiveEmployee

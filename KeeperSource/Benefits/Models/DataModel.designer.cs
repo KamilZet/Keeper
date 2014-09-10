@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KeeperRichClient.Modules.Benefits.Modules
+namespace KeeperRichClient.Modules.Benefits.Models
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
