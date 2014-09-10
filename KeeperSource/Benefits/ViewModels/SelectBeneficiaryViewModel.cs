@@ -17,7 +17,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
     
     public class SelectBeneficiaryViewModel : BindableBase, ISelectBeneficiaryViewModel, IAddBeneficiary
     {
-        IView activeView = (IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();    
+        IView mainContentView = (IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();    
         public SelectBeneficiaryViewModel() 
         {
             
@@ -34,11 +34,21 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             using (DbContext db = new DbContext())
             {
-                db.spAddBeneficiaryToMedicalPacket(SelectedBeneficiary.BeneficiaryID,
-                                                   (activeView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
+                int ExecRet;
+                ExecRet = db.spAddBeneficiaryToMedicalPacket(SelectedBeneficiary.BeneficiaryID,
+                                                   (mainContentView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
                                                    );
-                MessageBox.Show("Beneficiary was assigned to the selected healthcare packet.");
-                SelectedBeneficiary = new Beneficiary();
+                if (ExecRet != 0)
+                {
+                    MessageBox.Show("Some error occured.");
+                }
+                else
+                {
+                    MessageBox.Show("Beneficiary was assigned to the selected healthcare packet.");
+                    SelectedBeneficiary = new Beneficiary();
+                }
+                //reload listview of beneficiaries
+                //(activeView as HealthcareView).BeneficiariesLinkedToMedPack;
             }
         }
 

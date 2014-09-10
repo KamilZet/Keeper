@@ -52,16 +52,17 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperApplication\obj\Debug\KeeperApplication.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperApplication\obj\Debug\KeeperApplication.pdb
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\KeeperApplication\bin\Debug\KeeperApplication.exe.config
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.exe.config
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.exe.manifest
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.application
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.exe
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\CustomControlsLib.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Infrastructure.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Employees.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Prism.Composition.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
@@ -72,7 +73,6 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\System.Windows.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\CustomControlsLib.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Benefits.pdb

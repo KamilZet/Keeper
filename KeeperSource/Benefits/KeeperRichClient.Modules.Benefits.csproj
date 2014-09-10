@@ -95,10 +95,10 @@
     </Compile>
     <Compile Include="EmployeeBannerViewModel.cs" />
     <Compile Include="HealthcareModule.cs" />
-    <Compile Include="HealthcareView.xaml.cs">
+    <Compile Include="Views\HealthcareView.xaml.cs">
       <DependentUpon>HealthcareView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HealthcareViewModel.cs" />
+    <Compile Include="ViewModels\HealthcareViewModel.cs" />
     <Compile Include="HelperFuncs.cs" />
     <Compile Include="IEmployeeBannerViewModel.cs" />
     <Compile Include="IHealthcareViewModel.cs" />
@@ -167,7 +167,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HealthcareView.xaml">
+    <Page Include="Views\HealthcareView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

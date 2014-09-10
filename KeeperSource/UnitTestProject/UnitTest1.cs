@@ -10,8 +10,8 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethod1()
         {
-            PeselValidator pv = new PeselValidator();
-            pv.Validate(54032805210, System.Globalization.CultureInfo.CurrentCulture);
+            //PeselValidator pv = new PeselValidator();
+            //pv.Validate(54032805210, System.Globalization.CultureInfo.CurrentCulture);
 
             
 
