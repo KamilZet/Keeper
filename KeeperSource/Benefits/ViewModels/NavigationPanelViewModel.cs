@@ -9,24 +9,30 @@ using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.Commands;
 
 using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Employees.Services;
 
 namespace KeeperRichClient.Modules.Benefits
 {
     public class NavigationPanelViewModel : INavigationViewModel
     {
-
         IRegionManager _RegionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 
         public NavigationPanelViewModel()
         {
             this.NavigateToHealthcare = new DelegateCommand<object>(this._NavToHealthcare, this._CanNavigate);
             this.NavigateToMultiSport = new DelegateCommand<object>(this._NavToMultiSport, this._CanNavigate); ;
-            this.NavigateToParking = new DelegateCommand<object>(this._NavToParking, this._CanNavigate);
+            this.NavigateToParking = new DelegateCommand<object>(this._NavToParking, this._CanNavigate);//this._CanNavigate);
+            this.NavigateLangCourse = new DelegateCommand<object>(this._NavToParking, predicate => (ActiveEmployee.Employee != null && ActiveEmployee.Employee.LevelID >= 4 ? true : false));
         }
 
         public DelegateCommand<object> NavigateToHealthcare { get; private set; }
         public DelegateCommand<object> NavigateToMultiSport { get; private set; }
         public DelegateCommand<object> NavigateToParking { get; private set; }
+        public DelegateCommand<object> NavigateLangCourse
+        { 
+            get; 
+            private set; 
+        }
         
         public void NavigateToTarget(string targetName, string region)
         {
@@ -68,5 +74,12 @@ namespace KeeperRichClient.Modules.Benefits
             this.DeactivateView(RegionNames.MainContentRegion);
             this.NavigateToTarget("ParkingView", RegionNames.MainContentRegion);
         }
+
+        void _NavToLangCource(object arg)
+        {
+            this.DeactivateView(RegionNames.MainContentRegion);
+            this.NavigateToTarget("LangCourseView", RegionNames.MainContentRegion);
+        }
+
     }
 }

@@ -79,7 +79,6 @@ namespace KeeperRichClient.Modules.Benefits
 
 
         public event EventHandler RequestClose;
-
         
         public event PropertyChangedEventHandler PropertyChanged;
 
