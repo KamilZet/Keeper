@@ -74,6 +74,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
+    <Compile Include="Modules\LanguageCourseModule.cs" />
+    <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
     <Compile Include="Views\AddNewBeneficiaryView.xaml.cs">
       <DependentUpon>AddNewBeneficiaryView.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,9 @@
     <Compile Include="Views\SelectBeneficiaryView.xaml.cs">
       <DependentUpon>SelectBeneficiaryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LanguageCourseView.xaml.cs">
+      <DependentUpon>LanguageCourseView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -193,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SelectBeneficiaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LanguageCourseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -52,15 +52,6 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperApplication\obj\Debug\KeeperApplication.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperApplication\obj\Debug\KeeperApplication.pdb
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\KeeperApplication\bin\Debug\KeeperApplication.exe.config
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperRichClient.Appl.csprojResolveAssemblyReference.cache
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\ShellWindow.baml
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\App.baml
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\ShellWindow.g.cs
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\App.g.cs
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication_MarkupCompile.cache
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.g.resources
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.Properties.Resources.resources
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperRichClient.Appl.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.exe.config
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.exe.manifest
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperApplication.application
@@ -108,6 +99,15 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\ko\System.Windows.In
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperRichClient.Appl.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\ShellWindow.baml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\App.baml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\ShellWindow.g.cs
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\App.g.cs
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication_MarkupCompile.cache
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.g.resources
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.Properties.Resources.resources
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperRichClient.Appl.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.exe.manifest
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.application
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.exe

@@ -89,6 +89,13 @@ namespace KeeperRichClient.Appl
                 ModuleName = EmployeeBannerViewModel.Name,
                 ModuleType = EmployeeBannerViewModel.AssemblyQualifiedName
             });
+
+            Type LanguageCourseViewModel = typeof(LanguageCourseModule);
+            this.ModuleCatalog.AddModule(new ModuleInfo()
+            {
+                ModuleName = LanguageCourseViewModel.Name,
+                ModuleType = LanguageCourseViewModel.AssemblyQualifiedName
+            });
             
              
         }

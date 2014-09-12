@@ -22,17 +22,13 @@ namespace KeeperRichClient.Modules.Benefits
             this.NavigateToHealthcare = new DelegateCommand<object>(this._NavToHealthcare, this._CanNavigate);
             this.NavigateToMultiSport = new DelegateCommand<object>(this._NavToMultiSport, this._CanNavigate); ;
             this.NavigateToParking = new DelegateCommand<object>(this._NavToParking, this._CanNavigate);//this._CanNavigate);
-            this.NavigateLangCourse = new DelegateCommand<object>(this._NavToParking, predicate => (ActiveEmployee.Employee != null && ActiveEmployee.Employee.LevelID >= 4 ? true : false));
+            this.NavigateToLangCourse = new DelegateCommand<object>(this._NavToLangCource, this._CanNavigate);//predicate => (ActiveEmployee.Employee != null && ActiveEmployee.Employee.LevelID >= 4 ? true : false));
         }
 
         public DelegateCommand<object> NavigateToHealthcare { get; private set; }
         public DelegateCommand<object> NavigateToMultiSport { get; private set; }
         public DelegateCommand<object> NavigateToParking { get; private set; }
-        public DelegateCommand<object> NavigateLangCourse
-        { 
-            get; 
-            private set; 
-        }
+        public DelegateCommand<object> NavigateToLangCourse { get; private set; }
         
         public void NavigateToTarget(string targetName, string region)
         {
@@ -78,7 +74,7 @@ namespace KeeperRichClient.Modules.Benefits
         void _NavToLangCource(object arg)
         {
             this.DeactivateView(RegionNames.MainContentRegion);
-            this.NavigateToTarget("LangCourseView", RegionNames.MainContentRegion);
+            this.NavigateToTarget("LanguageCourseView", RegionNames.MainContentRegion);
         }
 
     }

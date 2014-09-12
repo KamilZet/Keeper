@@ -54,6 +54,18 @@ namespace KeeperRichClient.Modules.Benefits.Models
     partial void InsertBeneficiary(Beneficiary instance);
     partial void UpdateBeneficiary(Beneficiary instance);
     partial void DeleteBeneficiary(Beneficiary instance);
+    partial void InsertLanguageCourseInstructor(LanguageCourseInstructor instance);
+    partial void UpdateLanguageCourseInstructor(LanguageCourseInstructor instance);
+    partial void DeleteLanguageCourseInstructor(LanguageCourseInstructor instance);
+    partial void InsertLanguageCourse(LanguageCourse instance);
+    partial void UpdateLanguageCourse(LanguageCourse instance);
+    partial void DeleteLanguageCourse(LanguageCourse instance);
+    partial void InsertLanguagesForCourse(LanguagesForCourse instance);
+    partial void UpdateLanguagesForCourse(LanguagesForCourse instance);
+    partial void DeleteLanguagesForCourse(LanguagesForCourse instance);
+    partial void InsertLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
+    partial void UpdateLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
+    partial void DeleteLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
     #endregion
 		
 		public DbContext() : 
@@ -179,6 +191,46 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			get
 			{
 				return this.GetTable<Beneficiary>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LanguageCourseInstructor> LanguageCourseInstructors
+		{
+			get
+			{
+				return this.GetTable<LanguageCourseInstructor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LanguageCourse> LanguageCourses
+		{
+			get
+			{
+				return this.GetTable<LanguageCourse>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LanguagesForCourse> LanguagesForCourses
+		{
+			get
+			{
+				return this.GetTable<LanguagesForCourse>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LanguageCoursesToEmployee> LanguageCoursesToEmployees
+		{
+			get
+			{
+				return this.GetTable<LanguageCoursesToEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InstructorsToLanguageCourse> InstructorsToLanguageCourses
+		{
+			get
+			{
+				return this.GetTable<InstructorsToLanguageCourse>();
 			}
 		}
 		
@@ -2450,6 +2502,833 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="LanguageCourses.LanguageCourseInstructors")]
+	public partial class LanguageCourseInstructor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _InstructorId;
+		
+		private string _InstructorFName;
+		
+		private string _InstructorLName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInstructorIdChanging(int value);
+    partial void OnInstructorIdChanged();
+    partial void OnInstructorFNameChanging(string value);
+    partial void OnInstructorFNameChanged();
+    partial void OnInstructorLNameChanging(string value);
+    partial void OnInstructorLNameChanged();
+    #endregion
+		
+		public LanguageCourseInstructor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructorId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int InstructorId
+		{
+			get
+			{
+				return this._InstructorId;
+			}
+			set
+			{
+				if ((this._InstructorId != value))
+				{
+					this.OnInstructorIdChanging(value);
+					this.SendPropertyChanging();
+					this._InstructorId = value;
+					this.SendPropertyChanged("InstructorId");
+					this.OnInstructorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructorFName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string InstructorFName
+		{
+			get
+			{
+				return this._InstructorFName;
+			}
+			set
+			{
+				if ((this._InstructorFName != value))
+				{
+					this.OnInstructorFNameChanging(value);
+					this.SendPropertyChanging();
+					this._InstructorFName = value;
+					this.SendPropertyChanged("InstructorFName");
+					this.OnInstructorFNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructorLName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string InstructorLName
+		{
+			get
+			{
+				return this._InstructorLName;
+			}
+			set
+			{
+				if ((this._InstructorLName != value))
+				{
+					this.OnInstructorLNameChanging(value);
+					this.SendPropertyChanging();
+					this._InstructorLName = value;
+					this.SendPropertyChanged("InstructorLName");
+					this.OnInstructorLNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="LanguageCourses.LanguageCourses")]
+	public partial class LanguageCourse : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LanguageCourseID;
+		
+		private string _LanguageCourseName;
+		
+		private decimal _LanguageCourseCost;
+		
+		private int _LanguageID;
+		
+		private EntitySet<LanguageCoursesToEmployee> _LanguageCoursesToEmployees;
+		
+		private EntityRef<LanguagesForCourse> _LanguagesForCourse;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLanguageCourseIDChanging(int value);
+    partial void OnLanguageCourseIDChanged();
+    partial void OnLanguageCourseNameChanging(string value);
+    partial void OnLanguageCourseNameChanged();
+    partial void OnLanguageCourseCostChanging(decimal value);
+    partial void OnLanguageCourseCostChanged();
+    partial void OnLanguageIDChanging(int value);
+    partial void OnLanguageIDChanged();
+    #endregion
+		
+		public LanguageCourse()
+		{
+			this._LanguageCoursesToEmployees = new EntitySet<LanguageCoursesToEmployee>(new Action<LanguageCoursesToEmployee>(this.attach_LanguageCoursesToEmployees), new Action<LanguageCoursesToEmployee>(this.detach_LanguageCoursesToEmployees));
+			this._LanguagesForCourse = default(EntityRef<LanguagesForCourse>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LanguageCourseID
+		{
+			get
+			{
+				return this._LanguageCourseID;
+			}
+			set
+			{
+				if ((this._LanguageCourseID != value))
+				{
+					this.OnLanguageCourseIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageCourseID = value;
+					this.SendPropertyChanged("LanguageCourseID");
+					this.OnLanguageCourseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LanguageCourseName
+		{
+			get
+			{
+				return this._LanguageCourseName;
+			}
+			set
+			{
+				if ((this._LanguageCourseName != value))
+				{
+					this.OnLanguageCourseNameChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageCourseName = value;
+					this.SendPropertyChanged("LanguageCourseName");
+					this.OnLanguageCourseNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseCost", DbType="Decimal(18,2) NOT NULL")]
+		public decimal LanguageCourseCost
+		{
+			get
+			{
+				return this._LanguageCourseCost;
+			}
+			set
+			{
+				if ((this._LanguageCourseCost != value))
+				{
+					this.OnLanguageCourseCostChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageCourseCost = value;
+					this.SendPropertyChanged("LanguageCourseCost");
+					this.OnLanguageCourseCostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", DbType="Int NOT NULL")]
+		public int LanguageID
+		{
+			get
+			{
+				return this._LanguageID;
+			}
+			set
+			{
+				if ((this._LanguageID != value))
+				{
+					if (this._LanguagesForCourse.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLanguageIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageID = value;
+					this.SendPropertyChanged("LanguageID");
+					this.OnLanguageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LanguageCourse_LanguageCoursesToEmployee", Storage="_LanguageCoursesToEmployees", ThisKey="LanguageCourseID", OtherKey="LanguageCourseID")]
+		public EntitySet<LanguageCoursesToEmployee> LanguageCoursesToEmployees
+		{
+			get
+			{
+				return this._LanguageCoursesToEmployees;
+			}
+			set
+			{
+				this._LanguageCoursesToEmployees.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LanguagesForCourse_LanguageCourse", Storage="_LanguagesForCourse", ThisKey="LanguageID", OtherKey="LanguageID", IsForeignKey=true)]
+		public LanguagesForCourse LanguagesForCourse
+		{
+			get
+			{
+				return this._LanguagesForCourse.Entity;
+			}
+			set
+			{
+				LanguagesForCourse previousValue = this._LanguagesForCourse.Entity;
+				if (((previousValue != value) 
+							|| (this._LanguagesForCourse.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LanguagesForCourse.Entity = null;
+						previousValue.LanguageCourses.Remove(this);
+					}
+					this._LanguagesForCourse.Entity = value;
+					if ((value != null))
+					{
+						value.LanguageCourses.Add(this);
+						this._LanguageID = value.LanguageID;
+					}
+					else
+					{
+						this._LanguageID = default(int);
+					}
+					this.SendPropertyChanged("LanguagesForCourse");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LanguageCoursesToEmployees(LanguageCoursesToEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.LanguageCourse = this;
+		}
+		
+		private void detach_LanguageCoursesToEmployees(LanguageCoursesToEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.LanguageCourse = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="LanguageCourses.LanguagesForCourses")]
+	public partial class LanguagesForCourse : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LanguageID;
+		
+		private string _LanguageName;
+		
+		private EntitySet<LanguageCourse> _LanguageCourses;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLanguageIDChanging(int value);
+    partial void OnLanguageIDChanged();
+    partial void OnLanguageNameChanging(string value);
+    partial void OnLanguageNameChanged();
+    #endregion
+		
+		public LanguagesForCourse()
+		{
+			this._LanguageCourses = new EntitySet<LanguageCourse>(new Action<LanguageCourse>(this.attach_LanguageCourses), new Action<LanguageCourse>(this.detach_LanguageCourses));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LanguageID
+		{
+			get
+			{
+				return this._LanguageID;
+			}
+			set
+			{
+				if ((this._LanguageID != value))
+				{
+					this.OnLanguageIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageID = value;
+					this.SendPropertyChanged("LanguageID");
+					this.OnLanguageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string LanguageName
+		{
+			get
+			{
+				return this._LanguageName;
+			}
+			set
+			{
+				if ((this._LanguageName != value))
+				{
+					this.OnLanguageNameChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageName = value;
+					this.SendPropertyChanged("LanguageName");
+					this.OnLanguageNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LanguagesForCourse_LanguageCourse", Storage="_LanguageCourses", ThisKey="LanguageID", OtherKey="LanguageID")]
+		public EntitySet<LanguageCourse> LanguageCourses
+		{
+			get
+			{
+				return this._LanguageCourses;
+			}
+			set
+			{
+				this._LanguageCourses.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LanguageCourses(LanguageCourse entity)
+		{
+			this.SendPropertyChanging();
+			entity.LanguagesForCourse = this;
+		}
+		
+		private void detach_LanguageCourses(LanguageCourse entity)
+		{
+			this.SendPropertyChanging();
+			entity.LanguagesForCourse = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="LanguageCourses.LanguageCoursesToEmployees")]
+	public partial class LanguageCoursesToEmployee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _LanguageCourseID;
+		
+		private int _EmployeeID;
+		
+		private System.DateTime _AssignDate;
+		
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private int _IsIncludedInLimit;
+		
+		private System.Nullable<System.DateTime> _TakingDate;
+		
+		private System.Nullable<int> _TakingReasonID;
+		
+		private string _Note;
+		
+		private EntityRef<LanguageCourse> _LanguageCourse;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnLanguageCourseIDChanging(int value);
+    partial void OnLanguageCourseIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnAssignDateChanging(System.DateTime value);
+    partial void OnAssignDateChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnIsIncludedInLimitChanging(int value);
+    partial void OnIsIncludedInLimitChanged();
+    partial void OnTakingDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnTakingDateChanged();
+    partial void OnTakingReasonIDChanging(System.Nullable<int> value);
+    partial void OnTakingReasonIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public LanguageCoursesToEmployee()
+		{
+			this._LanguageCourse = default(EntityRef<LanguageCourse>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseID", DbType="Int NOT NULL")]
+		public int LanguageCourseID
+		{
+			get
+			{
+				return this._LanguageCourseID;
+			}
+			set
+			{
+				if ((this._LanguageCourseID != value))
+				{
+					if (this._LanguageCourse.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLanguageCourseIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageCourseID = value;
+					this.SendPropertyChanged("LanguageCourseID");
+					this.OnLanguageCourseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AssignDate
+		{
+			get
+			{
+				return this._AssignDate;
+			}
+			set
+			{
+				if ((this._AssignDate != value))
+				{
+					this.OnAssignDateChanging(value);
+					this.SendPropertyChanging();
+					this._AssignDate = value;
+					this.SendPropertyChanged("AssignDate");
+					this.OnAssignDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsIncludedInLimit", AutoSync=AutoSync.Always, DbType="Int NOT NULL", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int IsIncludedInLimit
+		{
+			get
+			{
+				return this._IsIncludedInLimit;
+			}
+			set
+			{
+				if ((this._IsIncludedInLimit != value))
+				{
+					this.OnIsIncludedInLimitChanging(value);
+					this.SendPropertyChanging();
+					this._IsIncludedInLimit = value;
+					this.SendPropertyChanged("IsIncludedInLimit");
+					this.OnIsIncludedInLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TakingDate
+		{
+			get
+			{
+				return this._TakingDate;
+			}
+			set
+			{
+				if ((this._TakingDate != value))
+				{
+					this.OnTakingDateChanging(value);
+					this.SendPropertyChanging();
+					this._TakingDate = value;
+					this.SendPropertyChanged("TakingDate");
+					this.OnTakingDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
+		public System.Nullable<int> TakingReasonID
+		{
+			get
+			{
+				return this._TakingReasonID;
+			}
+			set
+			{
+				if ((this._TakingReasonID != value))
+				{
+					this.OnTakingReasonIDChanging(value);
+					this.SendPropertyChanging();
+					this._TakingReasonID = value;
+					this.SendPropertyChanged("TakingReasonID");
+					this.OnTakingReasonIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LanguageCourse_LanguageCoursesToEmployee", Storage="_LanguageCourse", ThisKey="LanguageCourseID", OtherKey="LanguageCourseID", IsForeignKey=true)]
+		public LanguageCourse LanguageCourse
+		{
+			get
+			{
+				return this._LanguageCourse.Entity;
+			}
+			set
+			{
+				LanguageCourse previousValue = this._LanguageCourse.Entity;
+				if (((previousValue != value) 
+							|| (this._LanguageCourse.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LanguageCourse.Entity = null;
+						previousValue.LanguageCoursesToEmployees.Remove(this);
+					}
+					this._LanguageCourse.Entity = value;
+					if ((value != null))
+					{
+						value.LanguageCoursesToEmployees.Add(this);
+						this._LanguageCourseID = value.LanguageCourseID;
+					}
+					else
+					{
+						this._LanguageCourseID = default(int);
+					}
+					this.SendPropertyChanged("LanguageCourse");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="LanguageCourses.InstructorsToLanguageCourses")]
+	public partial class InstructorsToLanguageCourse
+	{
+		
+		private int _LanguageCourseToEmpId;
+		
+		private int _LanguageCourseInstructorId;
+		
+		private System.DateTime _InstructorAssignDate;
+		
+		private System.Nullable<System.DateTime> _InstructorTakingDate;
+		
+		public InstructorsToLanguageCourse()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseToEmpId", DbType="Int NOT NULL")]
+		public int LanguageCourseToEmpId
+		{
+			get
+			{
+				return this._LanguageCourseToEmpId;
+			}
+			set
+			{
+				if ((this._LanguageCourseToEmpId != value))
+				{
+					this._LanguageCourseToEmpId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageCourseInstructorId", DbType="Int NOT NULL")]
+		public int LanguageCourseInstructorId
+		{
+			get
+			{
+				return this._LanguageCourseInstructorId;
+			}
+			set
+			{
+				if ((this._LanguageCourseInstructorId != value))
+				{
+					this._LanguageCourseInstructorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructorAssignDate", DbType="DateTime NOT NULL")]
+		public System.DateTime InstructorAssignDate
+		{
+			get
+			{
+				return this._InstructorAssignDate;
+			}
+			set
+			{
+				if ((this._InstructorAssignDate != value))
+				{
+					this._InstructorAssignDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructorTakingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InstructorTakingDate
+		{
+			get
+			{
+				return this._InstructorTakingDate;
+			}
+			set
+			{
+				if ((this._InstructorTakingDate != value))
+				{
+					this._InstructorTakingDate = value;
+				}
 			}
 		}
 	}

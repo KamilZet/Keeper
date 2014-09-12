@@ -142,6 +142,57 @@
       <Association Name="Beneficiary_ConfiguredMultisportPacketsToEmployee" Member="ConfiguredMultisportPacketsToEmployees" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="ConfiguredMultisportPacketsToEmployee" />
     </Type>
   </Table>
+  <Table Name="LanguageCourses.LanguageCourseInstructors" Member="LanguageCourseInstructors">
+    <Type Name="LanguageCourseInstructor">
+      <Column Name="InstructorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InstructorFName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="InstructorLName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="LanguageCourseInstructor_InstructorsToLanguageCourse" Member="InstructorsToLanguageCourses" ThisKey="InstructorId" OtherKey="LanguageCourseInstructorId" Type="InstructorsToLanguageCourse" />
+    </Type>
+  </Table>
+  <Table Name="LanguageCourses.LanguageCourses" Member="LanguageCourses">
+    <Type Name="LanguageCourse">
+      <Column Name="LanguageCourseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LanguageCourseName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageCourseCost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LanguageCourse_LanguageCoursesToEmployee" Member="LanguageCoursesToEmployees" ThisKey="LanguageCourseID" OtherKey="LanguageCourseID" Type="LanguageCoursesToEmployee" />
+      <Association Name="LanguagesForCourse_LanguageCourse" Member="LanguagesForCourse" ThisKey="LanguageID" OtherKey="LanguageID" Type="LanguagesForCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="LanguageCourses.LanguagesForCourses" Member="LanguagesForCourses">
+    <Type Name="LanguagesForCourse">
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LanguageName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="LanguagesForCourse_LanguageCourse" Member="LanguageCourses" ThisKey="LanguageID" OtherKey="LanguageID" Type="LanguageCourse" />
+    </Type>
+  </Table>
+  <Table Name="LanguageCourses.LanguageCoursesToEmployees" Member="LanguageCoursesToEmployees">
+    <Type Name="LanguageCoursesToEmployee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LanguageCourseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsIncludedInLimit" Type="System.Int32" DbType="Int NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TakingReasonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="LanguageCoursesToEmployee_InstructorsToLanguageCourse" Member="InstructorsToLanguageCourses" ThisKey="Id" OtherKey="LanguageCourseToEmpId" Type="InstructorsToLanguageCourse" />
+      <Association Name="LanguageCourse_LanguageCoursesToEmployee" Member="LanguageCourse" ThisKey="LanguageCourseID" OtherKey="LanguageCourseID" Type="LanguageCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="LanguageCourses.InstructorsToLanguageCourses" Member="InstructorsToLanguageCourses">
+    <Type Name="InstructorsToLanguageCourse">
+      <Column Name="LanguageCourseToEmpId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageCourseInstructorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstructorAssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InstructorTakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="LanguageCourseInstructor_InstructorsToLanguageCourse" Member="LanguageCourseInstructor" ThisKey="LanguageCourseInstructorId" OtherKey="InstructorId" Type="LanguageCourseInstructor" IsForeignKey="true" />
+      <Association Name="LanguageCoursesToEmployee_InstructorsToLanguageCourse" Member="LanguageCoursesToEmployee" ThisKey="LanguageCourseToEmpId" OtherKey="Id" Type="LanguageCoursesToEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="Benefits.spAddBeneficiaryToMedicalPacket" Method="spAddBeneficiaryToMedicalPacket">
     <Parameter Name="BeneficiaryID" Parameter="beneficiaryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="MedicalPacketID" Parameter="medicalPacketID" Type="System.Int32" DbType="Int" />

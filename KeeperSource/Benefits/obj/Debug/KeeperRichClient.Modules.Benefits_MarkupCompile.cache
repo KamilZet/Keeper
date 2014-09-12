@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-11-854079158
+12-1053705682
 
-43-623570890
+471736877536
 77-780507449
-Views\AddNewBeneficiaryView.xaml;Views\DeactivateBenefitView.xaml;Views\EmployeeBannerView.xaml;Views\HealthcareView.xaml;Views\MultiSportView.xaml;Views\NavigationPanelView.xaml;Views\ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\SelectBeneficiaryView.xaml;
+Views\AddNewBeneficiaryView.xaml;Views\DeactivateBenefitView.xaml;Views\EmployeeBannerView.xaml;Views\HealthcareView.xaml;Views\MultiSportView.xaml;Views\NavigationPanelView.xaml;Views\ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\SelectBeneficiaryView.xaml;Views\LanguageCourseView.xaml;
 
 False
 
