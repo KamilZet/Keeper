@@ -26,9 +26,6 @@
         <ListView HorizontalAlignment="Left" Height="218" Margin="10,46,0,0" VerticalAlignment="Top" Width="362"
                   ItemsSource="{Binding MedicalPacketsLinkedToEmployee, Mode=OneWay}"
                   SelectedItem="{Binding SelectedMedicalPacket,Mode=TwoWay}">
-            <!--ItemsSource="{Binding ConfiguredMedicalPack, Mode=OneWay}"
-            SelectedItem="{Binding ConfiguredMedPackSelected , Mode=TwoWay}"-->
-
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID:" Width ="auto" DisplayMemberBinding="{Binding Path=ConfiguredMedicalPacketID}"/>

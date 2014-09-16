@@ -8,13 +8,14 @@ using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.PubSubEvents;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System;
+using System.Windows.Input;
 
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class LanguageCourseViewModel : BindableBase, ILanguageCourseViewModel
     {   
-
         public LanguageCourseViewModel()
         {
             ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected,true);
@@ -23,10 +24,34 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             eventAggr.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
         }
 
-
         public void AddInstructorToCourse(LanguageCourseInstructor argInstructor)
         {
 
+        }
+
+        public DateTime? CourseStartDate
+        {
+            get
+            {
+                if (this.activeCourse != null)
+                    return this.activeCourse.StartDate;
+                else
+                    return null;
+            }
+            set { this.activeCourse.StartDate = (DateTime)value; }
+        }
+
+        public DateTime? CourseEndDate
+        // co najmniej jeden miesiąc nauki, licząc od zaplanowanej daty rozpoczęcia
+        {
+            get
+            {
+                if (this.activeCourse != null)
+                    return this.activeCourse.EndDate;
+                else
+                    return null;
+            }
+            set { this.activeCourse.EndDate = (DateTime)value; }
         }
 
         public void RemoveInstructorFromCourse(LanguageCourseInstructor argInstructor)
@@ -46,23 +71,51 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public string LanguageCourseName
         {
-            get { return activeCourse.LanguageCourse.LanguageCourseName; }
+            get 
+            {
+                if (activeCourse != null)
+                    return activeCourse.LanguageCourse.LanguageCourseName;
+                else
+                    return string.Empty;
+            }
         }
 
         public ObservableCollection<LanguageCourseInstructor> LanguageCourseInstructors
         {
             get
             {
-                 return (dataContext.LanguageCourseInstructors.Join(dataContext.InstructorsToLanguageCourses,
-                                                                    instructor => instructor.InstructorId,
-                                                                    courseInstructor => courseInstructor.LanguageCourseInstructorId,
-                                                                    (instructor, courseInstructor) => instructor)).ToObservableCollection();
+                if (activeCourse != null)
+                    return (dataContext.LanguageCourseInstructors.Join(dataContext.InstructorsToLanguageCourses,
+                                                                        instructor => instructor.InstructorId,
+                                                                        courseInstructor => courseInstructor.LanguageCourseInstructorId,
+                                                                        (instructor, courseInstructor) => new { instructor, courseInstructor })
+                                                                                                            .Where(o => o.courseInstructor.LanguageCourseToEmpId == activeCourse.Id)
+                                                                                                            .Select(o => o.instructor)).ToObservableCollection();
+                else
+                    return null;
+
             }
+        }
+
+        public ICommand NewCourseCommand
+        {
+            get 
+            {
+                if (activeCourse != null)
+                    return new RelayCommand(action => newCourseCommand(), predicate => activeCourse.EndDate != null && activeCourse.EndDate < DateTime.Today);
+                else
+                    return null;
+            }
+        }
+
+        void newCourseCommand()
+        {
+            activeCourse = new LanguageCoursesToEmployee();
+            OnPropertyChanged(string.Empty);
         }
 
         void employeeSelected(GetEmployeesResult argEmployee)
         {
-
             activeCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmployeeID &&
                                                                                            course.TakingDate == null);
             OnPropertyChanged(string.Empty);

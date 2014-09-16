@@ -4,50 +4,113 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="370" d:DesignWidth="600">
+             Height="423" Width="954"
+             Background="LightSkyBlue">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Grid>
-        <Frame Content="Active language course properties" HorizontalAlignment="Left" Height="350" Margin="10,10,0,0" VerticalAlignment="Top" Width="320" 
-               BorderBrush="Black" BorderThickness="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        </Frame>
-        <StackPanel HorizontalAlignment="Left" Height="231" Margin="25,40,0,0" VerticalAlignment="Top" Width="218">
+        <GroupBox HorizontalAlignment="Left" Height="403" Margin="15,10,0,0" VerticalAlignment="Top" Width="575" 
+                BorderBrush="Black" BorderThickness="1"
+                FontSize="20">
+            <Button Content="Set New Language Curse" HorizontalAlignment="Left" Height="55" Margin="21,326,0,0" VerticalAlignment="Top" Width="527"
+                    Style="{StaticResource SimpleButton}"
+                    Background="Salmon"
+                    Command="{Binding NewCourseCommand}"/>
+        </GroupBox>
+
+        <StackPanel HorizontalAlignment="Left" Height="283" Margin="42,41,0,0" VerticalAlignment="Top" Width="350">
             <StackPanel.Resources>
-                <!--<Style TargetType="TextBox">
-                <Setter Property="Margin" Value="10"/>
-                
-                    <Setter Property="HorizontalAlignment" Value="Left"/>
-                </Style>-->
+                <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
+                    <Setter Property="FontSize"     Value="20"/>
+                    <Setter Property="Width"        Value="150"/>
+                    <Setter Property="Background"   Value="GreenYellow"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="#FF1DC0E4"/>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
             </StackPanel.Resources>
+
             <DockPanel>
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Text="Course name:"></TextBlock>
-                <TextBox IsReadOnly="True"
-                         Text="{Binding LanguageCourseName, Mode=OneWay}">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
+                           Text="Course name:" 
+                           Background="GreenYellow"
+                           Style="{StaticResource FieldLabelStyle}">
+                </TextBlock>
+                <TextBox Text="{Binding LanguageCourseName, Mode=OneWay}" FontSize="16" 
+                         Height="30" Width="199"
+                         HorizontalAlignment="Left"
+                         IsReadOnly="True">
                 </TextBox>
             </DockPanel>
 
-            <DockPanel>
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Text="Instructor(s):"></TextBlock>
-                <ListView Height="136" ItemsSource="{Binding LanguageCourseInstructors}"></ListView>
+            <DockPanel Margin="0,10,0,10" LastChildFill="True">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
+                           Text="Instructor(s):"
+                           Style="{StaticResource FieldLabelStyle}">
+                </TextBlock>
+                <ListView Height="136" HorizontalAlignment="Left" Width="201"
+                          ItemsSource="{Binding LanguageCourseInstructors}" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id"
+                                            Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding InstructorId}" FontWeight="ExtraBold"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="First Name:" DisplayMemberBinding="{Binding InstructorFName}"
+                                            Width="auto"/>
+                            <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding InstructorLName}" 
+                                            Width="100"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </DockPanel>
 
-            <DockPanel>
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Text="Start date:"></TextBlock>
-                <DatePicker></DatePicker>
+            <DockPanel Margin="0,10,0,10">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
+                           Text="Start date:"
+                           Style="{StaticResource FieldLabelStyle}">
+                </TextBlock>
+                <DatePicker Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedDate="{Binding CourseStartDate,Mode=TwoWay}"
+                            Style="{StaticResource MyDatePicker}">
+
+                </DatePicker>
             </DockPanel>
 
-            <DockPanel>
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Text="Start date:"></TextBlock>
-                <DatePicker></DatePicker>
+            <DockPanel Margin="0,10,0,10">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
+                           Text="End date:"
+                           Style="{StaticResource FieldLabelStyle}">
+                </TextBlock>
+                <DatePicker Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedDate="{Binding CourseEndDate,Mode=TwoWay}"
+                            Style="{StaticResource MyDatePicker}">
+                </DatePicker>
             </DockPanel>
 
             <DockPanel/>
-
         </StackPanel>
-        <Frame Content="General language course settings" HorizontalAlignment="Left" Height="350" Margin="335,10,0,0" VerticalAlignment="Top" Width="255"
-               BorderBrush="Black" BorderThickness="1"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="28" Margin="248,89,0,0" VerticalAlignment="Top" Width="73" Style="{StaticResource SimpleButton}"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="28" Margin="248,122,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.542,1.702" Style="{StaticResource SimpleButton}"/>
 
+        <GroupBox Content="General language course settings" HorizontalAlignment="Left" Height="403" Margin="595,10,0,0" VerticalAlignment="Top" Width="349"
+               BorderBrush="Black" BorderThickness="1" FontSize="20"
+               />
+        <Button Content="Add instructor" HorizontalAlignment="Left" Height="28" Margin="397,125,0,0" VerticalAlignment="Top" Width="172" 
+                    Style="{StaticResource SimpleButton}" Background="GreenYellow"/>
+        <Button Content="Remove instructor" HorizontalAlignment="Left" Height="28" Margin="397,158,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.542,1.702" 
+                    Style="{StaticResource SimpleButton}" Background="GreenYellow"/>
 
     </Grid>
 </UserControl>

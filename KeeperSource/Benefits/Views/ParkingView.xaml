@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:KeeperRichClient.Modules.Benefits"
              mc:Ignorable="d" 
              d:DesignHeight="382" d:DesignWidth="706"
-             >
+             Background="LightSalmon">
     <UserControl.Resources>
         <local:IsPaidByEmpConv x:Key="IsPaidByEmpConv"/>
     </UserControl.Resources>
@@ -47,11 +47,11 @@
         <Label HorizontalAlignment="Left" Height="36" Margin="32,79,0,0" VerticalAlignment="Top" Width="299" BorderThickness="2" BorderBrush="Black"
                Content="{Binding CurrentParking.ParkingName}"
                FontSize="20"
-               />
+               Background="white"/>
         <Label HorizontalAlignment="Left" Height="36" Margin="31,166,0,0" VerticalAlignment="Top" Width="299" BorderThickness="2" BorderBrush="Black"
                Content="{Binding CurrentParkingPlace.ParkingPlaceName}"
                FontSize="20"
-               />
+               Background="White"/>
         <Label Content="Current Parking Name:" HorizontalAlignment="Left" Height="38" Margin="32,36,0,0" VerticalAlignment="Top" Width="219"
                FontSize="20"
                />
