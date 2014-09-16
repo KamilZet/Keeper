@@ -112,3 +112,5 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.g.cs

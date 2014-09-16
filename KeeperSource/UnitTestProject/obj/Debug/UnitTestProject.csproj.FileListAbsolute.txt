@@ -21,3 +21,16 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Pr
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll

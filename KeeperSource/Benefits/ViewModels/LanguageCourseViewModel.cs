@@ -1,32 +1,63 @@
 ﻿using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Interfaces;
+using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Benefits.Notifications;
 using KeeperRichClient.Modules.Employees.Models;
 using KeeperRichClient.Modules.Employees.Services;
-using KeeperRichClient.Modules.Benefits.Models;
-using KeeperRichClient.Modules.Benefits.Interfaces;
 
-using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.PubSubEvents;
+using Microsoft.Practices.Prism.Commands; //for DelegateCommands
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
+using Microsoft.Practices.Prism.Mvvm; // for BindableBase
+using Microsoft.Practices.Prism.PubSubEvents; // for EventAggregation
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System;
 using System.Windows.Input;
 
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class LanguageCourseViewModel : BindableBase, ILanguageCourseViewModel
-    {   
+    {
         public LanguageCourseViewModel()
         {
-            ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected,true);
+            ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
             dataContext = new DbContext();
             eventAggr = ApplicationService.Instance.EventAggregator;
             eventAggr.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
+            
+            this.RaiseAttachInstructorCommand = new DelegateCommand(this.RaiseNotification);
+            this.ItemSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
         }
+
+        public ICommand RaiseAttachInstructorCommand
+        {
+            get;
+            private set;
+        }
+
+        public InteractionRequest<LanguageCourseInstructorSelect> ItemSelectionRequest { get; private set; }
+
+        void RaiseNotification()
+        {
+            LanguageCourseInstructorSelect notification = new LanguageCourseInstructorSelect();
+            this.ItemSelectionRequest.Raise(notification,
+                                            returned =>
+                                            {
+                                                if (returned != null && returned.Confirmed)
+                                                {
+                                                }
+                                                else
+                                                {
+
+                                                }
+                                            });
+        }
+
 
         public void AddInstructorToCourse(LanguageCourseInstructor argInstructor)
         {
-
+        
         }
 
         public DateTime? CourseStartDate

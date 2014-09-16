@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
     <Compile Include="Modules\LanguageCourseModule.cs" />
+    <Compile Include="Notifications\LanguageCourseInstructorSelect.cs" />
     <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
     <Compile Include="Views\AddNewBeneficiaryView.xaml.cs">
       <DependentUpon>AddNewBeneficiaryView.xaml</DependentUpon>
@@ -112,6 +113,9 @@
     <Compile Include="Models\INewBeneficiaryViewModel.cs" />
     <Compile Include="Models\ISelectBeneficiaryViewModel.cs" />
     <Compile Include="Modules\MultiSportModule.cs" />
+    <Compile Include="Views\LanguageInstructorSelectView.xaml.cs">
+      <DependentUpon>LanguageInstructorSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MultiSportView.xaml.cs">
       <DependentUpon>MultiSportView.xaml</DependentUpon>
     </Compile>
@@ -171,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HealthcareView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LanguageInstructorSelectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

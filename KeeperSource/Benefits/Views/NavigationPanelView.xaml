@@ -13,14 +13,14 @@
                 />
         <Button Content="MultiSport" HorizontalAlignment="Left" Height="36" Margin="216,26,0,0" VerticalAlignment="Top" Width="165"
                 Style="{DynamicResource SimpleButton}"
-                Command="{Binding NavigateToMultiSport}"
+                Command="{Binding NavigateToMultiSport}" Background="{StaticResource MultiSportWinBrush}"
                 />
         <Button Content="Parking" HorizontalAlignment="Left" Height="36" Margin="386,26,0,0" VerticalAlignment="Top" Width="165"
                 Style="{DynamicResource SimpleButton}"
-                Command="{Binding NavigateToParking}"
+                Command="{Binding NavigateToParking}" Background="{StaticResource ParkingWinBrush}"
                 />
         <Button Content="Language course" HorizontalAlignment="Left" Height="36" Margin="556,26,0,0" VerticalAlignment="Top" Width="165"
                 Style="{DynamicResource SimpleButton}"
-                Command="{Binding NavigateToLangCourse}"/>
+                Command="{Binding NavigateToLangCourse}" Background="{StaticResource LanguageWinBrush}"/>
     </Grid>
 </UserControl>

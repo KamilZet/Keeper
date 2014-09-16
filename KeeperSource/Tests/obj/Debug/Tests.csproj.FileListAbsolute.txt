@@ -56,3 +56,16 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Shared
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll

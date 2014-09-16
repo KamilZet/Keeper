@@ -5,21 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:KeeperRichClient.Modules.Benefits"
              mc:Ignorable="d" 
-             d:DesignHeight="422" d:DesignWidth="763">
+             d:DesignHeight="422" d:DesignWidth="763"
+             Background="{StaticResource MultiSportWinBrush}">
     <UserControl.Resources>
         <local:IsPaidByEmpConv x:Key="IsPaidByEmpConv"/>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="16"/>
         </Style>
     </UserControl.Resources>
-    <UserControl.Background>
-        <RadialGradientBrush>
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="#FF4977B8" Offset="1"/>
-            <GradientStop Color="#FFEAEFF5" Offset="0.025"/>
-            <GradientStop Color="#FFACC1DD"/>
-        </RadialGradientBrush>
-    </UserControl.Background>
+    
     <Grid>
         <Grid.ColumnDefinitions>
 

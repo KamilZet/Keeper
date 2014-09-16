@@ -7,6 +7,5 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Debug\LinqKeeper.exe.config
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Debug\LinqKeeper.exe
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Debug\LinqKeeper.pdb
-C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Debug\LinqKeeper.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Debug\LinqKeeper.exe
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Debug\LinqKeeper.pdb

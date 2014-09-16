@@ -23,6 +23,16 @@
     </ControlTemplate>
 
     
+    <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
+        <Setter Property="FontSize"     Value="20"/>
+        <Setter Property="Width"        Value="150"/>
+        <Setter Property="Background"   Value="GreenYellow"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#FF1DC0E4"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <!-- Taken from the EventAggregation_Desktop by Microsoft -->
 
@@ -31,6 +41,19 @@
     <!-- Brushes : These are used to define the color for background, foreground, selection, enabled etc of all controls
 	If you want to change the color of a control you can just chnage the brush; if you want to add a new shape or change arrangement then also edit the template -->
 
+    <!-- MultiSportWinBrush -->
+    <RadialGradientBrush x:Key="MultiSportWinBrush">
+        <GradientStop Color="#FF595959" Offset="0"/>
+        <GradientStop Color="#FF83ACE6" Offset="1"/>
+        <GradientStop Color="#FFEAEFF5" Offset="0.025"/>
+        <GradientStop Color="#FFACC1DD"/>
+    </RadialGradientBrush>
+
+    <!-- ParkingWinBrush -->
+    <SolidColorBrush x:Key="ParkingWinBrush" Color="LightSalmon"/>
+
+    <!--LanguageWinBrush-->
+    <SolidColorBrush x:Key="LanguageWinBrush" Color="LightSkyBlue"/>
 
     <!-- WindowBrush is used as the background for Windows -->
     <LinearGradientBrush x:Key="WindowBrush" EndPoint="0.5,1" StartPoint="0.5,0">
