@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\
 KeeperRichClient.Modules.Employees
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 11875779160
 
-141537875576
-221573865907
+14-1216315436
+22-488586511
 Views\EmployeeView.xaml;
 
 True

@@ -27,8 +27,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             dataContext = new DbContext();
 
             this.InstructorSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
-            this.RaiseAttachInstructorCommand = new DelegateCommand(this.RaiseNotification);
-            this.RaiseRemoveInstructorCommand = new DelegateCommand(this.RemoveInstructorFromCourse);    
+            this.RaiseAttachInstructorCommand = new DelegateCommand(this.raiseNotification);
+            this.RaiseRemoveInstructorCommand = new DelegateCommand(this.removeInstructorFromCourse);
+            this.NewCourseCommand = new DelegateCommand(this.newCourseCommand, () => activeCourse.EndDate != null &&
+                                                                                     activeCourse.EndDate < DateTime.Today);
         }
 
         public LanguageCoursesToEmployee ActiveCourse
@@ -62,7 +64,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             get
             {
-                if (this.activeCourse != null)
+                if (this.activeCourse != null )
                     return this.activeCourse.StartDate;
                 else
                     return null;
@@ -127,22 +129,17 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public ICommand NewCourseCommand
         {
-            get 
-            {
-                if (activeCourse != null)
-                    return new RelayCommand(action => newCourseCommand(), predicate => activeCourse.EndDate != null && activeCourse.EndDate < DateTime.Today);
-                else
-                    return null;
-            }
+            get;
+            private set;
         }
 
-        void newCourseCommand()
+        private void newCourseCommand()
         {
             activeCourse = new LanguageCoursesToEmployee();
             OnPropertyChanged(string.Empty);
         }
 
-        void employeeSelected(GetEmployeesResult argEmployee)
+        private void employeeSelected(GetEmployeesResult argEmployee)
         {
             ActiveCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmployeeID &&
                                                                                            course.TakingDate == null);
@@ -156,9 +153,9 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         LanguageCoursesToEmployee activeCourse;
         LanguageCourseInstructor selectedInstructor;
 
-        void RaiseNotification()
+        private void raiseNotification()
         {
-            // 1st method to retrieve available instructors
+            // 1st method to retrieve available instructors, error
             //var excludeInstructors = new HashSet<int>(this.LanguageCourseInstructors.Select(x => x.InstructorId));
             //var freeInstructors = dataContext.LanguageCourseInstructors.Where(x => !excludeInstructors.Contains(x.InstructorId)).ToObservableCollection();
 
@@ -195,7 +192,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                                             });
         }
 
-        private void RemoveInstructorFromCourse()
+        private void removeInstructorFromCourse()
         {
             if (this.SelectedInstructor != null)
             {
