@@ -2,6 +2,7 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\UnitTestProject.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\UnitTestProject.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Infrastructure.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Ninject.dll
@@ -9,8 +10,10 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modul
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\System.Windows.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Infrastructure.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Ninject.xml
@@ -18,12 +21,6 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modul
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.dll
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.pdb
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\System.Windows.Interactivity.dll
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
@@ -34,3 +31,6 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\ko\System.Windows.Inte
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Debug\UnitTestProject.pdb

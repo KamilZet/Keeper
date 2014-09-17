@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Height="320" Width="434"
-             Background="{StaticResource NormalBrush}">
+             Height="320" Width="434" Background="{StaticResource LanguageWinBrush}">
     <Grid>
         <StackPanel>
             <TextBlock FontSize="24" Foreground="DarkBlue" Text="Language instructor selection"
@@ -13,20 +12,28 @@
                        />
             <TextBlock />
 
-            <ListView Height="146" Margin="10,0"
-                      SelectionMode="Single" ItemsSource="{Binding Notification.Instructors}" SelectedItem="{Binding SelectedInstructor}"/>
-            <Grid Height="56">
+            <ListView Height="146" Margin="10,0" FontSize="16"
+                      SelectionMode="Single" ItemsSource="{Binding Notification.Instructors}" SelectedItem="{Binding SelectedInstructor}">
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource GreenHeader}">
+                        <GridViewColumn Header="First Name:" DisplayMemberBinding="{Binding InstructorFName}" Width="120"/>
+                        <GridViewColumn Header="Last Name:" DisplayMemberBinding="{Binding InstructorLName}"  Width="290"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Grid Height="107">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                </Grid.ColumnDefinitions>            
-            
-                <Button Grid.Column="0" Margin="10" 
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Select Instructor" Grid.Column="0" Margin="10" 
                         Style="{StaticResource SimpleButton}"
-                        Content="Select Instructor"/>
-                <Button Grid.Column="1" Margin="10"
+                        Command="{Binding SelectInstructorCommand}"/>
+
+                <Button Content="Cancel" Grid.Column="1" Margin="10"
                         Style="{StaticResource SimpleButton}"
-                        Content="Cancel"/>
+                        Command="{Binding CancelCommand}"/>
             </Grid>
         </StackPanel>
     </Grid>

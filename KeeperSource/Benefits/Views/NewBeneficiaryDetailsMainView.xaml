@@ -6,8 +6,8 @@
             xmlns:vm="clr-namespace:KeeperRichClient.Modules.Benefits.ViewModels"
             xmlns:fx="clr-namespace:CustomControlsLib;assembly=CustomControlsLib"
             mc:Ignorable="d"
-            Height="392" Width="419"
-            Background="{StaticResource WindowBrush}">
+            WindowStartupLocation="CenterScreen" Height="392" Width="419" Background="{StaticResource WindowBrush}"
+            >
     <Window.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}">
             <Setter Property="FontSize" Value="12"/>

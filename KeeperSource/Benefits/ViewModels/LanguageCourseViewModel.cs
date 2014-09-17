@@ -4,15 +4,17 @@ using KeeperRichClient.Modules.Benefits.Models;
 using KeeperRichClient.Modules.Benefits.Notifications;
 using KeeperRichClient.Modules.Employees.Models;
 using KeeperRichClient.Modules.Employees.Services;
-
 using Microsoft.Practices.Prism.Commands; //for DelegateCommands
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Mvvm; // for BindableBase
 using Microsoft.Practices.Prism.PubSubEvents; // for EventAggregation
+
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using System.Windows;
 
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
@@ -23,11 +25,22 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
             dataContext = new DbContext();
-            eventAggr = ApplicationService.Instance.EventAggregator;
-            eventAggr.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
-            
+
+            this.InstructorSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
             this.RaiseAttachInstructorCommand = new DelegateCommand(this.RaiseNotification);
-            this.ItemSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
+            this.RaiseRemoveInstructorCommand = new DelegateCommand(this.RemoveInstructorFromCourse);    
+        }
+
+        public LanguageCoursesToEmployee ActiveCourse
+        {
+            get { return activeCourse; }
+            set { SetProperty(ref this.activeCourse, value); }
+        }
+
+        public LanguageCourseInstructor SelectedInstructor
+        {
+            get { return selectedInstructor; }
+            set { SetProperty(ref this.selectedInstructor, value); }
         }
 
         public ICommand RaiseAttachInstructorCommand
@@ -36,29 +49,14 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             private set;
         }
 
-        public InteractionRequest<LanguageCourseInstructorSelect> ItemSelectionRequest { get; private set; }
-
-        void RaiseNotification()
+        public ICommand RaiseRemoveInstructorCommand
         {
-            LanguageCourseInstructorSelect notification = new LanguageCourseInstructorSelect();
-            this.ItemSelectionRequest.Raise(notification,
-                                            returned =>
-                                            {
-                                                if (returned != null && returned.Confirmed)
-                                                {
-                                                }
-                                                else
-                                                {
-
-                                                }
-                                            });
+            get;
+            private set;
         }
 
+        public InteractionRequest<LanguageCourseInstructorSelect> InstructorSelectionRequest { get; private set; }
 
-        public void AddInstructorToCourse(LanguageCourseInstructor argInstructor)
-        {
-        
-        }
 
         public DateTime? CourseStartDate
         {
@@ -85,10 +83,9 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             set { this.activeCourse.EndDate = (DateTime)value; }
         }
 
-        public void RemoveInstructorFromCourse(LanguageCourseInstructor argInstructor)
-        {
+        
 
-        }
+
 
         public void CloseCourse()
         {
@@ -120,12 +117,12 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                                                                         instructor => instructor.InstructorId,
                                                                         courseInstructor => courseInstructor.LanguageCourseInstructorId,
                                                                         (instructor, courseInstructor) => new { instructor, courseInstructor })
-                                                                                                            .Where(o => o.courseInstructor.LanguageCourseToEmpId == activeCourse.Id)
+                                                                                                            .Where(o => o.courseInstructor.LanguageCourseToEmpId == activeCourse.Id &&
+                                                                                                                        o.courseInstructor.InstructorTakingDate == null)
                                                                                                             .Select(o => o.instructor)).ToObservableCollection();
                 else
                     return null;
-
-            }
+            }            
         }
 
         public ICommand NewCourseCommand
@@ -147,7 +144,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         void employeeSelected(GetEmployeesResult argEmployee)
         {
-            activeCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmployeeID &&
+            ActiveCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmployeeID &&
                                                                                            course.TakingDate == null);
             OnPropertyChanged(string.Empty);
         }
@@ -155,7 +152,65 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         IEventAggregator eventAggr;
         DbContext dataContext;
+
         LanguageCoursesToEmployee activeCourse;
+        LanguageCourseInstructor selectedInstructor;
+
+        void RaiseNotification()
+        {
+            // 1st method to retrieve available instructors
+            //var excludeInstructors = new HashSet<int>(this.LanguageCourseInstructors.Select(x => x.InstructorId));
+            //var freeInstructors = dataContext.LanguageCourseInstructors.Where(x => !excludeInstructors.Contains(x.InstructorId)).ToObservableCollection();
+
+            // 2nd method
+            var allInstructors = dataContext.LanguageCourseInstructors.ToList();
+            var freeInstructors = allInstructors.Except(this.LanguageCourseInstructors).ToList();
+
+
+            LanguageCourseInstructorSelect notification = new LanguageCourseInstructorSelect(freeInstructors);
+            notification.Title = "Available instructors";
+            this.InstructorSelectionRequest.Raise(notification,
+                                            returned =>
+                                            {
+                                                if (returned != null && returned.SelectedInstructor != null && returned.Confirmed)
+                                                {
+                                                    try
+                                                    {
+                                                        this.dataContext.spAddInstructorToCourse(this.ActiveCourse.Id,
+                                                                                                 returned.SelectedInstructor.InstructorId
+                                                                                                );
+                                                        OnPropertyChanged(() => this.LanguageCourseInstructors);
+                                                    }
+                                                    catch (Exception e)
+                                                    {
+                                                        throw new NotImplementedException(e.ToString());
+                                                    }
+                                                }
+
+
+                                                else
+                                                {
+
+                                                }
+                                            });
+        }
+
+        private void RemoveInstructorFromCourse()
+        {
+            if (this.SelectedInstructor != null)
+            {
+                try
+                {
+                    dataContext.spRemoveInstructorFromCourse(this.ActiveCourse.Id,
+                                                             this.SelectedInstructor.InstructorId);
+                    OnPropertyChanged(() => this.LanguageCourseInstructors);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+        }
 
     }
 

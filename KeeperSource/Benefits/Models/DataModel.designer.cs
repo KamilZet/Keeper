@@ -346,6 +346,20 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			return this.CreateMethodCallQuery<vBeneficiaries2MedPackResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), medPackID);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LanguageCourses.spAddInstructorToCourse")]
+		public int spAddInstructorToCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseId", DbType="Int")] System.Nullable<int> courseId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="InstructorId", DbType="Int")] System.Nullable<int> instructorId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseId, instructorId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LanguageCourses.spRemoveInstructorFromCourse")]
+		public int spRemoveInstructorFromCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseId", DbType="Int")] System.Nullable<int> courseId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="InstructorId", DbType="Int")] System.Nullable<int> instructorId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseId, instructorId);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.MedicalPacketTypes")]

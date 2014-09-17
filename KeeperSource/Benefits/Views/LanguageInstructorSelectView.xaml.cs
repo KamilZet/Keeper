@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using KeeperRichClient.Modules.Benefits.ViewModels;
+
 namespace KeeperRichClient.Modules.Benefits.Views
 {
     /// <summary>
@@ -22,7 +24,7 @@ namespace KeeperRichClient.Modules.Benefits.Views
     {
         public LanguageInstructorSelectView()
         {
-            
+            this.DataContext = new LanguageCourseInstructorSelectViewModel();
             InitializeComponent();
         }
     }

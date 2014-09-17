@@ -327,4 +327,14 @@
       <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="LanguageCourses.spAddInstructorToCourse" Method="spAddInstructorToCourse">
+    <Parameter Name="CourseId" Parameter="courseId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InstructorId" Parameter="instructorId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="LanguageCourses.spRemoveInstructorFromCourse" Method="spRemoveInstructorFromCourse">
+    <Parameter Name="CourseId" Parameter="courseId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InstructorId" Parameter="instructorId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

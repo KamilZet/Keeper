@@ -22,7 +22,21 @@
         </DockPanel>
     </ControlTemplate>
 
-    
+
+<!-- Header style for ListView containers -->
+    <LinearGradientBrush x:Key="GreenHeaderBrush"  
+                        StartPoint="0,0" EndPoint="0.0,1" >
+        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+        <GradientStop Color="#FFF4FD2C" Offset="0.1"/>
+        <GradientStop Color="#FFABFD2C" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="GreenHeader" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Background" Value="{StaticResource GreenHeaderBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
+
     <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
         <Setter Property="FontSize"     Value="20"/>
         <Setter Property="Width"        Value="150"/>
@@ -33,7 +47,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
     <!-- Taken from the EventAggregation_Desktop by Microsoft -->
 
     <!-- SimpleStyles.XAML defines a set of control styles which are simplified starting points for creating your own controls -->
