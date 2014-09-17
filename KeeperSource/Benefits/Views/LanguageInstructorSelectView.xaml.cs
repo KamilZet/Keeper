@@ -22,6 +22,7 @@ namespace KeeperRichClient.Modules.Benefits.Views
     {
         public LanguageInstructorSelectView()
         {
+            
             InitializeComponent();
         }
     }
