@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿KeeperRichClient.Modules.Employees
 
 
@@ -18,3 +19,25 @@ Views\EmployeeView.xaml;
 
 False
 
+=======
+﻿KeeperRichClient.Modules.Employees
+
+
+library
+C#
+.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\
+KeeperRichClient.Modules.Employees
+none
+false
+DEBUG;TRACE
+
+11875779160
+
+14-1216315436
+22-488586511
+Views\EmployeeView.xaml;
+
+True
+
+>>>>>>> a81a54cca84f058e09d5bcbc416b2bac8503935f
