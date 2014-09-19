@@ -45,6 +45,29 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csprojResolveAssemblyReference.cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Properties\Styles.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\AddNewBeneficiaryView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\HealthcareView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\MultiSportView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\ParkingView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageCourseView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.lref
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll.config
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
@@ -125,26 +148,3 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csprojResolveAssemblyReference.cache
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Properties\Styles.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.baml
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\AddNewBeneficiaryView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\HealthcareView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\MultiSportView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\ParkingView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageCourseView.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.cache
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits_MarkupCompile.lref
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
-C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb

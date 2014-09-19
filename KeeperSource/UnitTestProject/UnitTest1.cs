@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using KeeperRichClient.Modules.Benefits;
 using KeeperRichClient.Modules.Benefits.ViewModels;
 using KeeperRichClient.Modules.Benefits.Models;
