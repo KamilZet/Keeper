@@ -101,7 +101,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             get 
             {
-                if (activeCourse != null)
+                if (activeCourse != null && activeCourse.LanguageCourse != null)
                     return activeCourse.LanguageCourse.LanguageCourseName;
                 else
                     return string.Empty;
