@@ -321,12 +321,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			return this.CreateMethodCallQuery<fBeneficiariesToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parentEmployeeId);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vMedicalPacketsToEmployee", IsComposable=true)]
-		public IQueryable<vMedicalPacketsToEmployeeResult> vMedicalPacketsToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
-		{
-			return this.CreateMethodCallQuery<vMedicalPacketsToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spCreateMedicalBeneficiary")]
 		public int spCreateMedicalBeneficiary([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryFName", DbType="NVarChar(20)")] string beneficiaryFName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryLName", DbType="NVarChar(20)")] string beneficiaryLName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPesel", DbType="NVarChar(11)")] string beneficiaryPesel, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryBirthDate", DbType="DateTime")] System.Nullable<System.DateTime> beneficiaryBirthDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryCitizenship", DbType="NVarChar(10)")] string beneficiaryCitizenship, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiarySex", DbType="NVarChar(1)")] string beneficiarySex, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryPhoneNumber", DbType="NVarChar(50)")] string beneficiaryPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryEmailAddress", DbType="NVarChar(100)")] string beneficiaryEmailAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryParentEmployeeId", DbType="Int")] System.Nullable<int> beneficiaryParentEmployeeId)
 		{
@@ -359,6 +353,12 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseId, instructorId);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vMedicalPacketsToEmployee", IsComposable=true)]
+		public IQueryable<vMedicalPacketsToEmployeeResult> vMedicalPacketsToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
+		{
+			return this.CreateMethodCallQuery<vMedicalPacketsToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
 		}
 	}
 	
@@ -3775,104 +3775,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		}
 	}
 	
-	public partial class vMedicalPacketsToEmployeeResult
-	{
-		
-		private int _ConfiguredMedicalPacketID;
-		
-		private System.Nullable<int> _BeneficiaryGroupID;
-		
-		private System.Nullable<bool> _IsPayedByEmployee;
-		
-		private System.DateTime _ValidFrom;
-		
-		private string _MedicalPacketName;
-		
-		public vMedicalPacketsToEmployeeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredMedicalPacketID", DbType="Int NOT NULL")]
-		public int ConfiguredMedicalPacketID
-		{
-			get
-			{
-				return this._ConfiguredMedicalPacketID;
-			}
-			set
-			{
-				if ((this._ConfiguredMedicalPacketID != value))
-				{
-					this._ConfiguredMedicalPacketID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryGroupID", DbType="Int")]
-		public System.Nullable<int> BeneficiaryGroupID
-		{
-			get
-			{
-				return this._BeneficiaryGroupID;
-			}
-			set
-			{
-				if ((this._BeneficiaryGroupID != value))
-				{
-					this._BeneficiaryGroupID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit")]
-		public System.Nullable<bool> IsPayedByEmployee
-		{
-			get
-			{
-				return this._IsPayedByEmployee;
-			}
-			set
-			{
-				if ((this._IsPayedByEmployee != value))
-				{
-					this._IsPayedByEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
-		public System.DateTime ValidFrom
-		{
-			get
-			{
-				return this._ValidFrom;
-			}
-			set
-			{
-				if ((this._ValidFrom != value))
-				{
-					this._ValidFrom = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string MedicalPacketName
-		{
-			get
-			{
-				return this._MedicalPacketName;
-			}
-			set
-			{
-				if ((this._MedicalPacketName != value))
-				{
-					this._MedicalPacketName = value;
-				}
-			}
-		}
-	}
-	
 	public partial class vBeneficiaries2MedPackResult
 	{
 		
@@ -3948,6 +3850,230 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._AssignDate != value))
 				{
 					this._AssignDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class vMedicalPacketsToEmployeeResult
+	{
+		
+		private int _ConfiguredMedicalPacketID;
+		
+		private int _EmployeeID;
+		
+		private int _MedicalPacketTypeID;
+		
+		private System.DateTime _ValidFrom;
+		
+		private System.Nullable<System.DateTime> _ValidTo;
+		
+		private bool _IsIncludedInLimit;
+		
+		private System.Nullable<bool> _IsPayedByEmployee;
+		
+		private System.DateTime _AssignDate;
+		
+		private System.Nullable<System.DateTime> _TakingDate;
+		
+		private System.Nullable<int> _TakingReasonID;
+		
+		private string _Note;
+		
+		private string _MedicalPacketName;
+		
+		public vMedicalPacketsToEmployeeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredMedicalPacketID", DbType="Int NOT NULL")]
+		public int ConfiguredMedicalPacketID
+		{
+			get
+			{
+				return this._ConfiguredMedicalPacketID;
+			}
+			set
+			{
+				if ((this._ConfiguredMedicalPacketID != value))
+				{
+					this._ConfiguredMedicalPacketID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this._EmployeeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketTypeID", DbType="Int NOT NULL")]
+		public int MedicalPacketTypeID
+		{
+			get
+			{
+				return this._MedicalPacketTypeID;
+			}
+			set
+			{
+				if ((this._MedicalPacketTypeID != value))
+				{
+					this._MedicalPacketTypeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
+		public System.DateTime ValidFrom
+		{
+			get
+			{
+				return this._ValidFrom;
+			}
+			set
+			{
+				if ((this._ValidFrom != value))
+				{
+					this._ValidFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ValidTo
+		{
+			get
+			{
+				return this._ValidTo;
+			}
+			set
+			{
+				if ((this._ValidTo != value))
+				{
+					this._ValidTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsIncludedInLimit", DbType="Bit NOT NULL")]
+		public bool IsIncludedInLimit
+		{
+			get
+			{
+				return this._IsIncludedInLimit;
+			}
+			set
+			{
+				if ((this._IsIncludedInLimit != value))
+				{
+					this._IsIncludedInLimit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit")]
+		public System.Nullable<bool> IsPayedByEmployee
+		{
+			get
+			{
+				return this._IsPayedByEmployee;
+			}
+			set
+			{
+				if ((this._IsPayedByEmployee != value))
+				{
+					this._IsPayedByEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AssignDate
+		{
+			get
+			{
+				return this._AssignDate;
+			}
+			set
+			{
+				if ((this._AssignDate != value))
+				{
+					this._AssignDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TakingDate
+		{
+			get
+			{
+				return this._TakingDate;
+			}
+			set
+			{
+				if ((this._TakingDate != value))
+				{
+					this._TakingDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
+		public System.Nullable<int> TakingReasonID
+		{
+			get
+			{
+				return this._TakingReasonID;
+			}
+			set
+			{
+				if ((this._TakingReasonID != value))
+				{
+					this._TakingReasonID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(1000)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this._Note = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string MedicalPacketName
+		{
+			get
+			{
+				return this._MedicalPacketName;
+			}
+			set
+			{
+				if ((this._MedicalPacketName != value))
+				{
+					this._MedicalPacketName = value;
 				}
 			}
 		}
