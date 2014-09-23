@@ -32,6 +32,40 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csproj.GenerateResource.Cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.dll
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Ninject.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Ninject.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.g.resources
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.Properties.Resources.resources
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csproj.GenerateResource.Cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.Infrastructure.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\KeeperRichClient.Infrastructure.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\Microsoft.Practices.Prism.Composition.dll
@@ -60,7 +94,6 @@ C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ko\Sys
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.g.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.Properties.Resources.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csproj.GenerateResource.Cache

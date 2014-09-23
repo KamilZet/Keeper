@@ -1,61 +1,95 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Windows;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Employees.Services;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
-    public interface INewBeneficiaryViewModel{}
-
-    public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel
+    public class NewBeneficiaryDetailsViewModel : ViewModelBase, INewBeneficiaryViewModel,IAddBeneficiary
     {
-        public NewBeneficiaryDetailsViewModel(){ 
-            beneficiary = new Beneficiary();}
+        IView activeView = (IView)ServiceLocator.Current.GetInstance<IRegionManager>().Regions["MainContentRegion"].ActiveViews.FirstOrDefault();
+        public NewBeneficiaryDetailsViewModel()
+        {
+            if (activeView is HealthcareView)
+                this.IsFieldEnabled = true;
+            else
+                this.IsFieldEnabled = false;
+        }
+
+        bool isFieldEnabled;
+        public bool IsFieldEnabled 
+        { 
+            get {return isFieldEnabled;} 
+            private set 
+            {
+                isFieldEnabled = value;
+                RaisePropertyChanged("IsFieldDisabled"); 
+            }
+        }
 
         Beneficiary beneficiary;
+        public Beneficiary Beneficiary
+        {
+            get
+            {
+                if (beneficiary == null) beneficiary = new Beneficiary();
+                return beneficiary;
+            }
+            private set
+            {
+                beneficiary = value;
+            }
+        }
         
         public string FirstName{
-            get { return beneficiary.BeneficiaryFName; }
-            set { beneficiary.BeneficiaryFName = value; }}
+            get { return Beneficiary.BeneficiaryFName; }
+            set { Beneficiary.BeneficiaryFName = value; }}
         
         public string LastName{
-            get { return beneficiary.BeneficiaryLName; }
-            set { beneficiary.BeneficiaryLName = value; }}
+            get { return Beneficiary.BeneficiaryLName; }
+            set { Beneficiary.BeneficiaryLName = value; }}
 
         public string Pesel{
-            get { return beneficiary.BeneficiaryPesel; }
-            set {beneficiary.BeneficiaryPesel = value;
+            get { return Beneficiary.BeneficiaryPesel; }
+            set {Beneficiary.BeneficiaryPesel = value;
                 RaisePropertyChanged("YearFromPesel");
                 RaisePropertyChanged("MonthFromPesel");
                 RaisePropertyChanged("DayFromPesel");
                 RaisePropertyChanged("SexFromPesel");}}
 
-        public DateTime DateOfBirth{
-            get { return beneficiary.BeneficiaryBirthDate; }
-            set { beneficiary.BeneficiaryBirthDate = value; }}
+        public DateTime DateOfBirth
+        {
+            get { return new DateTime(Int32.Parse(YearFromPesel), Int32.Parse(MonthFromPesel), Int32.Parse(DayFromPesel)); }
+        }
+
 
         public string Citizenship{
-            get { return beneficiary.BeneficiaryCitizenship; }
-            set { beneficiary.BeneficiaryCitizenship = value; }}
+            get { return Beneficiary.BeneficiaryCitizenship; }
+            set { Beneficiary.BeneficiaryCitizenship = value; }}
 
-        public string Sex{
-            get { return beneficiary.BeneficiarySex; }
-            set { beneficiary.BeneficiarySex = value; }}
+        public string Sex
+        {
+            get { return SexFromPesel; }
+        }
 
         public string PhoneNumber{
-            get { return beneficiary.BeneficiaryPhoneNumber; }
-            set { beneficiary.BeneficiaryPhoneNumber = value; }}
-
+            get { return Beneficiary.BeneficiaryPhoneNumber; }
+            set { Beneficiary.BeneficiaryPhoneNumber = value; }}
+            
         public string EmailAddress{
-            get { return beneficiary.BeneficiaryEmailAddress; }
-            set { beneficiary.BeneficiaryEmailAddress = value; }}
+            get { return Beneficiary.BeneficiaryEmailAddress; }
+            set { Beneficiary.BeneficiaryEmailAddress = value; }}
 
-        public int ParentEmployeeID{
-            get { return beneficiary.BeneficiaryParentEmployeeId; }
-            private set { beneficiary.BeneficiaryParentEmployeeId = value; }}
+        public int ParentEmployeeID
+        {
+            get { return ActiveEmployee.Employee.EmployeeID; }
+        }
+
 
         public string YearFromPesel{
             get { return HelperFuncs.GetYearFromPesel(Pesel); }}
@@ -69,9 +103,57 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public string SexFromPesel{
             get { return HelperFuncs.GetSexFromPesel(Pesel); }}
 
-
         public string ViewModelType{
             get{ return "Create New Beneficiary";}}
-        
+
+        public void AddBeneficiary()
+        {
+            using (DbContext db = new DbContext())
+            {
+                if (activeView is HealthcareView)
+                {
+                    int newBeneficiaryId = db.spCreateMedicalBeneficiary(FirstName, 
+                                                  LastName, 
+                                                  Pesel, 
+                                                  DateOfBirth, 
+                                                  Citizenship, 
+                                                  Sex, 
+                                                  PhoneNumber, 
+                                                  EmailAddress, 
+                                                  ParentEmployeeID);
+
+                    if (newBeneficiaryId != 0)
+                    {
+                        db.spAddBeneficiaryToMedicalPacket(newBeneficiaryId,
+                                                           (activeView.DataContext as HealthcareViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID
+                                                           );
+                        Beneficiary = new Beneficiary();
+                        MessageBox.Show("Beneficiary created and assigned to the selected healthcare packet.");
+                        RaisePropertyChanged(string.Empty);
+                    }
+                    else
+                        MessageBox.Show("Error occured. Please");
+
+                    
+                }
+                else
+                {
+                    //db.spCreateMultisportBeneficiary();
+                }
+                    
+            }
+
+        }
+
+        public bool CanBeAdded()
+        {
+            return true;
+        }
+
+
+
+
     }
+
+    
 }

@@ -26,7 +26,6 @@ namespace KeeperRichClient.Appl
         protected override DependencyObject CreateShell()
         {
             return Kernel.Resolve<ShellWindow>();
-            //return ServiceLocator.Current.GetInstance<ShellWindow>();
         }
 
         protected override void InitializeShell(){
@@ -36,8 +35,6 @@ namespace KeeperRichClient.Appl
             Application.Current.MainWindow.Show();
         
             IRegionManager irm = ServiceLocator.Current.GetInstance<IRegionManager>();
-            
-
             //irm.RegisterViewWithRegion("MainContentRegion",typeof(HealthcareView));
             //irm.RegisterViewWithRegion("ListerRegion", typeof(HealthcareView));
             //irm.RegisterViewWithRegion("CommandsRegion", typeof(HealthcareView));
@@ -91,6 +88,13 @@ namespace KeeperRichClient.Appl
             {
                 ModuleName = EmployeeBannerViewModel.Name,
                 ModuleType = EmployeeBannerViewModel.AssemblyQualifiedName
+            });
+
+            Type LanguageCourseViewModel = typeof(LanguageCourseModule);
+            this.ModuleCatalog.AddModule(new ModuleInfo()
+            {
+                ModuleName = LanguageCourseViewModel.Name,
+                ModuleType = LanguageCourseViewModel.AssemblyQualifiedName
             });
             
              

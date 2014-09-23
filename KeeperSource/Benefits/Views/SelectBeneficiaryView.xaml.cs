@@ -14,20 +14,37 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using KeeperRichClient.Modules.Benefits.ViewModels;
+using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Infrastructure;
+
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.Views
 {
-    /// <summary>
-    /// Interaction logic for SelectBeneficiaryView.xaml
-    /// </summary>
-    public partial class SelectBeneficiaryView : UserControl
+    public partial class SelectBeneficiaryView : UserControl,IView
     {
         public SelectBeneficiaryView(ISelectBeneficiaryViewModel vm)
         {
             InitializeComponent();
-            DataContext = vm;
+            ViewModel = vm;
         }
 
+        public IViewModel ViewModel
+        {
+            get 
+            { 
+                return (IViewModel)DataContext; 
+            }
+            set 
+            { 
+                DataContext = value; 
+            }
+        }
+
+        public void Close()
+        {
+            this.Close();
+        }
 
     }
 }

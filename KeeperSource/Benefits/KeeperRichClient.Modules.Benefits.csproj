@@ -33,6 +33,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.Prism.Composition">
       <HintPath>..\packages\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
     </Reference>
@@ -64,6 +65,7 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,53 +76,64 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewBeneficiaryView.xaml.cs">
+    <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
+    <Compile Include="Modules\LanguageCourseModule.cs" />
+    <Compile Include="Notifications\LanguageCourseInstructorSelect.cs" />
+    <Compile Include="ViewModels\LanguageCourseInstructorSelectViewModel.cs" />
+    <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
+    <Compile Include="Views\AddNewBeneficiaryView.xaml.cs">
       <DependentUpon>AddNewBeneficiaryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddNewBeneficiaryViewModel.cs" />
-    <Compile Include="CurrentEmployeService.cs" />
-    <Compile Include="DataModel.designer.cs">
+    <Compile Include="ViewModels\AddNewBeneficiaryViewModel.cs" />
+    <Compile Include="Services\CurrentEmployeService.cs" />
+    <Compile Include="Models\DataModel.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DeactivateBenefitView.xaml.cs">
+    <Compile Include="Views\DeactivateBenefitView.xaml.cs">
       <DependentUpon>DeactivateBenefitView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeactivateBenefitViewModel.cs" />
-    <Compile Include="EmailValidator.cs" />
-    <Compile Include="EmployeeBannerModule.cs" />
-    <Compile Include="EmployeeBannerView.xaml.cs">
+    <Compile Include="ViewModels\DeactivateBenefitViewModel.cs" />
+    <Compile Include="Validators\EmailValidator.cs" />
+    <Compile Include="Modules\EmployeeBannerModule.cs" />
+    <Compile Include="Views\EmployeeBannerView.xaml.cs">
       <DependentUpon>EmployeeBannerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeBannerViewModel.cs" />
-    <Compile Include="HealthcareModule.cs" />
-    <Compile Include="HealthcareView.xaml.cs">
+    <Compile Include="ViewModels\EmployeeBannerViewModel.cs" />
+    <Compile Include="Modules\HealthcareModule.cs" />
+    <Compile Include="Views\HealthcareView.xaml.cs">
       <DependentUpon>HealthcareView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HealthcareViewModel.cs" />
-    <Compile Include="HelperFuncs.cs" />
-    <Compile Include="IEmployeeBannerViewModel.cs" />
-    <Compile Include="IHealthcareViewModel.cs" />
-    <Compile Include="IMultiSportViewModel.cs" />
-    <Compile Include="INavigationViewModel.cs" />
-    <Compile Include="IParkingViewModel.cs" />
-    <Compile Include="MultiSportModule.cs" />
-    <Compile Include="MultiSportView.xaml.cs">
+    <Compile Include="ViewModels\HealthcareViewModel.cs" />
+    <Compile Include="Services\HelperFuncs.cs" />
+    <Compile Include="Interfaces\IEmployeeBannerViewModel.cs" />
+    <Compile Include="Interfaces\IHealthcareViewModel.cs" />
+    <Compile Include="Interfaces\IMultiSportViewModel.cs" />
+    <Compile Include="Interfaces\INavigationViewModel.cs" />
+    <Compile Include="Models\IAddBeneficiary.cs" />
+    <Compile Include="Interfaces\IParkingViewModel.cs" />
+    <Compile Include="Models\INewBeneficiaryViewModel.cs" />
+    <Compile Include="Models\ISelectBeneficiaryViewModel.cs" />
+    <Compile Include="Modules\MultiSportModule.cs" />
+    <Compile Include="Views\LanguageInstructorSelectView.xaml.cs">
+      <DependentUpon>LanguageInstructorSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultiSportView.xaml.cs">
       <DependentUpon>MultiSportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MultiSportViewModel.cs" />
-    <Compile Include="NavigationPanelModule.cs" />
-    <Compile Include="NavigationPanelView.xaml.cs">
+    <Compile Include="ViewModels\MultiSportViewModel.cs" />
+    <Compile Include="Modules\NavigationPanelModule.cs" />
+    <Compile Include="Views\NavigationPanelView.xaml.cs">
       <DependentUpon>NavigationPanelView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NavigationPanelViewModel.cs" />
-    <Compile Include="ParkingModule.cs" />
-    <Compile Include="ParkingView.xaml.cs">
+    <Compile Include="ViewModels\NavigationPanelViewModel.cs" />
+    <Compile Include="Modules\ParkingModule.cs" />
+    <Compile Include="Views\ParkingView.xaml.cs">
       <DependentUpon>ParkingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ParkingViewModel.cs" />
-    <Compile Include="PeselValidator.cs" />
+    <Compile Include="ViewModels\ParkingViewModel.cs" />
+    <Compile Include="Validators\PeselValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -132,8 +145,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="Validator.cs" />
+    <Compile Include="Services\RelayCommand.cs" />
+    <Compile Include="Services\ValidatedModelBase.cs" />
     <Compile Include="ViewModels\NewBeneficiaryDetailsMainViewModel.cs" />
     <Compile Include="ViewModels\NewBeneficiaryDetailsViewModel.cs" />
     <Compile Include="ViewModels\SelectBeneficiaryViewModel.cs" />
@@ -146,36 +159,41 @@
     <Compile Include="Views\SelectBeneficiaryView.xaml.cs">
       <DependentUpon>SelectBeneficiaryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LanguageCourseView.xaml.cs">
+      <DependentUpon>LanguageCourseView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="AddNewBeneficiaryView.xaml">
+    <Page Include="Views\AddNewBeneficiaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeactivateBenefitView.xaml">
+    <Page Include="Views\DeactivateBenefitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmployeeBannerView.xaml">
+    <Page Include="Views\EmployeeBannerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HealthcareView.xaml">
+    <Page Include="Views\HealthcareView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MultiSportView.xaml">
+    <Page Include="Views\LanguageInstructorSelectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NavigationPanelView.xaml">
+    <Page Include="Views\MultiSportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ParkingView.xaml">
+    <Page Include="Views\NavigationPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParkingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -195,12 +213,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LanguageCourseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataModel.dbml">
+    <None Include="Models\DataModel.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataModel.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -214,6 +236,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\CustomControlsLib.csproj">
+      <Project>{3b679647-6bfe-4738-b212-19622f6faef4}</Project>
+      <Name>CustomControlsLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Employees\KeeperRichClient.Modules.Employees.csproj">
       <Project>{e25d66cd-89b9-484a-8e7c-91e72b232506}</Project>
       <Name>KeeperRichClient.Modules.Employees</Name>
@@ -227,7 +253,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataModel.dbml.layout">
+    <None Include="Models\DataModel.dbml.layout">
       <DependentUpon>DataModel.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\Resources.resx">

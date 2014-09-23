@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using KeeperRichClient.Modules.Benefits.ViewModels;
+
 namespace KeeperRichClient.Modules.Benefits.Views
 {
     /// <summary>
@@ -23,6 +25,12 @@ namespace KeeperRichClient.Modules.Benefits.Views
         public NewBeneficiaryDetailsMainView()
         {
             InitializeComponent();
+            NewBeneficiaryDetailsMainViewModel vm = new NewBeneficiaryDetailsMainViewModel();
+            this.DataContext = vm;
+            vm.CancelCommand = new RelayCommand(action => this.Close());
         }
+
+        
+        
     }
 }

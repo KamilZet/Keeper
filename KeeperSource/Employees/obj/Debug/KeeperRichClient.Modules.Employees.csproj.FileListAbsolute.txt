@@ -38,6 +38,46 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Employees\obj\Debug\KeeperRichClient.Modules.Employees.g.resources
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Employees\obj\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Employees\obj\Debug\KeeperRichClient.Modules.Employees.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.dll.config
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Ninject.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\Ninject.xml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.csprojResolveAssemblyReference.cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.cache
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.lref
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.baml
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.g.resources
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Users\Kamil\Documents\Visual Studio 2013\Projects\Keeper\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.pdb
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.dll.config
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\KeeperRichClient.Modules.Employees.pdb
@@ -70,11 +110,11 @@ C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\ru\System.Windows.Interactiv
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.csprojResolveAssemblyReference.cache
-C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\EmployeeView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.cache
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees_MarkupCompile.lref
-C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\EmployeeView.baml
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\Views\EmployeeView.baml
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.g.resources
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Employees\obj\Debug\KeeperRichClient.Modules.Employees.pdb

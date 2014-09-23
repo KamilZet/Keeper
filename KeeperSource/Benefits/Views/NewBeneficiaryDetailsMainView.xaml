@@ -1,27 +1,37 @@
-﻿<Window     x:Class="KeeperRichClient.Modules.Benefits.Views.NewBeneficiaryDetailsMainView"
+﻿<Window x:Class="KeeperRichClient.Modules.Benefits.Views.NewBeneficiaryDetailsMainView"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:vm="clr-namespace:KeeperRichClient.Modules.Benefits.ViewModels"
-            xmlns:styles="clr-namespace:KeeperRichClient.Infrastructure.Themes;assembly=KeeperRichClient.Infrastructure"
-             mc:Ignorable="d"
-             d:DesignHeight="378" d:DesignWidth="681">
+            xmlns:fx="clr-namespace:CustomControlsLib;assembly=CustomControlsLib"
+            mc:Ignorable="d"
+            WindowStartupLocation="CenterScreen" Height="392" Width="419" Background="{StaticResource WindowBrush}"
+            >
     <Window.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}">
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
     </Window.Resources>
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <vm:NewBeneficiaryDetailsMainViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="47*"/>
-            <RowDefinition Height="240*"/>
-            <RowDefinition Height="63*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
 
-        <styles:AnimatedContentControl x:Name="ContentPlace"
-                                      Grid.Row="1"
-                                      Content="{Binding Content}"/>
+        <fx:ContentSlider Grid.Row="1"
+                          Content="{Binding Content, UpdateSourceTrigger=PropertyChanged}"
+                          HorizontalContentAlignment="Center"/>
+        <DockPanel Grid.Row="2" Margin="0">
+            <Button Content="Change New Beneficiary Mode" Command="{Binding ChangeContentCommand}" Width="191" DockPanel.Dock="Left"/>
+            <Button Content="Add Beneficiary" Command="{Binding AddBeneficiaryCommand}" Width="95"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}"/>
+
+        </DockPanel>
+
     </Grid>
 </Window>

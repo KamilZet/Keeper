@@ -10,7 +10,7 @@ namespace KeeperRichClient.Infrastructure
 
         public static ApplicationService Instance { get { return _instance; } }
 
-        private PrismEvents.IEventAggregator _eventAggregator;
+        PrismEvents.IEventAggregator _eventAggregator;
         public  PrismEvents.IEventAggregator EventAggregator
         {
             get
@@ -20,10 +20,7 @@ namespace KeeperRichClient.Infrastructure
 
                 return _eventAggregator;
             }
-        }
-
-        
-        
+        }   
     }
 }
 

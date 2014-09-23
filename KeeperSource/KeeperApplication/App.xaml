@@ -7,5 +7,7 @@
                 <ResourceDictionary Source="pack://application:,,,/KeeperRichClient.Infrastructure;component/Themes/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+        
+
     </Application.Resources>
 </Application>

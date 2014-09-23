@@ -14,15 +14,32 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using KeeperRichClient.Modules.Benefits.ViewModels;
+using KeeperRichClient.Infrastructure;
+using KeeperRichClient.Modules.Benefits.Models;
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace KeeperRichClient.Modules.Benefits.Views
 {
-    public partial class NewBeneficiaryDetailsView : UserControl
+    public partial class NewBeneficiaryDetailsView : UserControl,IView
     {
-        public NewBeneficiaryDetailsView()//INewBeneficiaryViewModel vm
+        public NewBeneficiaryDetailsView(INewBeneficiaryViewModel vm)
         {
             InitializeComponent();
-            DataContext = new NewBeneficiaryDetailsViewModel();//vm;
+            DataContext= vm;
         }
+
+        //public object DataContext
+        //{
+        //    get 
+        //    {
+        //        return (IViewModel)base.DataContext;
+        //    }
+        //    set
+        //    {
+        //        base.DataContext = value;
+        //    }
+        //}
+    
     }
+    
 }

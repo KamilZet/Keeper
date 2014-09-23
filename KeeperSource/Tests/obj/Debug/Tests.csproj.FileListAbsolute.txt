@@ -26,3 +26,46 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testy
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient Testyyyyyyy\Tests\obj\Debug\Tests.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.exe.config
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.exe
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Tests.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Benefits.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\LinqKeeper.exe
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Composition.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Infrastructure.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\LinqKeeper.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Composition.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Interactivity.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Infrastructure.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Employees.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.exe
+C:\Mediacom\Keeper\KeeperSource\Tests\obj\Debug\Tests.pdb

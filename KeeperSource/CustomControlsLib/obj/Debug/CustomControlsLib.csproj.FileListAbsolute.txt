@@ -1,0 +1,11 @@
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\bin\Debug\CustomControlsLib.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\bin\Debug\CustomControlsLib.pdb
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib_MarkupCompile.cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib_MarkupCompile.lref
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\Themes\Generic.baml
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib.g.resources
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib.Properties.Resources.resources
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib.csproj.GenerateResource.Cache
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib.dll
+C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\AddBeneficiary\AddNewBeneficiary\CustomControlsLib\obj\Debug\CustomControlsLib.pdb

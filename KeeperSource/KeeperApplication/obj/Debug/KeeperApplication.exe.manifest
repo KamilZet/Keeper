@@ -42,6 +42,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustomControlsLib.dll" size="10752">
+      <assemblyIdentity name="CustomControlsLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Jq1A/hKtJWiY/vXk37ru6RLL5pNcWf4u5YpjdWwa2/I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperApplication.exe" size="13824">
       <assemblyIdentity name="KeeperApplication" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -49,43 +61,43 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Kg3Gi8KLkJxtW4RLrNkxj4V2QOg7KRW3hS6zC5FjxbI=</dsig:DigestValue>
+        <dsig:DigestValue>VvBGavIrO61zYQZl1QNCC8eSw0tt5/tlyIxFS4co90o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Infrastructure.dll" size="67584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Infrastructure.dll" size="69120">
       <assemblyIdentity name="KeeperRichClient.Infrastructure" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bc7Y2tcymZOprvOiUj+BKgML6NeELk3Q/GmoC6tVN3M=</dsig:DigestValue>
+        <dsig:DigestValue>g+nNuu/Rdx+ZaOgFExeuHXYouaPXYznVvfNvp19o8iQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Benefits.dll" size="145408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Benefits.dll" size="183296">
       <assemblyIdentity name="KeeperRichClient.Modules.Benefits" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Q5J73RRRfh9APTRUrFixIQCQ0wMV5MAnYXjtmIYxwsk=</dsig:DigestValue>
+        <dsig:DigestValue>sc5BkSFNjgUVcB4tKN3Q6j5MUzs1FnG7TyZ6xU0mG4M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Employees.dll" size="16384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Employees.dll" size="16896">
       <assemblyIdentity name="KeeperRichClient.Modules.Employees" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tbuViO1wwIzLSsNhD27R8C5N1lY1qh5X5KfnpctBruw=</dsig:DigestValue>
+        <dsig:DigestValue>YZu8eIXaoYrH4zdOnKRMidWNtF2vIzXJ/Jvm2RiL3gs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
