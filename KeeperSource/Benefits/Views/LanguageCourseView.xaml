@@ -5,33 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:benefits="clr-namespace:KeeperRichClient.Modules.Benefits"
              xmlns:views="clr-namespace:KeeperRichClient.Modules.Benefits.Views"
+             xmlns:service="clr-namespace:KeeperRichClient.Modules.Benefits.Services"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              Height="423" Width="954"
              Background="{StaticResource LanguageWinBrush}">
     <UserControl.Resources>
+        <service:NullToVisibleConv x:Key="NullToVisibleConv"/>
+        <service:BoolToVisibleConv x:Key="BoolToVisibleConv"/>
     </UserControl.Resources>
-    
+
     <i:Interaction.Triggers>
         <prism:InteractionRequestTrigger SourceObject="{Binding InstructorSelectionRequest, Mode=OneWay}">
-            <prism:PopupWindowAction>
+            <prism:PopupWindowAction >
                 <prism:PopupWindowAction.WindowContent>
-                    <views:LanguageInstructorSelectView/>
+                    <views:LanguageInstructorSelectView />
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
-    
+
     <Grid>
         <GroupBox   HorizontalAlignment="Left" Height="403" Margin="15,10,0,0" VerticalAlignment="Top" Width="672" 
                     BorderBrush="Black" BorderThickness="1"
                     FontSize="16">
-            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,-12,0">
-                <Button Content="Set New Language Curse" HorizontalAlignment="Left" Height="55" Margin="42,326,0,0" VerticalAlignment="Top" Width="426"
-                    Style="{StaticResource SimpleButton}"
-                    Background="Salmon"
-                    Command="{Binding NewCourseCommand}"/>
-                <StackPanel HorizontalAlignment="Left" Height="283" Margin="42,41,0,0" VerticalAlignment="Top" Width="426">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="292*"/>
+                    <RowDefinition Height="105*"/>
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0">
                     <StackPanel.Resources>
                         <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
                             <Setter Property="FontSize"     Value="20"/>
@@ -45,19 +50,31 @@
                         </Style>
                     </StackPanel.Resources>
 
-                    <DockPanel>
+                    <DockPanel x:Name="CourseTypePanel">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
                     		Background="GreenYellow"
                     		Style="{StaticResource FieldLabelStyle}"><Run Text="Course "/><Run Text="type"/><Run Text=":"/></TextBlock>
-                        <TextBox Text="{Binding LanguageCourseName, Mode=OneWay}" FontSize="16" 
+                        <Grid>
+                            <TextBox Text="{Binding LanguageCourseName, Mode=OneWay}" FontSize="16" 
                                     Height="30" Width="276"
                                     HorizontalAlignment="Left"
                                     IsReadOnly="True"
-                                    BorderBrush="{StaticResource NormalBorderBrush}">
-                        </TextBox>
+                                    BorderBrush="{StaticResource NormalBorderBrush}"/>
+                            <ComboBox ItemsSource="{Binding LanguageCourses}" DisplayMemberPath="LanguageCourseName"
+                                      SelectedItem="{Binding ActiveCourse.LanguageCourse}"
+                                    Height="30" Width="276"
+                                    HorizontalAlignment="Left"
+                                    IsReadOnly="True"
+                                    BorderBrush="{StaticResource NormalBorderBrush}"
+                                    Visibility="{Binding IsNewCourse, Converter={StaticResource BoolToVisibleConv}}"/>
+                        </Grid>
+
+
+
                     </DockPanel>
 
-                    <DockPanel Margin="0,10,0,10" LastChildFill="True">
+                    <DockPanel x:Name="InstructorsPanel" 
+                               Margin="0,10,0,10" LastChildFill="True">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
                            Text="Instructor(s):"
                            Style="{StaticResource FieldLabelStyle}">
@@ -65,7 +82,8 @@
                         <ListView Height="136" HorizontalAlignment="Left" Width="275"
                                   ItemsSource="{Binding LanguageCourseInstructors}"
                                   SelectedItem="{Binding SelectedInstructor}"  
-                                  BorderBrush="{StaticResource NormalBorderBrush}">
+                                  BorderBrush="{StaticResource NormalBorderBrush}"
+                                  IsEnabled="{Binding IsInEdit, UpdateSourceTrigger=PropertyChanged}">
                             <ListView.Resources>
 
                                 <LinearGradientBrush x:Key="GreenHeader"  
@@ -93,44 +111,77 @@
                         </ListView>
                     </DockPanel>
 
-                    <DockPanel Margin="0,10,0,10">
+                    <DockPanel x:Name="CourseStartDatePanel" 
+                               Margin="0,10,0,10">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
                            Text="Start date:"
                            Style="{StaticResource FieldLabelStyle}">
                         </TextBlock>
                         <DatePicker Width="275"
-                            HorizontalAlignment="Left"
-                            SelectedDate="{Binding CourseStartDate,Mode=TwoWay}"
-                            Style="{StaticResource MyDatePicker}">
-
+                                    DisplayDateStart="{x:Static benefits:HelperFuncs.NextMonthStartDefault}"
+                                    HorizontalAlignment="Left"
+                            SelectedDate="{Binding CourseStartDate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Style="{StaticResource MyDatePicker}"
+                            IsEnabled="{Binding IsNewCourse}">
+                            <!--DisplayDateStart="{Binding Path=NextMonthStartDefault, Source={x:Type benefits:HelperFuncs}}"-->
+                            <!--<DatePicker.BlackoutDates>
+                                <CalendarDateRange End="{x:Static sys:DateTime.Today}"/>
+                            </DatePicker.BlackoutDates>-->
                         </DatePicker>
                     </DockPanel>
 
-                    <DockPanel Margin="0,10,0,10">
+                    <DockPanel x:Name="CourseEndDatePanel" 
+                               Margin="0,10,0,10">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" 
                            Text="End date:"
                            Style="{StaticResource FieldLabelStyle}">
                         </TextBlock>
                         <DatePicker Width="275"
+                                    DisplayDateStart="{Binding CourseStartDate, Mode=OneWay}"
                             HorizontalAlignment="Left"
                             SelectedDate="{Binding CourseEndDate,Mode=TwoWay}"
-                            Style="{StaticResource MyDatePicker}">
+                            Style="{StaticResource MyDatePicker}"
+                            IsEnabled="{Binding IsInEdit, UpdateSourceTrigger=PropertyChanged}">
                         </DatePicker>
                     </DockPanel>
 
-                    <DockPanel/>
                 </StackPanel>
+
+                <Grid x:Name="CommandsGridRow" Grid.Row="1" Margin="20">
+                    <DockPanel HorizontalAlignment="Stretch">
+                        
+                        <Button Content="New Course" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0" Height="65" VerticalAlignment="Top"
+                                
+                                Command="{Binding NewCourseCommand}" Width="144"/>
+                        <!--Visibility="{Binding CourseEndDate, Converter = {StaticResource NullToVisibleConv}}"-->
+                        <Button Content="Edit" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0" Height="65" VerticalAlignment="Top"
+                                
+                                Command="{Binding ChangeToEditMode}" Width="124"/>
+                        <!--Visibility="{Binding CourseEndDate, Converter = {StaticResource NullToVisibleConv}}"-->
+                        
+                        
+                        <Button Content="Save" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0" HorizontalAlignment="Right"
+                                Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=Visibility}"
+                                Command="{Binding SaveCommand}" Width="162"/>
+                        <!--Visibility="{Binding IsDirty, Converter={StaticResource BoolToVisibleConv}}"-->
+                        
+                        <Button Content="Cancel" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0" 
+                                Visibility="{Binding IsDirty, Converter={StaticResource BoolToVisibleConv}}"
+                                Command="{Binding CancelCommand}"/>
+                    </DockPanel>
+                </Grid>
+                
             </Grid>
         </GroupBox>
 
         <GroupBox Content="General language course settings" HorizontalAlignment="Left" Height="403" Margin="692,10,0,0" VerticalAlignment="Top" Width="262"
                     BorderBrush="Black" BorderThickness="1" FontSize="20"/>
-        
-        <Button Content="Add instructor" HorizontalAlignment="Left" Height="71" Margin="500,93,0,0" VerticalAlignment="Top" Width="172" 
+
+        <Button Content="Add instructor" HorizontalAlignment="Left" Height="62" Margin="468,65,0,0" VerticalAlignment="Top" Width="186" 
                 Style="{StaticResource SimpleButton}" Background="GreenYellow"
                 Command="{Binding RaiseAttachInstructorCommand}"/>
-        
-        <Button Content="Remove instructor" HorizontalAlignment="Left" Height="60" Margin="500,169,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.542,1.702" 
+
+        <Button Content="Remove instructor" HorizontalAlignment="Left" Height="60" Margin="468,132,0,0" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.542,1.702" 
                 Style="{StaticResource SimpleButton}" Background="GreenYellow"
                 Command="{Binding RaiseRemoveInstructorCommand}"/>
 

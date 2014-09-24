@@ -79,6 +79,8 @@
     <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
     <Compile Include="Modules\LanguageCourseModule.cs" />
     <Compile Include="Notifications\LanguageCourseInstructorSelect.cs" />
+    <Compile Include="Services\BoolToVisibleConv.cs" />
+    <Compile Include="Services\NullToVisibleConv.cs" />
     <Compile Include="ViewModels\LanguageCourseInstructorSelectViewModel.cs" />
     <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
     <Compile Include="Views\AddNewBeneficiaryView.xaml.cs">

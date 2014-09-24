@@ -14,9 +14,15 @@ namespace KeeperRichClient.Modules.Benefits
     public static class HelperFuncs
     {
 
-        public static DateTime NextMonthStart(DateTime Arg)
+        public static DateTime NextMonthStartDefault
         {
-            return new DateTime(Arg.Year, Arg.Month, 1).AddMonths(1);
+            get { return NextMonthStart(); }
+        }
+
+        public static DateTime NextMonthStart(DateTime? refDate = null)
+        {
+            if (refDate == null) refDate = DateTime.Today;
+            return new DateTime(((DateTime)refDate).Year, ((DateTime)refDate).Month, 1).AddMonths(1);
         }
 
         public static DateTime ThisMonthEnd(DateTime Arg)
