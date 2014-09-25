@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
-
+using System.Runtime.Serialization;
 
 namespace KeeperRichClient.Modules.Benefits
 {
@@ -116,6 +116,19 @@ namespace KeeperRichClient.Modules.Benefits
             return (int.Parse(ArgPesel.Substring(9, 1)) % 2 == 0) ? "F" : "M";
         }
 
+
+
+        //to be analysed somewhere in the future...
+        public static T Clone<T>(this T source)
+        {
+            var dcs = new DataContractSerializer(typeof(T));
+            using (var ms = new System.IO.MemoryStream())
+            {
+                dcs.WriteObject(ms, source);
+                ms.Seek(0, System.IO.SeekOrigin.Begin);
+                return (T)dcs.ReadObject(ms);
+            }
+        }
 
 
     }

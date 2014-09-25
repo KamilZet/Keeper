@@ -13,7 +13,6 @@ namespace KeeperRichClient.Modules.Benefits.Notifications
 {
     public class LanguageCourseInstructorSelect : Confirmation
     {
-
         public LanguageCourseInstructorSelect()
         {
             this.Instructors = new List<LanguageCourseInstructor>();
@@ -29,7 +28,5 @@ namespace KeeperRichClient.Modules.Benefits.Notifications
         public IEnumerable<LanguageCourseInstructor> Instructors { get; private set; }
 
         public LanguageCourseInstructor SelectedInstructor { get; set; }
-
-
     }
 }

@@ -18,7 +18,7 @@ using System.Linq;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Forms;
-
+using System.Data;
 
 
 
@@ -26,28 +26,54 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
     public class LanguageCourseViewModel : BindableBase, ILanguageCourseViewModel
     {
+
         public LanguageCourseViewModel()
         {
             ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
             this.dataContext = new DbContext();
             this.InstructorSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
-            this.RaiseAttachInstructorCommand = new RelayCommand(action => this.raiseNotification(),
-                                                                 predicate => IsInEdit);
-            this.RaiseRemoveInstructorCommand = new RelayCommand(action => this.removeInstructorFromCourse(),
-                                                                 predicate => IsInEdit);
+            
+            this.RaiseAttachInstructorCommand = new RelayCommand(action => this.raiseNotification(),predicate => IsInEdit);
+
+            this.RaiseRemoveInstructorCommand = new RelayCommand(action => this.removeInstructorFromCourse(),predicate => IsInEdit && Instructors.Count > 0);
 
             this.NewCourseCommand = new RelayCommand(action => this.newCourseCommand(), predicate => ActiveEmployee.Employee != null &&
                                                                                                      this.IsInEdit == false &&
                                                                                                      (ActiveCourse == null ||
                                                                                                      CourseEndDate != null && 
-                                                                                                     CourseEndDate <= DateTime.Today)
-                                                    );
+                                                                                                     CourseEndDate <= DateTime.Today));
+
 
             this.CancelCommand = new RelayCommand(action => cancelCommand(), predicate => IsInEdit);
 
-            this.ChangeToEditMode = new RelayCommand(action => { IsInEdit = true;}, predicate => IsInEdit == false && ActiveCourse !=null);
+            this.ChangeToEditMode = new RelayCommand(action => changeToEditMode(), predicate => IsInEdit == false && ActiveCourse !=null);
 
-            this.SaveCommand = new RelayCommand(action => { IsInEdit = false;},    predicate => IsInEdit == true);
+            this.SaveCommand = new RelayCommand(action => saveCommand(),predicate => IsInEdit == true && isValidToSave());
+        }
+
+        private bool isValidToSave()
+        {
+            if (IsNewCourse)
+            {
+                return ActiveCourse.LanguageCourse != null &&
+                        ActiveCourse.StartDate != null &&
+                        ActiveCourse.StartDate.Ticks != 0 &&
+                        Instructors.Count > 0;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void changeToEditMode() 
+        {
+            this.IsInEdit = true;
+        }
+
+        private void saveCommand()
+        {
+            
         }
 
         private void cancelCommand()
@@ -55,7 +81,6 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             ActiveCourse = prevLangCourse;
             goToReadMode();
             OnPropertyChanged(string.Empty);
-
         }
 
         public ICommand SaveCommand { get; private set; }
@@ -131,7 +156,13 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 else
                     return null;
             }
-            set { this.ActiveCourse.StartDate = (DateTime)value;OnPropertyChanged("CourseStartDate"); }
+            set 
+            { 
+                this.ActiveCourse.StartDate = (DateTime)value;
+                
+                
+
+                OnPropertyChanged("CourseStartDate"); }
         }
 
         public DateTime? CourseEndDate
@@ -159,12 +190,6 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             }
         }
 
-        
-
-
-        //EditExisting
-        //EditNew
-
 
         public void CloseCourse()
         {
@@ -187,7 +212,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             }
         }
 
-        public ObservableCollection<LanguageCourseInstructor> LanguageCourseInstructors
+
+        
+        
+        public ObservableCollection<LanguageCourseInstructor> Instructors
         {
             get
             {
@@ -200,9 +228,27 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                                                                                                                         o.courseInstructor.InstructorTakingDate == null)
                                                                                                             .Select(o => o.instructor)).ToObservableCollection();
                 else
+                        
                     return null;
             }
+            set
+            {
+
+            }
         }
+
+        public void AddInstructor(LanguageCourseInstructor instructor)
+        {
+
+            this.Instructors.Add(instructor);
+        }
+
+        public void RemoveInstructor(LanguageCourseInstructor instructor)
+        {
+            this.Instructors.Remove(instructor);
+        }
+
+
 
         public ObservableCollection<LanguageCourse> LanguageCourses
         {
@@ -211,9 +257,15 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         private void newCourseCommand()
         {
-
             prevLangCourse = ActiveCourse;
-            activeCourse = new LanguageCoursesToEmployee(); 
+            ActiveCourse = new LanguageCoursesToEmployee { EmployeeID = ActiveEmployee.Employee.EmployeeID};
+            
+
+            dataContext.LanguageCoursesToEmployees.InsertOnSubmit(ActiveCourse);
+            
+
+
+
             this.IsInEdit = true; this.IsNewCourse = true;
             OnPropertyChanged(string.Empty);            
         }
@@ -243,11 +295,12 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
             // 2nd method
             var allInstructors = dataContext.LanguageCourseInstructors.ToList();
-            var freeInstructors = allInstructors.Except(this.LanguageCourseInstructors).ToList();
+            var freeInstructors = allInstructors.Except(this.Instructors).ToList();
 
 
             LanguageCourseInstructorSelect notification = new LanguageCourseInstructorSelect(freeInstructors);
             notification.Title = "Available instructors";
+
             this.InstructorSelectionRequest.Raise(notification,
                                             returned =>
                                             {
@@ -255,10 +308,11 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                                                 {
                                                     try
                                                     {
-                                                        this.dataContext.spAddInstructorToCourse(this.ActiveCourse.Id,
-                                                                                                 returned.SelectedInstructor.InstructorId
-                                                                                                );
-                                                        OnPropertyChanged(() => this.LanguageCourseInstructors);
+                                                        this.Instructors.Add(returned.SelectedInstructor);
+                                                        //this.dataContext.spAddInstructorToCourse(this.ActiveCourse.Id,
+                                                        //                                         returned.SelectedInstructor.InstructorId
+                                                        //                                        );
+                                                        OnPropertyChanged(() => this.Instructors);
                                                     }
                                                     catch (Exception e)
                                                     {
@@ -282,9 +336,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             {
                 try
                 {
-                    dataContext.spRemoveInstructorFromCourse(this.ActiveCourse.Id,
-                                                             this.SelectedInstructor.InstructorId);
-                    OnPropertyChanged(() => this.LanguageCourseInstructors);
+                    this.Instructors.Remove(SelectedInstructor);
+                    //dataContext.spRemoveInstructorFromCourse(this.ActiveCourse.Id,
+                    //                                         this.SelectedInstructor.InstructorId);
+                    OnPropertyChanged(() => this.Instructors);
                 }
                 catch (Exception e)
                 {
@@ -292,6 +347,10 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 }
             }
         }
+
+
+        //public ObservableCollection<LanguageCourseInstructor> Instructors { get; set; }
+
 
         private LanguageCoursesToEmployee prevLangCourse { get; set; }
 
@@ -303,7 +362,12 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         private class NewLanguageCourse : LanguageCoursesToEmployee
         {
-            
+            public new ObservableCollection<LanguageCourseInstructor> Instructors
+            {
+                get;
+                set;
+            }
+
         }
 
     }

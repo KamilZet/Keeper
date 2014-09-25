@@ -68,9 +68,6 @@
                                     BorderBrush="{StaticResource NormalBorderBrush}"
                                     Visibility="{Binding IsNewCourse, Converter={StaticResource BoolToVisibleConv}}"/>
                         </Grid>
-
-
-
                     </DockPanel>
 
                     <DockPanel x:Name="InstructorsPanel" 
@@ -80,8 +77,8 @@
                            Style="{StaticResource FieldLabelStyle}">
                         </TextBlock>
                         <ListView Height="136" HorizontalAlignment="Left" Width="275"
-                                  ItemsSource="{Binding LanguageCourseInstructors}"
-                                  SelectedItem="{Binding SelectedInstructor}"  
+                                  ItemsSource="{Binding Instructors, Mode=TwoWay}"
+                                  SelectedItem="{Binding SelectedInstructor}"
                                   BorderBrush="{StaticResource NormalBorderBrush}"
                                   IsEnabled="{Binding IsInEdit, UpdateSourceTrigger=PropertyChanged}">
                             <ListView.Resources>
@@ -150,7 +147,7 @@
                 <Grid x:Name="CommandsGridRow" Grid.Row="1" Margin="20">
                     <DockPanel HorizontalAlignment="Stretch">
                         
-                        <Button Content="New Course" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0" Height="65" VerticalAlignment="Top"
+                        <Button Content="New Course" Style="{StaticResource SimpleButton}" Padding="10" Margin="0,0,10,0"
                                 
                                 Command="{Binding NewCourseCommand}" Width="144"/>
                         <!--Visibility="{Binding CourseEndDate, Converter = {StaticResource NullToVisibleConv}}"-->
@@ -177,7 +174,7 @@
         <GroupBox Content="General language course settings" HorizontalAlignment="Left" Height="403" Margin="692,10,0,0" VerticalAlignment="Top" Width="262"
                     BorderBrush="Black" BorderThickness="1" FontSize="20"/>
 
-        <Button Content="Add instructor" HorizontalAlignment="Left" Height="62" Margin="468,65,0,0" VerticalAlignment="Top" Width="186" 
+        <Button Content="Add instructor" HorizontalAlignment="Left" Height="62" Margin="468,66,0,0" VerticalAlignment="Top" Width="186" 
                 Style="{StaticResource SimpleButton}" Background="GreenYellow"
                 Command="{Binding RaiseAttachInstructorCommand}"/>
 
