@@ -33,7 +33,7 @@
         <elementListCompartment Id="8e14c8c3-6879-4547-86bd-e83e1a9101d9" absoluteBounds="0.515, 4.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(0.84375 : 5.47115315755208); (0.84375 : 7.84375); (4.375 : 7.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(0.84375 : 5.47115315755208); (0.84375 : 7.84375); (2.79166666666667 : 7.84375 : JumpStart); (2.95833333333333 : 7.84375 : JumpEnd); (4.375 : 7.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/BeneficiaryGroupId/BeneficiaryGroupId_BeneficiaryGroupDetail" />
       <nodes>
         <classShapeMoniker Id="b19f64c3-8b8e-449a-b62a-5bbcc3303a5b" />
@@ -195,14 +195,14 @@
         <elementListCompartment Id="684ea5c6-311f-4e75-b7f4-ebcde635986e" absoluteBounds="11.39, 7.9600000000000009, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.5 : 8.33629140702505); (13.375 : 8.33629140702505)]" fixedFrom="Algorithm" fixedTo="Caller">
+    <associationConnector edgePoints="[(14.5 : 8.33629140702505); (13.375 : 8.33629140702505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/LanguageCourseInstructor/LanguageCourseInstructor_InstructorsToLanguageCourse" />
       <nodes>
         <classShapeMoniker Id="4c8826b9-06c5-4f74-aa7f-0ee7fe4731a4" />
         <classShapeMoniker Id="6468c85a-0e26-4fb3-9f64-7a86ca7e6bc5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.375 : 9.5); (12.375 : 8.92484781901042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.375 : 9.5); (12.375 : 8.92484781901042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/LanguageCoursesToEmployee/LanguageCoursesToEmployee_InstructorsToLanguageCourse" />
       <nodes>
         <classShapeMoniker Id="120f6768-a609-4d56-bcbb-b1647f481cbe" />

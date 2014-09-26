@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
+    <Compile Include="Models\DataModelExt.cs" />
     <Compile Include="Modules\LanguageCourseModule.cs" />
     <Compile Include="Notifications\LanguageCourseInstructorSelect.cs" />
     <Compile Include="Services\BoolToVisibleConv.cs" />

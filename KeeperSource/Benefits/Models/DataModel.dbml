@@ -344,4 +344,16 @@
       <Column Name="MedicalPacketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="LanguageCourses.spAddNewLanguageCourse" Method="spAddNewLanguageCourse">
+    <Parameter Name="LanguageCourseId" Parameter="languageCourseId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="LanguageCourses.spModifyLangCourseEndDate" Method="spModifyLangCourseEndDate">
+    <Parameter Name="LanguageCourseId" Parameter="languageCourseId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NewLangCourseEndDate" Parameter="newLangCourseEndDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

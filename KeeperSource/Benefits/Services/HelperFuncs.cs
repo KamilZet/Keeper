@@ -119,16 +119,16 @@ namespace KeeperRichClient.Modules.Benefits
 
 
         //to be analysed somewhere in the future...
-        public static T Clone<T>(this T source)
-        {
-            var dcs = new DataContractSerializer(typeof(T));
-            using (var ms = new System.IO.MemoryStream())
-            {
-                dcs.WriteObject(ms, source);
-                ms.Seek(0, System.IO.SeekOrigin.Begin);
-                return (T)dcs.ReadObject(ms);
-            }
-        }
+        //public static T Clone<T>(this T source)
+        //{
+        //    var dcs = new DataContractSerializer(typeof(T));
+        //    using (var ms = new System.IO.MemoryStream())
+        //    {
+        //        dcs.WriteObject(ms, source);
+        //        ms.Seek(0, System.IO.SeekOrigin.Begin);
+        //        return (T)dcs.ReadObject(ms);
+        //    }
+        //}
 
 
     }

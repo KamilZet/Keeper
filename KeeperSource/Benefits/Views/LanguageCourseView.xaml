@@ -176,11 +176,11 @@
 
         <Button Content="Add instructor" HorizontalAlignment="Left" Height="62" Margin="468,66,0,0" VerticalAlignment="Top" Width="186" 
                 Style="{StaticResource SimpleButton}" Background="GreenYellow"
-                Command="{Binding RaiseAttachInstructorCommand}"/>
+                Command="{Binding AddInstructorCommand}"/>
 
         <Button Content="Remove instructor" HorizontalAlignment="Left" Height="60" Margin="468,132,0,0" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.542,1.702" 
                 Style="{StaticResource SimpleButton}" Background="GreenYellow"
-                Command="{Binding RaiseRemoveInstructorCommand}"/>
+                Command="{Binding RemoveInstructorCommand}"/>
 
     </Grid>
 </UserControl>

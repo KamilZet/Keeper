@@ -360,6 +360,20 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			return this.CreateMethodCallQuery<vMedicalPacketsToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LanguageCourses.spAddNewLanguageCourse")]
+		public int spAddNewLanguageCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LanguageCourseId", DbType="Int")] System.Nullable<int> languageCourseId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), languageCourseId, employeeId, startDate, endDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LanguageCourses.spModifyLangCourseEndDate")]
+		public int spModifyLangCourseEndDate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LanguageCourseId", DbType="Int")] System.Nullable<int> languageCourseId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewLangCourseEndDate", DbType="DateTime")] System.Nullable<System.DateTime> newLangCourseEndDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), languageCourseId, newLangCourseEndDate);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.MedicalPacketTypes")]
