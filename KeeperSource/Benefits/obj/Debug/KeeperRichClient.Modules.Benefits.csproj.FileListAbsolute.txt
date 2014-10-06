@@ -148,3 +148,6 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\EPPlus.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ReportingControlView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ReportingControlView.g.cs

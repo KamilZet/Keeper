@@ -33,27 +33,15 @@ namespace KeeperRichClient.Modules.Benefits.Models
     partial void InsertMedicalPacketType(MedicalPacketType instance);
     partial void UpdateMedicalPacketType(MedicalPacketType instance);
     partial void DeleteMedicalPacketType(MedicalPacketType instance);
-    partial void InsertBeneficiaryGroupId(BeneficiaryGroupId instance);
-    partial void UpdateBeneficiaryGroupId(BeneficiaryGroupId instance);
-    partial void DeleteBeneficiaryGroupId(BeneficiaryGroupId instance);
-    partial void InsertConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
-    partial void UpdateConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
-    partial void DeleteConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
     partial void InsertParkingPlace(ParkingPlace instance);
     partial void UpdateParkingPlace(ParkingPlace instance);
     partial void DeleteParkingPlace(ParkingPlace instance);
     partial void InsertParking(Parking instance);
     partial void UpdateParking(Parking instance);
     partial void DeleteParking(Parking instance);
-    partial void InsertMultisportPacketType(MultisportPacketType instance);
-    partial void UpdateMultisportPacketType(MultisportPacketType instance);
-    partial void DeleteMultisportPacketType(MultisportPacketType instance);
     partial void InsertTakingReasonType(TakingReasonType instance);
     partial void UpdateTakingReasonType(TakingReasonType instance);
     partial void DeleteTakingReasonType(TakingReasonType instance);
-    partial void InsertBeneficiary(Beneficiary instance);
-    partial void UpdateBeneficiary(Beneficiary instance);
-    partial void DeleteBeneficiary(Beneficiary instance);
     partial void InsertLanguageCourseInstructor(LanguageCourseInstructor instance);
     partial void UpdateLanguageCourseInstructor(LanguageCourseInstructor instance);
     partial void DeleteLanguageCourseInstructor(LanguageCourseInstructor instance);
@@ -66,6 +54,15 @@ namespace KeeperRichClient.Modules.Benefits.Models
     partial void InsertLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
     partial void UpdateLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
     partial void DeleteLanguageCoursesToEmployee(LanguageCoursesToEmployee instance);
+    partial void InsertConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
+    partial void UpdateConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
+    partial void DeleteConfiguredMedicalPacketToEmployee(ConfiguredMedicalPacketToEmployee instance);
+    partial void InsertBeneficiary(Beneficiary instance);
+    partial void UpdateBeneficiary(Beneficiary instance);
+    partial void DeleteBeneficiary(Beneficiary instance);
+    partial void InsertMultisportPackType(MultisportPackType instance);
+    partial void UpdateMultisportPackType(MultisportPackType instance);
+    partial void DeleteMultisportPackType(MultisportPackType instance);
     #endregion
 		
 		public DbContext() : 
@@ -114,38 +111,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<BeneficiaryGroupDetail> BeneficiaryGroupDetails
-		{
-			get
-			{
-				return this.GetTable<BeneficiaryGroupDetail>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BeneficiaryGroupId> BeneficiaryGroupIds
-		{
-			get
-			{
-				return this.GetTable<BeneficiaryGroupId>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ConfiguredMedicalPacketToEmployee> ConfiguredMedicalPacketToEmployees
-		{
-			get
-			{
-				return this.GetTable<ConfiguredMedicalPacketToEmployee>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ConfiguredMultisportPacketsToEmployee> ConfiguredMultisportPacketsToEmployees
-		{
-			get
-			{
-				return this.GetTable<ConfiguredMultisportPacketsToEmployee>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ParkingPlace> ParkingPlaces
 		{
 			get
@@ -170,27 +135,11 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<MultisportPacketType> MultisportPacketTypes
-		{
-			get
-			{
-				return this.GetTable<MultisportPacketType>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TakingReasonType> TakingReasonTypes
 		{
 			get
 			{
 				return this.GetTable<TakingReasonType>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Beneficiary> Beneficiaries
-		{
-			get
-			{
-				return this.GetTable<Beneficiary>();
 			}
 		}
 		
@@ -234,6 +183,46 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<ConfiguredMedicalPacketToEmployee> ConfiguredMedicalPacketToEmployees
+		{
+			get
+			{
+				return this.GetTable<ConfiguredMedicalPacketToEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BeneficiariesToConfiguredMedPack> BeneficiariesToConfiguredMedPacks
+		{
+			get
+			{
+				return this.GetTable<BeneficiariesToConfiguredMedPack>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Beneficiary> Beneficiaries
+		{
+			get
+			{
+				return this.GetTable<Beneficiary>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MultisportPackType> MultisportPackTypes
+		{
+			get
+			{
+				return this.GetTable<MultisportPackType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ConfMultisportPackToEmp> ConfMultisportPackToEmps
+		{
+			get
+			{
+				return this.GetTable<ConfMultisportPackToEmp>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spAddBeneficiaryToMedicalPacket")]
 		public int spAddBeneficiaryToMedicalPacket([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryID", DbType="Int")] System.Nullable<int> beneficiaryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedicalPacketID", DbType="Int")] System.Nullable<int> medicalPacketID)
 		{
@@ -245,13 +234,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		public int spRemoveBeneficiaryFromMedicalPacket([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryID", DbType="Int")] System.Nullable<int> beneficiaryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedicalPacketId", DbType="Int")] System.Nullable<int> medicalPacketId)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), beneficiaryID, medicalPacketId);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.spAddMedicalPacketToEmployee")]
-		public int spAddMedicalPacketToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedicalPacketTypeId", DbType="Int")] System.Nullable<int> medicalPacketTypeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryGroupId", DbType="Int")] System.Nullable<int> beneficiaryGroupId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValidFrom", DbType="DateTime")] System.Nullable<System.DateTime> validFrom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValidTo", DbType="DateTime")] System.Nullable<System.DateTime> validTo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludedInLimit", DbType="Bit")] System.Nullable<bool> includedInLimit, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsPayedByEmployee", DbType="Bit")] System.Nullable<bool> isPayedByEmployee, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Note", DbType="NVarChar(500)")] string note)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId, medicalPacketTypeId, beneficiaryGroupId, validFrom, validTo, includedInLimit, isPayedByEmployee, note);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -295,12 +277,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.fMultisportOwnerToEmployee", IsComposable=true)]
-		public IQueryable<fMultisportOwnerToEmployeeResult> fMultisportOwnerToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
-		{
-			return this.CreateMethodCallQuery<fMultisportOwnerToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="MultiSport.spTakeConfiguredMultiSportCard")]
 		public int spTakeConfiguredMultiSportCard([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConfiguredMultiSportCardId", DbType="Int")] System.Nullable<int> configuredMultiSportCardId)
 		{
@@ -335,12 +311,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vBeneficiaries2MedPack", IsComposable=true)]
-		public IQueryable<vBeneficiaries2MedPackResult> vBeneficiaries2MedPack([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedPackID", DbType="Int")] System.Nullable<int> medPackID)
-		{
-			return this.CreateMethodCallQuery<vBeneficiaries2MedPackResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), medPackID);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LanguageCourses.spAddInstructorToCourse")]
 		public int spAddInstructorToCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseId", DbType="Int")] System.Nullable<int> courseId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="InstructorId", DbType="Int")] System.Nullable<int> instructorId)
 		{
@@ -373,6 +343,32 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), languageCourseId, newLangCourseEndDate);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.vBeneficiaries2MedPack", IsComposable=true)]
+		public IQueryable<vBeneficiaries2MedPackResult> vBeneficiaries2MedPack([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedPackID", DbType="Int")] System.Nullable<int> medPackID)
+		{
+			return this.CreateMethodCallQuery<vBeneficiaries2MedPackResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), medPackID);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.spAddMedicalPacketToEmployee")]
+		public int spAddMedicalPacketToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedicalPacketTypeId", DbType="Int")] System.Nullable<int> medicalPacketTypeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValidFrom", DbType="DateTime")] System.Nullable<System.DateTime> validFrom, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValidTo", DbType="DateTime")] System.Nullable<System.DateTime> validTo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludedInLimit", DbType="Bit")] System.Nullable<bool> includedInLimit, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsPayedByEmployee", DbType="Bit")] System.Nullable<bool> isPayedByEmployee, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Note", DbType="NVarChar(500)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId, medicalPacketTypeId, validFrom, validTo, includedInLimit, isPayedByEmployee, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="MultiSport.fGetMultisUsersToEmployee", IsComposable=true)]
+		public IQueryable<fGetMultisUsersToEmployeeResult> fGetMultisUsersToEmployee([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EmployeeId", DbType="Int")] System.Nullable<int> employeeId)
+		{
+			return this.CreateMethodCallQuery<fGetMultisUsersToEmployeeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.spCalcHealthcareCost")]
+		public ISingleResult<spCalcHealthcareCostResult> spCalcHealthcareCost([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReportStartDate", DbType="DateTime")] System.Nullable<System.DateTime> reportStartDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReportStopDate", DbType="DateTime")] System.Nullable<System.DateTime> reportStopDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), reportStartDate, reportStopDate);
+			return ((ISingleResult<spCalcHealthcareCostResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -638,875 +634,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._DeactivateDate != value))
 				{
 					this._DeactivateDate = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.BeneficiaryGroupDetails")]
-	public partial class BeneficiaryGroupDetail
-	{
-		
-		private int _BeneficiaryGroupID;
-		
-		private int _BeneficiaryID;
-		
-		private System.DateTime _BeneficiaryAddDate;
-		
-		private System.Nullable<System.DateTime> _BeneficiaryRemoveDate;
-		
-		public BeneficiaryGroupDetail()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryGroupID", DbType="Int NOT NULL")]
-		public int BeneficiaryGroupID
-		{
-			get
-			{
-				return this._BeneficiaryGroupID;
-			}
-			set
-			{
-				if ((this._BeneficiaryGroupID != value))
-				{
-					this._BeneficiaryGroupID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", DbType="Int NOT NULL")]
-		public int BeneficiaryID
-		{
-			get
-			{
-				return this._BeneficiaryID;
-			}
-			set
-			{
-				if ((this._BeneficiaryID != value))
-				{
-					this._BeneficiaryID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryAddDate", DbType="DateTime NOT NULL")]
-		public System.DateTime BeneficiaryAddDate
-		{
-			get
-			{
-				return this._BeneficiaryAddDate;
-			}
-			set
-			{
-				if ((this._BeneficiaryAddDate != value))
-				{
-					this._BeneficiaryAddDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryRemoveDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> BeneficiaryRemoveDate
-		{
-			get
-			{
-				return this._BeneficiaryRemoveDate;
-			}
-			set
-			{
-				if ((this._BeneficiaryRemoveDate != value))
-				{
-					this._BeneficiaryRemoveDate = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.BeneficiaryGroupIds")]
-	public partial class BeneficiaryGroupId : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _GroupID;
-		
-		private bool _IsActive;
-		
-		private EntitySet<ConfiguredMedicalPacketToEmployee> _ConfiguredMedicalPacketToEmployees;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnGroupIDChanging(int value);
-    partial void OnGroupIDChanged();
-    partial void OnIsActiveChanging(bool value);
-    partial void OnIsActiveChanged();
-    #endregion
-		
-		public BeneficiaryGroupId()
-		{
-			this._ConfiguredMedicalPacketToEmployees = new EntitySet<ConfiguredMedicalPacketToEmployee>(new Action<ConfiguredMedicalPacketToEmployee>(this.attach_ConfiguredMedicalPacketToEmployees), new Action<ConfiguredMedicalPacketToEmployee>(this.detach_ConfiguredMedicalPacketToEmployees));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int GroupID
-		{
-			get
-			{
-				return this._GroupID;
-			}
-			set
-			{
-				if ((this._GroupID != value))
-				{
-					this.OnGroupIDChanging(value);
-					this.SendPropertyChanging();
-					this._GroupID = value;
-					this.SendPropertyChanged("GroupID");
-					this.OnGroupIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit NOT NULL")]
-		public bool IsActive
-		{
-			get
-			{
-				return this._IsActive;
-			}
-			set
-			{
-				if ((this._IsActive != value))
-				{
-					this.OnIsActiveChanging(value);
-					this.SendPropertyChanging();
-					this._IsActive = value;
-					this.SendPropertyChanged("IsActive");
-					this.OnIsActiveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BeneficiaryGroupId_ConfiguredMedicalPacketToEmployee", Storage="_ConfiguredMedicalPacketToEmployees", ThisKey="GroupID", OtherKey="BeneficiaryGroupID")]
-		public EntitySet<ConfiguredMedicalPacketToEmployee> ConfiguredMedicalPacketToEmployees
-		{
-			get
-			{
-				return this._ConfiguredMedicalPacketToEmployees;
-			}
-			set
-			{
-				this._ConfiguredMedicalPacketToEmployees.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ConfiguredMedicalPacketToEmployees(ConfiguredMedicalPacketToEmployee entity)
-		{
-			this.SendPropertyChanging();
-			entity.BeneficiaryGroupId1 = this;
-		}
-		
-		private void detach_ConfiguredMedicalPacketToEmployees(ConfiguredMedicalPacketToEmployee entity)
-		{
-			this.SendPropertyChanging();
-			entity.BeneficiaryGroupId1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.ConfiguredMedicalPacketToEmployee")]
-	public partial class ConfiguredMedicalPacketToEmployee : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ConfiguredMedicalPacketID;
-		
-		private int _EmployeeID;
-		
-		private int _MedicalPacketTypeID;
-		
-		private System.Nullable<int> _BeneficiaryGroupID;
-		
-		private System.DateTime _ValidFrom;
-		
-		private System.Nullable<System.DateTime> _ValidTo;
-		
-		private bool _IncludedInLimit;
-		
-		private bool _IsPayedByEmployee;
-		
-		private System.DateTime _AssignDate;
-		
-		private System.Nullable<System.DateTime> _TakingDate;
-		
-		private System.Nullable<int> _TakingReasonID;
-		
-		private string _Note;
-		
-		private EntityRef<BeneficiaryGroupId> _BeneficiaryGroupId1;
-		
-		private EntityRef<MedicalPacketType> _MedicalPacketType;
-		
-		private EntityRef<TakingReasonType> _TakingReasonType;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnConfiguredMedicalPacketIDChanging(int value);
-    partial void OnConfiguredMedicalPacketIDChanged();
-    partial void OnEmployeeIDChanging(int value);
-    partial void OnEmployeeIDChanged();
-    partial void OnMedicalPacketTypeIDChanging(int value);
-    partial void OnMedicalPacketTypeIDChanged();
-    partial void OnBeneficiaryGroupIDChanging(System.Nullable<int> value);
-    partial void OnBeneficiaryGroupIDChanged();
-    partial void OnValidFromChanging(System.DateTime value);
-    partial void OnValidFromChanged();
-    partial void OnValidToChanging(System.Nullable<System.DateTime> value);
-    partial void OnValidToChanged();
-    partial void OnIncludedInLimitChanging(bool value);
-    partial void OnIncludedInLimitChanged();
-    partial void OnIsPayedByEmployeeChanging(bool value);
-    partial void OnIsPayedByEmployeeChanged();
-    partial void OnAssignDateChanging(System.DateTime value);
-    partial void OnAssignDateChanged();
-    partial void OnTakingDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnTakingDateChanged();
-    partial void OnTakingReasonIDChanging(System.Nullable<int> value);
-    partial void OnTakingReasonIDChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    #endregion
-		
-		public ConfiguredMedicalPacketToEmployee()
-		{
-			this._BeneficiaryGroupId1 = default(EntityRef<BeneficiaryGroupId>);
-			this._MedicalPacketType = default(EntityRef<MedicalPacketType>);
-			this._TakingReasonType = default(EntityRef<TakingReasonType>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredMedicalPacketID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ConfiguredMedicalPacketID
-		{
-			get
-			{
-				return this._ConfiguredMedicalPacketID;
-			}
-			set
-			{
-				if ((this._ConfiguredMedicalPacketID != value))
-				{
-					this.OnConfiguredMedicalPacketIDChanging(value);
-					this.SendPropertyChanging();
-					this._ConfiguredMedicalPacketID = value;
-					this.SendPropertyChanged("ConfiguredMedicalPacketID");
-					this.OnConfiguredMedicalPacketIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
-		public int EmployeeID
-		{
-			get
-			{
-				return this._EmployeeID;
-			}
-			set
-			{
-				if ((this._EmployeeID != value))
-				{
-					this.OnEmployeeIDChanging(value);
-					this.SendPropertyChanging();
-					this._EmployeeID = value;
-					this.SendPropertyChanged("EmployeeID");
-					this.OnEmployeeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketTypeID", DbType="Int NOT NULL")]
-		public int MedicalPacketTypeID
-		{
-			get
-			{
-				return this._MedicalPacketTypeID;
-			}
-			set
-			{
-				if ((this._MedicalPacketTypeID != value))
-				{
-					if (this._MedicalPacketType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMedicalPacketTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._MedicalPacketTypeID = value;
-					this.SendPropertyChanged("MedicalPacketTypeID");
-					this.OnMedicalPacketTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryGroupID", DbType="Int")]
-		public System.Nullable<int> BeneficiaryGroupID
-		{
-			get
-			{
-				return this._BeneficiaryGroupID;
-			}
-			set
-			{
-				if ((this._BeneficiaryGroupID != value))
-				{
-					if (this._BeneficiaryGroupId1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBeneficiaryGroupIDChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryGroupID = value;
-					this.SendPropertyChanged("BeneficiaryGroupID");
-					this.OnBeneficiaryGroupIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
-		public System.DateTime ValidFrom
-		{
-			get
-			{
-				return this._ValidFrom;
-			}
-			set
-			{
-				if ((this._ValidFrom != value))
-				{
-					this.OnValidFromChanging(value);
-					this.SendPropertyChanging();
-					this._ValidFrom = value;
-					this.SendPropertyChanged("ValidFrom");
-					this.OnValidFromChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ValidTo
-		{
-			get
-			{
-				return this._ValidTo;
-			}
-			set
-			{
-				if ((this._ValidTo != value))
-				{
-					this.OnValidToChanging(value);
-					this.SendPropertyChanging();
-					this._ValidTo = value;
-					this.SendPropertyChanged("ValidTo");
-					this.OnValidToChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IncludedInLimit", DbType="Bit NOT NULL")]
-		public bool IncludedInLimit
-		{
-			get
-			{
-				return this._IncludedInLimit;
-			}
-			set
-			{
-				if ((this._IncludedInLimit != value))
-				{
-					this.OnIncludedInLimitChanging(value);
-					this.SendPropertyChanging();
-					this._IncludedInLimit = value;
-					this.SendPropertyChanged("IncludedInLimit");
-					this.OnIncludedInLimitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit NOT NULL")]
-		public bool IsPayedByEmployee
-		{
-			get
-			{
-				return this._IsPayedByEmployee;
-			}
-			set
-			{
-				if ((this._IsPayedByEmployee != value))
-				{
-					this.OnIsPayedByEmployeeChanging(value);
-					this.SendPropertyChanging();
-					this._IsPayedByEmployee = value;
-					this.SendPropertyChanged("IsPayedByEmployee");
-					this.OnIsPayedByEmployeeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AssignDate
-		{
-			get
-			{
-				return this._AssignDate;
-			}
-			set
-			{
-				if ((this._AssignDate != value))
-				{
-					this.OnAssignDateChanging(value);
-					this.SendPropertyChanging();
-					this._AssignDate = value;
-					this.SendPropertyChanged("AssignDate");
-					this.OnAssignDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> TakingDate
-		{
-			get
-			{
-				return this._TakingDate;
-			}
-			set
-			{
-				if ((this._TakingDate != value))
-				{
-					this.OnTakingDateChanging(value);
-					this.SendPropertyChanging();
-					this._TakingDate = value;
-					this.SendPropertyChanged("TakingDate");
-					this.OnTakingDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
-		public System.Nullable<int> TakingReasonID
-		{
-			get
-			{
-				return this._TakingReasonID;
-			}
-			set
-			{
-				if ((this._TakingReasonID != value))
-				{
-					if (this._TakingReasonType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTakingReasonIDChanging(value);
-					this.SendPropertyChanging();
-					this._TakingReasonID = value;
-					this.SendPropertyChanged("TakingReasonID");
-					this.OnTakingReasonIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BeneficiaryGroupId_ConfiguredMedicalPacketToEmployee", Storage="_BeneficiaryGroupId1", ThisKey="BeneficiaryGroupID", OtherKey="GroupID", IsForeignKey=true)]
-		public BeneficiaryGroupId BeneficiaryGroupId1
-		{
-			get
-			{
-				return this._BeneficiaryGroupId1.Entity;
-			}
-			set
-			{
-				BeneficiaryGroupId previousValue = this._BeneficiaryGroupId1.Entity;
-				if (((previousValue != value) 
-							|| (this._BeneficiaryGroupId1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BeneficiaryGroupId1.Entity = null;
-						previousValue.ConfiguredMedicalPacketToEmployees.Remove(this);
-					}
-					this._BeneficiaryGroupId1.Entity = value;
-					if ((value != null))
-					{
-						value.ConfiguredMedicalPacketToEmployees.Add(this);
-						this._BeneficiaryGroupID = value.GroupID;
-					}
-					else
-					{
-						this._BeneficiaryGroupID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("BeneficiaryGroupId1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MedicalPacketType_ConfiguredMedicalPacketToEmployee", Storage="_MedicalPacketType", ThisKey="MedicalPacketTypeID", OtherKey="MedicalPacketID", IsForeignKey=true)]
-		public MedicalPacketType MedicalPacketType
-		{
-			get
-			{
-				return this._MedicalPacketType.Entity;
-			}
-			set
-			{
-				MedicalPacketType previousValue = this._MedicalPacketType.Entity;
-				if (((previousValue != value) 
-							|| (this._MedicalPacketType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MedicalPacketType.Entity = null;
-						previousValue.ConfiguredMedicalPacketToEmployees.Remove(this);
-					}
-					this._MedicalPacketType.Entity = value;
-					if ((value != null))
-					{
-						value.ConfiguredMedicalPacketToEmployees.Add(this);
-						this._MedicalPacketTypeID = value.MedicalPacketID;
-					}
-					else
-					{
-						this._MedicalPacketTypeID = default(int);
-					}
-					this.SendPropertyChanged("MedicalPacketType");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TakingReasonType_ConfiguredMedicalPacketToEmployee", Storage="_TakingReasonType", ThisKey="TakingReasonID", OtherKey="TakingReasonID", IsForeignKey=true)]
-		public TakingReasonType TakingReasonType
-		{
-			get
-			{
-				return this._TakingReasonType.Entity;
-			}
-			set
-			{
-				TakingReasonType previousValue = this._TakingReasonType.Entity;
-				if (((previousValue != value) 
-							|| (this._TakingReasonType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TakingReasonType.Entity = null;
-						previousValue.ConfiguredMedicalPacketToEmployees.Remove(this);
-					}
-					this._TakingReasonType.Entity = value;
-					if ((value != null))
-					{
-						value.ConfiguredMedicalPacketToEmployees.Add(this);
-						this._TakingReasonID = value.TakingReasonID;
-					}
-					else
-					{
-						this._TakingReasonID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TakingReasonType");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.ConfiguredMultisportPacketsToEmployees")]
-	public partial class ConfiguredMultisportPacketsToEmployee
-	{
-		
-		private int _ConfiguredBenefitPacketID;
-		
-		private int _EmployeeID;
-		
-		private int _MultiSportPacketTypeID;
-		
-		private System.Nullable<int> _BeneficiaryID;
-		
-		private System.DateTime _ValidFrom;
-		
-		private System.Nullable<System.DateTime> _ValidTo;
-		
-		private bool _IsIncludedInLimit;
-		
-		private bool _IsPayedByEmployee;
-		
-		private System.DateTime _AssignDate;
-		
-		private System.Nullable<System.DateTime> _TakingDate;
-		
-		private System.Nullable<int> _TakingReasonID;
-		
-		private string _Note;
-		
-		public ConfiguredMultisportPacketsToEmployee()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredBenefitPacketID", DbType="Int NOT NULL")]
-		public int ConfiguredBenefitPacketID
-		{
-			get
-			{
-				return this._ConfiguredBenefitPacketID;
-			}
-			set
-			{
-				if ((this._ConfiguredBenefitPacketID != value))
-				{
-					this._ConfiguredBenefitPacketID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
-		public int EmployeeID
-		{
-			get
-			{
-				return this._EmployeeID;
-			}
-			set
-			{
-				if ((this._EmployeeID != value))
-				{
-					this._EmployeeID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultiSportPacketTypeID", DbType="Int NOT NULL")]
-		public int MultiSportPacketTypeID
-		{
-			get
-			{
-				return this._MultiSportPacketTypeID;
-			}
-			set
-			{
-				if ((this._MultiSportPacketTypeID != value))
-				{
-					this._MultiSportPacketTypeID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", DbType="Int")]
-		public System.Nullable<int> BeneficiaryID
-		{
-			get
-			{
-				return this._BeneficiaryID;
-			}
-			set
-			{
-				if ((this._BeneficiaryID != value))
-				{
-					this._BeneficiaryID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
-		public System.DateTime ValidFrom
-		{
-			get
-			{
-				return this._ValidFrom;
-			}
-			set
-			{
-				if ((this._ValidFrom != value))
-				{
-					this._ValidFrom = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ValidTo
-		{
-			get
-			{
-				return this._ValidTo;
-			}
-			set
-			{
-				if ((this._ValidTo != value))
-				{
-					this._ValidTo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsIncludedInLimit", DbType="Bit NOT NULL")]
-		public bool IsIncludedInLimit
-		{
-			get
-			{
-				return this._IsIncludedInLimit;
-			}
-			set
-			{
-				if ((this._IsIncludedInLimit != value))
-				{
-					this._IsIncludedInLimit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit NOT NULL")]
-		public bool IsPayedByEmployee
-		{
-			get
-			{
-				return this._IsPayedByEmployee;
-			}
-			set
-			{
-				if ((this._IsPayedByEmployee != value))
-				{
-					this._IsPayedByEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AssignDate
-		{
-			get
-			{
-				return this._AssignDate;
-			}
-			set
-			{
-				if ((this._AssignDate != value))
-				{
-					this._AssignDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> TakingDate
-		{
-			get
-			{
-				return this._TakingDate;
-			}
-			set
-			{
-				if ((this._TakingDate != value))
-				{
-					this._TakingDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
-		public System.Nullable<int> TakingReasonID
-		{
-			get
-			{
-				return this._TakingReasonID;
-			}
-			set
-			{
-				if ((this._TakingReasonID != value))
-				{
-					this._TakingReasonID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this._Note = value;
 				}
 			}
 		}
@@ -1984,140 +1111,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.MultisportPacketTypes")]
-	public partial class MultisportPacketType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MultisportPacketTypeID;
-		
-		private string _MultisportPacketTypeName;
-		
-		private decimal _MultisportPacketTypeCost;
-		
-		private bool _IsActive;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMultisportPacketTypeIDChanging(int value);
-    partial void OnMultisportPacketTypeIDChanged();
-    partial void OnMultisportPacketTypeNameChanging(string value);
-    partial void OnMultisportPacketTypeNameChanged();
-    partial void OnMultisportPacketTypeCostChanging(decimal value);
-    partial void OnMultisportPacketTypeCostChanged();
-    partial void OnIsActiveChanging(bool value);
-    partial void OnIsActiveChanged();
-    #endregion
-		
-		public MultisportPacketType()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MultisportPacketTypeID
-		{
-			get
-			{
-				return this._MultisportPacketTypeID;
-			}
-			set
-			{
-				if ((this._MultisportPacketTypeID != value))
-				{
-					this.OnMultisportPacketTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._MultisportPacketTypeID = value;
-					this.SendPropertyChanged("MultisportPacketTypeID");
-					this.OnMultisportPacketTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string MultisportPacketTypeName
-		{
-			get
-			{
-				return this._MultisportPacketTypeName;
-			}
-			set
-			{
-				if ((this._MultisportPacketTypeName != value))
-				{
-					this.OnMultisportPacketTypeNameChanging(value);
-					this.SendPropertyChanging();
-					this._MultisportPacketTypeName = value;
-					this.SendPropertyChanged("MultisportPacketTypeName");
-					this.OnMultisportPacketTypeNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeCost", DbType="Decimal(18,2) NOT NULL")]
-		public decimal MultisportPacketTypeCost
-		{
-			get
-			{
-				return this._MultisportPacketTypeCost;
-			}
-			set
-			{
-				if ((this._MultisportPacketTypeCost != value))
-				{
-					this.OnMultisportPacketTypeCostChanging(value);
-					this.SendPropertyChanging();
-					this._MultisportPacketTypeCost = value;
-					this.SendPropertyChanged("MultisportPacketTypeCost");
-					this.OnMultisportPacketTypeCostChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit NOT NULL")]
-		public bool IsActive
-		{
-			get
-			{
-				return this._IsActive;
-			}
-			set
-			{
-				if ((this._IsActive != value))
-				{
-					this.OnIsActiveChanging(value);
-					this.SendPropertyChanging();
-					this._IsActive = value;
-					this.SendPropertyChanged("IsActive");
-					this.OnIsActiveChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="General.TakingReasonTypes")]
 	public partial class TakingReasonType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2253,284 +1246,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			this.SendPropertyChanging();
 			entity.TakingReasonType = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.Beneficiaries")]
-	public partial class Beneficiary : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _BeneficiaryID;
-		
-		private string _BeneficiaryFName;
-		
-		private string _BeneficiaryLName;
-		
-		private string _BeneficiaryPesel;
-		
-		private System.DateTime _BeneficiaryBirthDate;
-		
-		private string _BeneficiaryCitizenship;
-		
-		private string _BeneficiarySex;
-		
-		private string _BeneficiaryPhoneNumber;
-		
-		private string _BeneficiaryEmailAddress;
-		
-		private int _BeneficiaryParentEmployeeId;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnBeneficiaryIDChanging(int value);
-    partial void OnBeneficiaryIDChanged();
-    partial void OnBeneficiaryFNameChanging(string value);
-    partial void OnBeneficiaryFNameChanged();
-    partial void OnBeneficiaryLNameChanging(string value);
-    partial void OnBeneficiaryLNameChanged();
-    partial void OnBeneficiaryPeselChanging(string value);
-    partial void OnBeneficiaryPeselChanged();
-    partial void OnBeneficiaryBirthDateChanging(System.DateTime value);
-    partial void OnBeneficiaryBirthDateChanged();
-    partial void OnBeneficiaryCitizenshipChanging(string value);
-    partial void OnBeneficiaryCitizenshipChanged();
-    partial void OnBeneficiarySexChanging(string value);
-    partial void OnBeneficiarySexChanged();
-    partial void OnBeneficiaryPhoneNumberChanging(string value);
-    partial void OnBeneficiaryPhoneNumberChanged();
-    partial void OnBeneficiaryEmailAddressChanging(string value);
-    partial void OnBeneficiaryEmailAddressChanged();
-    partial void OnBeneficiaryParentEmployeeIdChanging(int value);
-    partial void OnBeneficiaryParentEmployeeIdChanged();
-    #endregion
-		
-		public Beneficiary()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int BeneficiaryID
-		{
-			get
-			{
-				return this._BeneficiaryID;
-			}
-			set
-			{
-				if ((this._BeneficiaryID != value))
-				{
-					this.OnBeneficiaryIDChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryID = value;
-					this.SendPropertyChanged("BeneficiaryID");
-					this.OnBeneficiaryIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryFName
-		{
-			get
-			{
-				return this._BeneficiaryFName;
-			}
-			set
-			{
-				if ((this._BeneficiaryFName != value))
-				{
-					this.OnBeneficiaryFNameChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryFName = value;
-					this.SendPropertyChanged("BeneficiaryFName");
-					this.OnBeneficiaryFNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryLName
-		{
-			get
-			{
-				return this._BeneficiaryLName;
-			}
-			set
-			{
-				if ((this._BeneficiaryLName != value))
-				{
-					this.OnBeneficiaryLNameChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryLName = value;
-					this.SendPropertyChanged("BeneficiaryLName");
-					this.OnBeneficiaryLNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryPesel", DbType="NVarChar(11) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryPesel
-		{
-			get
-			{
-				return this._BeneficiaryPesel;
-			}
-			set
-			{
-				if ((this._BeneficiaryPesel != value))
-				{
-					this.OnBeneficiaryPeselChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryPesel = value;
-					this.SendPropertyChanged("BeneficiaryPesel");
-					this.OnBeneficiaryPeselChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryBirthDate", DbType="DateTime NOT NULL")]
-		public System.DateTime BeneficiaryBirthDate
-		{
-			get
-			{
-				return this._BeneficiaryBirthDate;
-			}
-			set
-			{
-				if ((this._BeneficiaryBirthDate != value))
-				{
-					this.OnBeneficiaryBirthDateChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryBirthDate = value;
-					this.SendPropertyChanged("BeneficiaryBirthDate");
-					this.OnBeneficiaryBirthDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryCitizenship", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryCitizenship
-		{
-			get
-			{
-				return this._BeneficiaryCitizenship;
-			}
-			set
-			{
-				if ((this._BeneficiaryCitizenship != value))
-				{
-					this.OnBeneficiaryCitizenshipChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryCitizenship = value;
-					this.SendPropertyChanged("BeneficiaryCitizenship");
-					this.OnBeneficiaryCitizenshipChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiarySex", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
-		public string BeneficiarySex
-		{
-			get
-			{
-				return this._BeneficiarySex;
-			}
-			set
-			{
-				if ((this._BeneficiarySex != value))
-				{
-					this.OnBeneficiarySexChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiarySex = value;
-					this.SendPropertyChanged("BeneficiarySex");
-					this.OnBeneficiarySexChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryPhoneNumber", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryPhoneNumber
-		{
-			get
-			{
-				return this._BeneficiaryPhoneNumber;
-			}
-			set
-			{
-				if ((this._BeneficiaryPhoneNumber != value))
-				{
-					this.OnBeneficiaryPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryPhoneNumber = value;
-					this.SendPropertyChanged("BeneficiaryPhoneNumber");
-					this.OnBeneficiaryPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryEmailAddress", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryEmailAddress
-		{
-			get
-			{
-				return this._BeneficiaryEmailAddress;
-			}
-			set
-			{
-				if ((this._BeneficiaryEmailAddress != value))
-				{
-					this.OnBeneficiaryEmailAddressChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryEmailAddress = value;
-					this.SendPropertyChanged("BeneficiaryEmailAddress");
-					this.OnBeneficiaryEmailAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryParentEmployeeId", DbType="Int NOT NULL")]
-		public int BeneficiaryParentEmployeeId
-		{
-			get
-			{
-				return this._BeneficiaryParentEmployeeId;
-			}
-			set
-			{
-				if ((this._BeneficiaryParentEmployeeId != value))
-				{
-					this.OnBeneficiaryParentEmployeeIdChanging(value);
-					this.SendPropertyChanging();
-					this._BeneficiaryParentEmployeeId = value;
-					this.SendPropertyChanged("BeneficiaryParentEmployeeId");
-					this.OnBeneficiaryParentEmployeeIdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -3361,6 +2076,1120 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.ConfiguredMedicalPacketToEmployee")]
+	public partial class ConfiguredMedicalPacketToEmployee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ConfiguredMedicalPacketID;
+		
+		private int _EmployeeID;
+		
+		private int _MedicalPacketTypeID;
+		
+		private System.DateTime _ValidFrom;
+		
+		private System.Nullable<System.DateTime> _ValidTo;
+		
+		private bool _IsIncludedInLimit;
+		
+		private System.Nullable<bool> _IsPayedByEmployee;
+		
+		private System.DateTime _AssignDate;
+		
+		private System.Nullable<System.DateTime> _TakingDate;
+		
+		private System.Nullable<int> _TakingReasonID;
+		
+		private string _Note;
+		
+		private EntityRef<MedicalPacketType> _MedicalPacketType;
+		
+		private EntityRef<TakingReasonType> _TakingReasonType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnConfiguredMedicalPacketIDChanging(int value);
+    partial void OnConfiguredMedicalPacketIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnMedicalPacketTypeIDChanging(int value);
+    partial void OnMedicalPacketTypeIDChanged();
+    partial void OnValidFromChanging(System.DateTime value);
+    partial void OnValidFromChanged();
+    partial void OnValidToChanging(System.Nullable<System.DateTime> value);
+    partial void OnValidToChanged();
+    partial void OnIsIncludedInLimitChanging(bool value);
+    partial void OnIsIncludedInLimitChanged();
+    partial void OnIsPayedByEmployeeChanging(System.Nullable<bool> value);
+    partial void OnIsPayedByEmployeeChanged();
+    partial void OnAssignDateChanging(System.DateTime value);
+    partial void OnAssignDateChanged();
+    partial void OnTakingDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnTakingDateChanged();
+    partial void OnTakingReasonIDChanging(System.Nullable<int> value);
+    partial void OnTakingReasonIDChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public ConfiguredMedicalPacketToEmployee()
+		{
+			this._MedicalPacketType = default(EntityRef<MedicalPacketType>);
+			this._TakingReasonType = default(EntityRef<TakingReasonType>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredMedicalPacketID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ConfiguredMedicalPacketID
+		{
+			get
+			{
+				return this._ConfiguredMedicalPacketID;
+			}
+			set
+			{
+				if ((this._ConfiguredMedicalPacketID != value))
+				{
+					this.OnConfiguredMedicalPacketIDChanging(value);
+					this.SendPropertyChanging();
+					this._ConfiguredMedicalPacketID = value;
+					this.SendPropertyChanged("ConfiguredMedicalPacketID");
+					this.OnConfiguredMedicalPacketIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketTypeID", DbType="Int NOT NULL")]
+		public int MedicalPacketTypeID
+		{
+			get
+			{
+				return this._MedicalPacketTypeID;
+			}
+			set
+			{
+				if ((this._MedicalPacketTypeID != value))
+				{
+					if (this._MedicalPacketType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMedicalPacketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._MedicalPacketTypeID = value;
+					this.SendPropertyChanged("MedicalPacketTypeID");
+					this.OnMedicalPacketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
+		public System.DateTime ValidFrom
+		{
+			get
+			{
+				return this._ValidFrom;
+			}
+			set
+			{
+				if ((this._ValidFrom != value))
+				{
+					this.OnValidFromChanging(value);
+					this.SendPropertyChanging();
+					this._ValidFrom = value;
+					this.SendPropertyChanged("ValidFrom");
+					this.OnValidFromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ValidTo
+		{
+			get
+			{
+				return this._ValidTo;
+			}
+			set
+			{
+				if ((this._ValidTo != value))
+				{
+					this.OnValidToChanging(value);
+					this.SendPropertyChanging();
+					this._ValidTo = value;
+					this.SendPropertyChanged("ValidTo");
+					this.OnValidToChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsIncludedInLimit", DbType="Bit NOT NULL")]
+		public bool IsIncludedInLimit
+		{
+			get
+			{
+				return this._IsIncludedInLimit;
+			}
+			set
+			{
+				if ((this._IsIncludedInLimit != value))
+				{
+					this.OnIsIncludedInLimitChanging(value);
+					this.SendPropertyChanging();
+					this._IsIncludedInLimit = value;
+					this.SendPropertyChanged("IsIncludedInLimit");
+					this.OnIsIncludedInLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit")]
+		public System.Nullable<bool> IsPayedByEmployee
+		{
+			get
+			{
+				return this._IsPayedByEmployee;
+			}
+			set
+			{
+				if ((this._IsPayedByEmployee != value))
+				{
+					this.OnIsPayedByEmployeeChanging(value);
+					this.SendPropertyChanging();
+					this._IsPayedByEmployee = value;
+					this.SendPropertyChanged("IsPayedByEmployee");
+					this.OnIsPayedByEmployeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AssignDate
+		{
+			get
+			{
+				return this._AssignDate;
+			}
+			set
+			{
+				if ((this._AssignDate != value))
+				{
+					this.OnAssignDateChanging(value);
+					this.SendPropertyChanging();
+					this._AssignDate = value;
+					this.SendPropertyChanged("AssignDate");
+					this.OnAssignDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TakingDate
+		{
+			get
+			{
+				return this._TakingDate;
+			}
+			set
+			{
+				if ((this._TakingDate != value))
+				{
+					this.OnTakingDateChanging(value);
+					this.SendPropertyChanging();
+					this._TakingDate = value;
+					this.SendPropertyChanged("TakingDate");
+					this.OnTakingDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
+		public System.Nullable<int> TakingReasonID
+		{
+			get
+			{
+				return this._TakingReasonID;
+			}
+			set
+			{
+				if ((this._TakingReasonID != value))
+				{
+					if (this._TakingReasonType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTakingReasonIDChanging(value);
+					this.SendPropertyChanging();
+					this._TakingReasonID = value;
+					this.SendPropertyChanged("TakingReasonID");
+					this.OnTakingReasonIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(1000)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MedicalPacketType_ConfiguredMedicalPacketToEmployee", Storage="_MedicalPacketType", ThisKey="MedicalPacketTypeID", OtherKey="MedicalPacketID", IsForeignKey=true)]
+		public MedicalPacketType MedicalPacketType
+		{
+			get
+			{
+				return this._MedicalPacketType.Entity;
+			}
+			set
+			{
+				MedicalPacketType previousValue = this._MedicalPacketType.Entity;
+				if (((previousValue != value) 
+							|| (this._MedicalPacketType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MedicalPacketType.Entity = null;
+						previousValue.ConfiguredMedicalPacketToEmployees.Remove(this);
+					}
+					this._MedicalPacketType.Entity = value;
+					if ((value != null))
+					{
+						value.ConfiguredMedicalPacketToEmployees.Add(this);
+						this._MedicalPacketTypeID = value.MedicalPacketID;
+					}
+					else
+					{
+						this._MedicalPacketTypeID = default(int);
+					}
+					this.SendPropertyChanged("MedicalPacketType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TakingReasonType_ConfiguredMedicalPacketToEmployee", Storage="_TakingReasonType", ThisKey="TakingReasonID", OtherKey="TakingReasonID", IsForeignKey=true)]
+		public TakingReasonType TakingReasonType
+		{
+			get
+			{
+				return this._TakingReasonType.Entity;
+			}
+			set
+			{
+				TakingReasonType previousValue = this._TakingReasonType.Entity;
+				if (((previousValue != value) 
+							|| (this._TakingReasonType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TakingReasonType.Entity = null;
+						previousValue.ConfiguredMedicalPacketToEmployees.Remove(this);
+					}
+					this._TakingReasonType.Entity = value;
+					if ((value != null))
+					{
+						value.ConfiguredMedicalPacketToEmployees.Add(this);
+						this._TakingReasonID = value.TakingReasonID;
+					}
+					else
+					{
+						this._TakingReasonID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TakingReasonType");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.BeneficiariesToConfiguredMedPacks")]
+	public partial class BeneficiariesToConfiguredMedPack
+	{
+		
+		private int _ConfiguredMedicalPacketId;
+		
+		private int _BeneficiaryId;
+		
+		private System.DateTime _ValidFrom;
+		
+		private System.Nullable<System.DateTime> _ValidTo;
+		
+		private System.DateTime _SetupDate;
+		
+		private System.Nullable<System.DateTime> _TakeDate;
+		
+		public BeneficiariesToConfiguredMedPack()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredMedicalPacketId", DbType="Int NOT NULL")]
+		public int ConfiguredMedicalPacketId
+		{
+			get
+			{
+				return this._ConfiguredMedicalPacketId;
+			}
+			set
+			{
+				if ((this._ConfiguredMedicalPacketId != value))
+				{
+					this._ConfiguredMedicalPacketId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryId", DbType="Int NOT NULL")]
+		public int BeneficiaryId
+		{
+			get
+			{
+				return this._BeneficiaryId;
+			}
+			set
+			{
+				if ((this._BeneficiaryId != value))
+				{
+					this._BeneficiaryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
+		public System.DateTime ValidFrom
+		{
+			get
+			{
+				return this._ValidFrom;
+			}
+			set
+			{
+				if ((this._ValidFrom != value))
+				{
+					this._ValidFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ValidTo
+		{
+			get
+			{
+				return this._ValidTo;
+			}
+			set
+			{
+				if ((this._ValidTo != value))
+				{
+					this._ValidTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SetupDate", DbType="DateTime NOT NULL")]
+		public System.DateTime SetupDate
+		{
+			get
+			{
+				return this._SetupDate;
+			}
+			set
+			{
+				if ((this._SetupDate != value))
+				{
+					this._SetupDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakeDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TakeDate
+		{
+			get
+			{
+				return this._TakeDate;
+			}
+			set
+			{
+				if ((this._TakeDate != value))
+				{
+					this._TakeDate = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Benefits.Beneficiaries")]
+	public partial class Beneficiary : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _BeneficiaryID;
+		
+		private string _BeneficiaryFName;
+		
+		private string _BeneficiaryLName;
+		
+		private string _BeneficiaryPesel;
+		
+		private System.Nullable<System.DateTime> _BeneficiaryBirthDate;
+		
+		private string _BeneficiaryCitizenship;
+		
+		private string _BeneficiarySex;
+		
+		private string _BeneficiaryPhoneNumber;
+		
+		private string _BeneficiaryEmailAddress;
+		
+		private System.DateTime _CreateDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBeneficiaryIDChanging(int value);
+    partial void OnBeneficiaryIDChanged();
+    partial void OnBeneficiaryFNameChanging(string value);
+    partial void OnBeneficiaryFNameChanged();
+    partial void OnBeneficiaryLNameChanging(string value);
+    partial void OnBeneficiaryLNameChanged();
+    partial void OnBeneficiaryPeselChanging(string value);
+    partial void OnBeneficiaryPeselChanged();
+    partial void OnBeneficiaryBirthDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBeneficiaryBirthDateChanged();
+    partial void OnBeneficiaryCitizenshipChanging(string value);
+    partial void OnBeneficiaryCitizenshipChanged();
+    partial void OnBeneficiarySexChanging(string value);
+    partial void OnBeneficiarySexChanged();
+    partial void OnBeneficiaryPhoneNumberChanging(string value);
+    partial void OnBeneficiaryPhoneNumberChanged();
+    partial void OnBeneficiaryEmailAddressChanging(string value);
+    partial void OnBeneficiaryEmailAddressChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    #endregion
+		
+		public Beneficiary()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int BeneficiaryID
+		{
+			get
+			{
+				return this._BeneficiaryID;
+			}
+			set
+			{
+				if ((this._BeneficiaryID != value))
+				{
+					this.OnBeneficiaryIDChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryID = value;
+					this.SendPropertyChanged("BeneficiaryID");
+					this.OnBeneficiaryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string BeneficiaryFName
+		{
+			get
+			{
+				return this._BeneficiaryFName;
+			}
+			set
+			{
+				if ((this._BeneficiaryFName != value))
+				{
+					this.OnBeneficiaryFNameChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryFName = value;
+					this.SendPropertyChanged("BeneficiaryFName");
+					this.OnBeneficiaryFNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string BeneficiaryLName
+		{
+			get
+			{
+				return this._BeneficiaryLName;
+			}
+			set
+			{
+				if ((this._BeneficiaryLName != value))
+				{
+					this.OnBeneficiaryLNameChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryLName = value;
+					this.SendPropertyChanged("BeneficiaryLName");
+					this.OnBeneficiaryLNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryPesel", DbType="NVarChar(255)")]
+		public string BeneficiaryPesel
+		{
+			get
+			{
+				return this._BeneficiaryPesel;
+			}
+			set
+			{
+				if ((this._BeneficiaryPesel != value))
+				{
+					this.OnBeneficiaryPeselChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryPesel = value;
+					this.SendPropertyChanged("BeneficiaryPesel");
+					this.OnBeneficiaryPeselChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryBirthDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> BeneficiaryBirthDate
+		{
+			get
+			{
+				return this._BeneficiaryBirthDate;
+			}
+			set
+			{
+				if ((this._BeneficiaryBirthDate != value))
+				{
+					this.OnBeneficiaryBirthDateChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryBirthDate = value;
+					this.SendPropertyChanged("BeneficiaryBirthDate");
+					this.OnBeneficiaryBirthDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryCitizenship", DbType="NVarChar(255)")]
+		public string BeneficiaryCitizenship
+		{
+			get
+			{
+				return this._BeneficiaryCitizenship;
+			}
+			set
+			{
+				if ((this._BeneficiaryCitizenship != value))
+				{
+					this.OnBeneficiaryCitizenshipChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryCitizenship = value;
+					this.SendPropertyChanged("BeneficiaryCitizenship");
+					this.OnBeneficiaryCitizenshipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiarySex", DbType="NVarChar(255)")]
+		public string BeneficiarySex
+		{
+			get
+			{
+				return this._BeneficiarySex;
+			}
+			set
+			{
+				if ((this._BeneficiarySex != value))
+				{
+					this.OnBeneficiarySexChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiarySex = value;
+					this.SendPropertyChanged("BeneficiarySex");
+					this.OnBeneficiarySexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryPhoneNumber", DbType="NVarChar(255)")]
+		public string BeneficiaryPhoneNumber
+		{
+			get
+			{
+				return this._BeneficiaryPhoneNumber;
+			}
+			set
+			{
+				if ((this._BeneficiaryPhoneNumber != value))
+				{
+					this.OnBeneficiaryPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryPhoneNumber = value;
+					this.SendPropertyChanged("BeneficiaryPhoneNumber");
+					this.OnBeneficiaryPhoneNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryEmailAddress", DbType="NVarChar(255)")]
+		public string BeneficiaryEmailAddress
+		{
+			get
+			{
+				return this._BeneficiaryEmailAddress;
+			}
+			set
+			{
+				if ((this._BeneficiaryEmailAddress != value))
+				{
+					this.OnBeneficiaryEmailAddressChanging(value);
+					this.SendPropertyChanging();
+					this._BeneficiaryEmailAddress = value;
+					this.SendPropertyChanged("BeneficiaryEmailAddress");
+					this.OnBeneficiaryEmailAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="MultiSport.MultisportPackTypes")]
+	public partial class MultisportPackType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MultisportPacketTypeID;
+		
+		private string _MultisportPacketTypeName;
+		
+		private bool _IsActive;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMultisportPacketTypeIDChanging(int value);
+    partial void OnMultisportPacketTypeIDChanged();
+    partial void OnMultisportPacketTypeNameChanging(string value);
+    partial void OnMultisportPacketTypeNameChanged();
+    partial void OnIsActiveChanging(bool value);
+    partial void OnIsActiveChanged();
+    #endregion
+		
+		public MultisportPackType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MultisportPacketTypeID
+		{
+			get
+			{
+				return this._MultisportPacketTypeID;
+			}
+			set
+			{
+				if ((this._MultisportPacketTypeID != value))
+				{
+					this.OnMultisportPacketTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._MultisportPacketTypeID = value;
+					this.SendPropertyChanged("MultisportPacketTypeID");
+					this.OnMultisportPacketTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string MultisportPacketTypeName
+		{
+			get
+			{
+				return this._MultisportPacketTypeName;
+			}
+			set
+			{
+				if ((this._MultisportPacketTypeName != value))
+				{
+					this.OnMultisportPacketTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._MultisportPacketTypeName = value;
+					this.SendPropertyChanged("MultisportPacketTypeName");
+					this.OnMultisportPacketTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit NOT NULL")]
+		public bool IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this.OnIsActiveChanging(value);
+					this.SendPropertyChanging();
+					this._IsActive = value;
+					this.SendPropertyChanged("IsActive");
+					this.OnIsActiveChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="MultiSport.ConfMultisportPackToEmp")]
+	public partial class ConfMultisportPackToEmp
+	{
+		
+		private int _ConfiguredBenefitPacketID;
+		
+		private int _MultiSportPacketTypeID;
+		
+		private int _EmployeeID;
+		
+		private System.Nullable<int> _BeneficiaryID;
+		
+		private System.DateTime _ValidFrom;
+		
+		private System.Nullable<System.DateTime> _ValidTo;
+		
+		private bool _IsIncludedInLimit;
+		
+		private bool _IsPayedByEmployee;
+		
+		private System.DateTime _AssignDate;
+		
+		private System.Nullable<System.DateTime> _TakingDate;
+		
+		private System.Nullable<int> _TakingReasonID;
+		
+		private string _Note;
+		
+		public ConfMultisportPackToEmp()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredBenefitPacketID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int ConfiguredBenefitPacketID
+		{
+			get
+			{
+				return this._ConfiguredBenefitPacketID;
+			}
+			set
+			{
+				if ((this._ConfiguredBenefitPacketID != value))
+				{
+					this._ConfiguredBenefitPacketID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultiSportPacketTypeID", DbType="Int NOT NULL")]
+		public int MultiSportPacketTypeID
+		{
+			get
+			{
+				return this._MultiSportPacketTypeID;
+			}
+			set
+			{
+				if ((this._MultiSportPacketTypeID != value))
+				{
+					this._MultiSportPacketTypeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					this._EmployeeID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", DbType="Int")]
+		public System.Nullable<int> BeneficiaryID
+		{
+			get
+			{
+				return this._BeneficiaryID;
+			}
+			set
+			{
+				if ((this._BeneficiaryID != value))
+				{
+					this._BeneficiaryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidFrom", DbType="DateTime NOT NULL")]
+		public System.DateTime ValidFrom
+		{
+			get
+			{
+				return this._ValidFrom;
+			}
+			set
+			{
+				if ((this._ValidFrom != value))
+				{
+					this._ValidFrom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ValidTo
+		{
+			get
+			{
+				return this._ValidTo;
+			}
+			set
+			{
+				if ((this._ValidTo != value))
+				{
+					this._ValidTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsIncludedInLimit", DbType="Bit NOT NULL")]
+		public bool IsIncludedInLimit
+		{
+			get
+			{
+				return this._IsIncludedInLimit;
+			}
+			set
+			{
+				if ((this._IsIncludedInLimit != value))
+				{
+					this._IsIncludedInLimit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPayedByEmployee", DbType="Bit NOT NULL")]
+		public bool IsPayedByEmployee
+		{
+			get
+			{
+				return this._IsPayedByEmployee;
+			}
+			set
+			{
+				if ((this._IsPayedByEmployee != value))
+				{
+					this._IsPayedByEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AssignDate
+		{
+			get
+			{
+				return this._AssignDate;
+			}
+			set
+			{
+				if ((this._AssignDate != value))
+				{
+					this._AssignDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TakingDate
+		{
+			get
+			{
+				return this._TakingDate;
+			}
+			set
+			{
+				if ((this._TakingDate != value))
+				{
+					this._TakingDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TakingReasonID", DbType="Int")]
+		public System.Nullable<int> TakingReasonID
+		{
+			get
+			{
+				return this._TakingReasonID;
+			}
+			set
+			{
+				if ((this._TakingReasonID != value))
+				{
+					this._TakingReasonID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(500)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this._Note = value;
+				}
+			}
+		}
+	}
+	
 	public partial class fMultisportCardTypesResult
 	{
 		
@@ -3516,86 +3345,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._IsActive != value))
 				{
 					this._IsActive = value;
-				}
-			}
-		}
-	}
-	
-	public partial class fMultisportOwnerToEmployeeResult
-	{
-		
-		private int _ConfiguredBenefitPacketID;
-		
-		private string _MultisportPacketTypeName;
-		
-		private string _BeneficiaryFName;
-		
-		private string _BeneficiaryLName;
-		
-		public fMultisportOwnerToEmployeeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredBenefitPacketID", DbType="Int NOT NULL")]
-		public int ConfiguredBenefitPacketID
-		{
-			get
-			{
-				return this._ConfiguredBenefitPacketID;
-			}
-			set
-			{
-				if ((this._ConfiguredBenefitPacketID != value))
-				{
-					this._ConfiguredBenefitPacketID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string MultisportPacketTypeName
-		{
-			get
-			{
-				return this._MultisportPacketTypeName;
-			}
-			set
-			{
-				if ((this._MultisportPacketTypeName != value))
-				{
-					this._MultisportPacketTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(20)")]
-		public string BeneficiaryFName
-		{
-			get
-			{
-				return this._BeneficiaryFName;
-			}
-			set
-			{
-				if ((this._BeneficiaryFName != value))
-				{
-					this._BeneficiaryFName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(20)")]
-		public string BeneficiaryLName
-		{
-			get
-			{
-				return this._BeneficiaryLName;
-			}
-			set
-			{
-				if ((this._BeneficiaryLName != value))
-				{
-					this._BeneficiaryLName = value;
 				}
 			}
 		}
@@ -3784,86 +3533,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._BeneficiaryParentEmployeeId != value))
 				{
 					this._BeneficiaryParentEmployeeId = value;
-				}
-			}
-		}
-	}
-	
-	public partial class vBeneficiaries2MedPackResult
-	{
-		
-		private int _BeneficiaryID;
-		
-		private string _BeneficiaryFName;
-		
-		private string _BeneficiaryLName;
-		
-		private System.DateTime _AssignDate;
-		
-		public vBeneficiaries2MedPackResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", DbType="Int NOT NULL")]
-		public int BeneficiaryID
-		{
-			get
-			{
-				return this._BeneficiaryID;
-			}
-			set
-			{
-				if ((this._BeneficiaryID != value))
-				{
-					this._BeneficiaryID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryFName
-		{
-			get
-			{
-				return this._BeneficiaryFName;
-			}
-			set
-			{
-				if ((this._BeneficiaryFName != value))
-				{
-					this._BeneficiaryFName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string BeneficiaryLName
-		{
-			get
-			{
-				return this._BeneficiaryLName;
-			}
-			set
-			{
-				if ((this._BeneficiaryLName != value))
-				{
-					this._BeneficiaryLName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AssignDate
-		{
-			get
-			{
-				return this._AssignDate;
-			}
-			set
-			{
-				if ((this._AssignDate != value))
-				{
-					this._AssignDate = value;
 				}
 			}
 		}
@@ -4088,6 +3757,282 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._MedicalPacketName != value))
 				{
 					this._MedicalPacketName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class vBeneficiaries2MedPackResult
+	{
+		
+		private int _BeneficiaryID;
+		
+		private string _BeneficiaryFName;
+		
+		private string _BeneficiaryLName;
+		
+		private System.DateTime _SetupDate;
+		
+		public vBeneficiaries2MedPackResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryID", DbType="Int NOT NULL")]
+		public int BeneficiaryID
+		{
+			get
+			{
+				return this._BeneficiaryID;
+			}
+			set
+			{
+				if ((this._BeneficiaryID != value))
+				{
+					this._BeneficiaryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string BeneficiaryFName
+		{
+			get
+			{
+				return this._BeneficiaryFName;
+			}
+			set
+			{
+				if ((this._BeneficiaryFName != value))
+				{
+					this._BeneficiaryFName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string BeneficiaryLName
+		{
+			get
+			{
+				return this._BeneficiaryLName;
+			}
+			set
+			{
+				if ((this._BeneficiaryLName != value))
+				{
+					this._BeneficiaryLName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SetupDate", DbType="DateTime NOT NULL")]
+		public System.DateTime SetupDate
+		{
+			get
+			{
+				return this._SetupDate;
+			}
+			set
+			{
+				if ((this._SetupDate != value))
+				{
+					this._SetupDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fGetMultisUsersToEmployeeResult
+	{
+		
+		private int _ConfiguredBenefitPacketID;
+		
+		private string _MultisportPacketTypeName;
+		
+		private string _BeneficiaryFName;
+		
+		private string _BeneficiaryLName;
+		
+		public fGetMultisUsersToEmployeeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfiguredBenefitPacketID", DbType="Int NOT NULL")]
+		public int ConfiguredBenefitPacketID
+		{
+			get
+			{
+				return this._ConfiguredBenefitPacketID;
+			}
+			set
+			{
+				if ((this._ConfiguredBenefitPacketID != value))
+				{
+					this._ConfiguredBenefitPacketID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MultisportPacketTypeName", DbType="NVarChar(100)")]
+		public string MultisportPacketTypeName
+		{
+			get
+			{
+				return this._MultisportPacketTypeName;
+			}
+			set
+			{
+				if ((this._MultisportPacketTypeName != value))
+				{
+					this._MultisportPacketTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryFName", DbType="NVarChar(255)")]
+		public string BeneficiaryFName
+		{
+			get
+			{
+				return this._BeneficiaryFName;
+			}
+			set
+			{
+				if ((this._BeneficiaryFName != value))
+				{
+					this._BeneficiaryFName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeneficiaryLName", DbType="NVarChar(255)")]
+		public string BeneficiaryLName
+		{
+			get
+			{
+				return this._BeneficiaryLName;
+			}
+			set
+			{
+				if ((this._BeneficiaryLName != value))
+				{
+					this._BeneficiaryLName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spCalcHealthcareCostResult
+	{
+		
+		private string _EmpFullName;
+		
+		private System.Nullable<decimal> _LimitValue;
+		
+		private System.Nullable<decimal> _PackTotalCost;
+		
+		private System.Nullable<decimal> _OccupMedTotalCost;
+		
+		private System.Nullable<decimal> _PackTotalCostNet;
+		
+		private System.Nullable<decimal> _EmpSurcharge;
+		
+		public spCalcHealthcareCostResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpFullName", DbType="NVarChar(201)")]
+		public string EmpFullName
+		{
+			get
+			{
+				return this._EmpFullName;
+			}
+			set
+			{
+				if ((this._EmpFullName != value))
+				{
+					this._EmpFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LimitValue", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> LimitValue
+		{
+			get
+			{
+				return this._LimitValue;
+			}
+			set
+			{
+				if ((this._LimitValue != value))
+				{
+					this._LimitValue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackTotalCost", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> PackTotalCost
+		{
+			get
+			{
+				return this._PackTotalCost;
+			}
+			set
+			{
+				if ((this._PackTotalCost != value))
+				{
+					this._PackTotalCost = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OccupMedTotalCost", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> OccupMedTotalCost
+		{
+			get
+			{
+				return this._OccupMedTotalCost;
+			}
+			set
+			{
+				if ((this._OccupMedTotalCost != value))
+				{
+					this._OccupMedTotalCost = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackTotalCostNet", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> PackTotalCostNet
+		{
+			get
+			{
+				return this._PackTotalCostNet;
+			}
+			set
+			{
+				if ((this._PackTotalCostNet != value))
+				{
+					this._PackTotalCostNet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpSurcharge", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> EmpSurcharge
+		{
+			get
+			{
+				return this._EmpSurcharge;
+			}
+			set
+			{
+				if ((this._EmpSurcharge != value))
+				{
+					this._EmpSurcharge = value;
 				}
 			}
 		}

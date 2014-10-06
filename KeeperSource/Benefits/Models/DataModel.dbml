@@ -21,62 +21,6 @@
       <Association Name="MedicalPacketType_MedicalPacketTypeSetting" Member="MedicalPacketType" ThisKey="MedicalPacketID" OtherKey="MedicalPacketID" Type="MedicalPacketType" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="Benefits.BeneficiaryGroupDetails" Member="BeneficiaryGroupDetails">
-    <Type Name="BeneficiaryGroupDetail">
-      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryAddDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryRemoveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="BeneficiaryGroupId_BeneficiaryGroupDetail" Member="BeneficiaryGroupId1" ThisKey="BeneficiaryGroupID" OtherKey="GroupID" Type="BeneficiaryGroupId" IsForeignKey="true" />
-      <Association Name="Beneficiary_BeneficiaryGroupDetail" Member="Beneficiary" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="Beneficiary" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="Benefits.BeneficiaryGroupIds" Member="BeneficiaryGroupIds">
-    <Type Name="BeneficiaryGroupId">
-      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="BeneficiaryGroupId_BeneficiaryGroupDetail" Member="BeneficiaryGroupDetails" ThisKey="GroupID" OtherKey="BeneficiaryGroupID" Type="BeneficiaryGroupDetail" />
-      <Association Name="BeneficiaryGroupId_ConfiguredMedicalPacketToEmployee" Member="ConfiguredMedicalPacketToEmployees" ThisKey="GroupID" OtherKey="BeneficiaryGroupID" Type="ConfiguredMedicalPacketToEmployee" />
-    </Type>
-  </Table>
-  <Table Name="Healthcare.ConfiguredMedicalPacketToEmployee" Member="ConfiguredMedicalPacketToEmployees">
-    <Type Name="ConfiguredMedicalPacketToEmployee">
-      <Column Name="ConfiguredMedicalPacketID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MedicalPacketTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IncludedInLimit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TakingReasonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="BeneficiaryGroupId_ConfiguredMedicalPacketToEmployee" Member="BeneficiaryGroupId1" ThisKey="BeneficiaryGroupID" OtherKey="GroupID" Type="BeneficiaryGroupId" IsForeignKey="true" />
-      <Association Name="MedicalPacketType_ConfiguredMedicalPacketToEmployee" Member="MedicalPacketType" ThisKey="MedicalPacketTypeID" OtherKey="MedicalPacketID" Type="MedicalPacketType" IsForeignKey="true" />
-      <Association Name="TakingReasonType_ConfiguredMedicalPacketToEmployee" Member="TakingReasonType" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="TakingReasonType" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="Benefits.ConfiguredMultisportPacketsToEmployees" Member="ConfiguredMultisportPacketsToEmployees">
-    <Type Name="ConfiguredMultisportPacketsToEmployee">
-      <Column Name="ConfiguredBenefitPacketID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MultiSportPacketTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IsIncludedInLimit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TakingReasonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="MultisportPacketType_ConfiguredMultisportPacketsToEmployee" Member="MultisportPacketType" ThisKey="MultiSportPacketTypeID" OtherKey="MultisportPacketTypeID" Type="MultisportPacketType" IsForeignKey="true" />
-      <Association Name="TakingReasonType_ConfiguredMultisportPacketsToEmployee" Member="TakingReasonType" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="TakingReasonType" IsForeignKey="true" />
-      <Association Name="Beneficiary_ConfiguredMultisportPacketsToEmployee" Member="Beneficiary" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="Beneficiary" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="Parkings.ParkingPlaces" Member="ParkingPlaces">
     <Type Name="ParkingPlace">
       <Column Name="ParkingPlaceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -108,38 +52,13 @@
       <Association Name="Parking_ParkingPlace" Member="ParkingPlaces" ThisKey="ParkingID" OtherKey="ParkingID" Type="ParkingPlace" />
     </Type>
   </Table>
-  <Table Name="Benefits.MultisportPacketTypes" Member="MultisportPacketTypes">
-    <Type Name="MultisportPacketType">
-      <Column Name="MultisportPacketTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MultisportPacketTypeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="MultisportPacketTypeCost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="MultisportPacketType_ConfiguredMultisportPacketsToEmployee" Member="ConfiguredMultisportPacketsToEmployees" ThisKey="MultisportPacketTypeID" OtherKey="MultiSportPacketTypeID" Type="ConfiguredMultisportPacketsToEmployee" />
-    </Type>
-  </Table>
   <Table Name="General.TakingReasonTypes" Member="TakingReasonTypes">
     <Type Name="TakingReasonType">
       <Column Name="TakingReasonID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TakingReasonName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="TakingReasonType_ConfiguredMedicalPacketToEmployee" Member="ConfiguredMedicalPacketToEmployees" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="ConfiguredMedicalPacketToEmployee" />
-      <Association Name="TakingReasonType_ConfiguredMultisportPacketsToEmployee" Member="ConfiguredMultisportPacketsToEmployees" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="ConfiguredMultisportPacketsToEmployee" />
-    </Type>
-  </Table>
-  <Table Name="Benefits.Beneficiaries" Member="Beneficiaries">
-    <Type Name="Beneficiary">
-      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryPesel" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryBirthDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryCitizenship" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiarySex" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryPhoneNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryEmailAddress" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryParentEmployeeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Beneficiary_BeneficiaryGroupDetail" Member="BeneficiaryGroupDetails" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="BeneficiaryGroupDetail" />
-      <Association Name="Beneficiary_ConfiguredMultisportPacketsToEmployee" Member="ConfiguredMultisportPacketsToEmployees" ThisKey="BeneficiaryID" OtherKey="BeneficiaryID" Type="ConfiguredMultisportPacketsToEmployee" />
+      <Association Name="TakingReasonType_ConfMultisportPackToEmp" Member="ConfMultisportPackToEmps" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="ConfMultisportPackToEmp" />
     </Type>
   </Table>
   <Table Name="LanguageCourses.LanguageCourseInstructors" Member="LanguageCourseInstructors">
@@ -193,6 +112,77 @@
       <Association Name="LanguageCoursesToEmployee_InstructorsToLanguageCourse" Member="LanguageCoursesToEmployee" ThisKey="LanguageCourseToEmpId" OtherKey="Id" Type="LanguageCoursesToEmployee" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="Healthcare.ConfiguredMedicalPacketToEmployee" Member="ConfiguredMedicalPacketToEmployees">
+    <Type Name="ConfiguredMedicalPacketToEmployee">
+      <Column Name="ConfiguredMedicalPacketID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalPacketTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsIncludedInLimit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TakingReasonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="ConfiguredMedicalPacketToEmployee_BeneficiariesToConfiguredMedPack" Member="BeneficiariesToConfiguredMedPacks" ThisKey="ConfiguredMedicalPacketID" OtherKey="ConfiguredMedicalPacketId" Type="BeneficiariesToConfiguredMedPack" />
+      <Association Name="MedicalPacketType_ConfiguredMedicalPacketToEmployee" Member="MedicalPacketType" ThisKey="MedicalPacketTypeID" OtherKey="MedicalPacketID" Type="MedicalPacketType" IsForeignKey="true" />
+      <Association Name="TakingReasonType_ConfiguredMedicalPacketToEmployee" Member="TakingReasonType" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="TakingReasonType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Healthcare.BeneficiariesToConfiguredMedPacks" Member="BeneficiariesToConfiguredMedPacks">
+    <Type Name="BeneficiariesToConfiguredMedPack">
+      <Column Name="ConfiguredMedicalPacketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SetupDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TakeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ConfiguredMedicalPacketToEmployee_BeneficiariesToConfiguredMedPack" Member="ConfiguredMedicalPacketToEmployee" ThisKey="ConfiguredMedicalPacketId" OtherKey="ConfiguredMedicalPacketID" Type="ConfiguredMedicalPacketToEmployee" IsForeignKey="true" />
+      <Association Name="Beneficiary_BeneficiariesToConfiguredMedPack" Member="Beneficiary" ThisKey="BeneficiaryId" OtherKey="BeneficiaryID" Type="Beneficiary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Benefits.Beneficiaries" Member="Beneficiaries">
+    <Type Name="Beneficiary">
+      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryPesel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BeneficiaryBirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BeneficiaryCitizenship" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BeneficiarySex" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BeneficiaryPhoneNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BeneficiaryEmailAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Beneficiary_BeneficiariesToConfiguredMedPack" Member="BeneficiariesToConfiguredMedPacks" ThisKey="BeneficiaryID" OtherKey="BeneficiaryId" Type="BeneficiariesToConfiguredMedPack" />
+    </Type>
+  </Table>
+  <Table Name="MultiSport.MultisportPackTypes" Member="MultisportPackTypes">
+    <Type Name="MultisportPackType">
+      <Column Name="MultisportPacketTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MultisportPacketTypeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="MultisportPackType_ConfMultisportPackToEmp" Member="ConfMultisportPackToEmps" ThisKey="MultisportPacketTypeID" OtherKey="MultiSportPacketTypeID" Type="ConfMultisportPackToEmp" />
+    </Type>
+  </Table>
+  <Table Name="MultiSport.ConfMultisportPackToEmp" Member="ConfMultisportPackToEmps">
+    <Type Name="ConfMultisportPackToEmp">
+      <Column Name="ConfiguredBenefitPacketID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MultiSportPacketTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsIncludedInLimit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPayedByEmployee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TakingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TakingReasonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TakingReasonType_ConfMultisportPackToEmp" Member="TakingReasonType" ThisKey="TakingReasonID" OtherKey="TakingReasonID" Type="TakingReasonType" IsForeignKey="true" />
+      <Association Name="MultisportPackType_ConfMultisportPackToEmp" Member="MultisportPackType" ThisKey="MultiSportPacketTypeID" OtherKey="MultisportPacketTypeID" Type="MultisportPackType" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="Benefits.spAddBeneficiaryToMedicalPacket" Method="spAddBeneficiaryToMedicalPacket">
     <Parameter Name="BeneficiaryID" Parameter="beneficiaryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="MedicalPacketID" Parameter="medicalPacketID" Type="System.Int32" DbType="Int" />
@@ -201,17 +191,6 @@
   <Function Name="Benefits.spRemoveBeneficiaryFromMedicalPacket" Method="spRemoveBeneficiaryFromMedicalPacket">
     <Parameter Name="BeneficiaryID" Parameter="beneficiaryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="MedicalPacketId" Parameter="medicalPacketId" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Healthcare.spAddMedicalPacketToEmployee" Method="spAddMedicalPacketToEmployee">
-    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MedicalPacketTypeId" Parameter="medicalPacketTypeId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="BeneficiaryGroupId" Parameter="beneficiaryGroupId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ValidFrom" Parameter="validFrom" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ValidTo" Parameter="validTo" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="IncludedInLimit" Parameter="includedInLimit" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="IsPayedByEmployee" Parameter="isPayedByEmployee" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="NVarChar(500)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="Healthcare.spCreateBeneficiaryGroupForMedPack" Method="spCreateBeneficiaryGroupForMedPack">
@@ -254,15 +233,6 @@
     <Parameter Name="IsIncludedInLimit" Parameter="isIncludedInLimit" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="IsPayedByEmployee" Parameter="isPayedByEmployee" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Benefits.fMultisportOwnerToEmployee" Method="fMultisportOwnerToEmployee" IsComposable="true">
-    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="fMultisportOwnerToEmployeeResult">
-      <Column Name="ConfiguredBenefitPacketID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MultisportPacketTypeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="MultiSport.spTakeConfiguredMultiSportCard" Method="spTakeConfiguredMultiSportCard">
     <Parameter Name="ConfiguredMultiSportCardId" Parameter="configuredMultiSportCardId" Type="System.Int32" DbType="Int" />
@@ -308,15 +278,6 @@
     <Parameter Name="BeneficiaryParentEmployeeId" Parameter="beneficiaryParentEmployeeId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Healthcare.vBeneficiaries2MedPack" Method="vBeneficiaries2MedPack" IsComposable="true">
-    <Parameter Name="MedPackID" Parameter="medPackID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="vBeneficiaries2MedPackResult">
-      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="AssignDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="LanguageCourses.spAddInstructorToCourse" Method="spAddInstructorToCourse">
     <Parameter Name="CourseId" Parameter="courseId" Type="System.Int32" DbType="Int" />
     <Parameter Name="InstructorId" Parameter="instructorId" Type="System.Int32" DbType="Int" />
@@ -355,5 +316,45 @@
     <Parameter Name="LanguageCourseId" Parameter="languageCourseId" Type="System.Int32" DbType="Int" />
     <Parameter Name="NewLangCourseEndDate" Parameter="newLangCourseEndDate" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Healthcare.vBeneficiaries2MedPack" Method="vBeneficiaries2MedPack" IsComposable="true">
+    <Parameter Name="MedPackID" Parameter="medPackID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="vBeneficiaries2MedPackResult">
+      <Column Name="BeneficiaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SetupDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.spAddMedicalPacketToEmployee" Method="spAddMedicalPacketToEmployee">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MedicalPacketTypeId" Parameter="medicalPacketTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ValidFrom" Parameter="validFrom" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ValidTo" Parameter="validTo" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IncludedInLimit" Parameter="includedInLimit" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsPayedByEmployee" Parameter="isPayedByEmployee" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="MultiSport.fGetMultisUsersToEmployee" Method="fGetMultisUsersToEmployee" IsComposable="true">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fGetMultisUsersToEmployeeResult">
+      <Column Name="ConfiguredBenefitPacketID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MultisportPacketTypeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BeneficiaryFName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BeneficiaryLName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.spCalcHealthcareCost" Method="spCalcHealthcareCost">
+    <Parameter Name="ReportStartDate" Parameter="reportStartDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReportStopDate" Parameter="reportStopDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="spCalcHealthcareCostResult">
+      <Column Name="EmpFullName" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="LimitValue" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="PackTotalCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="OccupMedTotalCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="PackTotalCostNet" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="EmpSurcharge" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

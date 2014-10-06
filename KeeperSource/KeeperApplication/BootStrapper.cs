@@ -34,12 +34,14 @@ namespace KeeperRichClient.Appl
             Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
         
+
             IRegionManager irm = ServiceLocator.Current.GetInstance<IRegionManager>();
             //irm.RegisterViewWithRegion("MainContentRegion",typeof(HealthcareView));
             //irm.RegisterViewWithRegion("ListerRegion", typeof(HealthcareView));
             //irm.RegisterViewWithRegion("CommandsRegion", typeof(HealthcareView));
             //irm.RegisterViewWithRegion("TitleRegion", typeof(HealthcareView));
             //irm.RegisterViewWithRegion("NavigationRegion", typeof(HealthcareView));
+
         }
         protected override void ConfigureModuleCatalog()
         {

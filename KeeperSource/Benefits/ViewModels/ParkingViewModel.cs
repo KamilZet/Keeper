@@ -35,7 +35,7 @@ namespace KeeperRichClient.Modules.Benefits
                                          from pp in pp_join.DefaultIfEmpty()
                                          join p in _DbContext.Parkings on pp.ParkingID equals p.ParkingID
                                          where
-                                           pe.EmployeeID == SelectedEmployee.EmployeeID &&
+                                           pe.EmployeeID == SelectedEmployee.EmpId &&
                                            pe.TakingDate == null
                                          select p).SingleOrDefault();                                         
 
@@ -46,7 +46,7 @@ namespace KeeperRichClient.Modules.Benefits
                                 from pp in pp_join.DefaultIfEmpty()
                                 join p in _DbContext.Parkings on pp.ParkingID equals p.ParkingID
                                 where
-                                  pe.EmployeeID == SelectedEmployee.EmployeeID &&
+                                  pe.EmployeeID == SelectedEmployee.EmpId &&
                                   pe.TakingDate == null
                                 select pp).SingleOrDefault();
 
@@ -177,14 +177,14 @@ namespace KeeperRichClient.Modules.Benefits
             if (SelectedEmployee == null) return false;
             return (this._SelectedParking != null && 
                     this._SelectedParkingPlace != null && 
-                    this.SelectedEmployee.EmployeeID != 0
+                    this.SelectedEmployee.EmpId != 0
                     );
         }
         void _SaveParkingPlace()
         {
             try
             {
-                _DbContext.spSaveParkingPlace(employeeId: SelectedEmployee.EmployeeID, parkingPlaceId: SelectedParkingPlace.ParkingPlaceID, isIncludedInLimit: IsIncludedInLimit);
+                _DbContext.spSaveParkingPlace(employeeId: SelectedEmployee.EmpId, parkingPlaceId: SelectedParkingPlace.ParkingPlaceID, isIncludedInLimit: IsIncludedInLimit);
                 _EmployeeSelected(SelectedEmployee);
                 _ClearNewSaveData();
             }
@@ -225,7 +225,7 @@ namespace KeeperRichClient.Modules.Benefits
         {
            try 
 	{	        
-		 _DbContext.spTakeParkingPlace(employeeId: SelectedEmployee.EmployeeID, parkingPlaceId: CurrentParkingPlace.ParkingPlaceID);
+		 _DbContext.spTakeParkingPlace(employeeId: SelectedEmployee.EmpId, parkingPlaceId: CurrentParkingPlace.ParkingPlaceID);
             RaisePropertyChanged("AvailableParkings");
             RaisePropertyChanged("AvailableParkingPlaces");
             CurrentParking = null;

@@ -57,10 +57,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             {
                 using (DbContext db = new DbContext())
                 {
-                    var result = from beneficiaries in db.Beneficiaries
-                                 where beneficiaries.BeneficiaryParentEmployeeId == ActiveEmployee.Employee.EmployeeID
-                                 select beneficiaries;
-                    return new ObservableCollection<Beneficiary>(result);
+                    return (db.Beneficiaries.OrderBy(x => x.BeneficiaryLName)).ToObservableCollection();
                 }
             }
         }

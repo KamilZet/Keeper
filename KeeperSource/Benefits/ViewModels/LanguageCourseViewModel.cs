@@ -25,7 +25,6 @@ using System.ComponentModel;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
-
     public class LanguageCourseViewModel : BindableBase, ILanguageCourseViewModel
     {
 
@@ -210,7 +209,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
                 goToReadMode();
 
-                ActiveCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmployeeID &&
+                ActiveCourse = dataContext.LanguageCoursesToEmployees.FirstOrDefault(course => course.EmployeeID == argEmployee.EmpId &&
                                                                                                    course.TakingDate == null);
                 OnPropertyChanged(string.Empty);
 
@@ -332,7 +331,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
                 if (IsNewCourse)
                 {
                     ActiveCourse.Id = dataContext.spAddNewLanguageCourse(ActiveCourse.LanguageCourseID,
-                                                                    ActiveEmployee.Employee.EmployeeID,
+                                                                    ActiveEmployee.Employee.EmpId,
                                                                     ActiveCourse.StartDate,
                                                                     ActiveCourse.EndDate);
                     foreach (LanguageCourseInstructor lci in newCourseInstructors)

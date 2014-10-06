@@ -1,10 +1,8 @@
 ﻿
 using KeeperRichClient.Infrastructure;
-using KeeperRichClient.Modules.Employees.Services;
 using KeeperRichClient.Modules.Employees.Models;
-
+using KeeperRichClient.Modules.Employees.Services;
 using Microsoft.Practices.Prism.PubSubEvents;
-
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -13,58 +11,66 @@ namespace KeeperRichClient.Modules.Employees
 {
     public class EmployeeViewModel : INotifyPropertyChanged,IEmployeeViewModel
     {
-        private IEventAggregator _eventAggr;
         
-        private EmployeeLINQClassDataContext _empDC;
-        private GetEmployeesResult _emp;
-
-        private ObservableCollection<GetEmployeesResult> _EmployeeList;
-        public ObservableCollection<GetEmployeesResult> EmployeeList
-        {
-            get {return _EmployeeList;}
-        }
-
+        #region Construction
         public EmployeeViewModel()
         {
-            _empDC = new EmployeeLINQClassDataContext();
-            _EmployeeList = (from emps in _empDC.GetEmployees() where emps.LevelID != null select emps).ToObservableCollection();
-            this._eventAggr = ApplicationService.Instance.EventAggregator;
+            dataContext = new EmployeeLINQClassDataContext();
+            employees = (from emps in dataContext.GetEmployees() select emps).ToObservableCollection();
+            this.eventAggr = ApplicationService.Instance.EventAggregator;
+        }
+        #endregion
+
+        #region Interface
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void EmployeeRefresh()
+        {
+            employees.Clear();
+            employees = (from emps in dataContext.GetEmployees() select emps).ToObservableCollection();
+            RaisePropertyChanged("Employee");
+        }
+
+        public ObservableCollection<GetEmployeesResult> Employees
+        {
+            get { return employees; }
         }
 
         public GetEmployeesResult SelectedEmployee
         {
-            get { return _emp; }
+            get { return employee; }
             set
             {
-                _emp = value;
-                SelectedEmployeeChanged();
+                employee = value;
+                selectedEmployeeChanged();
             }
         }
 
         public ObservableCollection<GetEmployeesResult> Employee
         {
-            get { return _EmployeeList; }
+            get { return employees; }
         }
+        #endregion
 
-        private void SelectedEmployeeChanged()
+        private IEventAggregator eventAggr;
+
+        private EmployeeLINQClassDataContext dataContext;
+
+        private GetEmployeesResult employee;
+
+        private ObservableCollection<GetEmployeesResult> employees;
+
+        private void selectedEmployeeChanged()
         {
             GetEmployeesResult employee = this.SelectedEmployee as GetEmployeesResult;
             if (employee != null)
             {
                 ActiveEmployee.Employee = employee;
-                this._eventAggr.GetEvent<EmployeeSelectedEvent>().Publish(employee); 
+                this.eventAggr.GetEvent<EmployeeSelectedEvent>().Publish(employee); 
             }
 
         }
-        
-        public void EmployeeRefresh()
-        {
-            _EmployeeList.Clear();
-            _EmployeeList = (from emps in _empDC.GetEmployees() where emps.LevelID != null select emps).ToObservableCollection();
-            RaisePropertyChanged("Employee");
-        }
 
-        public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string PropertyName)
         {
             PropertyChangedEventHandler hand = PropertyChanged;

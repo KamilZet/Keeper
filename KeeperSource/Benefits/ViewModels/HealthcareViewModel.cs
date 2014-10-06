@@ -131,7 +131,7 @@ namespace KeeperRichClient.Modules.Benefits
 
         private void EmployeeSelected(GetEmployeesResult Employee)
         {
-            _selectedEmpId = Employee.EmployeeID;
+            _selectedEmpId = Employee.EmpId;
             RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
             RaisePropertyChanged("MedicalPacketTypes");
         }
@@ -164,17 +164,16 @@ namespace KeeperRichClient.Modules.Benefits
                     db.spAddMedicalPacketToEmployee(
                                                                 employeeId: _selectedEmpId,
                                                                 medicalPacketTypeId: NewMedPackTypeId,
-                                                                beneficiaryGroupId: null,
                                                                 validFrom: NewMedPackValidFrom,
                                                                 validTo: NewMedPackValidTo,
                                                                 includedInLimit: NewMedPackInclInLimit,
                                                                 isPayedByEmployee: NewMedPackPayByEmp,
+
                                                                 note: null
                                                                 );
                     if (NewMedPackTypeId == 4)
                         db.spAddMedicalPacketToEmployee(employeeId: _selectedEmpId,
                                                                 medicalPacketTypeId: 8,
-                                                                beneficiaryGroupId: null,
                                                                 validFrom: NewMedPackValidFrom,
                                                                 validTo: NewMedPackValidTo,
                                                                 includedInLimit: NewMedPackInclInLimit,
@@ -216,24 +215,10 @@ namespace KeeperRichClient.Modules.Benefits
                     return;
                 }
 
-                //Modified User Control type to Window type, so no runtime created window is required
-
-                {
                     NewBeneficiaryDetailsMainView NewBeneficiaryView = new NewBeneficiaryDetailsMainView();
                     NewBeneficiaryView.ShowDialog();
-
-                    //if (SelectedMedicalPacket.BeneficiaryGroupID == null)
-                    //    _DbContext.spCreateBeneficiaryGroupForMedPack(medPackID: SelectedMedicalPacket.ConfiguredMedicalPacketID);
-                    
-                    //_DbContext.spAddBeneficiaryToMedicalPacket(
-                    //                                                beneficiaryID: wnd.Beneficiary.BeneficiaryID,
-                    //                                                medicalPacketID: SelectedMedicalPacket.ConfiguredMedicalPacketID
-                    //                                                );
                     RaisePropertyChanged("BeneficiariesLinkedToMedPack");
-                }
-               
-
-                    //if insertion error occured on server side, provide handling mechanism
+              
                 
             }
             catch (Exception e)
@@ -244,7 +229,7 @@ namespace KeeperRichClient.Modules.Benefits
         }
 
         private ICommand _RemoveMedPackFromEmp;
-        private void __RemoveMedPackFromEmp()
+        private void removeMedPackFromEmp()
         {
             try
             {
@@ -252,8 +237,8 @@ namespace KeeperRichClient.Modules.Benefits
                     MessageBox.Show(messageBoxText: "No medical packet for active employee was selected. \n\n Pleae select medical packet first.");
                 else
                 {
-                    DeactivateBenefitView _DeactView = new DeactivateBenefitView(this);
-                    _DeactView.ShowDialog();
+                    DeactivateBenefitView deactView = new DeactivateBenefitView(this);
+                    deactView.ShowDialog();
                     //method raised also when user cancel operation - implement handling for this case
                     RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
                 }
@@ -269,7 +254,7 @@ namespace KeeperRichClient.Modules.Benefits
             get
             {
                 //TODO: determine predicate for CanExecute. (for now it is null...)
-                if (_RemoveMedPackFromEmp == null) _RemoveMedPackFromEmp = new RelayCommand(param => this.__RemoveMedPackFromEmp(), null);
+                if (_RemoveMedPackFromEmp == null) _RemoveMedPackFromEmp = new RelayCommand(param => this.removeMedPackFromEmp(), null);
                 return _RemoveMedPackFromEmp;
             }
         }

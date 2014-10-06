@@ -34,7 +34,7 @@
         <Label Content="Multisport Card Type:" HorizontalAlignment="Left" Height="27" Margin="339,43,0,0" VerticalAlignment="Top" Width="273" />
 
         <ComboBox HorizontalAlignment="Left" Width="266" 
-                  ItemsSource="{Binding Path=MultiSportCardType}" 
+                  ItemsSource="{Binding Path=MultiSportPacketTypes}" 
                   DisplayMemberPath="MultisportPacketTypeName" FontSize="20"
                   SelectedValuePath="MultisportPacketTypeID"
                   SelectedValue="{Binding Path=MultiSportPacketTypeId,Mode=TwoWay}" Margin="339,75,0,313"
@@ -70,7 +70,7 @@
         	    BorderBrush="Gray" BorderThickness="2"
                   />
         <ComboBox HorizontalAlignment="Left" Margin="341,290,0,0" VerticalAlignment="Top" Width="273" Height="35"
-                  ItemsSource="{Binding BeneficiariesToEmployee,Mode=OneWay}"
+                  ItemsSource="{Binding Beneficiaries,Mode=OneWay}"
                   SelectedItem="{Binding MultisportOwner}"
                   Style="{StaticResource SimpleComboBox}"
                   >
@@ -78,7 +78,7 @@
                 <DataTemplate>
                     <TextBlock DataContext="{Binding}" FontSize="20">
                         <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} - {1}">
+                            <MultiBinding StringFormat="{}{0} {1}">
                                 <Binding Path="BeneficiaryLName" />
                                 <Binding Path="BeneficiaryFName" />
                             </MultiBinding>

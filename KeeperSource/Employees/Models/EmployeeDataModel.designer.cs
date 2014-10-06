@@ -73,96 +73,96 @@ namespace KeeperRichClient.Modules.Employees.Models
 	public partial class GetEmployeesResult
 	{
 		
-		private int _EmployeeID;
+		private int _EmpId;
 		
-		private string _FirstName;
+		private string _EmpFName;
 		
-		private string _LastName;
+		private string _EmpLName;
 		
-		private string _email;
+		private string _EmpEmail;
 		
-		private System.Nullable<int> _LevelID;
+		private System.Nullable<int> _EmpLvlId;
 		
 		public GetEmployeesResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
-		public int EmployeeID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpId", DbType="Int NOT NULL")]
+		public int EmpId
 		{
 			get
 			{
-				return this._EmployeeID;
+				return this._EmpId;
 			}
 			set
 			{
-				if ((this._EmployeeID != value))
+				if ((this._EmpId != value))
 				{
-					this._EmployeeID = value;
+					this._EmpId = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpFName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string EmpFName
 		{
 			get
 			{
-				return this._FirstName;
+				return this._EmpFName;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._EmpFName != value))
 				{
-					this._FirstName = value;
+					this._EmpFName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string LastName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpLName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string EmpLName
 		{
 			get
 			{
-				return this._LastName;
+				return this._EmpLName;
 			}
 			set
 			{
-				if ((this._LastName != value))
+				if ((this._EmpLName != value))
 				{
-					this._LastName = value;
+					this._EmpLName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(200)")]
-		public string email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpEmail", DbType="NVarChar(200)")]
+		public string EmpEmail
 		{
 			get
 			{
-				return this._email;
+				return this._EmpEmail;
 			}
 			set
 			{
-				if ((this._email != value))
+				if ((this._EmpEmail != value))
 				{
-					this._email = value;
+					this._EmpEmail = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LevelID", DbType="Int")]
-		public System.Nullable<int> LevelID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpLvlId", DbType="Int")]
+		public System.Nullable<int> EmpLvlId
 		{
 			get
 			{
-				return this._LevelID;
+				return this._EmpLvlId;
 			}
 			set
 			{
-				if ((this._LevelID != value))
+				if ((this._EmpLvlId != value))
 				{
-					this._LevelID = value;
+					this._EmpLvlId = value;
 				}
 			}
 		}

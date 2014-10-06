@@ -65,8 +65,8 @@ namespace KeeperRichClient.Modules.Benefits
         void EmployeeSelected(GetEmployeesResult Employee)
         {
 
-            EmpFirstName = Employee.FirstName;
-            EmpLastName = Employee.LastName;
+            EmpFirstName = Employee.EmpFName;
+            EmpLastName = Employee.EmpFName;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

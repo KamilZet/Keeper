@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-13-619654354
+14-1775634070
 
-58-556386476
-30-188951660
-Views\AddNewBeneficiaryView.xaml;Views\DeactivateBenefitView.xaml;Views\EmployeeBannerView.xaml;Views\HealthcareView.xaml;Views\LanguageInstructorSelectView.xaml;Views\MultiSportView.xaml;Views\NavigationPanelView.xaml;Views\ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\SelectBeneficiaryView.xaml;Views\LanguageCourseView.xaml;
+611030356911
+31-781919992
+Views\AddNewBeneficiaryView.xaml;Views\DeactivateBenefitView.xaml;Views\EmployeeBannerView.xaml;Views\HealthcareView.xaml;Views\LanguageInstructorSelectView.xaml;Views\MultiSportView.xaml;Views\NavigationPanelView.xaml;Views\ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\ReportingControlView.xaml;Views\SelectBeneficiaryView.xaml;Views\LanguageCourseView.xaml;
 
 False
 

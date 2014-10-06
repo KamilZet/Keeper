@@ -87,7 +87,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public int ParentEmployeeID
         {
-            get { return ActiveEmployee.Employee.EmployeeID; }
+            get { return ActiveEmployee.Employee.EmpId; }
         }
 
 

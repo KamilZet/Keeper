@@ -17,7 +17,7 @@
         <service:BoolToVisibleConv x:Key="BoolToVisibleConv"/>
     </UserControl.Resources>
 
-    <i:Interaction.Triggers>
+    <i:Interaction.Triggers><!--interaction for instructor list modifications-->
         <prism:InteractionRequestTrigger SourceObject="{Binding InstructorSelectionRequest, Mode=OneWay}">
             <prism:PopupWindowAction >
                 <prism:PopupWindowAction.WindowContent>

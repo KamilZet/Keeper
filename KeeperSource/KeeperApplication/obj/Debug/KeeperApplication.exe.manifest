@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oJMA4IliMi9XlXa9FZM3xDXzpi/HNZc60tDIbOyGQMs=</dsig:DigestValue>
+        <dsig:DigestValue>ER+GGtobJbbFyFk919/LbVXt6IzRsNRZbWTX3wijq0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperApplication.exe" size="13824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperApplication.exe" size="14848">
       <assemblyIdentity name="KeeperApplication" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nHgEDHeyjQkdNtDfaJ1q2kM10TxKH+5eUNltlpp5his=</dsig:DigestValue>
+        <dsig:DigestValue>7blrO20TuO4Ste/9iiYwsBa18Y492uxMIS4lhHxYe6s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PtixODbHTCLl3/GnI1c12lSonF+RqlhvFwkmbY9DH+w=</dsig:DigestValue>
+        <dsig:DigestValue>kJVIWwpMoTq3gU4ODZFqZY4Cdo1CogpdSc49ftPK4tY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Benefits.dll" size="190464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeeperRichClient.Modules.Benefits.dll" size="195072">
       <assemblyIdentity name="KeeperRichClient.Modules.Benefits" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V2oc2kJ4NTKznf9X58nA7guilj0w9ZrO8Y2JkDxcKVQ=</dsig:DigestValue>
+        <dsig:DigestValue>0+ZA3t3unNAJkoMeylDSWRcHKXIPUwCgSxs3yA3Nif4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y1BD+s1lEd2HyRmH069xhHP5U5eUeiGiDkMRZIh+72o=</dsig:DigestValue>
+        <dsig:DigestValue>7kVr3FoklCU/THfpQ0j4tDjOTmrculDBYIOwMWuy468=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

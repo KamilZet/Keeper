@@ -12,6 +12,8 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Input;
 
+using System.Linq;
+
 //Concerns:
 
 //How to show record with info about employee multisport card? Normally there are owners selected from beneficiaries, but employee is selected from
@@ -21,31 +23,19 @@ namespace KeeperRichClient.Modules.Benefits
 {
     public class MultiSportViewModel : IMultiSportViewModel, INotifyPropertyChanged
     {
-        DbContext _DbContext = new DbContext();
-        IEventAggregator _EventAggregator;
-        int _SelectedEmployeeId;
 
-
+        #region Construction
         public MultiSportViewModel()
         {
-            _EventAggregator = ApplicationService.Instance.EventAggregator;
-            _EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this._EmployeeSelected, true);
-            //placeholder for configuring new multisport packets. 
-            NewMultiSportPacket = new ConfiguredMultisportPacketsToEmployee();
-            ValidFrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
+            
+            ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
+            NewMultiSportPacket = new ConfMultisportPackToEmp();
+            ValidFrom = HelperFuncs.NextMonthStart();
             IsPaidByEmployee = true;
         }
-
-        void _EmployeeSelected(GetEmployeesResult Employee)
-        {
-            _SelectedEmployeeId = Employee.EmployeeID;
-            RaisePropertyChanged("MultiSportOwnerToEmployee");
-            RaisePropertyChanged("BeneficiariesToEmployee");
-
-        }
-
-        private ConfiguredMultisportPacketsToEmployee _NewMultiSportPacket;
-        public ConfiguredMultisportPacketsToEmployee NewMultiSportPacket
+        #endregion
+        
+        public ConfMultisportPackToEmp NewMultiSportPacket
         {
             get { return _NewMultiSportPacket; }
             set { _NewMultiSportPacket = value; }
@@ -81,63 +71,127 @@ namespace KeeperRichClient.Modules.Benefits
             set { _NewMultiSportPacket.IsPayedByEmployee = value; }
         }
 
-        private fBeneficiariesToEmployeeResult _MultisportOwner;
+
         public fBeneficiariesToEmployeeResult MultisportOwner
         {
             get {return _MultisportOwner;}
             set {_MultisportOwner = value;}
         }
 
-
-
-        private fMultisportOwnerToEmployeeResult _SelectedMultiSportOwner;
-        public fMultisportOwnerToEmployeeResult SelectedMultiSportOwner
+        public fGetMultisUsersToEmployeeResult SelectedMultiSportOwner
         {
             get { return _SelectedMultiSportOwner; }
             set { _SelectedMultiSportOwner = value; }
         }
 
-        public ObservableCollection<fMultisportOwnerToEmployeeResult> MultiSportOwnerToEmployee
+
+        public ObservableCollection<fGetMultisUsersToEmployeeResult> MultiSportOwnerToEmployee
         {
-            get { return new ObservableCollection<fMultisportOwnerToEmployeeResult>(_DbContext.fMultisportOwnerToEmployee(_SelectedEmployeeId)); }
+            get 
+            {
+            if (selectedEmployee != null)
+                return new ObservableCollection<fGetMultisUsersToEmployeeResult>(dataContext.fGetMultisUsersToEmployee(selectedEmployee.EmpId));
+            else
+                return null;
+            }
         }
 
-
-        public ObservableCollection<fMultisportCardTypesResult> MultiSportCardType
+        public ObservableCollection<MultisportPackType> MultiSportPacketTypes
         {
-            get { return new ObservableCollection<fMultisportCardTypesResult>(_DbContext.fMultisportCardTypes()); }
+            get
+            {
+                return (dataContext.MultisportPackTypes.Where(x => x.IsActive == true)).ToObservableCollection();
+            }
         }
         
-        public ObservableCollection<fBeneficiariesToEmployeeResult> BeneficiariesToEmployee
+        public ObservableCollection<Beneficiary> Beneficiaries
         {
-            get { return new ObservableCollection<fBeneficiariesToEmployeeResult>(_DbContext.fBeneficiariesToEmployee(_SelectedEmployeeId)); }
+            get 
+            {
+                return (dataContext.Beneficiaries.OrderBy(x => x.BeneficiaryLName)).ToObservableCollection();
+            }
         }
 
-        private bool IsMultiSportPacketConfigured()
-        {
-            return (NewMultiSportPacket.MultiSportPacketTypeID != 0 &&
-                    NewMultiSportPacket.ValidFrom != null);
-        }
-
-        private ICommand _CallSaveNewMultiSportPacket;
         public ICommand CallSaveNewMultiSportPacket
         {
             get
             {
                 if (_CallSaveNewMultiSportPacket == null)
                 {   //my first usefull delegate application..(+ its applied through lambda expression, which produces +100 to c# coding skills :)
-                    _CallSaveNewMultiSportPacket = new RelayCommand(action => this.SaveNewMultiSportPacket(), predicate => this.IsMultiSportPacketConfigured());
+                    _CallSaveNewMultiSportPacket = new RelayCommand(action => this.saveNewMultiSportPacket(), predicate => NewMultiSportPacket.MultiSportPacketTypeID != 0 &&
+                                                                                                                           NewMultiSportPacket.ValidFrom != null);
                 }
                 return _CallSaveNewMultiSportPacket;
             }
         }
+        
+        public ICommand CallDeactivateMultiSportPacket
+        {
+            get
+            {
+                if (callDeactivateMultiSportPacket==null)
+                {
+                    callDeactivateMultiSportPacket = new RelayCommand(action => this.deactivateMultiSportPacket(), predicate => SelectedMultiSportOwner != null);//
+                }
+                return callDeactivateMultiSportPacket;
+            }
 
-        private void SaveNewMultiSportPacket()
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void deactivateMultiSportPacket()
         {
             try
             {
-                _DbContext.spAddConfigutedMultiSportCard(cardTypeId: MultiSportPacketTypeId,
-                                                                employeeId: _SelectedEmployeeId,
+                // reuse DeactivateBenefit{ View | ViewModel }
+
+                DeactivateBenefitView deactivateView = new DeactivateBenefitView(this);
+                deactivateView.ShowDialog();
+
+                //method raised also when user cancel operation - implement handling for this case
+                RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
+
+
+                //previous code
+                dataContext.spTakeConfiguredMultiSportCard(configuredMultiSportCardId: SelectedMultiSportOwner.ConfiguredBenefitPacketID);
+                RaisePropertyChanged("MultiSportOwnerToEmployee");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        private void employeeSelected(GetEmployeesResult Employee)
+        {
+            selectedEmployee = Employee;
+            RaisePropertyChanged("MultiSportOwnerToEmployee");
+            RaisePropertyChanged("BeneficiariesToEmployee");
+        }
+
+
+        private void RaisePropertyChanged(string PropertyName)
+        {
+            PropertyChangedEventHandler hand = PropertyChanged;
+            if (hand != null) hand(this, new PropertyChangedEventArgs(PropertyName));
+        }
+
+        private ICommand callDeactivateMultiSportPacket;
+
+        private DbContext dataContext = new DbContext();
+        private GetEmployeesResult selectedEmployee;
+
+        private ConfMultisportPackToEmp _NewMultiSportPacket;
+        private fBeneficiariesToEmployeeResult _MultisportOwner;
+        private fGetMultisUsersToEmployeeResult _SelectedMultiSportOwner;
+        private ICommand _CallSaveNewMultiSportPacket;
+        private void saveNewMultiSportPacket()
+        {
+            try
+            {
+                dataContext.spAddConfigutedMultiSportCard(cardTypeId: MultiSportPacketTypeId,
+                                                                employeeId: selectedEmployee.EmpId,
                                                                 beneficiaryId: (MultisportOwner == null) ? (int?)null : MultisportOwner.BeneficiaryID,
                                                                 validFrom: ValidFrom,
                                                                 validTo: ValidTo,
@@ -152,60 +206,6 @@ namespace KeeperRichClient.Modules.Benefits
                 MessageBox.Show(e.Message);
             }
 
-        }
-
-        private ICommand _CallDeactivateMultiSportPacket;
-        public ICommand CallDeactivateMultiSportPacket
-        {
-            get
-            {
-                if (_CallDeactivateMultiSportPacket==null)
-                {
-                    _CallDeactivateMultiSportPacket = new RelayCommand(action => this.DeactivateMultiSportPacket(),predicate => this.IsDeactivateCallable());//
-                }
-                return _CallDeactivateMultiSportPacket;
-            }
-
-        }
-
-        private void DeactivateMultiSportPacket()
-        {
-            try
-            {
-                // reuse DeactivateBenefit{ View | ViewModel }
-
-                DeactivateBenefitView deactivateView = new DeactivateBenefitView(this);
-                deactivateView.ShowDialog();
-
-                //method raised also when user cancel operation - implement handling for this case
-                RaisePropertyChanged("MedicalPacketsLinkedToEmployee");
-
-
-                //previous code
-                _DbContext.spTakeConfiguredMultiSportCard(configuredMultiSportCardId: SelectedMultiSportOwner.ConfiguredBenefitPacketID);
-                RaisePropertyChanged("MultiSportOwnerToEmployee");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
-
-        bool IsDeactivateCallable()
-        {
-            return (SelectedMultiSportOwner != null);
-        }
-
-        void _ClearNewSaveData()
-        {
-            
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void RaisePropertyChanged(string PropertyName)
-        {
-            PropertyChangedEventHandler hand = PropertyChanged;
-            if (hand != null) hand(this, new PropertyChangedEventArgs(PropertyName));
         }
 
 

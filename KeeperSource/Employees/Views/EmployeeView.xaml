@@ -11,27 +11,25 @@
         <services:RowNumberConverter x:Key="rowNumberConverter"/>
     </UserControl.Resources>
     <Grid>
-        <DataGrid
+        <Border CornerRadius="15" BorderThickness="1">
+            <DataGrid
             x:Name="EmployeeDataGrid" 
             LoadingRow="EmployeeDataGrid_LoadingRow"
             HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="397" Width="306" 
             AutoGenerateColumns="False" 
             IsReadOnly="True"
-            ItemsSource="{Binding Path=EmployeeList}"
+            ItemsSource="{Binding Employees}"
             SelectedItem="{Binding SelectedEmployee,Mode=TwoWay}"
             CellStyle="{StaticResource GridCellStyle}"
             BorderThickness="5"
             BorderBrush="{StaticResource NormalBorderBrush}">
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Imię" Binding="{Binding Path=FirstName}" Width="*"/>
-                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Path=LastName}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <!--<Button Content="Refresh" HorizontalAlignment="Left" Margin="295,119,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click"/>-->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}"/></DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Imię" Binding="{Binding Path=EmpFName}" Width="*"/>
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding Path=EmpLName}" Width="*"/></DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
+
 </UserControl>

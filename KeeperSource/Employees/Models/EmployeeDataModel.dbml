@@ -2,11 +2,11 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=WAR-SQL100;Initial Catalog=MCM_Keeper;Integrated Security=True" SettingsObjectName="KeeperRichClient.Modules.Employees.Properties.Settings" SettingsPropertyName="MCM_KeeperConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="Interface.GetEmployees" Method="GetEmployees">
     <ElementType Name="GetEmployeesResult">
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="LevelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpFName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpLName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="EmpLvlId" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
