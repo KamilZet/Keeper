@@ -3925,114 +3925,150 @@ namespace KeeperRichClient.Modules.Benefits.Models
 	public partial class spCalcHealthcareCostResult
 	{
 		
-		private string _EmpFullName;
+		private string _NazwiskoImię;
 		
-		private System.Nullable<decimal> _LimitValue;
+		private System.Nullable<decimal> _CałkowityKosztPakietu;
 		
-		private System.Nullable<decimal> _PackTotalCost;
+		private System.Nullable<decimal> _KosztMedycynyPracy;
 		
-		private System.Nullable<decimal> _OccupMedTotalCost;
+		private System.Nullable<decimal> _KosztPakietuPomniejszonyOMedycynęPracy;
 		
-		private System.Nullable<decimal> _PackTotalCostNet;
+		private System.Nullable<decimal> _LimitDoWykorzystania;
 		
-		private System.Nullable<decimal> _EmpSurcharge;
+		private decimal _DopłataPracownika;
+		
+		private decimal _DoZusIOpodatkowania;
+		
+		private decimal _PotrącenieRodzina;
 		
 		public spCalcHealthcareCostResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpFullName", DbType="NVarChar(201)")]
-		public string EmpFullName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NazwiskoImię", DbType="NVarChar(100)")]
+		public string NazwiskoImię
 		{
 			get
 			{
-				return this._EmpFullName;
+				return this._NazwiskoImię;
 			}
 			set
 			{
-				if ((this._EmpFullName != value))
+				if ((this._NazwiskoImię != value))
 				{
-					this._EmpFullName = value;
+					this._NazwiskoImię = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LimitValue", DbType="Decimal(6,2)")]
-		public System.Nullable<decimal> LimitValue
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CałkowityKosztPakietu", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> CałkowityKosztPakietu
 		{
 			get
 			{
-				return this._LimitValue;
+				return this._CałkowityKosztPakietu;
 			}
 			set
 			{
-				if ((this._LimitValue != value))
+				if ((this._CałkowityKosztPakietu != value))
 				{
-					this._LimitValue = value;
+					this._CałkowityKosztPakietu = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackTotalCost", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> PackTotalCost
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KosztMedycynyPracy", DbType="Decimal(38,12)")]
+		public System.Nullable<decimal> KosztMedycynyPracy
 		{
 			get
 			{
-				return this._PackTotalCost;
+				return this._KosztMedycynyPracy;
 			}
 			set
 			{
-				if ((this._PackTotalCost != value))
+				if ((this._KosztMedycynyPracy != value))
 				{
-					this._PackTotalCost = value;
+					this._KosztMedycynyPracy = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OccupMedTotalCost", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> OccupMedTotalCost
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KosztPakietuPomniejszonyOMedycynęPracy", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> KosztPakietuPomniejszonyOMedycynęPracy
 		{
 			get
 			{
-				return this._OccupMedTotalCost;
+				return this._KosztPakietuPomniejszonyOMedycynęPracy;
 			}
 			set
 			{
-				if ((this._OccupMedTotalCost != value))
+				if ((this._KosztPakietuPomniejszonyOMedycynęPracy != value))
 				{
-					this._OccupMedTotalCost = value;
+					this._KosztPakietuPomniejszonyOMedycynęPracy = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackTotalCostNet", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> PackTotalCostNet
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LimitDoWykorzystania", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> LimitDoWykorzystania
 		{
 			get
 			{
-				return this._PackTotalCostNet;
+				return this._LimitDoWykorzystania;
 			}
 			set
 			{
-				if ((this._PackTotalCostNet != value))
+				if ((this._LimitDoWykorzystania != value))
 				{
-					this._PackTotalCostNet = value;
+					this._LimitDoWykorzystania = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpSurcharge", DbType="Decimal(38,2)")]
-		public System.Nullable<decimal> EmpSurcharge
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DopłataPracownika", DbType="Decimal(38,2) NOT NULL")]
+		public decimal DopłataPracownika
 		{
 			get
 			{
-				return this._EmpSurcharge;
+				return this._DopłataPracownika;
 			}
 			set
 			{
-				if ((this._EmpSurcharge != value))
+				if ((this._DopłataPracownika != value))
 				{
-					this._EmpSurcharge = value;
+					this._DopłataPracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoZusIOpodatkowania", DbType="Decimal(38,2) NOT NULL")]
+		public decimal DoZusIOpodatkowania
+		{
+			get
+			{
+				return this._DoZusIOpodatkowania;
+			}
+			set
+			{
+				if ((this._DoZusIOpodatkowania != value))
+				{
+					this._DoZusIOpodatkowania = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PotrącenieRodzina", DbType="Decimal(38,2) NOT NULL")]
+		public decimal PotrącenieRodzina
+		{
+			get
+			{
+				return this._PotrącenieRodzina;
+			}
+			set
+			{
+				if ((this._PotrącenieRodzina != value))
+				{
+					this._PotrącenieRodzina = value;
 				}
 			}
 		}

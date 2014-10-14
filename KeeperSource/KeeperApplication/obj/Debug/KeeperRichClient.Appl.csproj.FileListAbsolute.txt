@@ -131,6 +131,7 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\System.Windows.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\CustomControlsLib.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Benefits.pdb

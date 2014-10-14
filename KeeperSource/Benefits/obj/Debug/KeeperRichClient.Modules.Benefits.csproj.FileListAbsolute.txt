@@ -72,6 +72,7 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\CustomControlsLib.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Infrastructure.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Expression.Interactions.dll
@@ -115,12 +116,14 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\ru\System.Windows.Interactivi
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Reporting\HealthcareReporsView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageInstructorSelectView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Properties\Styles.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Reporting\HealthcareReporsView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\AddNewBeneficiaryView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\DeactivateBenefitView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\EmployeeBannerView.g.cs
@@ -131,6 +134,7 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NavigationPanelView.g.c
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ParkingView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsMainView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LoadReportingView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\SelectBeneficiaryView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageCourseView.g.cs
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -142,12 +146,10 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\MultiSportView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ParkingView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsMainView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\NewBeneficiaryDetailsView.baml
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LoadReportingView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\LanguageCourseView.baml
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.g.resources
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.Properties.Resources.resources
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\EPPlus.dll
-C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ReportingControlView.baml
-C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\Views\ReportingControlView.g.cs

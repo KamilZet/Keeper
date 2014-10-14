@@ -40,6 +40,7 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Infrastructure.
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\KeeperRichClient.Modules.Employees.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Debug\System.Windows.Interactivity.dll

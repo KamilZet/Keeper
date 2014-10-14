@@ -349,12 +349,14 @@
     <Parameter Name="ReportStartDate" Parameter="reportStartDate" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="ReportStopDate" Parameter="reportStopDate" Type="System.DateTime" DbType="DateTime" />
     <ElementType Name="spCalcHealthcareCostResult">
-      <Column Name="EmpFullName" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
-      <Column Name="LimitValue" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
-      <Column Name="PackTotalCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
-      <Column Name="OccupMedTotalCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
-      <Column Name="PackTotalCostNet" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
-      <Column Name="EmpSurcharge" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="NazwiskoImię" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CałkowityKosztPakietu" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="KosztMedycynyPracy" Type="System.Decimal" DbType="Decimal(38,12)" CanBeNull="true" />
+      <Column Name="KosztPakietuPomniejszonyOMedycynęPracy" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="LimitDoWykorzystania" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="DopłataPracownika" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DoZusIOpodatkowania" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PotrącenieRodzina" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

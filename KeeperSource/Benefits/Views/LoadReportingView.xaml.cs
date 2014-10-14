@@ -6,12 +6,11 @@ namespace KeeperRichClient.Modules.Benefits.Views
     /// <summary>
     /// Interaction logic for ReportingControl.xaml
     /// </summary>
-    public partial class ReportingControlView : UserControl
+    public partial class LoadReportingView : UserControl
     {
-        public ReportingControlView()
+        public LoadReportingView()
         {
             InitializeComponent();
-            this.DataContext = new ReportingViewModel();
         }
     }
 }

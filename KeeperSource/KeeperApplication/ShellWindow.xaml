@@ -2,10 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/prism"
-        xmlns:view="clr-namespace:KeeperRichClient.Modules.Benefits.Views;assembly=KeeperRichClient.Modules.Benefits"
+        xmlns:view="clr-namespace:KeeperRichClient.Modules.Benefits.Views;assembly=KeeperRichClient.Modules.Benefits"      
         Title="MainWindow" Height="804.24" Width="1385.484"
         Background="{DynamicResource WindowBrush}"
-        >
+        x:Name="_ShellWindow">
     <!--ERROR xmlns:infrastructure="clr-namespace:KeeperRichClient.Infrastructure"-->
     <!--<Window.Background>
         
@@ -33,14 +33,11 @@
             <ColumnDefinition Width="995*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" CornerRadius="4,4,4,4" BorderBrush="#193441" Background="#DDDCC5" BorderThickness="2,2,2,2">
-            
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" CornerRadius="4,4,4,4" BorderBrush="#193441" Background="#DDDCC5" BorderThickness="2,2,2,2"> 
             <DockPanel Grid.Row="0" Grid.Column="0">
                 <Border Grid.Column="0" CornerRadius="4,4,4,4" BorderBrush="#193441" Background="#FCFFF5" BorderThickness="2,2,2,2" Margin="5" Padding="5" Width="348">
-                    <view:ReportingControlView x:Name="TasksRegion"/>
-                    <!--<ContentControl Margin="5" 
-                                    prism:RegionManager.RegionName="TasksRegion"
-                                    />--> 
+                    <view:LoadReportingView x:Name="TasksRegion"/>
+                    <!--<ContentControl Margin="5" prism:RegionManager.RegionName="TasksRegion"/>--> 
                 </Border>
             </DockPanel>
         </Border>
@@ -56,7 +53,7 @@
                     <ContentControl Margin="5,7,-7,3" DockPanel.Dock="Left" prism:RegionManager.RegionName="ListerRegion"/>
                 </Border>
                 <Border Grid.Column="2" CornerRadius="4,4,4,4" BorderBrush="#193441" Background="#FCFFF5" BorderThickness="2,2,2,2" Margin="5" Padding="5" Width="958">
-                    <ContentControl Margin="3,5,5,5" DockPanel.Dock="Top"  prism:RegionManager.RegionName="MainContentRegion"/>
+                    <ContentControl x:Name="MainContentRegion" Margin="3,5,5,5" DockPanel.Dock="Top"  prism:RegionManager.RegionName="MainContentRegion"/>
                 </Border>
             </DockPanel>
         </Border>

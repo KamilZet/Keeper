@@ -80,17 +80,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reporting\IHealthcareReportsViewModel.cs" />
     <Compile Include="Interfaces\ILanguageCourseViewModel.cs" />
     <Compile Include="Models\DataModelExt.cs" />
+    <Compile Include="Reporting\HealthcareReportsModule.cs" />
     <Compile Include="Modules\LanguageCourseModule.cs" />
     <Compile Include="Notifications\LanguageCourseInstructorSelect.cs" />
-    <Compile Include="Reporting\Healthcare.cs" />
+    <Compile Include="Reporting\HealthcareReporsView.xaml.cs">
+      <DependentUpon>HealthcareReporsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\BoolToVisibleConv.cs" />
     <Compile Include="Services\DataContractSerializer.cs" />
+    <Compile Include="Services\DataSetLinqOperators.cs" />
     <Compile Include="Services\NullToVisibleConv.cs" />
+    <Compile Include="Reporting\HealthcareReportsViewModel.cs" />
     <Compile Include="ViewModels\LanguageCourseInstructorSelectViewModel.cs" />
     <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
-    <Compile Include="ViewModels\ReportingViewModel.cs" />
+    <Compile Include="ViewModels\LoadReportingViewModel.cs" />
     <Compile Include="Views\AddNewBeneficiaryView.xaml.cs">
       <DependentUpon>AddNewBeneficiaryView.xaml</DependentUpon>
     </Compile>
@@ -166,8 +172,8 @@
     <Compile Include="Views\NewBeneficiaryDetailsView.xaml.cs">
       <DependentUpon>NewBeneficiaryDetailsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReportingControlView.xaml.cs">
-      <DependentUpon>ReportingControlView.xaml</DependentUpon>
+    <Compile Include="Views\LoadReportingView.xaml.cs">
+      <DependentUpon>LoadReportingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SelectBeneficiaryView.xaml.cs">
       <DependentUpon>SelectBeneficiaryView.xaml</DependentUpon>
@@ -178,6 +184,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Reporting\HealthcareReporsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewBeneficiaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,7 +232,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ReportingControlView.xaml">
+    <Page Include="Views\LoadReportingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

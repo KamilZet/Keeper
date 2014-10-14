@@ -8,12 +8,14 @@ using System.Windows;
 using KeeperRichClient.Modules.Benefits;
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Employees;
+using KeeperRichClient.Modules.Benefits.Reporting;
 
 using Ninject;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.PubSubEvents;
+
 
 
 namespace KeeperRichClient.Appl
@@ -34,22 +36,16 @@ namespace KeeperRichClient.Appl
             Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.Show();
         
-
             IRegionManager irm = ServiceLocator.Current.GetInstance<IRegionManager>();
-            //irm.RegisterViewWithRegion("MainContentRegion",typeof(HealthcareView));
-            //irm.RegisterViewWithRegion("ListerRegion", typeof(HealthcareView));
-            //irm.RegisterViewWithRegion("CommandsRegion", typeof(HealthcareView));
-            //irm.RegisterViewWithRegion("TitleRegion", typeof(HealthcareView));
-            //irm.RegisterViewWithRegion("NavigationRegion", typeof(HealthcareView));
 
         }
         protected override void ConfigureModuleCatalog()
         {
-            Type EmployeeViewModel = typeof(EmployeeModule);
+            Type EmployeeModule = typeof(EmployeeModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = EmployeeViewModel.Name,
-                ModuleType = EmployeeViewModel.AssemblyQualifiedName
+                ModuleName = EmployeeModule.Name,
+                ModuleType = EmployeeModule.AssemblyQualifiedName
             });
 
             
@@ -61,45 +57,46 @@ namespace KeeperRichClient.Appl
                 });
 
 
-            Type MultisportViewModel = typeof(MultiSportModule);
+            Type MultisportModule = typeof(MultiSportModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = MultisportViewModel.Name,
-                ModuleType = MultisportViewModel.AssemblyQualifiedName
+                ModuleName = MultisportModule.Name,
+                ModuleType = MultisportModule.AssemblyQualifiedName
             });
 
 
-            Type ParkingViewModel = typeof(ParkingModule);
+            Type ParkingModule = typeof(ParkingModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = ParkingViewModel.Name,
-                ModuleType = ParkingViewModel.AssemblyQualifiedName
+                ModuleName = ParkingModule.Name,
+                ModuleType = ParkingModule.AssemblyQualifiedName
             });
 
 
-            Type NavigationPanelViewModel = typeof(NavigationPanelModule);
+            Type NavigationPanelModule = typeof(NavigationPanelModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = NavigationPanelViewModel.Name,
-                ModuleType = NavigationPanelViewModel.AssemblyQualifiedName
+                ModuleName = NavigationPanelModule.Name,
+                ModuleType = NavigationPanelModule.AssemblyQualifiedName
             });
 
 
-            Type EmployeeBannerViewModel = typeof(EmployeeBannerModule);
+            Type EmployeeBannerModule = typeof(EmployeeBannerModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = EmployeeBannerViewModel.Name,
-                ModuleType = EmployeeBannerViewModel.AssemblyQualifiedName
+                ModuleName = EmployeeBannerModule.Name,
+                ModuleType = EmployeeBannerModule.AssemblyQualifiedName
             });
 
-            Type LanguageCourseViewModel = typeof(LanguageCourseModule);
+            Type LanguageCourseModule = typeof(LanguageCourseModule);
             this.ModuleCatalog.AddModule(new ModuleInfo()
             {
-                ModuleName = LanguageCourseViewModel.Name,
-                ModuleType = LanguageCourseViewModel.AssemblyQualifiedName
+                ModuleName = LanguageCourseModule.Name,
+                ModuleType = LanguageCourseModule.AssemblyQualifiedName
             });
-            
-             
+
+            Type HealthcareReportsModule = typeof(HealthcareReportsModule);
+            this.ModuleCatalog.AddModule(new ModuleInfo(){ModuleName = HealthcareReportsModule.Name,ModuleType = HealthcareReportsModule.AssemblyQualifiedName});
         }
     }
 }

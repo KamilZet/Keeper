@@ -11,6 +11,7 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Se
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Infrastructure.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modules.Employees.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\System.Windows.Interactivity.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Debug\Microsoft.Practices.Prism.Composition.xml

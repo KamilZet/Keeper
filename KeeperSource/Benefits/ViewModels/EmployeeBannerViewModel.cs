@@ -66,7 +66,7 @@ namespace KeeperRichClient.Modules.Benefits
         {
 
             EmpFirstName = Employee.EmpFName;
-            EmpLastName = Employee.EmpFName;
+            EmpLastName = Employee.EmpLName;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
