@@ -4,3 +4,9 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\LinqK
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\LinqKeeper\obj\Release\LinqKeeper.csprojResolveAssemblyReference.cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\LinqKeeper\obj\Release\LinqKeeper.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\LinqKeeper\obj\Release\LinqKeeper.pdb
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Release\LinqKeeper.exe.config
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Release\LinqKeeper.exe
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Release\LinqKeeper.pdb
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.exe
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.pdb
+C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.csprojResolveAssemblyReference.cache

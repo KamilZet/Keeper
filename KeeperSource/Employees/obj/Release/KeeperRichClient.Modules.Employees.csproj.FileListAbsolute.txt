@@ -38,3 +38,43 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Emplo
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Employees\obj\Release\KeeperRichClient.Modules.Employees.g.resources
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Employees\obj\Release\KeeperRichClient.Modules.Employees.dll
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Employees\obj\Release\KeeperRichClient.Modules.Employees.pdb
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\KeeperRichClient.Modules.Employees.dll.config
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\KeeperRichClient.Modules.Employees.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\KeeperRichClient.Modules.Employees.pdb
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\KeeperRichClient.Infrastructure.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Composition.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Mvvm.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.PubSubEvents.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\KeeperRichClient.Infrastructure.pdb
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Composition.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Interactivity.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.Mvvm.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Microsoft.Practices.ServiceLocation.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\de\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\en\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\es\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\fr\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\it\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\ja\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\ko\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\ru\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees.csprojResolveAssemblyReference.cache
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\Views\EmployeeView.g.cs
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees_MarkupCompile.cache
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees_MarkupCompile.lref
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\Views\EmployeeView.baml
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees.g.resources
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees.dll
+C:\Mediacom\Keeper\KeeperSource\Employees\obj\Release\KeeperRichClient.Modules.Employees.pdb

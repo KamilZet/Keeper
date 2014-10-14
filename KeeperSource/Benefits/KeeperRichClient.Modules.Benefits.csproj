@@ -94,6 +94,7 @@
     <Compile Include="Services\DataSetLinqOperators.cs" />
     <Compile Include="Services\NullToVisibleConv.cs" />
     <Compile Include="Reporting\HealthcareReportsViewModel.cs" />
+    <Compile Include="Services\ServerChanger.cs" />
     <Compile Include="ViewModels\LanguageCourseInstructorSelectViewModel.cs" />
     <Compile Include="ViewModels\LanguageCourseViewModel.cs" />
     <Compile Include="ViewModels\LoadReportingViewModel.cs" />

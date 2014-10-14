@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="KeeperApplication.exe.manifest" size="22217">
+    <dependentAssembly dependencyType="install" codebase="KeeperApplication.exe.manifest" size="24896">
       <assemblyIdentity name="KeeperApplication.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>njhpQz27/ojEc76GZmpR8MKKg/1KOytszgq120iiuNQ=</dsig:DigestValue>
+        <dsig:DigestValue>igFgfMTWjSc3H8Jx/gmp1aWuyKNYdWXeJiAgNYUsyTs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

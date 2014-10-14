@@ -64,8 +64,13 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
                 dt.Rows.Add(dr);
             }
 
-            using (ExcelPackage xlPack = new ExcelPackage(new System.IO.FileInfo("C:\\Export.xlsx")))
+
+
+            using (ExcelPackage xlPack = new ExcelPackage())
             {
+                System.IO.FileInfo newXlFile =  new System.IO.FileInfo("C:\\Export.xlsx");
+                if (newXlFile.Exists) newXlFile.Delete();
+
                 ExcelWorksheet ws = xlPack.Workbook.Worksheets.Add("Export");
                 
                 ws.Cells[2,1].LoadFromDataTable(dt, true);

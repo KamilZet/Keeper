@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Benefits\obj\Release\
+C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Release\
 KeeperRichClient.Modules.Benefits
 none
 false
 TRACE
 
-11-1370847948
+15100960967
 
-40-1327490006
-761838567760
-AddNewBeneficiaryView.xaml;DeactivateBenefitView.xaml;EmployeeBannerView.xaml;HealthcareView.xaml;MultiSportView.xaml;NavigationPanelView.xaml;ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\SelectBeneficiaryView.xaml;
+62-593111632
+81422338189
+Reporting\HealthcareReporsView.xaml;Views\AddNewBeneficiaryView.xaml;Views\DeactivateBenefitView.xaml;Views\EmployeeBannerView.xaml;Views\HealthcareView.xaml;Views\LanguageInstructorSelectView.xaml;Views\MultiSportView.xaml;Views\NavigationPanelView.xaml;Views\ParkingView.xaml;Properties\Styles.xaml;Views\NewBeneficiaryDetailsMainView.xaml;Views\NewBeneficiaryDetailsView.xaml;Views\LoadReportingView.xaml;Views\SelectBeneficiaryView.xaml;Views\LanguageCourseView.xaml;
 
 False
 

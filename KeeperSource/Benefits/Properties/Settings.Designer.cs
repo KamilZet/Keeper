@@ -32,5 +32,15 @@ namespace KeeperRichClient.Modules.Benefits.Properties {
                 return ((string)(this["MCM_KeeperConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WAR-SQL100;Initial Catalog=MCM_Keeper_DEV;Integrated Security=True")]
+        public string MCM_Keeper_Dev_ConnString {
+            get {
+                return ((string)(this["MCM_Keeper_Dev_ConnString"]));
+            }
+        }
     }
 }

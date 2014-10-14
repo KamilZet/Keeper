@@ -225,7 +225,7 @@
                     <!-- We use Grid as a root because it is easy to add more elements to customize the button -->
                     <Grid x:Name="Grid">
                         <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"
-                                CornerRadius="10"/>
+                                CornerRadius="2"/>
 
                         <!-- Content Presenter is where the text content etc is placed by the control -->
                         <!-- The bindings are useful so that the control can be parameterized without editing the template -->

@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:infra="clr-namespace:KeeperRichClient.Infrastructure;assembly=KeeperRichClient.Infrastructure">
+             xmlns:infra="clr-namespace:KeeperRichClient.Infrastructure;assembly=KeeperRichClient.Infrastructure"
+             xmlns:custCtrl="clr-namespace:CustomControlsLib;assembly=CustomControlsLib">
     <DockPanel>
         <Grid>
         <Grid.ColumnDefinitions>
@@ -16,12 +17,12 @@
                     <TextBlock Text="Report Start Date:" FontSize="15"/>
                     <DatePicker Style="{StaticResource MyDatePicker}"
                                 SelectedDate="{Binding ReportStart, Mode=TwoWay}"></DatePicker>
-                    
                     <TextBlock Text="Report End Date:" FontSize="15"/>
                     <DatePicker Style="{StaticResource MyDatePicker}"
                                 SelectedDate="{Binding ReportEnd, Mode=TwoWay}"></DatePicker>
                     <TextBlock Text="Output path:" FontSize="15"/>
-                    <TextBox Height="25"></TextBox>
+                    <custCtrl:FolderDialog />
+                    
                     <Button Content="Generate"
                             Style="{StaticResource SimpleButton}"
                             Height="50"
