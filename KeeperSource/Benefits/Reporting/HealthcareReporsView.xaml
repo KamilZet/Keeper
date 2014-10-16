@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:infra="clr-namespace:KeeperRichClient.Infrastructure;assembly=KeeperRichClient.Infrastructure"
-             xmlns:custCtrl="clr-namespace:CustomControlsLib;assembly=CustomControlsLib">
+             xmlns:CustCtrl="clr-namespace:CustomControlsLib;assembly=CustomControlsLib">
     <DockPanel>
         <Grid>
         <Grid.ColumnDefinitions>
@@ -21,8 +21,8 @@
                     <DatePicker Style="{StaticResource MyDatePicker}"
                                 SelectedDate="{Binding ReportEnd, Mode=TwoWay}"></DatePicker>
                     <TextBlock Text="Output path:" FontSize="15"/>
-                    <custCtrl:FolderDialog />
-                    
+                    <CustCtrl:FolderDialog 
+                        MyFilepathProperty ="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=ReportPath, Mode=OneWayToSource}"/>
                     <Button Content="Generate"
                             Style="{StaticResource SimpleButton}"
                             Height="50"

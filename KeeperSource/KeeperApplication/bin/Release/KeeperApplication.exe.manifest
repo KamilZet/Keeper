@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="KeeperApplication.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="KeeperApplication.exe" version="1.1.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="KeeperApplication" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustomControlsLib.dll" size="13824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CustomControlsLib.dll" size="14848">
       <assemblyIdentity name="CustomControlsLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sg0mKXW/PQ7UyGXYetkKfiNPYodP/cgkH2u6p1QxBGs=</dsig:DigestValue>
+        <dsig:DigestValue>1tE23Di5jVtRy/IiNwqvyC2Oi7JfrqBowPlGYAaPxvc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ab6Dyj336AVOJUInxcLoz+BfMrJ69jpdiix+6ooilzI=</dsig:DigestValue>
+        <dsig:DigestValue>dc+fGgXJdBzQX/IwdtNZcPVY1wL5b1rYGL0BzPeq+iE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VGApJu6BZoXYdakjXncrO4SNlqzgP5Knp3MmMO25HxE=</dsig:DigestValue>
+        <dsig:DigestValue>0Yk++ym2rpWCSZC7psF96TcLjjfVMNlAnhsdiN+duqc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KA+hghKRpzUhJ1em/iJZO1mwfYKcJWXx4krlKVtibPU=</dsig:DigestValue>
+        <dsig:DigestValue>YIl7PCMqsX3+lsy4aZJQbIWu5mJaJLWZUCO2nhbygR8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VPhDAA2LwVKYcRqi7b2GSq+mU5C11Gb+t1baBkr0p2E=</dsig:DigestValue>
+        <dsig:DigestValue>7OBum+eMuVZl2uOq4fqjzKN4JtwQNbUtwm9IfLraqu4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

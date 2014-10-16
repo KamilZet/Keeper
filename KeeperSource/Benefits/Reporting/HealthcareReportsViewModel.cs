@@ -8,15 +8,19 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Input;
 //using System.Data;
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits.Reporting
 {
     public class HealthcareReportsViewModel : IHealthcareReportsViewModel
     {
+
+        public string ReportPath { get; set; }
+
         public HealthcareReportsViewModel()
         {
             dataContext = new DbContext();
-            CreElasReportCommand = new RelayCommand(action => this.creElasReportCommand());
+            CreElasReportCommand = new RelayCommand(action => this.creElasReportCommand(ReportPath));
             ReportStart = new DateTime(2014,1,1);
             ReportEnd = new DateTime(2014, 1, 31);
 
@@ -33,13 +37,15 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
 
 
         private DbContext dataContext;
-        private void creElasReportCommand()
+        private void creElasReportCommand(string fileName)
         {
             var queryResult = dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd).OrderBy(x => x.NazwiskoImię);
 
-            //System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd)).CopyToDataTable();
+            System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd)).ToDataTable3();
 
-            System.Data.DataTable dt = new System.Data.DataTable();
+            #region Explicit workbook preparation
+            //System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd)).ToDataTable();
+            //System.Data.DataTable dt = new System.Data.DataTable();
             dt.Columns.Add("NazwiskoImię",typeof(string));
             dt.Columns.Add("LimitDoWykorzystania", typeof(string));
             dt.Columns.Add("CałkowityKosztPakietu", typeof(decimal));
@@ -48,7 +54,6 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
             dt.Columns.Add("DopłataPracownika", typeof(decimal));
             dt.Columns.Add("DoZusIOpodatkowania", typeof(decimal));
             dt.Columns.Add("PotrącenieRodzina", typeof(decimal));
-
 
             foreach (spCalcHealthcareCostResult iter in queryResult)
             {
@@ -63,17 +68,20 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
                 dr["PotrącenieRodzina"] = iter.PotrącenieRodzina;
                 dt.Rows.Add(dr);
             }
+            #endregion
 
 
+            System.IO.FileInfo newXlFile = new System.IO.FileInfo(fileName);
+            //if (newXlFile.Exists) newXlFile.Delete();
 
-            using (ExcelPackage xlPack = new ExcelPackage())
+            using (ExcelPackage xlPack = new ExcelPackage(newXlFile))
             {
-                System.IO.FileInfo newXlFile =  new System.IO.FileInfo("C:\\Export.xlsx");
-                if (newXlFile.Exists) newXlFile.Delete();
 
                 ExcelWorksheet ws = xlPack.Workbook.Worksheets.Add("Export");
-                
-                ws.Cells[2,1].LoadFromDataTable(dt, true);
+                ws.Cells["A2"].LoadFromDataTable(dt, true);
+
+
+                //ws.Cells[2,1].LoadFromDataTable(dt, true);
                 
                 //header row
                 var headCell = ws.Cells[1, 1];
@@ -90,7 +98,7 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
             }
 
             MessageBox.Show("Done.");
-            System.Diagnostics.Process.Start("C:\\Export.xlsx");
+            System.Diagnostics.Process.Start(newXlFile.FullName);
             
             
         }

@@ -66,8 +66,7 @@ namespace KeeperRichClient.Modules.Benefits.Models
     #endregion
 		
 		public DbContext() : 
-				//base(global::KeeperRichClient.Modules.Benefits.Properties.Settings.Default.MCM_KeeperConnectionString, mappingSource)
-                base(global::KeeperRichClient.Modules.Benefits.Services.ServerChanger.ConnStr,mappingSource)
+				base(global::KeeperRichClient.Modules.Benefits.Properties.Settings.Default.MCM_KeeperConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

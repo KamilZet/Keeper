@@ -9,6 +9,39 @@ namespace KeeperRichClient.Modules.Benefits.Services
 {
     public static class DataSetLinqOperators
     {
+
+        public static DataTable ToDataTable3<T>(this IEnumerable<T> items)
+        {
+            var tb = new DataTable(typeof(T).Name);
+
+            PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (var prop in props)
+            {
+
+                Type pt = prop.PropertyType;
+
+                if (pt.IsGenericType && Nullable.GetUnderlyingType(pt) != null)
+                    pt = Nullable.GetUnderlyingType(prop.PropertyType);
+
+
+                tb.Columns.Add(prop.Name, pt);
+            }
+
+            foreach (var item in items)
+            {
+                var values = new object[props.Length];
+                for (var i = 0; i < props.Length; i++)
+                {
+                    values[i] = props[i].GetValue(item, null);
+                }
+
+                tb.Rows.Add(values);
+            }
+
+            return tb;
+        }
+
         public static DataTable CopyToDataTable<T>(this IEnumerable<T> source)
         {
             //you find the ObjectShredder implementation on the blog wich was linked.
@@ -199,9 +232,28 @@ namespace KeeperRichClient.Modules.Benefits.Services
 
                     //Debug.Assert(p.PropertyType.GetGenericTypeDefinition() == typeof(Nullable));
 
+                    DataColumn dc = new DataColumn();
 
-                    DataColumn dc = table.Columns.Contains(p.Name) ? table.Columns[p.Name]
-                        : table.Columns.Add(p.Name, p.PropertyType);
+                    if (table.Columns.Contains(p.Name))
+                        dc = table.Columns[p.Name];
+                    else
+                    {
+                        Type pt = p.PropertyType;
+
+                        if (pt.IsGenericType && Nullable.GetUnderlyingType(pt) != null)
+                            pt = Nullable.GetUnderlyingType(p.PropertyType);
+
+
+
+                        dc.ColumnName = p.Name;
+                        dc.DataType = pt;
+                        table.Columns.Add(p.Name, pt);
+                    }
+
+                        
+                    //DataColumn dc = table.Columns.Contains(p.Name) 
+                    //    ? table.Columns[p.Name]
+                    //    : table.Columns.Add(p.Name, p.PropertyType);
 
 
                     // Add the property to the ordinal map.

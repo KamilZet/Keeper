@@ -57,12 +57,6 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Keepe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\KeeperApplication\obj\Release\KeeperApplication.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\KeeperApplication\obj\Release\KeeperApplication.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperApplication.exe.config
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.exe
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperRichClient.Appl.csprojResolveAssemblyReference.cache
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\App.baml
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\App.g.cs
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication_MarkupCompile.cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperApplication.exe.manifest
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperApplication.application
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperApplication.exe
@@ -83,8 +77,10 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practice
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practices.Unity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\CustomControlsLib.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\KeeperRichClient.Modules.Employees.pdb
@@ -100,6 +96,10 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practice
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practices.Unity.Configuration.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\de\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\en\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\es\System.Windows.Interactivity.resources.dll
@@ -110,16 +110,16 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\ko\System.Windows.
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperRichClient.Appl.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\ShellWindow.baml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\App.baml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\ShellWindow.g.cs
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\App.g.cs
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication_MarkupCompile.cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.g.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.Properties.Resources.resources
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperRichClient.Appl.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.exe.manifest
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.application
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Release\Microsoft.WindowsAPICodePack.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.exe
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Release\KeeperApplication.pdb
