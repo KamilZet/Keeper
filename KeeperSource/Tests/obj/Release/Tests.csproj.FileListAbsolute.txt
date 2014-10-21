@@ -28,6 +28,7 @@ C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Tests
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Tests\obj\Release\Tests.csprojResolveAssemblyReference.cache
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Tests\obj\Release\Tests.exe
 C:\Users\Kamil.Zien\Documents\Visual Studio 2013\Projects\KeeperRichClient\Tests\obj\Release\Tests.pdb
+C:\Mediacom\Keeper\KeeperSource\Tests\obj\Release\Tests.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\Tests.exe.config
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\Tests.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\Tests.pdb
@@ -69,6 +70,5 @@ C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\ko\System.Windows.Interactivit
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Tests\bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Mediacom\Keeper\KeeperSource\Tests\obj\Release\Tests.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Release\Tests.exe
 C:\Mediacom\Keeper\KeeperSource\Tests\obj\Release\Tests.pdb

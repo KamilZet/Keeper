@@ -1,21 +1,18 @@
 ﻿
 using KeeperRichClient.Modules.Benefits.Models;
+//using System.Data;
+using KeeperRichClient.Modules.Benefits.Services;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using System.Windows.Input;
-//using System.Data;
-using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits.Reporting
 {
     public class HealthcareReportsViewModel : IHealthcareReportsViewModel
     {
-
-        public string ReportPath { get; set; }
 
         public HealthcareReportsViewModel()
         {
@@ -23,7 +20,6 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
             CreElasReportCommand = new RelayCommand(action => this.creElasReportCommand(ReportPath));
             ReportStart = new DateTime(2014,1,1);
             ReportEnd = new DateTime(2014, 1, 31);
-
         }
 
         public ICommand CreElasReportCommand
@@ -32,56 +28,44 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
             private set;
         }
 
-        public DateTime ReportStart { get; set; }
-        public DateTime? ReportEnd { get; set; }
-
+        public DateTime     ReportStart { get; set; }
+        public DateTime?    ReportEnd { get; set; }
+        public String       ReportPath { get; set; }
 
         private DbContext dataContext;
         private void creElasReportCommand(string fileName)
         {
-            var queryResult = dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd).OrderBy(x => x.NazwiskoImię);
+            
+            System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd).OrderBy(x=>x.NazwiskoImię)).ToDataTable();
 
-            System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd)).ToDataTable3();
 
-            #region Explicit workbook preparation
-            //System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd)).ToDataTable();
-            //System.Data.DataTable dt = new System.Data.DataTable();
-            dt.Columns.Add("NazwiskoImię",typeof(string));
-            dt.Columns.Add("LimitDoWykorzystania", typeof(string));
-            dt.Columns.Add("CałkowityKosztPakietu", typeof(decimal));
-            dt.Columns.Add("KosztMedycynyPracy", typeof(decimal));
-            dt.Columns.Add("KosztPakietuPomniejszonyOMedycynęPracy", typeof(decimal));
-            dt.Columns.Add("DopłataPracownika", typeof(decimal));
-            dt.Columns.Add("DoZusIOpodatkowania", typeof(decimal));
-            dt.Columns.Add("PotrącenieRodzina", typeof(decimal));
-
-            foreach (spCalcHealthcareCostResult iter in queryResult)
+            System.IO.FileInfo newXlFile = new System.IO.FileInfo(ReportPath);
+            if (newXlFile.Exists)
             {
-                System.Data.DataRow dr = dt.NewRow();
-                dr["NazwiskoImię"] = iter.NazwiskoImię;
-                dr["LimitDoWykorzystania"] = iter.LimitDoWykorzystania;
-                dr["CałkowityKosztPakietu"] = iter.CałkowityKosztPakietu;
-                dr["KosztMedycynyPracy"] = iter.KosztMedycynyPracy;
-                dr["KosztPakietuPomniejszonyOMedycynęPracy"] = iter.KosztPakietuPomniejszonyOMedycynęPracy;
-                dr["DopłataPracownika"] = iter.DopłataPracownika;
-                dr["DoZusIOpodatkowania"] = iter.DoZusIOpodatkowania;
-                dr["PotrącenieRodzina"] = iter.PotrącenieRodzina;
-                dt.Rows.Add(dr);
+                if (newXlFile.IsFileLocked())
+                {
+                    System.Windows.MessageBox.Show(string.Format("File {0} is opened! \n\n Please close it and regenerate givent report.\n\n Thank you!",ReportPath),
+                                                    msgCaption,
+                                                    System.Windows.MessageBoxButton.OK);
+                }
+
+                var decision = System.Windows.MessageBox.Show(string.Format("File {0} already exists! \n\n Please click Yes to delete file or No to quit the procedure.\n\n Thank you!", ReportPath),
+                                                                msgCaption,
+                                                                System.Windows.MessageBoxButton.YesNo);
+                switch (decision)
+                {
+                    case System.Windows.MessageBoxResult.Yes:
+                        newXlFile.Delete();
+                        break;
+                    case System.Windows.MessageBoxResult.No:
+                        return;
+                }
             }
-            #endregion
-
-
-            System.IO.FileInfo newXlFile = new System.IO.FileInfo(fileName);
-            //if (newXlFile.Exists) newXlFile.Delete();
 
             using (ExcelPackage xlPack = new ExcelPackage(newXlFile))
             {
-
-                ExcelWorksheet ws = xlPack.Workbook.Worksheets.Add("Export");
+                ExcelWorksheet ws = xlPack.Workbook.Worksheets.Add("DATA");
                 ws.Cells["A2"].LoadFromDataTable(dt, true);
-
-
-                //ws.Cells[2,1].LoadFromDataTable(dt, true);
                 
                 //header row
                 var headCell = ws.Cells[1, 1];
@@ -94,14 +78,20 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
 
                 ws.View.FreezePanes(3, 1);
                 ws.Cells.AutoFitColumns();
+
+                ws.Hidden = OfficeOpenXml.eWorkSheetHidden.Visible;   
+
                 xlPack.Save();
             }
 
-            MessageBox.Show("Done.");
+            //newXlFile.Open(mode: System.IO.FileMode.Open);
+
             System.Diagnostics.Process.Start(newXlFile.FullName);
             
             
         }
+        private const string msgCaption = "Healthcare reports :: KeeperRichClient 2014";
+
     }
 }
 

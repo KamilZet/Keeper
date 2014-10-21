@@ -9,4 +9,3 @@ C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Release\LinqKeeper.exe
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\bin\Release\LinqKeeper.pdb
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.exe
 C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.pdb
-C:\Mediacom\Keeper\KeeperSource\LinqKeeper\obj\Release\LinqKeeper.csprojResolveAssemblyReference.cache

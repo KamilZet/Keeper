@@ -92,6 +92,7 @@
     <Compile Include="Services\BoolToVisibleConv.cs" />
     <Compile Include="Services\DataContractSerializer.cs" />
     <Compile Include="Services\DataSetLinqOperators.cs" />
+    <Compile Include="Services\FileInfoExt.cs" />
     <Compile Include="Services\NullToVisibleConv.cs" />
     <Compile Include="Reporting\HealthcareReportsViewModel.cs" />
     <Compile Include="Services\ServerChanger.cs" />

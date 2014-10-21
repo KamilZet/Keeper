@@ -8,24 +8,23 @@ using System.Reflection;
 namespace KeeperRichClient.Modules.Benefits.Services
 {
     public static class DataSetLinqOperators
-    {
+    {   
 
-        public static DataTable ToDataTable3<T>(this IEnumerable<T> items)
+        // working version
+        public static DataTable ToDataTable<T>(this IEnumerable<T> items)
         {
-            var tb = new DataTable(typeof(T).Name);
+            var dataTable = new DataTable(typeof(T).Name);
 
             PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
             foreach (var prop in props)
             {
+                Type propType = prop.PropertyType;
 
-                Type pt = prop.PropertyType;
+                if (propType.IsGenericType && Nullable.GetUnderlyingType(propType) != null)
+                    propType = Nullable.GetUnderlyingType(prop.PropertyType);
 
-                if (pt.IsGenericType && Nullable.GetUnderlyingType(pt) != null)
-                    pt = Nullable.GetUnderlyingType(prop.PropertyType);
-
-
-                tb.Columns.Add(prop.Name, pt);
+                dataTable.Columns.Add(prop.Name, propType);
             }
 
             foreach (var item in items)
@@ -36,25 +35,26 @@ namespace KeeperRichClient.Modules.Benefits.Services
                     values[i] = props[i].GetValue(item, null);
                 }
 
-                tb.Rows.Add(values);
+                dataTable.Rows.Add(values);
             }
-
-            return tb;
+            return dataTable;
         }
 
+
+        // NOT working version
         public static DataTable CopyToDataTable<T>(this IEnumerable<T> source)
         {
             //you find the ObjectShredder implementation on the blog wich was linked.
             return new ObjectShredder<T>().Shred(source, null, null);
         }
-
+        // NOT working version
         public static DataTable CopyToDataTable<T>(this IEnumerable<T> source,
                                          DataTable table, LoadOption? options)
         {
             return new ObjectShredder<T>().Shred(source, table, options);
         }
-
-        public static DataTable ToDataTable<T>(this IEnumerable<T> source)
+        // NOT working version
+        public static DataTable ToDataTable_<T>(this IEnumerable<T> source)
         {
             var dt = new DataTable();
             var properties = typeof(T).GetProperties();
