@@ -7,6 +7,7 @@ using KeeperRichClient.Modules.Employees.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.Mvvm;
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
@@ -108,7 +109,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public void AddBeneficiary()
         {
-            using (DbContext db = new DbContext())
+            using (DbContext db = new DbContext(ServerChanger.ConnStr))
             {
                 if (activeView is HealthcareView)
                 {

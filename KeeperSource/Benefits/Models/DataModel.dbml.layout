@@ -130,7 +130,7 @@
         <classShapeMoniker Id="250438c7-14f5-4c40-8cfe-68b0d8f0bb0f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 2.40625); (2.5 : 2.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.375 : 2.62677124023438); (2.5 : 2.62677124023438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DbContext/TakingReasonType/TakingReasonType_ConfiguredMedicalPacketToEmployee" />
       <nodes>
         <classShapeMoniker Id="0649a562-6f90-4423-b92f-cef9f6174f00" />
@@ -175,7 +175,7 @@
         <elementListCompartment Id="8b1b4c00-171c-4e91-bda4-a1cc4f6a5b30" absoluteBounds="9.89, 3.835, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.375 : 2.72925048828125); (10.34375 : 2.72925048828125); (10.34375 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.375 : 2.72925048828125); (10.34375 : 2.72925048828125); (10.34375 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DbContext/TakingReasonType/TakingReasonType_ConfMultisportPackToEmp" />
       <nodes>
         <classShapeMoniker Id="0649a562-6f90-4423-b92f-cef9f6174f00" />
@@ -189,5 +189,11 @@
         <classShapeMoniker Id="83c11bd4-a7ac-4219-a527-fe6cfe0c8d6b" />
       </nodes>
     </associationConnector>
+    <classShape Id="37904861-8503-480f-be8e-ac2237986103" absoluteBounds="3, 0.5, 2, 1.75354248046875">
+      <DataClassMoniker Name="/DbContext/vMedTotRepo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="732a5422-197a-4b8b-9954-006174572bd7" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

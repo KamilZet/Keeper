@@ -223,6 +223,14 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<vMedTotRepo> vMedTotRepos
+		{
+			get
+			{
+				return this.GetTable<vMedTotRepo>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Benefits.spAddBeneficiaryToMedicalPacket")]
 		public int spAddBeneficiaryToMedicalPacket([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BeneficiaryID", DbType="Int")] System.Nullable<int> beneficiaryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MedicalPacketID", DbType="Int")] System.Nullable<int> medicalPacketID)
 		{
@@ -369,6 +377,13 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), reportStartDate, reportStopDate);
 			return ((ISingleResult<spCalcHealthcareCostResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.spCalcHealthcareCostV3")]
+		public ISingleResult<spCalcHealthcareCostV3Result> spCalcHealthcareCostV3([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReportStartDate", DbType="DateTime")] System.Nullable<System.DateTime> reportStartDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReportStopDate", DbType="DateTime")] System.Nullable<System.DateTime> reportStopDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), reportStartDate, reportStopDate);
+			return ((ISingleResult<spCalcHealthcareCostV3Result>)(result.ReturnValue));
 		}
 	}
 	
@@ -3190,6 +3205,123 @@ namespace KeeperRichClient.Modules.Benefits.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.vMedTotRepo")]
+	public partial class vMedTotRepo
+	{
+		
+		private string _nazwisko_imię_pracownik;
+		
+		private System.Nullable<decimal> _koszt_pakietu;
+		
+		private System.Nullable<decimal> _medycyna_pracy;
+		
+		private System.Nullable<decimal> _koszt_pakietu___medycyna;
+		
+		private System.Nullable<decimal> _dopłata_pracownika;
+		
+		private System.Nullable<decimal> _potrącenie_rodzina;
+		
+		public vMedTotRepo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwisko_imię_pracownik", DbType="NVarChar(100)")]
+		public string nazwisko_imię_pracownik
+		{
+			get
+			{
+				return this._nazwisko_imię_pracownik;
+			}
+			set
+			{
+				if ((this._nazwisko_imię_pracownik != value))
+				{
+					this._nazwisko_imię_pracownik = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koszt_pakietu", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> koszt_pakietu
+		{
+			get
+			{
+				return this._koszt_pakietu;
+			}
+			set
+			{
+				if ((this._koszt_pakietu != value))
+				{
+					this._koszt_pakietu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_medycyna_pracy", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> medycyna_pracy
+		{
+			get
+			{
+				return this._medycyna_pracy;
+			}
+			set
+			{
+				if ((this._medycyna_pracy != value))
+				{
+					this._medycyna_pracy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[koszt_pakietu_-_medycyna]", Storage="_koszt_pakietu___medycyna", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> koszt_pakietu___medycyna
+		{
+			get
+			{
+				return this._koszt_pakietu___medycyna;
+			}
+			set
+			{
+				if ((this._koszt_pakietu___medycyna != value))
+				{
+					this._koszt_pakietu___medycyna = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dopłata_pracownika", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> dopłata_pracownika
+		{
+			get
+			{
+				return this._dopłata_pracownika;
+			}
+			set
+			{
+				if ((this._dopłata_pracownika != value))
+				{
+					this._dopłata_pracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_potrącenie_rodzina", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> potrącenie_rodzina
+		{
+			get
+			{
+				return this._potrącenie_rodzina;
+			}
+			set
+			{
+				if ((this._potrącenie_rodzina != value))
+				{
+					this._potrącenie_rodzina = value;
+				}
+			}
+		}
+	}
+	
 	public partial class fMultisportCardTypesResult
 	{
 		
@@ -4069,6 +4201,122 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._PotrącenieRodzina != value))
 				{
 					this._PotrącenieRodzina = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spCalcHealthcareCostV3Result
+	{
+		
+		private string _nazwisko_imię_pracownik;
+		
+		private System.Nullable<decimal> _koszt_pakietu;
+		
+		private System.Nullable<decimal> _medycyna_pracy;
+		
+		private System.Nullable<decimal> _koszt_pakietu___medycyna;
+		
+		private System.Nullable<decimal> _dopłata_pracownika;
+		
+		private System.Nullable<decimal> _potrącenie_rodzina;
+		
+		public spCalcHealthcareCostV3Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwisko_imię_pracownik", DbType="NVarChar(100)")]
+		public string nazwisko_imię_pracownik
+		{
+			get
+			{
+				return this._nazwisko_imię_pracownik;
+			}
+			set
+			{
+				if ((this._nazwisko_imię_pracownik != value))
+				{
+					this._nazwisko_imię_pracownik = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koszt_pakietu", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> koszt_pakietu
+		{
+			get
+			{
+				return this._koszt_pakietu;
+			}
+			set
+			{
+				if ((this._koszt_pakietu != value))
+				{
+					this._koszt_pakietu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_medycyna_pracy", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> medycyna_pracy
+		{
+			get
+			{
+				return this._medycyna_pracy;
+			}
+			set
+			{
+				if ((this._medycyna_pracy != value))
+				{
+					this._medycyna_pracy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[koszt_pakietu_-_medycyna]", Storage="_koszt_pakietu___medycyna", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> koszt_pakietu___medycyna
+		{
+			get
+			{
+				return this._koszt_pakietu___medycyna;
+			}
+			set
+			{
+				if ((this._koszt_pakietu___medycyna != value))
+				{
+					this._koszt_pakietu___medycyna = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dopłata_pracownika", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> dopłata_pracownika
+		{
+			get
+			{
+				return this._dopłata_pracownika;
+			}
+			set
+			{
+				if ((this._dopłata_pracownika != value))
+				{
+					this._dopłata_pracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_potrącenie_rodzina", DbType="Decimal(38,13)")]
+		public System.Nullable<decimal> potrącenie_rodzina
+		{
+			get
+			{
+				return this._potrącenie_rodzina;
+			}
+			set
+			{
+				if ((this._potrącenie_rodzina != value))
+				{
+					this._potrącenie_rodzina = value;
 				}
 			}
 		}

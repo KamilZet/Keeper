@@ -10,13 +10,14 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Linq;
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits
 {
     public class ParkingViewModel : IParkingViewModel, INotifyPropertyChanged
     {
         IEventAggregator _EventAggregator;
-        DbContext _DbContext = new DbContext();
+        DbContext _DbContext = new DbContext(ServerChanger.ConnStr);
         GetEmployeesResult SelectedEmployee;
 
         public ParkingViewModel()

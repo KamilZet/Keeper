@@ -183,6 +183,16 @@
       <Association Name="MultisportPackType_ConfMultisportPackToEmp" Member="MultisportPackType" ThisKey="MultiSportPacketTypeID" OtherKey="MultisportPacketTypeID" Type="MultisportPackType" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="Healthcare.vMedTotRepo" Member="vMedTotRepos">
+    <Type Name="vMedTotRepo">
+      <Column Name="nazwisko_imię_pracownik" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="koszt_pakietu" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="medycyna_pracy" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="[koszt_pakietu_-_medycyna]" Member="koszt_pakietu___medycyna" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="dopłata_pracownika" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="potrącenie_rodzina" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="Benefits.spAddBeneficiaryToMedicalPacket" Method="spAddBeneficiaryToMedicalPacket">
     <Parameter Name="BeneficiaryID" Parameter="beneficiaryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="MedicalPacketID" Parameter="medicalPacketID" Type="System.Int32" DbType="Int" />
@@ -357,6 +367,18 @@
       <Column Name="DopłataPracownika" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
       <Column Name="DoZusIOpodatkowania" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
       <Column Name="PotrącenieRodzina" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.spCalcHealthcareCostV3" Method="spCalcHealthcareCostV3">
+    <Parameter Name="ReportStartDate" Parameter="reportStartDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReportStopDate" Parameter="reportStopDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="spCalcHealthcareCostV3Result">
+      <Column Name="nazwisko_imię_pracownik" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="koszt_pakietu" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="medycyna_pracy" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="[koszt_pakietu_-_medycyna]" Member="koszt_pakietu___medycyna" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="dopłata_pracownika" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="potrącenie_rodzina" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

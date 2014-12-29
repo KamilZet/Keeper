@@ -153,3 +153,9 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.xml

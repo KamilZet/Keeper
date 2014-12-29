@@ -20,6 +20,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Data;
 using System.ComponentModel;
+using KeeperRichClient.Modules.Benefits.Services;
 
 
 
@@ -32,7 +33,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         public LanguageCourseViewModel()
         {
             ApplicationService.Instance.EventAggregator.GetEvent<EmployeeSelectedEvent>().Subscribe(this.employeeSelected, true);
-            this.dataContext = new DbContext();
+            this.dataContext = new DbContext(ServerChanger.ConnStr);
             this.InstructorSelectionRequest = new InteractionRequest<LanguageCourseInstructorSelect>();
 
             this.AddInstructorCommand = new RelayCommand(action => this.raiseNotification(), predicate => IsInEdit);

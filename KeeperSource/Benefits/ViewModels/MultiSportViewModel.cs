@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 
 using System.Linq;
+using KeeperRichClient.Modules.Benefits.Services;
 
 //Concerns:
 
@@ -179,7 +180,7 @@ namespace KeeperRichClient.Modules.Benefits
 
         private ICommand callDeactivateMultiSportPacket;
 
-        private DbContext dataContext = new DbContext();
+        private DbContext dataContext = new DbContext(ServerChanger.ConnStr);
         private GetEmployeesResult selectedEmployee;
 
         private ConfMultisportPackToEmp _NewMultiSportPacket;

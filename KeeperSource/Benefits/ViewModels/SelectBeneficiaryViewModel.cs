@@ -10,6 +10,7 @@ using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
 using System.Windows.Forms;
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
@@ -31,7 +32,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
 
         public void AddBeneficiary()
         {
-            using (DbContext db = new DbContext())
+            using (DbContext db = new DbContext(ServerChanger.ConnStr))
             {
                 int ExecRet;
                 ExecRet = db.spAddBeneficiaryToMedicalPacket(SelectedBeneficiary.BeneficiaryID,
@@ -55,7 +56,7 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
         {
             get
             {
-                using (DbContext db = new DbContext())
+                using (DbContext db = new DbContext(ServerChanger.ConnStr))
                 {
                     return (db.Beneficiaries.OrderBy(x => x.BeneficiaryLName)).ToObservableCollection();
                 }

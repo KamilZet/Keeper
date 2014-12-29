@@ -1,0 +1,64 @@
+﻿<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <empid>150</empid>
+  <empfname>MARCIN</empfname>
+  <emplname>PIEŁUNOWICZ</emplname>
+  <MedicalPacketID>2</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny partnerski</MedicalPacketName>
+  <ConfiguredMedicalPacketID>159</ConfiguredMedicalPacketID>
+  <MedStartDate>2014-01-01T00:00:00</MedStartDate>
+  <MedEndDate>2014-02-19T00:00:00</MedEndDate>
+  <BeneficiaryID>60</BeneficiaryID>
+  <BeneficiaryFName>Magdalena</BeneficiaryFName>
+  <BeneficiaryLName>Piełunowicz</BeneficiaryLName>
+  <BenCreDate>2013-12-31T00:00:00</BenCreDate>
+  <Ben2MedStartDate>2014-01-01T00:00:00</Ben2MedStartDate>
+  <Ben2MedEndDate>2014-02-19T00:00:00</Ben2MedEndDate>
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <empid>150</empid>
+  <empfname>MARCIN</empfname>
+  <emplname>PIEŁUNOWICZ</emplname>
+  <MedicalPacketID>1</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny pojedynczy</MedicalPacketName>
+  <ConfiguredMedicalPacketID>160</ConfiguredMedicalPacketID>
+  <MedStartDate>2014-01-01T00:00:00</MedStartDate>
+  <MedEndDate xsi:nil="true" />
+  <BeneficiaryID xsi:nil="true" />
+  <BeneficiaryFName xsi:nil="true" />
+  <BeneficiaryLName xsi:nil="true" />
+  <BenCreDate xsi:nil="true" />
+  <Ben2MedStartDate xsi:nil="true" />
+  <Ben2MedEndDate xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <empid>150</empid>
+  <empfname>MARCIN</empfname>
+  <emplname>PIEŁUNOWICZ</emplname>
+  <MedicalPacketID>3</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny rodzinny</MedicalPacketName>
+  <ConfiguredMedicalPacketID>293</ConfiguredMedicalPacketID>
+  <MedStartDate>2014-02-20T00:00:00</MedStartDate>
+  <MedEndDate xsi:nil="true" />
+  <BeneficiaryID>203</BeneficiaryID>
+  <BeneficiaryFName>Liliana</BeneficiaryFName>
+  <BeneficiaryLName>Piełunowicz</BeneficiaryLName>
+  <BenCreDate>2014-02-19T00:00:00</BenCreDate>
+  <Ben2MedStartDate>2014-02-20T00:00:00</Ben2MedStartDate>
+  <Ben2MedEndDate xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <empid>150</empid>
+  <empfname>MARCIN</empfname>
+  <emplname>PIEŁUNOWICZ</emplname>
+  <MedicalPacketID>3</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny rodzinny</MedicalPacketName>
+  <ConfiguredMedicalPacketID>293</ConfiguredMedicalPacketID>
+  <MedStartDate>2014-02-20T00:00:00</MedStartDate>
+  <MedEndDate xsi:nil="true" />
+  <BeneficiaryID>60</BeneficiaryID>
+  <BeneficiaryFName>Magdalena</BeneficiaryFName>
+  <BeneficiaryLName>Piełunowicz</BeneficiaryLName>
+  <BenCreDate>2013-12-31T00:00:00</BenCreDate>
+  <Ben2MedStartDate>2014-02-20T00:00:00</Ben2MedStartDate>
+  <Ben2MedEndDate xsi:nil="true" />
+</med_change_rec>

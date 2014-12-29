@@ -9,4 +9,11 @@ namespace KeeperRichClient.Modules.Benefits.Models
             return (LanguageCoursesToEmployee)this.MemberwiseClone();
         }
     }
+
+    public partial class DbContext : System.Data.Linq.DataContext{
+        partial void OnCreated(){
+            this.CommandTimeout = 0;
+        }
+    }
+
 }

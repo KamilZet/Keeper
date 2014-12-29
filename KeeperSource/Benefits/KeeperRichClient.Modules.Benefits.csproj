@@ -251,6 +251,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Models\DataModel.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataModel.designer.cs</LastGenOutput>

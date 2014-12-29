@@ -7,6 +7,7 @@ using OfficeOpenXml.Style;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 
 namespace KeeperRichClient.Modules.Benefits.Reporting
@@ -16,7 +17,7 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
 
         public HealthcareReportsViewModel()
         {
-            dataContext = new DbContext();
+            dataContext = new DbContext(ServerChanger.ConnStr);
             CreElasReportCommand = new RelayCommand(action => this.creElasReportCommand(ReportPath));
             ReportStart = new DateTime(2014,1,1);
             ReportEnd = new DateTime(2014, 1, 31);
@@ -36,7 +37,16 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
         private void creElasReportCommand(string fileName)
         {
             
-            System.Data.DataTable dt = (dataContext.spCalcHealthcareCost(this.ReportStart, this.ReportEnd).OrderBy(x=>x.NazwiskoImię)).ToDataTable();
+            try
+            {     
+                /*
+                 * calculate med fin data through view
+                 * 
+                 */
+                 
+                //System.Data.DataTable dt = (dataContext.vMedTotRepos).ToDataTable<vMedTotRepo>();
+
+                System.Data.DataTable dt = (dataContext.spCalcHealthcareCostV3(this.ReportStart, this.ReportEnd).OrderBy(x=>x.nazwisko_imię_pracownik)).ToDataTable();
 
 
             System.IO.FileInfo newXlFile = new System.IO.FileInfo(ReportPath);
@@ -87,7 +97,12 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
             //newXlFile.Open(mode: System.IO.FileMode.Open);
 
             System.Diagnostics.Process.Start(newXlFile.FullName);
-            
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(string.Format("Error occurred! \n\n{0}",e.ToString()),msgCaption,MessageBoxButton.OK,MessageBoxImage.Error);
+            }
             
         }
         private const string msgCaption = "Healthcare reports :: KeeperRichClient 2014";

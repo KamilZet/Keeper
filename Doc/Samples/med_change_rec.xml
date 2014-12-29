@@ -1,0 +1,108 @@
+﻿<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>1</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny pojedynczy</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>84.00</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.1103192000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>2</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny partnerski</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>81.92</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0615058000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>3</MedicalPacketID>
+  <MedicalPacketName>Specjalistyczny rodzinny</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>133.77</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0485523000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>4</MedicalPacketID>
+  <MedicalPacketName>Szpitalny pojedynczy</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>356.82</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0601024000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>5</MedicalPacketID>
+  <MedicalPacketName>Szpitalny partnerski</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>161.05</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0309823000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>6</MedicalPacketID>
+  <MedicalPacketName>Szpitalny rodzinny</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>363.93</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0228210000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>7</MedicalPacketID>
+  <MedicalPacketName>Senior</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>134.81</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0000000000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>8</MedicalPacketID>
+  <MedicalPacketName>Stomatologiczny</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>124.44</MedicalPacketTotalCost>
+  <validfrom>2014-01-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>0.0000000000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>9</MedicalPacketID>
+  <MedicalPacketName>Test</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>1.00</MedicalPacketTotalCost>
+  <validfrom>2012-11-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>1.0000000000</OccupationalMedicinePartPC>
+  <ValidTo>2014-04-30T23:59:59</ValidTo>
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>9</MedicalPacketID>
+  <MedicalPacketName>Test</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>3.00</MedicalPacketTotalCost>
+  <validfrom>2014-05-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>1.0000000000</OccupationalMedicinePartPC>
+  <ValidTo>2014-05-31T23:59:59</ValidTo>
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>9</MedicalPacketID>
+  <MedicalPacketName>Test</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>3.00</MedicalPacketTotalCost>
+  <validfrom>2014-12-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>1.0000000000</OccupationalMedicinePartPC>
+  <ValidTo xsi:nil="true" />
+</med_change_rec>
+<med_change_rec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MedicalPacketID>9</MedicalPacketID>
+  <MedicalPacketName>Test</MedicalPacketName>
+  <IsActive>1</IsActive>
+  <MedicalPacketTotalCost>4.00</MedicalPacketTotalCost>
+  <validfrom>2014-06-01T00:00:00</validfrom>
+  <OccupationalMedicinePartPC>1.0000000000</OccupationalMedicinePartPC>
+  <ValidTo>2014-11-30T23:59:59</ValidTo>
+</med_change_rec>

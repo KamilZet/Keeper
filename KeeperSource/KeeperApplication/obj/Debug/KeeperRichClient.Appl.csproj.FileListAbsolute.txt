@@ -171,3 +171,9 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.ex
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.application
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.exe
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.xml

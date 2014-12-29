@@ -12,7 +12,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits
 {
@@ -24,7 +24,7 @@ namespace KeeperRichClient.Modules.Benefits
         ObservableCollection<Beneficiary> _benefLinkToMedPackColl;
         public HealthcareViewModel()//IEventAggregator eventAgr
         {
-            db = new DbContext();
+            db = new DbContext(ServerChanger.ConnStr);
             _medPackTypesColl = (from packs in db.MedicalPacketTypes select packs).ToObservableCollection();//MedPackTypes.ToObservableCollection();
             //_eventAggr = eventAgr;
             _eventAggr = ApplicationService.Instance.EventAggregator;

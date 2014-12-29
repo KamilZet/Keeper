@@ -6,6 +6,7 @@ using System.ComponentModel;
 
 using KeeperRichClient.Infrastructure;
 using KeeperRichClient.Modules.Benefits.Models;
+using KeeperRichClient.Modules.Benefits.Services;
 
 namespace KeeperRichClient.Modules.Benefits
 {
@@ -22,7 +23,7 @@ namespace KeeperRichClient.Modules.Benefits
         {
             get
             {
-                using (DbContext dc = new DbContext())
+                using (DbContext dc = new DbContext(ServerChanger.ConnStr))
                 {
                     return new ObservableCollection<TakingReasonType>(dc.TakingReasonTypes);
                 }
@@ -63,7 +64,7 @@ namespace KeeperRichClient.Modules.Benefits
 
         private void _DeactivateBenefit()
         {
-            using (DbContext dc = new DbContext())
+            using (DbContext dc = new DbContext(ServerChanger.ConnStr))
             {
                 if (_ViewModel.GetType() == typeof(HealthcareViewModel))
                     dc.spRemoveMedicalPacketFromEmployee(((HealthcareViewModel)_ViewModel).SelectedMedicalPacket.ConfiguredMedicalPacketID,

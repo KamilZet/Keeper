@@ -79,12 +79,14 @@
             </Border>
         </DockPanel>
         
-        <TextBlock 
-                   Grid.Row="3" TextWrapping="Wrap" Grid.Column="1" 
-                   Text="{Binding Source={x:Static serv:ServerChanger.ConnStr}}"
-                   FontSize="24" Foreground="GreenYellow"
-                   Background="Black"
-                   />
-
+        <DockPanel Grid.Row="3" Grid.Column="3" Background="AliceBlue">
+            <TextBlock 
+                       TextWrapping="Wrap" 
+                       Text="{Binding Source={x:Static serv:ServerChanger.ConnStrTag}}" TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="32"
+                       Width="500"/>
+            <Button Content="Switch Database" FontSize="20" Opacity=".5"/>
+        </DockPanel>
     </Grid>
 </Window>

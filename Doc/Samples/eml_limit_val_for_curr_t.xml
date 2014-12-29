@@ -1,0 +1,24 @@
+<emp_limit_for_act_mth>
+  <emp_id>166</emp_id> <!-- uniwersalny klucz pracownika -->
+  <emp_ben_t_start>2014-12-01T00:00:00</emp_ben_t_start> <!-- data startu okresu ważności przyznanego limitu -->
+  <emp_ben_t_end>2014-12-31T00:00:00</emp_ben_t_end> <!-- data stopu okresu ważności przyznanego limitu -->
+  <emp_ben_limit>1160.00</emp_ben_limit> <!-- wartość limitu do wykorzystania na usługi benefitowe -->
+</emp_limit_for_act_mth>
+<emp_limit_for_act_mth>
+  <emp_id>146</emp_id>
+  <emp_ben_t_start>2014-12-01T00:00:00</emp_ben_t_start>
+  <emp_ben_t_end>2014-12-31T00:00:00</emp_ben_t_end>
+  <emp_ben_limit>806.00</emp_ben_limit>
+</emp_limit_for_act_mth>
+<emp_limit_for_act_mth>
+  <emp_id>196</emp_id>
+  <emp_ben_t_start>2014-12-01T00:00:00</emp_ben_t_start>
+  <emp_ben_t_end>2014-12-31T00:00:00</emp_ben_t_end>
+  <emp_ben_limit>288.00</emp_ben_limit>
+</emp_limit_for_act_mth>
+<emp_limit_for_act_mth>
+  <emp_id>2</emp_id>
+  <emp_ben_t_start>2014-12-01T00:00:00</emp_ben_t_start>
+  <emp_ben_t_end>2014-12-31T00:00:00</emp_ben_t_end>
+  <emp_ben_limit>120.00</emp_ben_limit>
+</emp_limit_for_act_mth>

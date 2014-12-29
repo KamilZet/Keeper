@@ -14,10 +14,8 @@ namespace UnitTestProject
         public void TestMethod1()
         {
             LanguageCourseViewModel langCourseVm = new LanguageCourseViewModel();
-            
-            
             langCourseVm.ActiveCourse = new LanguageCoursesToEmployee();
-
+            
 
             Assert.Fail("Course start date error", langCourseVm.CourseStartDate);
 

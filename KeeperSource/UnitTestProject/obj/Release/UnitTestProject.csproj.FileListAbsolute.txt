@@ -1,4 +1,3 @@
-C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Release\UnitTestProject.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\UnitTestProject.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\UnitTestProject.pdb
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\KeeperRichClient.Modules.Benefits.dll
@@ -34,5 +33,6 @@ C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\ko\System.Windows.In
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\ru\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Release\UnitTestProject.csprojResolveAssemblyReference.cache
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Release\UnitTestProject.dll
 C:\Mediacom\Keeper\KeeperSource\UnitTestProject\obj\Release\UnitTestProject.pdb
