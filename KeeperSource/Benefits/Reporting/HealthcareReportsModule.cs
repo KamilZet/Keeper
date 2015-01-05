@@ -17,7 +17,6 @@ namespace KeeperRichClient.Modules.Benefits.Reporting
         {
             kernel.Bind<object>().To<HealthcareReporsView>().Named("HealthcareReporsView");
             kernel.Bind<IHealthcareReportsViewModel>().To<HealthcareReportsViewModel>();
-
         }
 
         private IKernel kernel;

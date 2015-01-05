@@ -381,4 +381,57 @@
       <Column Name="potrącenie_rodzina" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="Healthcare.RunInternMedReport" Method="RunInternMedReport">
+    <Parameter Name="repStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="repEnd" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="RunInternMedReportResult">
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpLName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpFName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dept" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dept_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MedicalPacketNameFull" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalPacketTotalCost" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.PermEmpMedUseInLimit" Method="PermEmpMedUseInLimit" IsComposable="true">
+    <Parameter Name="repStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="repEnd" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="PermEmpMedUseInLimitResult">
+      <Column Name="[ID pracownika]" Member="ID_pracownika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Nazwisko i imię]" Member="Nazwisko_i_imię" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Dział" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ilość" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Koszt" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.ShitEmpMedUseInLimit" Method="ShitEmpMedUseInLimit" IsComposable="true">
+    <Parameter Name="repStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="repEnd" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ShitEmpMedUseInLimitResult">
+      <Column Name="[ID pracownika]" Member="ID_pracownika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Nazwisko i imię]" Member="Nazwisko_i_imię" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Dział" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ilość" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Koszt" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Healthcare.BusEmpMedUseInLimit" Method="BusEmpMedUseInLimit" IsComposable="true">
+    <Parameter Name="repStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="repEnd" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="BusEmpMedUseInLimitResult">
+      <Column Name="[ID pracownika]" Member="ID_pracownika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Nazwisko i imię]" Member="Nazwisko_i_imię" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Dział" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ilość" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Koszt" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

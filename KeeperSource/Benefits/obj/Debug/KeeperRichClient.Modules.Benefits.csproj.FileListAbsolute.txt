@@ -85,6 +85,8 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Sha
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Ninject.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\CustomControlsLib.pdb
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Modules.Employees.pdb
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\KeeperRichClient.Infrastructure.pdb
@@ -95,6 +97,10 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.Prism.Sha
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.xml
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
@@ -153,9 +159,3 @@ C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Bene
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.dll
 C:\Mediacom\Keeper\KeeperSource\Benefits\obj\Debug\KeeperRichClient.Modules.Benefits.pdb
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.dll
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.pdb
-C:\Mediacom\Keeper\KeeperSource\Benefits\bin\Debug\Microsoft.WindowsAPICodePack.xml

@@ -131,8 +131,10 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Ninject.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\EPPlus.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\System.Windows.Interactivity.dll
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\CustomControlsLib.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Benefits.pdb
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\KeeperRichClient.Modules.Employees.pdb
@@ -148,6 +150,10 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Ninject.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.xml
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\de\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\en\System.Windows.Interactivity.resources.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\es\System.Windows.Interactivity.resources.dll
@@ -171,9 +177,3 @@ C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.ex
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.application
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.exe
 C:\Mediacom\Keeper\KeeperSource\KeeperApplication\obj\Debug\KeeperApplication.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.dll
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperApplication\bin\Debug\Microsoft.WindowsAPICodePack.xml

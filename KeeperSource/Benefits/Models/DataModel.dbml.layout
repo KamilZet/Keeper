@@ -130,7 +130,7 @@
         <classShapeMoniker Id="250438c7-14f5-4c40-8cfe-68b0d8f0bb0f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 2.62677124023438); (2.5 : 2.62677124023438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.375 : 2.62677124023438); (2.5 : 2.62677124023438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/TakingReasonType/TakingReasonType_ConfiguredMedicalPacketToEmployee" />
       <nodes>
         <classShapeMoniker Id="0649a562-6f90-4423-b92f-cef9f6174f00" />
@@ -175,7 +175,7 @@
         <elementListCompartment Id="8b1b4c00-171c-4e91-bda4-a1cc4f6a5b30" absoluteBounds="9.89, 3.835, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.375 : 2.72925048828125); (10.34375 : 2.72925048828125); (10.34375 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.375 : 2.72925048828125); (10.34375 : 2.72925048828125); (10.34375 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContext/TakingReasonType/TakingReasonType_ConfMultisportPackToEmp" />
       <nodes>
         <classShapeMoniker Id="0649a562-6f90-4423-b92f-cef9f6174f00" />

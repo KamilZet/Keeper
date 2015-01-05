@@ -99,4 +99,3 @@ C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\Keeper
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csproj.GenerateResource.Cache
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.dll
 C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.pdb
-C:\Mediacom\Keeper\KeeperSource\KeeperRichClient.Infrastructure\obj\Debug\KeeperRichClient.Infrastructure.csprojResolveAssemblyReference.cache

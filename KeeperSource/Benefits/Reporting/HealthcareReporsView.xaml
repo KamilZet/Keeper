@@ -7,29 +7,52 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <DockPanel>
         <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>                       
-        </Grid.ColumnDefinitions>
-            <Border Padding="15" BorderBrush="Black" BorderThickness="1" Background="White" CornerRadius="15">
-                <StackPanel  x:Name="test" infra:MarginSetter.Margin="0,10,0,0" Grid.Column="0" Background="Azure">
-                    <TextBlock Text="RAPORT DLA ELI " HorizontalAlignment="Center" FontSize="20"/>
-                    <TextBlock Text="Report Start Date:" FontSize="15"/>
-                    <DatePicker Style="{StaticResource MyDatePicker}"
-                                SelectedDate="{Binding ReportStart, Mode=TwoWay}"></DatePicker>
-                    <TextBlock Text="Report End Date:" FontSize="15"/>
-                    <DatePicker Style="{StaticResource MyDatePicker}"
-                                SelectedDate="{Binding ReportEnd, Mode=TwoWay}"></DatePicker>
-                    <TextBlock Text="Output path:" FontSize="15"/>
-                    <CustCtrl:FolderDialog MyFilepathProperty ="{Binding Path=DataContext.ReportPath,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=OneWayToSource}"
-                                           MyFilenameProperty="Export201401.xlsx"/>
-                    <Button Content="Generate"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel LastChildFill="True" Grid.ColumnSpan="2">
+                
+                <!-- Group report UI -->
+                <Border Padding="15" BorderBrush="Black" BorderThickness="1" Background="White" CornerRadius="15" Width="288">
+                    <StackPanel  infra:MarginSetter.Margin="0,10,0,0" Grid.Column="0" Background="Magenta">
+                        <TextBlock Text="Medicover GroupM" HorizontalAlignment="Center" FontSize="20"/>
+                        <TextBlock Text="Report Start Date:" FontSize="15"/>
+                        <DatePicker Style="{StaticResource MyDatePicker}"
+                                SelectedDate="{Binding GroupReportStart, Mode=TwoWay}"></DatePicker>
+                        <TextBlock Text="Report End Date:" FontSize="15"/>
+                        <DatePicker Style="{StaticResource MyDatePicker}"
+                                SelectedDate="{Binding GroupReportEnd, Mode=TwoWay}"></DatePicker>
+                        <TextBlock Text="Output path:" FontSize="15"/>
+                        <CustCtrl:FolderDialog MyFilepathProperty ="{Binding Path=DataContext.GroupReportPath,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=OneWayToSource}"
+                                           MyFilenameProperty="MedicoverRozlGroupM.xlsx"/>
+                        <Button Content="Generate"
                             Style="{StaticResource SimpleButton}"
                             Height="40"
-                            Command="{Binding CreElasReportCommand}"/>
-                </StackPanel>
-            </Border>
+                            Command="{Binding GroupMedRepCommand}"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Intern report UI -->
+                <Border Padding="15" BorderBrush="Black" BorderThickness="1" Background="White" CornerRadius="15" Width="306">
+                    <StackPanel  infra:MarginSetter.Margin="0,10,0,0" Grid.Column="1" Background="Magenta">
+                        <TextBlock HorizontalAlignment="Center" FontSize="20"><Run Text="Medicover "/><Run Text="Działy"/></TextBlock>
+                        <TextBlock Text="Report Start Date:" FontSize="15"/>
+                        <DatePicker Style="{StaticResource MyDatePicker}"
+                                    SelectedDate="{Binding InternReportStart, Mode=TwoWay}"></DatePicker>                        
+                        <TextBlock Text="Report End Date:" FontSize="15"/>
+                        <DatePicker Style="{StaticResource MyDatePicker}"
+                                SelectedDate="{Binding InternReportEnd, Mode=TwoWay}"></DatePicker>                        
+                        <TextBlock Text="Output path:" FontSize="15"/>
+                        <CustCtrl:FolderDialog MyFilepathProperty ="{Binding Path=DataContext.InternReportPath,RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=OneWayToSource}"
+                                           MyFilenameProperty="MedicoverDziały.xlsx"/>
+                        <Button Content="Generate"
+                            Style="{StaticResource SimpleButton}"
+                            Height="40"
+                            Command="{Binding InternMedRepCommand}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
         </Grid>
     </DockPanel>
 </UserControl>

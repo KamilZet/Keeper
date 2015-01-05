@@ -93,6 +93,7 @@
     <Compile Include="Services\DataContractSerializer.cs" />
     <Compile Include="Services\DataSetLinqOperators.cs" />
     <Compile Include="Services\FileInfoExt.cs" />
+    <Compile Include="Services\IQueryExt.cs" />
     <Compile Include="Services\NullToVisibleConv.cs" />
     <Compile Include="Reporting\HealthcareReportsViewModel.cs" />
     <Compile Include="Services\ServerChanger.cs" />
@@ -261,7 +262,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

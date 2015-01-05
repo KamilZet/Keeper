@@ -385,6 +385,31 @@ namespace KeeperRichClient.Modules.Benefits.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), reportStartDate, reportStopDate);
 			return ((ISingleResult<spCalcHealthcareCostV3Result>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.RunInternMedReport")]
+		public ISingleResult<RunInternMedReportResult> RunInternMedReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repEnd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), repStart, repEnd);
+			return ((ISingleResult<RunInternMedReportResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.PermEmpMedUseInLimit", IsComposable=true)]
+		public IQueryable<PermEmpMedUseInLimitResult> PermEmpMedUseInLimit([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repEnd)
+		{
+			return this.CreateMethodCallQuery<PermEmpMedUseInLimitResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), repStart, repEnd);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.ShitEmpMedUseInLimit", IsComposable=true)]
+		public IQueryable<ShitEmpMedUseInLimitResult> ShitEmpMedUseInLimit([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repEnd)
+		{
+			return this.CreateMethodCallQuery<ShitEmpMedUseInLimitResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), repStart, repEnd);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Healthcare.BusEmpMedUseInLimit", IsComposable=true)]
+		public IQueryable<BusEmpMedUseInLimitResult> BusEmpMedUseInLimit([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> repEnd)
+		{
+			return this.CreateMethodCallQuery<BusEmpMedUseInLimitResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), repStart, repEnd);
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Healthcare.MedicalPacketTypes")]
@@ -4317,6 +4342,560 @@ namespace KeeperRichClient.Modules.Benefits.Models
 				if ((this._potrącenie_rodzina != value))
 				{
 					this._potrącenie_rodzina = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RunInternMedReportResult
+	{
+		
+		private int _EmpId;
+		
+		private string _EmpLName;
+		
+		private string _EmpFName;
+		
+		private System.Nullable<int> _dept;
+		
+		private System.Nullable<int> _dept_id;
+		
+		private string _MedicalPacketNameFull;
+		
+		private int _count;
+		
+		private System.Nullable<decimal> _MedicalPacketTotalCost;
+		
+		public RunInternMedReportResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpId", DbType="Int NOT NULL")]
+		public int EmpId
+		{
+			get
+			{
+				return this._EmpId;
+			}
+			set
+			{
+				if ((this._EmpId != value))
+				{
+					this._EmpId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpLName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string EmpLName
+		{
+			get
+			{
+				return this._EmpLName;
+			}
+			set
+			{
+				if ((this._EmpLName != value))
+				{
+					this._EmpLName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpFName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string EmpFName
+		{
+			get
+			{
+				return this._EmpFName;
+			}
+			set
+			{
+				if ((this._EmpFName != value))
+				{
+					this._EmpFName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dept", DbType="Int")]
+		public System.Nullable<int> dept
+		{
+			get
+			{
+				return this._dept;
+			}
+			set
+			{
+				if ((this._dept != value))
+				{
+					this._dept = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dept_id", DbType="Int")]
+		public System.Nullable<int> dept_id
+		{
+			get
+			{
+				return this._dept_id;
+			}
+			set
+			{
+				if ((this._dept_id != value))
+				{
+					this._dept_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketNameFull", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string MedicalPacketNameFull
+		{
+			get
+			{
+				return this._MedicalPacketNameFull;
+			}
+			set
+			{
+				if ((this._MedicalPacketNameFull != value))
+				{
+					this._MedicalPacketNameFull = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_count", DbType="Int NOT NULL")]
+		public int count
+		{
+			get
+			{
+				return this._count;
+			}
+			set
+			{
+				if ((this._count != value))
+				{
+					this._count = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalPacketTotalCost", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> MedicalPacketTotalCost
+		{
+			get
+			{
+				return this._MedicalPacketTotalCost;
+			}
+			set
+			{
+				if ((this._MedicalPacketTotalCost != value))
+				{
+					this._MedicalPacketTotalCost = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PermEmpMedUseInLimitResult
+	{
+		
+		private int _ID_pracownika;
+		
+		private string _Nazwisko_i_imię;
+		
+		private System.Nullable<int> _Dział;
+		
+		private System.Nullable<int> _Numer;
+		
+		private string _Program;
+		
+		private int _Ilość;
+		
+		private System.Nullable<decimal> _Koszt;
+		
+		public PermEmpMedUseInLimitResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ID pracownika]", Storage="_ID_pracownika", DbType="Int NOT NULL")]
+		public int ID_pracownika
+		{
+			get
+			{
+				return this._ID_pracownika;
+			}
+			set
+			{
+				if ((this._ID_pracownika != value))
+				{
+					this._ID_pracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nazwisko i imię]", Storage="_Nazwisko_i_imię", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Nazwisko_i_imię
+		{
+			get
+			{
+				return this._Nazwisko_i_imię;
+			}
+			set
+			{
+				if ((this._Nazwisko_i_imię != value))
+				{
+					this._Nazwisko_i_imię = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dział", DbType="Int")]
+		public System.Nullable<int> Dział
+		{
+			get
+			{
+				return this._Dział;
+			}
+			set
+			{
+				if ((this._Dział != value))
+				{
+					this._Dział = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numer", DbType="Int")]
+		public System.Nullable<int> Numer
+		{
+			get
+			{
+				return this._Numer;
+			}
+			set
+			{
+				if ((this._Numer != value))
+				{
+					this._Numer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Program", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Program
+		{
+			get
+			{
+				return this._Program;
+			}
+			set
+			{
+				if ((this._Program != value))
+				{
+					this._Program = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ilość", DbType="Int NOT NULL")]
+		public int Ilość
+		{
+			get
+			{
+				return this._Ilość;
+			}
+			set
+			{
+				if ((this._Ilość != value))
+				{
+					this._Ilość = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Koszt", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> Koszt
+		{
+			get
+			{
+				return this._Koszt;
+			}
+			set
+			{
+				if ((this._Koszt != value))
+				{
+					this._Koszt = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ShitEmpMedUseInLimitResult
+	{
+		
+		private int _ID_pracownika;
+		
+		private string _Nazwisko_i_imię;
+		
+		private System.Nullable<int> _Dział;
+		
+		private System.Nullable<int> _Numer;
+		
+		private string _Program;
+		
+		private int _Ilość;
+		
+		private System.Nullable<decimal> _Koszt;
+		
+		public ShitEmpMedUseInLimitResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ID pracownika]", Storage="_ID_pracownika", DbType="Int NOT NULL")]
+		public int ID_pracownika
+		{
+			get
+			{
+				return this._ID_pracownika;
+			}
+			set
+			{
+				if ((this._ID_pracownika != value))
+				{
+					this._ID_pracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nazwisko i imię]", Storage="_Nazwisko_i_imię", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Nazwisko_i_imię
+		{
+			get
+			{
+				return this._Nazwisko_i_imię;
+			}
+			set
+			{
+				if ((this._Nazwisko_i_imię != value))
+				{
+					this._Nazwisko_i_imię = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dział", DbType="Int")]
+		public System.Nullable<int> Dział
+		{
+			get
+			{
+				return this._Dział;
+			}
+			set
+			{
+				if ((this._Dział != value))
+				{
+					this._Dział = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numer", DbType="Int")]
+		public System.Nullable<int> Numer
+		{
+			get
+			{
+				return this._Numer;
+			}
+			set
+			{
+				if ((this._Numer != value))
+				{
+					this._Numer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Program", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Program
+		{
+			get
+			{
+				return this._Program;
+			}
+			set
+			{
+				if ((this._Program != value))
+				{
+					this._Program = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ilość", DbType="Int NOT NULL")]
+		public int Ilość
+		{
+			get
+			{
+				return this._Ilość;
+			}
+			set
+			{
+				if ((this._Ilość != value))
+				{
+					this._Ilość = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Koszt", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> Koszt
+		{
+			get
+			{
+				return this._Koszt;
+			}
+			set
+			{
+				if ((this._Koszt != value))
+				{
+					this._Koszt = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BusEmpMedUseInLimitResult
+	{
+		
+		private int _ID_pracownika;
+		
+		private string _Nazwisko_i_imię;
+		
+		private System.Nullable<int> _Dział;
+		
+		private System.Nullable<int> _Numer;
+		
+		private string _Program;
+		
+		private int _Ilość;
+		
+		private System.Nullable<decimal> _Koszt;
+		
+		public BusEmpMedUseInLimitResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ID pracownika]", Storage="_ID_pracownika", DbType="Int NOT NULL")]
+		public int ID_pracownika
+		{
+			get
+			{
+				return this._ID_pracownika;
+			}
+			set
+			{
+				if ((this._ID_pracownika != value))
+				{
+					this._ID_pracownika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nazwisko i imię]", Storage="_Nazwisko_i_imię", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Nazwisko_i_imię
+		{
+			get
+			{
+				return this._Nazwisko_i_imię;
+			}
+			set
+			{
+				if ((this._Nazwisko_i_imię != value))
+				{
+					this._Nazwisko_i_imię = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dział", DbType="Int")]
+		public System.Nullable<int> Dział
+		{
+			get
+			{
+				return this._Dział;
+			}
+			set
+			{
+				if ((this._Dział != value))
+				{
+					this._Dział = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numer", DbType="Int")]
+		public System.Nullable<int> Numer
+		{
+			get
+			{
+				return this._Numer;
+			}
+			set
+			{
+				if ((this._Numer != value))
+				{
+					this._Numer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Program", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Program
+		{
+			get
+			{
+				return this._Program;
+			}
+			set
+			{
+				if ((this._Program != value))
+				{
+					this._Program = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ilość", DbType="Int NOT NULL")]
+		public int Ilość
+		{
+			get
+			{
+				return this._Ilość;
+			}
+			set
+			{
+				if ((this._Ilość != value))
+				{
+					this._Ilość = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Koszt", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> Koszt
+		{
+			get
+			{
+				return this._Koszt;
+			}
+			set
+			{
+				if ((this._Koszt != value))
+				{
+					this._Koszt = value;
 				}
 			}
 		}
