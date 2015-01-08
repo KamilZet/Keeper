@@ -21,7 +21,6 @@ namespace KeeperRichClient.Modules.Benefits.Models
         }
 
         
-        
         [FunctionAttribute(Name = "Healthcare.RunInternMedReport")]
         [ResultType(typeof(RunInternMedReportResult))] // for perm emp results
         [ResultType(typeof(RunInternMedReportResult))] // for shit (aka freelance;) emp results

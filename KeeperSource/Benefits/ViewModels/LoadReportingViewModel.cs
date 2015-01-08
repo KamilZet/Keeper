@@ -5,6 +5,8 @@ using KeeperRichClient.Infrastructure;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Prism.Regions;
 using System;
+using System.Windows;
+
 
 namespace KeeperRichClient.Modules.Benefits.ViewModels
 {
@@ -15,7 +17,20 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             get { return new RelayCommand(action => this.showHealthcareReportsCommand()); }
         }
 
+        public ICommand ShowMultisportReportsCommand
+        {
+            get { return new RelayCommand(action => this.unImplAction()); }
+        }
 
+        public ICommand ShowLanguageReportsCommand
+        {
+            get { return new RelayCommand(action => this.unImplAction()); }
+        }
+
+        public ICommand ShowParkingReportsCommand
+        {
+            get { return new RelayCommand(action => this.unImplAction()); }
+        }
 
 
 
@@ -25,6 +40,11 @@ namespace KeeperRichClient.Modules.Benefits.ViewModels
             region.Deactivate(region.ActiveViews.FirstOrDefault());
             Uri source = new Uri("HealthcareReporsView", UriKind.Relative);
             ServiceLocator.Current.GetInstance<IRegionManager>().RequestNavigate(RegionNames.MainContentRegion, source);
+        }
+
+        private void unImplAction()
+        {
+            MessageBox.Show("To be implemented!", "", MessageBoxButton.OK);
         }
 
         //private void DeactivateView(string region)

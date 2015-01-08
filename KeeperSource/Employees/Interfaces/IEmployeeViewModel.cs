@@ -8,6 +8,5 @@ namespace KeeperRichClient.Modules.Employees
     public interface IEmployeeViewModel : IViewModel
     {
         ObservableCollection<GetEmployeesResult> Employees { get; }
-       
     }
 }
